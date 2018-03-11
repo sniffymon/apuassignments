@@ -35,7 +35,7 @@ Public Class RegisterChalet
         End If
     End Sub
     Private Sub RegisterChalet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
 
         conn.Open()
         sql = "SELECT ChaletNumber FROM Chalet WHERE ChaletStatusOccupied='True'"
@@ -78,7 +78,7 @@ Public Class RegisterChalet
             Exit Sub
         End If
 
-        conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
 
 
         'GUEST DETAIL SECTION START
@@ -139,7 +139,7 @@ Public Class RegisterChalet
         '' AVAILABILITY CHECK
         ''
         'n = 0
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+        'conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
 
         'conn.Open()
 

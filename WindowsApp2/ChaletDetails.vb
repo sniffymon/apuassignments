@@ -5,7 +5,7 @@ Public Class ChaletDetails
     Dim dr As SqlDataReader
     Dim sql As String
     Private Sub ChaletDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         conn.Open()
         sql = "SELECT GuestDetail.Guest_Name FROM GuestDetail INNER JOIN Reservation ON GuestDetail.GuestNo=Reservation.GuestNo_FK
                WHERE ChaletNumber_FK = @clickedchaletCH"

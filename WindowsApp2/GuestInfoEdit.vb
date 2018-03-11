@@ -8,7 +8,7 @@ Public Class GuestInfoEdit
         '
         'Start Loading For Guest ID In Search ComboBox
         '
-        conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
 
         conn.Open()
 
@@ -35,7 +35,7 @@ Public Class GuestInfoEdit
             Exit Sub
         End If
         idmemory = cboGuestID.Text
-        conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
 
 
         'GUEST DETAIL SECTION START

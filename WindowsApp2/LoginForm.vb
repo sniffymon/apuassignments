@@ -9,7 +9,7 @@ Public Class LoginForm
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim sql As String
 
-        conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
 
         conn.Open()
         sql = "SELECT * FROM Users WHERE LoginUsername=@usrname AND Password=@pwd"
