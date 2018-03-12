@@ -9,6 +9,7 @@ Public Class AdminChaletInfo
     Dim sql As String
     Dim passportregex As Regex = New Regex("^ (?!^ 0 +$)[a-zA-Z0-9]{3,20}$")
     Private Sub ChaletBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Maximized
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
 
         conn.Open()
@@ -22,7 +23,7 @@ Public Class AdminChaletInfo
         Dim row As DataRow
 
         For Each row In exdata.Rows
-            DirectCast(GroupBox2.Controls("btn" & row(0)), Button).BackColor = Color.Red
+            DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).BackColor = Color.Red
         Next
 
         '
