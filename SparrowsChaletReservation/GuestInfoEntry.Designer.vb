@@ -37,6 +37,9 @@ Partial Class GuestInfoEntry
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.txtGuestEmail)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtGuestMobile)
@@ -45,103 +48,125 @@ Partial Class GuestInfoEntry
         Me.GroupBox1.Controls.Add(Me.lblGuestName)
         Me.GroupBox1.Controls.Add(Me.txtGuestID)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(49, 124)
+        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(24, 84)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(716, 298)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(811, 264)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Guest Information Enter"
         '
         'txtGuestEmail
         '
-        Me.txtGuestEmail.Location = New System.Drawing.Point(262, 210)
+        Me.txtGuestEmail.Location = New System.Drawing.Point(361, 146)
+        Me.txtGuestEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtGuestEmail.Name = "txtGuestEmail"
         Me.txtGuestEmail.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestEmail.Size = New System.Drawing.Size(342, 31)
+        Me.txtGuestEmail.Size = New System.Drawing.Size(201, 25)
         Me.txtGuestEmail.TabIndex = 8
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(22, 210)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(221, 146)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(150, 25)
+        Me.Label2.Size = New System.Drawing.Size(96, 19)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Email Address"
         '
         'txtGuestMobile
         '
-        Me.txtGuestMobile.Location = New System.Drawing.Point(262, 158)
+        Me.txtGuestMobile.Location = New System.Drawing.Point(361, 111)
+        Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtGuestMobile.Mask = "0000000000"
         Me.txtGuestMobile.Name = "txtGuestMobile"
         Me.txtGuestMobile.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestMobile.Size = New System.Drawing.Size(342, 31)
+        Me.txtGuestMobile.Size = New System.Drawing.Size(201, 25)
         Me.txtGuestMobile.TabIndex = 6
         Me.txtGuestMobile.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(22, 158)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(221, 111)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(157, 25)
+        Me.Label3.Size = New System.Drawing.Size(108, 19)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Mobile Number"
         '
         'txtGuestName
         '
-        Me.txtGuestName.Location = New System.Drawing.Point(262, 104)
+        Me.txtGuestName.Location = New System.Drawing.Point(361, 75)
+        Me.txtGuestName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtGuestName.Name = "txtGuestName"
         Me.txtGuestName.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestName.Size = New System.Drawing.Size(342, 31)
+        Me.txtGuestName.Size = New System.Drawing.Size(201, 25)
         Me.txtGuestName.TabIndex = 4
         '
         'lblGuestName
         '
         Me.lblGuestName.AutoSize = True
-        Me.lblGuestName.Location = New System.Drawing.Point(22, 104)
+        Me.lblGuestName.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGuestName.Location = New System.Drawing.Point(221, 75)
+        Me.lblGuestName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGuestName.Name = "lblGuestName"
-        Me.lblGuestName.Size = New System.Drawing.Size(68, 25)
+        Me.lblGuestName.Size = New System.Drawing.Size(46, 19)
         Me.lblGuestName.TabIndex = 3
         Me.lblGuestName.Text = "Name"
         '
         'txtGuestID
         '
-        Me.txtGuestID.Location = New System.Drawing.Point(262, 46)
+        Me.txtGuestID.Location = New System.Drawing.Point(361, 35)
+        Me.txtGuestID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtGuestID.Mask = "000000009"
         Me.txtGuestID.Name = "txtGuestID"
         Me.txtGuestID.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestID.Size = New System.Drawing.Size(342, 31)
+        Me.txtGuestID.Size = New System.Drawing.Size(201, 25)
         Me.txtGuestID.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(22, 49)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(221, 37)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(204, 25)
+        Me.Label1.Size = New System.Drawing.Size(136, 19)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Passport/IC Number"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(335, 468)
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(369, 385)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(173, 59)
+        Me.Button1.Size = New System.Drawing.Size(101, 40)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Enter"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'GuestInfoEntry
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(812, 589)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(867, 462)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "GuestInfoEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "GuestInfoEntry"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

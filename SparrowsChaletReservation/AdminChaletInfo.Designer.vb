@@ -35,26 +35,27 @@ Partial Class AdminChaletInfo
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.tlpChaletButtons = New System.Windows.Forms.TableLayoutPanel()
         Me.btnCH020 = New System.Windows.Forms.Button()
-        Me.btnCH017 = New System.Windows.Forms.Button()
-        Me.btnCH011 = New System.Windows.Forms.Button()
-        Me.btnCH018 = New System.Windows.Forms.Button()
-        Me.btnCH012 = New System.Windows.Forms.Button()
-        Me.btnCH019 = New System.Windows.Forms.Button()
-        Me.btnCH016 = New System.Windows.Forms.Button()
-        Me.btnCH015 = New System.Windows.Forms.Button()
-        Me.btnCH014 = New System.Windows.Forms.Button()
-        Me.btnCH013 = New System.Windows.Forms.Button()
-        Me.btnCH010 = New System.Windows.Forms.Button()
-        Me.btnCH007 = New System.Windows.Forms.Button()
         Me.btnCH001 = New System.Windows.Forms.Button()
-        Me.btnCH008 = New System.Windows.Forms.Button()
+        Me.btnCH019 = New System.Windows.Forms.Button()
+        Me.btnCH018 = New System.Windows.Forms.Button()
+        Me.btnCH017 = New System.Windows.Forms.Button()
         Me.btnCH002 = New System.Windows.Forms.Button()
-        Me.btnCH009 = New System.Windows.Forms.Button()
-        Me.btnCH006 = New System.Windows.Forms.Button()
-        Me.btnCH005 = New System.Windows.Forms.Button()
-        Me.btnCH004 = New System.Windows.Forms.Button()
+        Me.btnCH011 = New System.Windows.Forms.Button()
+        Me.btnCH012 = New System.Windows.Forms.Button()
+        Me.btnCH016 = New System.Windows.Forms.Button()
         Me.btnCH003 = New System.Windows.Forms.Button()
+        Me.btnCH015 = New System.Windows.Forms.Button()
+        Me.btnCH004 = New System.Windows.Forms.Button()
+        Me.btnCH014 = New System.Windows.Forms.Button()
+        Me.btnCH005 = New System.Windows.Forms.Button()
+        Me.btnCH013 = New System.Windows.Forms.Button()
+        Me.btnCH006 = New System.Windows.Forms.Button()
+        Me.btnCH007 = New System.Windows.Forms.Button()
+        Me.btnCH008 = New System.Windows.Forms.Button()
+        Me.btnCH009 = New System.Windows.Forms.Button()
+        Me.btnCH010 = New System.Windows.Forms.Button()
         Me.lblTest = New System.Windows.Forms.Label()
         Me.CH020 = New System.Windows.Forms.PictureBox()
         Me.CH013 = New System.Windows.Forms.PictureBox()
@@ -85,16 +86,16 @@ Partial Class AdminChaletInfo
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ViewDetailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditDetailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CancelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tlpChaletButtons = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.tlpChaletButtons.SuspendLayout()
         CType(Me.CH020, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CH013, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CH011, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,7 +118,6 @@ Partial Class AdminChaletInfo
         CType(Me.CH003, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
-        Me.tlpChaletButtons.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -136,9 +136,9 @@ Partial Class AdminChaletInfo
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.GroupBox1.Location = New System.Drawing.Point(208, 0)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(538, 225)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
@@ -148,7 +148,7 @@ Partial Class AdminChaletInfo
         '
         Me.cboGuestID.FormattingEnabled = True
         Me.cboGuestID.Location = New System.Drawing.Point(235, 40)
-        Me.cboGuestID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboGuestID.Margin = New System.Windows.Forms.Padding(2)
         Me.cboGuestID.Name = "cboGuestID"
         Me.cboGuestID.Size = New System.Drawing.Size(229, 25)
         Me.cboGuestID.TabIndex = 11
@@ -232,7 +232,7 @@ Partial Class AdminChaletInfo
         '
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.Button1.Location = New System.Drawing.Point(382, 181)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(81, 27)
         Me.Button1.TabIndex = 2
@@ -247,13 +247,57 @@ Partial Class AdminChaletInfo
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.GroupBox2.Location = New System.Drawing.Point(25, 229)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(909, 179)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Chalet Occupancy Map"
+        '
+        'tlpChaletButtons
+        '
+        Me.tlpChaletButtons.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tlpChaletButtons.ColumnCount = 10
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH020, 9, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH001, 0, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH019, 8, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH018, 7, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH017, 6, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH002, 1, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH011, 0, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH012, 1, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH016, 5, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH003, 2, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH015, 4, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH004, 3, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH014, 3, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH005, 4, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH013, 2, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH006, 5, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH007, 6, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH008, 7, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH009, 8, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH010, 9, 0)
+        Me.tlpChaletButtons.Location = New System.Drawing.Point(47, 33)
+        Me.tlpChaletButtons.Name = "tlpChaletButtons"
+        Me.tlpChaletButtons.RowCount = 2
+        Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.0!))
+        Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.0!))
+        Me.tlpChaletButtons.Size = New System.Drawing.Size(800, 124)
+        Me.tlpChaletButtons.TabIndex = 56
         '
         'btnCH020
         '
@@ -265,80 +309,27 @@ Partial Class AdminChaletInfo
         Me.btnCH020.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH020.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH020.Location = New System.Drawing.Point(722, 67)
-        Me.btnCH020.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH020.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH020.Name = "btnCH020"
         Me.btnCH020.Size = New System.Drawing.Size(57, 51)
         Me.btnCH020.TabIndex = 53
         Me.btnCH020.Text = "20"
         Me.btnCH020.UseVisualStyleBackColor = False
         '
-        'btnCH017
+        'btnCH001
         '
-        Me.btnCH017.BackColor = System.Drawing.Color.White
-        Me.btnCH017.BackgroundImage = CType(resources.GetObject("btnCH017.BackgroundImage"), System.Drawing.Image)
-        Me.btnCH017.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCH017.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH017.FlatAppearance.BorderSize = 3
-        Me.btnCH017.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH017.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH017.Location = New System.Drawing.Point(482, 67)
-        Me.btnCH017.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH017.Name = "btnCH017"
-        Me.btnCH017.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH017.TabIndex = 52
-        Me.btnCH017.Text = "17"
-        Me.btnCH017.UseVisualStyleBackColor = False
-        '
-        'btnCH011
-        '
-        Me.btnCH011.BackColor = System.Drawing.Color.White
-        Me.btnCH011.BackgroundImage = CType(resources.GetObject("btnCH011.BackgroundImage"), System.Drawing.Image)
-        Me.btnCH011.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCH011.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH011.FlatAppearance.BorderSize = 3
-        Me.btnCH011.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH011.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH011.Location = New System.Drawing.Point(2, 67)
-        Me.btnCH011.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH011.Name = "btnCH011"
-        Me.btnCH011.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH011.TabIndex = 51
-        Me.btnCH011.Text = "11"
-        Me.btnCH011.UseVisualStyleBackColor = False
-        '
-        'btnCH018
-        '
-        Me.btnCH018.BackColor = System.Drawing.Color.White
-        Me.btnCH018.BackgroundImage = CType(resources.GetObject("btnCH018.BackgroundImage"), System.Drawing.Image)
-        Me.btnCH018.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCH018.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH018.FlatAppearance.BorderSize = 3
-        Me.btnCH018.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH018.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH018.Location = New System.Drawing.Point(562, 67)
-        Me.btnCH018.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH018.Name = "btnCH018"
-        Me.btnCH018.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH018.TabIndex = 50
-        Me.btnCH018.Text = "18"
-        Me.btnCH018.UseVisualStyleBackColor = False
-        '
-        'btnCH012
-        '
-        Me.btnCH012.BackColor = System.Drawing.Color.White
-        Me.btnCH012.BackgroundImage = CType(resources.GetObject("btnCH012.BackgroundImage"), System.Drawing.Image)
-        Me.btnCH012.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCH012.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH012.FlatAppearance.BorderSize = 3
-        Me.btnCH012.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH012.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH012.Location = New System.Drawing.Point(82, 67)
-        Me.btnCH012.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH012.Name = "btnCH012"
-        Me.btnCH012.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH012.TabIndex = 49
-        Me.btnCH012.Text = "12"
-        Me.btnCH012.UseVisualStyleBackColor = False
+        Me.btnCH001.BackColor = System.Drawing.Color.White
+        Me.btnCH001.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH001.FlatAppearance.BorderSize = 3
+        Me.btnCH001.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH001.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH001.Location = New System.Drawing.Point(2, 2)
+        Me.btnCH001.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH001.Name = "btnCH001"
+        Me.btnCH001.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH001.TabIndex = 41
+        Me.btnCH001.Text = "01"
+        Me.btnCH001.UseVisualStyleBackColor = False
         '
         'btnCH019
         '
@@ -350,12 +341,95 @@ Partial Class AdminChaletInfo
         Me.btnCH019.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH019.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH019.Location = New System.Drawing.Point(642, 67)
-        Me.btnCH019.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH019.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH019.Name = "btnCH019"
         Me.btnCH019.Size = New System.Drawing.Size(57, 51)
         Me.btnCH019.TabIndex = 48
         Me.btnCH019.Text = "19"
         Me.btnCH019.UseVisualStyleBackColor = False
+        '
+        'btnCH018
+        '
+        Me.btnCH018.BackColor = System.Drawing.Color.White
+        Me.btnCH018.BackgroundImage = CType(resources.GetObject("btnCH018.BackgroundImage"), System.Drawing.Image)
+        Me.btnCH018.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCH018.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH018.FlatAppearance.BorderSize = 3
+        Me.btnCH018.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH018.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH018.Location = New System.Drawing.Point(562, 67)
+        Me.btnCH018.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH018.Name = "btnCH018"
+        Me.btnCH018.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH018.TabIndex = 50
+        Me.btnCH018.Text = "18"
+        Me.btnCH018.UseVisualStyleBackColor = False
+        '
+        'btnCH017
+        '
+        Me.btnCH017.BackColor = System.Drawing.Color.White
+        Me.btnCH017.BackgroundImage = CType(resources.GetObject("btnCH017.BackgroundImage"), System.Drawing.Image)
+        Me.btnCH017.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCH017.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH017.FlatAppearance.BorderSize = 3
+        Me.btnCH017.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH017.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH017.Location = New System.Drawing.Point(482, 67)
+        Me.btnCH017.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH017.Name = "btnCH017"
+        Me.btnCH017.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH017.TabIndex = 52
+        Me.btnCH017.Text = "17"
+        Me.btnCH017.UseVisualStyleBackColor = False
+        '
+        'btnCH002
+        '
+        Me.btnCH002.BackColor = System.Drawing.Color.White
+        Me.btnCH002.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH002.FlatAppearance.BorderSize = 3
+        Me.btnCH002.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH002.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH002.Location = New System.Drawing.Point(82, 2)
+        Me.btnCH002.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH002.Name = "btnCH002"
+        Me.btnCH002.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH002.TabIndex = 39
+        Me.btnCH002.Text = "02"
+        Me.btnCH002.UseVisualStyleBackColor = False
+        '
+        'btnCH011
+        '
+        Me.btnCH011.BackColor = System.Drawing.Color.White
+        Me.btnCH011.BackgroundImage = CType(resources.GetObject("btnCH011.BackgroundImage"), System.Drawing.Image)
+        Me.btnCH011.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCH011.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH011.FlatAppearance.BorderSize = 3
+        Me.btnCH011.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH011.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH011.Location = New System.Drawing.Point(2, 67)
+        Me.btnCH011.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH011.Name = "btnCH011"
+        Me.btnCH011.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH011.TabIndex = 51
+        Me.btnCH011.Text = "11"
+        Me.btnCH011.UseVisualStyleBackColor = False
+        '
+        'btnCH012
+        '
+        Me.btnCH012.BackColor = System.Drawing.Color.White
+        Me.btnCH012.BackgroundImage = CType(resources.GetObject("btnCH012.BackgroundImage"), System.Drawing.Image)
+        Me.btnCH012.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCH012.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH012.FlatAppearance.BorderSize = 3
+        Me.btnCH012.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH012.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH012.Location = New System.Drawing.Point(82, 67)
+        Me.btnCH012.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH012.Name = "btnCH012"
+        Me.btnCH012.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH012.TabIndex = 49
+        Me.btnCH012.Text = "12"
+        Me.btnCH012.UseVisualStyleBackColor = False
         '
         'btnCH016
         '
@@ -367,12 +441,27 @@ Partial Class AdminChaletInfo
         Me.btnCH016.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH016.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH016.Location = New System.Drawing.Point(402, 67)
-        Me.btnCH016.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH016.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH016.Name = "btnCH016"
         Me.btnCH016.Size = New System.Drawing.Size(57, 51)
         Me.btnCH016.TabIndex = 47
         Me.btnCH016.Text = "16"
         Me.btnCH016.UseVisualStyleBackColor = False
+        '
+        'btnCH003
+        '
+        Me.btnCH003.BackColor = System.Drawing.Color.White
+        Me.btnCH003.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH003.FlatAppearance.BorderSize = 3
+        Me.btnCH003.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH003.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH003.Location = New System.Drawing.Point(162, 2)
+        Me.btnCH003.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH003.Name = "btnCH003"
+        Me.btnCH003.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH003.TabIndex = 34
+        Me.btnCH003.Text = "03"
+        Me.btnCH003.UseVisualStyleBackColor = False
         '
         'btnCH015
         '
@@ -384,12 +473,27 @@ Partial Class AdminChaletInfo
         Me.btnCH015.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH015.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH015.Location = New System.Drawing.Point(322, 67)
-        Me.btnCH015.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH015.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH015.Name = "btnCH015"
         Me.btnCH015.Size = New System.Drawing.Size(57, 51)
         Me.btnCH015.TabIndex = 46
         Me.btnCH015.Text = "15"
         Me.btnCH015.UseVisualStyleBackColor = False
+        '
+        'btnCH004
+        '
+        Me.btnCH004.BackColor = System.Drawing.Color.White
+        Me.btnCH004.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH004.FlatAppearance.BorderSize = 3
+        Me.btnCH004.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH004.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH004.Location = New System.Drawing.Point(242, 2)
+        Me.btnCH004.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH004.Name = "btnCH004"
+        Me.btnCH004.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH004.TabIndex = 35
+        Me.btnCH004.Text = "04"
+        Me.btnCH004.UseVisualStyleBackColor = False
         '
         'btnCH014
         '
@@ -401,12 +505,27 @@ Partial Class AdminChaletInfo
         Me.btnCH014.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH014.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH014.Location = New System.Drawing.Point(242, 67)
-        Me.btnCH014.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH014.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH014.Name = "btnCH014"
         Me.btnCH014.Size = New System.Drawing.Size(57, 51)
         Me.btnCH014.TabIndex = 45
         Me.btnCH014.Text = "14"
         Me.btnCH014.UseVisualStyleBackColor = False
+        '
+        'btnCH005
+        '
+        Me.btnCH005.BackColor = System.Drawing.Color.White
+        Me.btnCH005.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH005.FlatAppearance.BorderSize = 3
+        Me.btnCH005.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH005.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH005.Location = New System.Drawing.Point(322, 2)
+        Me.btnCH005.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH005.Name = "btnCH005"
+        Me.btnCH005.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH005.TabIndex = 36
+        Me.btnCH005.Text = "05"
+        Me.btnCH005.UseVisualStyleBackColor = False
         '
         'btnCH013
         '
@@ -418,102 +537,12 @@ Partial Class AdminChaletInfo
         Me.btnCH013.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH013.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH013.Location = New System.Drawing.Point(162, 67)
-        Me.btnCH013.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH013.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH013.Name = "btnCH013"
         Me.btnCH013.Size = New System.Drawing.Size(57, 51)
         Me.btnCH013.TabIndex = 44
         Me.btnCH013.Text = "13"
         Me.btnCH013.UseVisualStyleBackColor = False
-        '
-        'btnCH010
-        '
-        Me.btnCH010.BackColor = System.Drawing.Color.White
-        Me.btnCH010.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH010.FlatAppearance.BorderSize = 3
-        Me.btnCH010.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH010.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH010.Location = New System.Drawing.Point(722, 2)
-        Me.btnCH010.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH010.Name = "btnCH010"
-        Me.btnCH010.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH010.TabIndex = 43
-        Me.btnCH010.Text = "10"
-        Me.btnCH010.UseVisualStyleBackColor = False
-        '
-        'btnCH007
-        '
-        Me.btnCH007.BackColor = System.Drawing.Color.White
-        Me.btnCH007.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH007.FlatAppearance.BorderSize = 3
-        Me.btnCH007.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH007.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH007.Location = New System.Drawing.Point(482, 2)
-        Me.btnCH007.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH007.Name = "btnCH007"
-        Me.btnCH007.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH007.TabIndex = 42
-        Me.btnCH007.Text = "07"
-        Me.btnCH007.UseVisualStyleBackColor = False
-        '
-        'btnCH001
-        '
-        Me.btnCH001.BackColor = System.Drawing.Color.White
-        Me.btnCH001.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH001.FlatAppearance.BorderSize = 3
-        Me.btnCH001.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH001.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH001.Location = New System.Drawing.Point(2, 2)
-        Me.btnCH001.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH001.Name = "btnCH001"
-        Me.btnCH001.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH001.TabIndex = 41
-        Me.btnCH001.Text = "01"
-        Me.btnCH001.UseVisualStyleBackColor = False
-        '
-        'btnCH008
-        '
-        Me.btnCH008.BackColor = System.Drawing.Color.White
-        Me.btnCH008.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH008.FlatAppearance.BorderSize = 3
-        Me.btnCH008.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH008.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH008.Location = New System.Drawing.Point(562, 2)
-        Me.btnCH008.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH008.Name = "btnCH008"
-        Me.btnCH008.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH008.TabIndex = 40
-        Me.btnCH008.Text = "08"
-        Me.btnCH008.UseVisualStyleBackColor = False
-        '
-        'btnCH002
-        '
-        Me.btnCH002.BackColor = System.Drawing.Color.White
-        Me.btnCH002.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH002.FlatAppearance.BorderSize = 3
-        Me.btnCH002.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH002.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH002.Location = New System.Drawing.Point(82, 2)
-        Me.btnCH002.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH002.Name = "btnCH002"
-        Me.btnCH002.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH002.TabIndex = 39
-        Me.btnCH002.Text = "02"
-        Me.btnCH002.UseVisualStyleBackColor = False
-        '
-        'btnCH009
-        '
-        Me.btnCH009.BackColor = System.Drawing.Color.White
-        Me.btnCH009.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH009.FlatAppearance.BorderSize = 3
-        Me.btnCH009.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH009.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH009.Location = New System.Drawing.Point(642, 2)
-        Me.btnCH009.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH009.Name = "btnCH009"
-        Me.btnCH009.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH009.TabIndex = 38
-        Me.btnCH009.Text = "09"
-        Me.btnCH009.UseVisualStyleBackColor = False
         '
         'btnCH006
         '
@@ -523,57 +552,72 @@ Partial Class AdminChaletInfo
         Me.btnCH006.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH006.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH006.Location = New System.Drawing.Point(402, 2)
-        Me.btnCH006.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH006.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH006.Name = "btnCH006"
         Me.btnCH006.Size = New System.Drawing.Size(57, 51)
         Me.btnCH006.TabIndex = 37
         Me.btnCH006.Text = "06"
         Me.btnCH006.UseVisualStyleBackColor = False
         '
-        'btnCH005
+        'btnCH007
         '
-        Me.btnCH005.BackColor = System.Drawing.Color.White
-        Me.btnCH005.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH005.FlatAppearance.BorderSize = 3
-        Me.btnCH005.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH005.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH005.Location = New System.Drawing.Point(322, 2)
-        Me.btnCH005.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH005.Name = "btnCH005"
-        Me.btnCH005.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH005.TabIndex = 36
-        Me.btnCH005.Text = "05"
-        Me.btnCH005.UseVisualStyleBackColor = False
+        Me.btnCH007.BackColor = System.Drawing.Color.White
+        Me.btnCH007.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH007.FlatAppearance.BorderSize = 3
+        Me.btnCH007.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH007.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH007.Location = New System.Drawing.Point(482, 2)
+        Me.btnCH007.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH007.Name = "btnCH007"
+        Me.btnCH007.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH007.TabIndex = 42
+        Me.btnCH007.Text = "07"
+        Me.btnCH007.UseVisualStyleBackColor = False
         '
-        'btnCH004
+        'btnCH008
         '
-        Me.btnCH004.BackColor = System.Drawing.Color.White
-        Me.btnCH004.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH004.FlatAppearance.BorderSize = 3
-        Me.btnCH004.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH004.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH004.Location = New System.Drawing.Point(242, 2)
-        Me.btnCH004.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH004.Name = "btnCH004"
-        Me.btnCH004.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH004.TabIndex = 35
-        Me.btnCH004.Text = "04"
-        Me.btnCH004.UseVisualStyleBackColor = False
+        Me.btnCH008.BackColor = System.Drawing.Color.White
+        Me.btnCH008.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH008.FlatAppearance.BorderSize = 3
+        Me.btnCH008.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH008.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH008.Location = New System.Drawing.Point(562, 2)
+        Me.btnCH008.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH008.Name = "btnCH008"
+        Me.btnCH008.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH008.TabIndex = 40
+        Me.btnCH008.Text = "08"
+        Me.btnCH008.UseVisualStyleBackColor = False
         '
-        'btnCH003
+        'btnCH009
         '
-        Me.btnCH003.BackColor = System.Drawing.Color.White
-        Me.btnCH003.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnCH003.FlatAppearance.BorderSize = 3
-        Me.btnCH003.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCH003.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH003.Location = New System.Drawing.Point(162, 2)
-        Me.btnCH003.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnCH003.Name = "btnCH003"
-        Me.btnCH003.Size = New System.Drawing.Size(57, 51)
-        Me.btnCH003.TabIndex = 34
-        Me.btnCH003.Text = "03"
-        Me.btnCH003.UseVisualStyleBackColor = False
+        Me.btnCH009.BackColor = System.Drawing.Color.White
+        Me.btnCH009.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH009.FlatAppearance.BorderSize = 3
+        Me.btnCH009.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH009.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH009.Location = New System.Drawing.Point(642, 2)
+        Me.btnCH009.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH009.Name = "btnCH009"
+        Me.btnCH009.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH009.TabIndex = 38
+        Me.btnCH009.Text = "09"
+        Me.btnCH009.UseVisualStyleBackColor = False
+        '
+        'btnCH010
+        '
+        Me.btnCH010.BackColor = System.Drawing.Color.White
+        Me.btnCH010.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnCH010.FlatAppearance.BorderSize = 3
+        Me.btnCH010.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCH010.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCH010.Location = New System.Drawing.Point(722, 2)
+        Me.btnCH010.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCH010.Name = "btnCH010"
+        Me.btnCH010.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH010.TabIndex = 43
+        Me.btnCH010.Text = "10"
+        Me.btnCH010.UseVisualStyleBackColor = False
         '
         'lblTest
         '
@@ -749,7 +793,7 @@ Partial Class AdminChaletInfo
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Location = New System.Drawing.Point(5, 4)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(16, 15)
         Me.Panel1.TabIndex = 13
@@ -782,7 +826,7 @@ Partial Class AdminChaletInfo
         '
         Me.Panel2.BackColor = System.Drawing.Color.Red
         Me.Panel2.Location = New System.Drawing.Point(5, 30)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(16, 15)
         Me.Panel2.TabIndex = 15
@@ -803,7 +847,7 @@ Partial Class AdminChaletInfo
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel3.Location = New System.Drawing.Point(5, 54)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(16, 15)
         Me.Panel3.TabIndex = 17
@@ -838,10 +882,26 @@ Partial Class AdminChaletInfo
         Me.Panel4.Controls.Add(Me.Label11)
         Me.Panel4.Controls.Add(Me.Button2)
         Me.Panel4.Location = New System.Drawing.Point(0, 438)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(117, 86)
         Me.Panel4.TabIndex = 34
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.Enabled = False
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.Button3.FlatAppearance.BorderSize = 3
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(2, 4)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(37, 36)
+        Me.Button3.TabIndex = 54
+        Me.Button3.Text = " "
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Button2
         '
@@ -854,28 +914,12 @@ Partial Class AdminChaletInfo
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(2, 50)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(37, 36)
         Me.Button2.TabIndex = 55
         Me.Button2.Text = " "
         Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.Enabled = False
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Button3.FlatAppearance.BorderSize = 3
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(2, 4)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(37, 36)
-        Me.Button3.TabIndex = 54
-        Me.Button3.Text = " "
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'ContextMenuStrip1
         '
@@ -901,50 +945,6 @@ Partial Class AdminChaletInfo
         Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
         Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
         Me.CancelToolStripMenuItem.Text = "Cancel"
-        '
-        'tlpChaletButtons
-        '
-        Me.tlpChaletButtons.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tlpChaletButtons.ColumnCount = 10
-        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH020, 9, 1)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH001, 0, 0)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH019, 8, 1)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH018, 7, 1)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH017, 6, 1)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH002, 1, 0)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH011, 0, 1)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH012, 1, 1)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH016, 5, 1)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH003, 2, 0)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH015, 4, 1)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH004, 3, 0)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH014, 3, 1)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH005, 4, 0)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH013, 2, 1)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH006, 5, 0)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH007, 6, 0)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH008, 7, 0)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH009, 8, 0)
-        Me.tlpChaletButtons.Controls.Add(Me.btnCH010, 9, 0)
-        Me.tlpChaletButtons.Location = New System.Drawing.Point(47, 33)
-        Me.tlpChaletButtons.Name = "tlpChaletButtons"
-        Me.tlpChaletButtons.RowCount = 2
-        Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.0!))
-        Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.0!))
-        Me.tlpChaletButtons.Size = New System.Drawing.Size(800, 124)
-        Me.tlpChaletButtons.TabIndex = 56
         '
         'Panel5
         '
@@ -974,7 +974,7 @@ Partial Class AdminChaletInfo
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "AdminChaletInfo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
@@ -983,6 +983,7 @@ Partial Class AdminChaletInfo
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.tlpChaletButtons.ResumeLayout(False)
         CType(Me.CH020, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CH013, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CH011, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1006,7 +1007,6 @@ Partial Class AdminChaletInfo
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
-        Me.tlpChaletButtons.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)

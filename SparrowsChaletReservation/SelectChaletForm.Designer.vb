@@ -44,34 +44,23 @@ Partial Class SelectChaletForm
         Me.btnCH005 = New System.Windows.Forms.Button()
         Me.btnCH004 = New System.Windows.Forms.Button()
         Me.btnCH003 = New System.Windows.Forms.Button()
+        Me.tlpChaletButtons = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox2.SuspendLayout()
+        Me.tlpChaletButtons.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.btnCH020)
-        Me.GroupBox2.Controls.Add(Me.btnCH017)
-        Me.GroupBox2.Controls.Add(Me.btnCH011)
-        Me.GroupBox2.Controls.Add(Me.btnCH018)
-        Me.GroupBox2.Controls.Add(Me.btnCH012)
-        Me.GroupBox2.Controls.Add(Me.btnCH019)
-        Me.GroupBox2.Controls.Add(Me.btnCH016)
-        Me.GroupBox2.Controls.Add(Me.btnCH015)
-        Me.GroupBox2.Controls.Add(Me.btnCH014)
-        Me.GroupBox2.Controls.Add(Me.btnCH013)
-        Me.GroupBox2.Controls.Add(Me.btnCH010)
-        Me.GroupBox2.Controls.Add(Me.btnCH007)
-        Me.GroupBox2.Controls.Add(Me.btnCH001)
-        Me.GroupBox2.Controls.Add(Me.btnCH008)
-        Me.GroupBox2.Controls.Add(Me.btnCH002)
-        Me.GroupBox2.Controls.Add(Me.btnCH009)
-        Me.GroupBox2.Controls.Add(Me.btnCH006)
-        Me.GroupBox2.Controls.Add(Me.btnCH005)
-        Me.GroupBox2.Controls.Add(Me.btnCH004)
-        Me.GroupBox2.Controls.Add(Me.btnCH003)
-        Me.GroupBox2.Location = New System.Drawing.Point(33, 28)
+        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.tlpChaletButtons)
+        Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(21, 20)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1364, 390)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Size = New System.Drawing.Size(909, 250)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Select Chalet"
@@ -86,9 +75,10 @@ Partial Class SelectChaletForm
         Me.btnCH020.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH020.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH020.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH020.Location = New System.Drawing.Point(1230, 240)
+        Me.btnCH020.Location = New System.Drawing.Point(749, 80)
+        Me.btnCH020.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH020.Name = "btnCH020"
-        Me.btnCH020.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH020.Size = New System.Drawing.Size(79, 75)
         Me.btnCH020.TabIndex = 53
         Me.btnCH020.Text = "20"
         Me.btnCH020.UseVisualStyleBackColor = False
@@ -103,9 +93,10 @@ Partial Class SelectChaletForm
         Me.btnCH017.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH017.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH017.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH017.Location = New System.Drawing.Point(825, 240)
+        Me.btnCH017.Location = New System.Drawing.Point(500, 80)
+        Me.btnCH017.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH017.Name = "btnCH017"
-        Me.btnCH017.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH017.Size = New System.Drawing.Size(79, 75)
         Me.btnCH017.TabIndex = 52
         Me.btnCH017.Text = "17"
         Me.btnCH017.UseVisualStyleBackColor = False
@@ -120,9 +111,10 @@ Partial Class SelectChaletForm
         Me.btnCH011.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH011.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH011.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH011.Location = New System.Drawing.Point(45, 240)
+        Me.btnCH011.Location = New System.Drawing.Point(2, 80)
+        Me.btnCH011.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH011.Name = "btnCH011"
-        Me.btnCH011.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH011.Size = New System.Drawing.Size(79, 75)
         Me.btnCH011.TabIndex = 51
         Me.btnCH011.Text = "11"
         Me.btnCH011.UseVisualStyleBackColor = False
@@ -137,9 +129,10 @@ Partial Class SelectChaletForm
         Me.btnCH018.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH018.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH018.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH018.Location = New System.Drawing.Point(962, 240)
+        Me.btnCH018.Location = New System.Drawing.Point(583, 80)
+        Me.btnCH018.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH018.Name = "btnCH018"
-        Me.btnCH018.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH018.Size = New System.Drawing.Size(79, 75)
         Me.btnCH018.TabIndex = 50
         Me.btnCH018.Text = "18"
         Me.btnCH018.UseVisualStyleBackColor = False
@@ -154,9 +147,10 @@ Partial Class SelectChaletForm
         Me.btnCH012.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH012.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH012.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH012.Location = New System.Drawing.Point(162, 240)
+        Me.btnCH012.Location = New System.Drawing.Point(85, 80)
+        Me.btnCH012.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH012.Name = "btnCH012"
-        Me.btnCH012.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH012.Size = New System.Drawing.Size(79, 75)
         Me.btnCH012.TabIndex = 49
         Me.btnCH012.Text = "12"
         Me.btnCH012.UseVisualStyleBackColor = False
@@ -171,9 +165,10 @@ Partial Class SelectChaletForm
         Me.btnCH019.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH019.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH019.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH019.Location = New System.Drawing.Point(1093, 240)
+        Me.btnCH019.Location = New System.Drawing.Point(666, 80)
+        Me.btnCH019.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH019.Name = "btnCH019"
-        Me.btnCH019.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH019.Size = New System.Drawing.Size(79, 75)
         Me.btnCH019.TabIndex = 48
         Me.btnCH019.Text = "19"
         Me.btnCH019.UseVisualStyleBackColor = False
@@ -188,9 +183,10 @@ Partial Class SelectChaletForm
         Me.btnCH016.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH016.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH016.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH016.Location = New System.Drawing.Point(688, 240)
+        Me.btnCH016.Location = New System.Drawing.Point(417, 80)
+        Me.btnCH016.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH016.Name = "btnCH016"
-        Me.btnCH016.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH016.Size = New System.Drawing.Size(79, 75)
         Me.btnCH016.TabIndex = 47
         Me.btnCH016.Text = "16"
         Me.btnCH016.UseVisualStyleBackColor = False
@@ -205,9 +201,10 @@ Partial Class SelectChaletForm
         Me.btnCH015.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH015.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH015.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH015.Location = New System.Drawing.Point(553, 240)
+        Me.btnCH015.Location = New System.Drawing.Point(334, 80)
+        Me.btnCH015.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH015.Name = "btnCH015"
-        Me.btnCH015.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH015.Size = New System.Drawing.Size(79, 75)
         Me.btnCH015.TabIndex = 46
         Me.btnCH015.Text = "15"
         Me.btnCH015.UseVisualStyleBackColor = False
@@ -222,9 +219,10 @@ Partial Class SelectChaletForm
         Me.btnCH014.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH014.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH014.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH014.Location = New System.Drawing.Point(424, 240)
+        Me.btnCH014.Location = New System.Drawing.Point(251, 80)
+        Me.btnCH014.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH014.Name = "btnCH014"
-        Me.btnCH014.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH014.Size = New System.Drawing.Size(79, 75)
         Me.btnCH014.TabIndex = 45
         Me.btnCH014.Text = "14"
         Me.btnCH014.UseVisualStyleBackColor = False
@@ -239,9 +237,10 @@ Partial Class SelectChaletForm
         Me.btnCH013.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH013.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH013.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH013.Location = New System.Drawing.Point(294, 240)
+        Me.btnCH013.Location = New System.Drawing.Point(168, 80)
+        Me.btnCH013.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH013.Name = "btnCH013"
-        Me.btnCH013.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH013.Size = New System.Drawing.Size(79, 75)
         Me.btnCH013.TabIndex = 44
         Me.btnCH013.Text = "13"
         Me.btnCH013.UseVisualStyleBackColor = False
@@ -254,9 +253,10 @@ Partial Class SelectChaletForm
         Me.btnCH010.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH010.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH010.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH010.Location = New System.Drawing.Point(1230, 94)
+        Me.btnCH010.Location = New System.Drawing.Point(749, 2)
+        Me.btnCH010.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH010.Name = "btnCH010"
-        Me.btnCH010.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH010.Size = New System.Drawing.Size(79, 74)
         Me.btnCH010.TabIndex = 43
         Me.btnCH010.Text = "10"
         Me.btnCH010.UseVisualStyleBackColor = False
@@ -269,9 +269,10 @@ Partial Class SelectChaletForm
         Me.btnCH007.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH007.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH007.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH007.Location = New System.Drawing.Point(825, 94)
+        Me.btnCH007.Location = New System.Drawing.Point(500, 2)
+        Me.btnCH007.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH007.Name = "btnCH007"
-        Me.btnCH007.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH007.Size = New System.Drawing.Size(79, 74)
         Me.btnCH007.TabIndex = 42
         Me.btnCH007.Text = "07"
         Me.btnCH007.UseVisualStyleBackColor = False
@@ -284,9 +285,10 @@ Partial Class SelectChaletForm
         Me.btnCH001.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH001.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH001.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH001.Location = New System.Drawing.Point(45, 94)
+        Me.btnCH001.Location = New System.Drawing.Point(2, 2)
+        Me.btnCH001.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH001.Name = "btnCH001"
-        Me.btnCH001.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH001.Size = New System.Drawing.Size(79, 74)
         Me.btnCH001.TabIndex = 41
         Me.btnCH001.Text = "01"
         Me.btnCH001.UseVisualStyleBackColor = False
@@ -299,9 +301,10 @@ Partial Class SelectChaletForm
         Me.btnCH008.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH008.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH008.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH008.Location = New System.Drawing.Point(962, 94)
+        Me.btnCH008.Location = New System.Drawing.Point(583, 2)
+        Me.btnCH008.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH008.Name = "btnCH008"
-        Me.btnCH008.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH008.Size = New System.Drawing.Size(79, 74)
         Me.btnCH008.TabIndex = 40
         Me.btnCH008.Text = "08"
         Me.btnCH008.UseVisualStyleBackColor = False
@@ -314,9 +317,10 @@ Partial Class SelectChaletForm
         Me.btnCH002.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH002.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH002.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH002.Location = New System.Drawing.Point(162, 94)
+        Me.btnCH002.Location = New System.Drawing.Point(85, 2)
+        Me.btnCH002.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH002.Name = "btnCH002"
-        Me.btnCH002.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH002.Size = New System.Drawing.Size(79, 74)
         Me.btnCH002.TabIndex = 39
         Me.btnCH002.Text = "02"
         Me.btnCH002.UseVisualStyleBackColor = False
@@ -329,9 +333,10 @@ Partial Class SelectChaletForm
         Me.btnCH009.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH009.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH009.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH009.Location = New System.Drawing.Point(1093, 94)
+        Me.btnCH009.Location = New System.Drawing.Point(666, 2)
+        Me.btnCH009.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH009.Name = "btnCH009"
-        Me.btnCH009.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH009.Size = New System.Drawing.Size(79, 74)
         Me.btnCH009.TabIndex = 38
         Me.btnCH009.Text = "09"
         Me.btnCH009.UseVisualStyleBackColor = False
@@ -344,9 +349,10 @@ Partial Class SelectChaletForm
         Me.btnCH006.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH006.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH006.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH006.Location = New System.Drawing.Point(688, 94)
+        Me.btnCH006.Location = New System.Drawing.Point(417, 2)
+        Me.btnCH006.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH006.Name = "btnCH006"
-        Me.btnCH006.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH006.Size = New System.Drawing.Size(79, 74)
         Me.btnCH006.TabIndex = 37
         Me.btnCH006.Text = "06"
         Me.btnCH006.UseVisualStyleBackColor = False
@@ -359,9 +365,10 @@ Partial Class SelectChaletForm
         Me.btnCH005.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH005.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH005.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH005.Location = New System.Drawing.Point(553, 94)
+        Me.btnCH005.Location = New System.Drawing.Point(334, 2)
+        Me.btnCH005.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH005.Name = "btnCH005"
-        Me.btnCH005.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH005.Size = New System.Drawing.Size(79, 74)
         Me.btnCH005.TabIndex = 36
         Me.btnCH005.Text = "05"
         Me.btnCH005.UseVisualStyleBackColor = False
@@ -374,9 +381,10 @@ Partial Class SelectChaletForm
         Me.btnCH004.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH004.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH004.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH004.Location = New System.Drawing.Point(424, 94)
+        Me.btnCH004.Location = New System.Drawing.Point(251, 2)
+        Me.btnCH004.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH004.Name = "btnCH004"
-        Me.btnCH004.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH004.Size = New System.Drawing.Size(79, 74)
         Me.btnCH004.TabIndex = 35
         Me.btnCH004.Text = "04"
         Me.btnCH004.UseVisualStyleBackColor = False
@@ -389,23 +397,72 @@ Partial Class SelectChaletForm
         Me.btnCH003.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH003.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH003.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCH003.Location = New System.Drawing.Point(294, 94)
+        Me.btnCH003.Location = New System.Drawing.Point(168, 2)
+        Me.btnCH003.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCH003.Name = "btnCH003"
-        Me.btnCH003.Size = New System.Drawing.Size(85, 79)
+        Me.btnCH003.Size = New System.Drawing.Size(79, 74)
         Me.btnCH003.TabIndex = 34
         Me.btnCH003.Text = "03"
         Me.btnCH003.UseVisualStyleBackColor = False
         '
+        'tlpChaletButtons
+        '
+        Me.tlpChaletButtons.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tlpChaletButtons.ColumnCount = 10
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH020, 9, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH001, 0, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH019, 8, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH018, 7, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH017, 6, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH002, 1, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH011, 0, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH012, 1, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH016, 5, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH003, 2, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH015, 4, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH004, 3, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH014, 3, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH005, 4, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH013, 2, 1)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH006, 5, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH007, 6, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH008, 7, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH009, 8, 0)
+        Me.tlpChaletButtons.Controls.Add(Me.btnCH010, 9, 0)
+        Me.tlpChaletButtons.Location = New System.Drawing.Point(37, 88)
+        Me.tlpChaletButtons.Name = "tlpChaletButtons"
+        Me.tlpChaletButtons.RowCount = 2
+        Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpChaletButtons.Size = New System.Drawing.Size(830, 157)
+        Me.tlpChaletButtons.TabIndex = 54
+        '
         'SelectChaletForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1426, 471)
+        Me.ClientSize = New System.Drawing.Size(951, 301)
         Me.Controls.Add(Me.GroupBox2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "SelectChaletForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "EditChaletForm"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox2.ResumeLayout(False)
+        Me.tlpChaletButtons.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -431,4 +488,5 @@ Partial Class SelectChaletForm
     Friend WithEvents btnCH005 As Button
     Friend WithEvents btnCH004 As Button
     Friend WithEvents btnCH003 As Button
+    Friend WithEvents tlpChaletButtons As TableLayoutPanel
 End Class

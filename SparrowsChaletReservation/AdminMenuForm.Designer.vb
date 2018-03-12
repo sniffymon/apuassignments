@@ -24,9 +24,9 @@ Partial Class AdminMenuForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminMenuForm))
         Me.btnAdminInfoPanel = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnEditChaletRecords = New System.Windows.Forms.Button()
+        Me.btnRegisterGuest = New System.Windows.Forms.Button()
+        Me.btnEditGuestRecords = New System.Windows.Forms.Button()
         Me.pnlMainView = New System.Windows.Forms.Panel()
         Me.pnlMenu = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -53,53 +53,53 @@ Partial Class AdminMenuForm
         Me.btnAdminInfoPanel.Text = "Admin Info Panel"
         Me.btnAdminInfoPanel.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btnEditChaletRecords
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(2, 220)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(195, 105)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Edit Chalet Records"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnEditChaletRecords.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.btnEditChaletRecords.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnEditChaletRecords.FlatAppearance.BorderSize = 0
+        Me.btnEditChaletRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditChaletRecords.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditChaletRecords.ForeColor = System.Drawing.Color.White
+        Me.btnEditChaletRecords.Location = New System.Drawing.Point(2, 220)
+        Me.btnEditChaletRecords.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEditChaletRecords.Name = "btnEditChaletRecords"
+        Me.btnEditChaletRecords.Size = New System.Drawing.Size(195, 105)
+        Me.btnEditChaletRecords.TabIndex = 1
+        Me.btnEditChaletRecords.Text = "Edit Chalet Records"
+        Me.btnEditChaletRecords.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btnRegisterGuest
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(2, 2)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(195, 105)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Register Guest"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnRegisterGuest.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.btnRegisterGuest.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnRegisterGuest.FlatAppearance.BorderSize = 0
+        Me.btnRegisterGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegisterGuest.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegisterGuest.ForeColor = System.Drawing.Color.White
+        Me.btnRegisterGuest.Location = New System.Drawing.Point(2, 2)
+        Me.btnRegisterGuest.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnRegisterGuest.Name = "btnRegisterGuest"
+        Me.btnRegisterGuest.Size = New System.Drawing.Size(195, 105)
+        Me.btnRegisterGuest.TabIndex = 2
+        Me.btnRegisterGuest.Text = "Register Guest"
+        Me.btnRegisterGuest.UseVisualStyleBackColor = False
         '
-        'Button4
+        'btnEditGuestRecords
         '
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(2, 111)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(195, 105)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Edit Guest Records"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btnEditGuestRecords.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.btnEditGuestRecords.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnEditGuestRecords.FlatAppearance.BorderSize = 0
+        Me.btnEditGuestRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditGuestRecords.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditGuestRecords.ForeColor = System.Drawing.Color.White
+        Me.btnEditGuestRecords.Location = New System.Drawing.Point(2, 111)
+        Me.btnEditGuestRecords.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEditGuestRecords.Name = "btnEditGuestRecords"
+        Me.btnEditGuestRecords.Size = New System.Drawing.Size(195, 105)
+        Me.btnEditGuestRecords.TabIndex = 3
+        Me.btnEditGuestRecords.Text = "Edit Guest Records"
+        Me.btnEditGuestRecords.UseVisualStyleBackColor = False
         '
         'pnlMainView
         '
@@ -153,9 +153,9 @@ Partial Class AdminMenuForm
         Me.tlpMenuBtn.ColumnCount = 1
         Me.tlpMenuBtn.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlpMenuBtn.Controls.Add(Me.btnAdminInfoPanel, 0, 3)
-        Me.tlpMenuBtn.Controls.Add(Me.Button4, 0, 1)
-        Me.tlpMenuBtn.Controls.Add(Me.Button2, 0, 2)
-        Me.tlpMenuBtn.Controls.Add(Me.Button3, 0, 0)
+        Me.tlpMenuBtn.Controls.Add(Me.btnEditGuestRecords, 0, 1)
+        Me.tlpMenuBtn.Controls.Add(Me.btnEditChaletRecords, 0, 2)
+        Me.tlpMenuBtn.Controls.Add(Me.btnRegisterGuest, 0, 0)
         Me.tlpMenuBtn.Location = New System.Drawing.Point(0, 141)
         Me.tlpMenuBtn.Name = "tlpMenuBtn"
         Me.tlpMenuBtn.RowCount = 4
@@ -188,9 +188,9 @@ Partial Class AdminMenuForm
     End Sub
 
     Friend WithEvents btnAdminInfoPanel As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnEditChaletRecords As Button
+    Friend WithEvents btnRegisterGuest As Button
+    Friend WithEvents btnEditGuestRecords As Button
     Friend WithEvents pnlMainView As Panel
     Friend WithEvents pnlMenu As Panel
     Friend WithEvents tlpMenuBtn As TableLayoutPanel
