@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class RegisterChalet
+Public Class CheckIn
     Dim conn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader

@@ -112,6 +112,12 @@
     <Compile Include="ChaletEdit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CheckOut.Designer.vb">
+      <DependentUpon>CheckOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CheckOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GuestInfoEdit.Designer.vb">
       <DependentUpon>GuestInfoEdit.vb</DependentUpon>
     </Compile>
@@ -124,10 +130,10 @@
     <Compile Include="GuestInfoSearch.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterChalet.Designer.vb">
-      <DependentUpon>RegisterChalet.vb</DependentUpon>
+    <Compile Include="CheckIn.Designer.vb">
+      <DependentUpon>CheckIn.vb</DependentUpon>
     </Compile>
-    <Compile Include="RegisterChalet.vb">
+    <Compile Include="CheckIn.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SelectChaletForm.Designer.vb">
@@ -196,8 +202,8 @@
     <EmbeddedResource Include="GuestInfoSearch.resx">
       <DependentUpon>GuestInfoSearch.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegisterChalet.resx">
-      <DependentUpon>RegisterChalet.vb</DependentUpon>
+    <EmbeddedResource Include="CheckIn.resx">
+      <DependentUpon>CheckIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectChaletForm.resx">
       <DependentUpon>SelectChaletForm.vb</DependentUpon>
