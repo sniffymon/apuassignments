@@ -112,6 +112,12 @@
     <Compile Include="ChaletEdit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CheckOut.Designer.vb">
+      <DependentUpon>CheckOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CheckOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GuestInfoEdit.Designer.vb">
       <DependentUpon>GuestInfoEdit.vb</DependentUpon>
     </Compile>
