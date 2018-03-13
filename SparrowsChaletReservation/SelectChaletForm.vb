@@ -14,6 +14,7 @@ Public Class SelectChaletForm
 
     Private Sub SelectChaletForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         conn.Open()
         Sql = "SELECT ChaletNumber FROM Chalet WHERE ChaletStatusOccupied='True'"
 

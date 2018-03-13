@@ -36,90 +36,117 @@ Partial Class ChaletDetails
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.875!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(255, 9)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(128, 5)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(189, 61)
+        Me.Label1.Size = New System.Drawing.Size(102, 37)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Label1"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(90, 251)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(45, 131)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 25)
+        Me.Label2.Size = New System.Drawing.Size(69, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Guest Name"
         '
         'txtGuestName
         '
         Me.txtGuestName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtGuestName.Location = New System.Drawing.Point(227, 244)
+        Me.txtGuestName.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtGuestName.ForeColor = System.Drawing.Color.White
+        Me.txtGuestName.Location = New System.Drawing.Point(114, 127)
+        Me.txtGuestName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtGuestName.Name = "txtGuestName"
-        Me.txtGuestName.Size = New System.Drawing.Size(367, 41)
+        Me.txtGuestName.Size = New System.Drawing.Size(184, 21)
         Me.txtGuestName.TabIndex = 2
         Me.txtGuestName.Text = "Not Available Yet"
         '
         'txtCheckIn
         '
         Me.txtCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtCheckIn.Location = New System.Drawing.Point(227, 314)
+        Me.txtCheckIn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCheckIn.ForeColor = System.Drawing.Color.White
+        Me.txtCheckIn.Location = New System.Drawing.Point(114, 163)
+        Me.txtCheckIn.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtCheckIn.Name = "txtCheckIn"
-        Me.txtCheckIn.Size = New System.Drawing.Size(367, 41)
+        Me.txtCheckIn.Size = New System.Drawing.Size(184, 21)
         Me.txtCheckIn.TabIndex = 4
         Me.txtCheckIn.Text = "Not Available Yet"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(64, 320)
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(32, 166)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(148, 25)
+        Me.Label5.Size = New System.Drawing.Size(79, 13)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Check-In Date"
         '
         'txtCheckOut
         '
         Me.txtCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtCheckOut.Location = New System.Drawing.Point(227, 382)
+        Me.txtCheckOut.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCheckOut.ForeColor = System.Drawing.Color.White
+        Me.txtCheckOut.Location = New System.Drawing.Point(114, 199)
+        Me.txtCheckOut.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtCheckOut.Name = "txtCheckOut"
-        Me.txtCheckOut.Size = New System.Drawing.Size(367, 41)
+        Me.txtCheckOut.Size = New System.Drawing.Size(184, 21)
         Me.txtCheckOut.TabIndex = 6
         Me.txtCheckOut.Text = "Not Available Yet"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(50, 388)
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(25, 202)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(165, 25)
+        Me.Label7.Size = New System.Drawing.Size(89, 13)
         Me.Label7.TabIndex = 5
         Me.Label7.Text = "Check-Out Date"
         '
         'txtEB
         '
         Me.txtEB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtEB.Location = New System.Drawing.Point(227, 446)
+        Me.txtEB.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEB.ForeColor = System.Drawing.Color.White
+        Me.txtEB.Location = New System.Drawing.Point(114, 232)
+        Me.txtEB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtEB.Name = "txtEB"
-        Me.txtEB.Size = New System.Drawing.Size(367, 41)
+        Me.txtEB.Size = New System.Drawing.Size(184, 21)
         Me.txtEB.TabIndex = 8
         Me.txtEB.Text = "Not Available Yet"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(95, 452)
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(48, 235)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(117, 25)
+        Me.Label9.Size = New System.Drawing.Size(60, 13)
         Me.Label9.TabIndex = 7
         Me.Label9.Text = "Extra Beds"
         '
         'ChaletDetails
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(710, 645)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(355, 335)
         Me.Controls.Add(Me.txtEB)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtCheckOut)
@@ -129,6 +156,7 @@ Partial Class ChaletDetails
         Me.Controls.Add(Me.txtGuestName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "ChaletDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "ChaletDetails"

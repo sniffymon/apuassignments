@@ -11,6 +11,7 @@ Public Class AdminChaletInfo
     Private Sub ChaletBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
         sql = "SELECT ChaletNumber FROM Chalet WHERE ChaletStatusOccupied='True'"
@@ -46,12 +47,6 @@ Public Class AdminChaletInfo
         conn.Close()
     End Sub
     Private Sub ChaletButtons_Click(sender As Object, e As EventArgs) Handles btnCH001.Click, btnCH002.Click, btnCH003.Click, btnCH004.Click, btnCH005.Click, btnCH006.Click, btnCH007.Click, btnCH008.Click, btnCH009.Click, btnCH010.Click, btnCH011.Click, btnCH012.Click, btnCH013.Click, btnCH014.Click, btnCH015.Click, btnCH016.Click, btnCH017.Click, btnCH018.Click, btnCH019.Click, btnCH020.Click
-        'If sender.BackColor = Color.White Then
-        '    DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255)
-        'ElseIf DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255) Then
-        '    DirectCast(sender, Button).BackColor = Color.White
-        'End If
-        'checkedchalet.Add("CH0" & sender.text)
         ContextMenuStrip1.Show(sender, sender.Height, 0)
         clickedchalet = "Chalet " & sender.text
         clickedchaletCH = "CH0" & sender.text
@@ -63,6 +58,7 @@ Public Class AdminChaletInfo
         End If
 
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
 
         'GUEST DETAIL SECTION START

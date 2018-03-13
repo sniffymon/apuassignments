@@ -135,11 +135,11 @@ Partial Class AdminChaletInfo
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(208, 0)
+        Me.GroupBox1.Location = New System.Drawing.Point(156, 0)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(538, 225)
+        Me.GroupBox1.Size = New System.Drawing.Size(404, 183)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Guest Information Search"
@@ -147,37 +147,37 @@ Partial Class AdminChaletInfo
         'cboGuestID
         '
         Me.cboGuestID.FormattingEnabled = True
-        Me.cboGuestID.Location = New System.Drawing.Point(235, 40)
+        Me.cboGuestID.Location = New System.Drawing.Point(176, 32)
         Me.cboGuestID.Margin = New System.Windows.Forms.Padding(2)
         Me.cboGuestID.Name = "cboGuestID"
-        Me.cboGuestID.Size = New System.Drawing.Size(229, 25)
+        Me.cboGuestID.Size = New System.Drawing.Size(173, 20)
         Me.cboGuestID.TabIndex = 11
         '
         'txtGuestEmail
         '
         Me.txtGuestEmail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtGuestEmail.Location = New System.Drawing.Point(235, 147)
+        Me.txtGuestEmail.Location = New System.Drawing.Point(176, 119)
         Me.txtGuestEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtGuestEmail.Name = "txtGuestEmail"
-        Me.txtGuestEmail.Size = New System.Drawing.Size(228, 21)
+        Me.txtGuestEmail.Size = New System.Drawing.Size(171, 17)
         Me.txtGuestEmail.TabIndex = 10
         '
         'txtGuestName
         '
         Me.txtGuestName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtGuestName.Location = New System.Drawing.Point(235, 78)
+        Me.txtGuestName.Location = New System.Drawing.Point(176, 63)
         Me.txtGuestName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtGuestName.Name = "txtGuestName"
-        Me.txtGuestName.Size = New System.Drawing.Size(228, 21)
+        Me.txtGuestName.Size = New System.Drawing.Size(171, 17)
         Me.txtGuestName.TabIndex = 9
         '
         'txtGuestMobile
         '
         Me.txtGuestMobile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtGuestMobile.Location = New System.Drawing.Point(235, 112)
+        Me.txtGuestMobile.Location = New System.Drawing.Point(176, 91)
         Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtGuestMobile.Name = "txtGuestMobile"
-        Me.txtGuestMobile.Size = New System.Drawing.Size(228, 21)
+        Me.txtGuestMobile.Size = New System.Drawing.Size(171, 17)
         Me.txtGuestMobile.TabIndex = 8
         '
         'Label2
@@ -185,10 +185,10 @@ Partial Class AdminChaletInfo
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(75, 149)
+        Me.Label2.Location = New System.Drawing.Point(56, 121)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 19)
+        Me.Label2.Size = New System.Drawing.Size(79, 13)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Email Address"
         '
@@ -197,10 +197,10 @@ Partial Class AdminChaletInfo
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(75, 115)
+        Me.Label3.Location = New System.Drawing.Point(56, 93)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(108, 19)
+        Me.Label3.Size = New System.Drawing.Size(87, 13)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Mobile Number"
         '
@@ -209,10 +209,10 @@ Partial Class AdminChaletInfo
         Me.lblGuestName.AutoSize = True
         Me.lblGuestName.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblGuestName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.lblGuestName.Location = New System.Drawing.Point(75, 81)
+        Me.lblGuestName.Location = New System.Drawing.Point(56, 66)
         Me.lblGuestName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGuestName.Name = "lblGuestName"
-        Me.lblGuestName.Size = New System.Drawing.Size(46, 19)
+        Me.lblGuestName.Size = New System.Drawing.Size(37, 13)
         Me.lblGuestName.TabIndex = 3
         Me.lblGuestName.Text = "Name"
         '
@@ -221,20 +221,20 @@ Partial Class AdminChaletInfo
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(75, 46)
+        Me.Label1.Location = New System.Drawing.Point(56, 37)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(136, 19)
+        Me.Label1.Size = New System.Drawing.Size(110, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Passport/IC Number"
         '
         'Button1
         '
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(382, 181)
+        Me.Button1.Location = New System.Drawing.Point(286, 147)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(81, 27)
+        Me.Button1.Size = New System.Drawing.Size(61, 22)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Search"
         Me.Button1.UseVisualStyleBackColor = True
@@ -246,11 +246,11 @@ Partial Class AdminChaletInfo
         Me.GroupBox2.Controls.Add(Me.lblTest)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.GroupBox2.Location = New System.Drawing.Point(25, 229)
+        Me.GroupBox2.Location = New System.Drawing.Point(19, 186)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Size = New System.Drawing.Size(909, 179)
+        Me.GroupBox2.Size = New System.Drawing.Size(682, 145)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Chalet Occupancy Map"
@@ -291,12 +291,13 @@ Partial Class AdminChaletInfo
         Me.tlpChaletButtons.Controls.Add(Me.btnCH008, 7, 0)
         Me.tlpChaletButtons.Controls.Add(Me.btnCH009, 8, 0)
         Me.tlpChaletButtons.Controls.Add(Me.btnCH010, 9, 0)
-        Me.tlpChaletButtons.Location = New System.Drawing.Point(47, 33)
+        Me.tlpChaletButtons.Location = New System.Drawing.Point(35, 27)
+        Me.tlpChaletButtons.Margin = New System.Windows.Forms.Padding(2)
         Me.tlpChaletButtons.Name = "tlpChaletButtons"
         Me.tlpChaletButtons.RowCount = 2
         Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.0!))
         Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.0!))
-        Me.tlpChaletButtons.Size = New System.Drawing.Size(800, 124)
+        Me.tlpChaletButtons.Size = New System.Drawing.Size(600, 101)
         Me.tlpChaletButtons.TabIndex = 56
         '
         'btnCH020
@@ -308,10 +309,10 @@ Partial Class AdminChaletInfo
         Me.btnCH020.FlatAppearance.BorderSize = 3
         Me.btnCH020.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH020.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH020.Location = New System.Drawing.Point(722, 67)
+        Me.btnCH020.Location = New System.Drawing.Point(542, 55)
         Me.btnCH020.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH020.Name = "btnCH020"
-        Me.btnCH020.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH020.Size = New System.Drawing.Size(43, 41)
         Me.btnCH020.TabIndex = 53
         Me.btnCH020.Text = "20"
         Me.btnCH020.UseVisualStyleBackColor = False
@@ -326,7 +327,7 @@ Partial Class AdminChaletInfo
         Me.btnCH001.Location = New System.Drawing.Point(2, 2)
         Me.btnCH001.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH001.Name = "btnCH001"
-        Me.btnCH001.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH001.Size = New System.Drawing.Size(43, 41)
         Me.btnCH001.TabIndex = 41
         Me.btnCH001.Text = "01"
         Me.btnCH001.UseVisualStyleBackColor = False
@@ -340,10 +341,10 @@ Partial Class AdminChaletInfo
         Me.btnCH019.FlatAppearance.BorderSize = 3
         Me.btnCH019.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH019.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH019.Location = New System.Drawing.Point(642, 67)
+        Me.btnCH019.Location = New System.Drawing.Point(482, 55)
         Me.btnCH019.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH019.Name = "btnCH019"
-        Me.btnCH019.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH019.Size = New System.Drawing.Size(43, 41)
         Me.btnCH019.TabIndex = 48
         Me.btnCH019.Text = "19"
         Me.btnCH019.UseVisualStyleBackColor = False
@@ -357,10 +358,10 @@ Partial Class AdminChaletInfo
         Me.btnCH018.FlatAppearance.BorderSize = 3
         Me.btnCH018.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH018.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH018.Location = New System.Drawing.Point(562, 67)
+        Me.btnCH018.Location = New System.Drawing.Point(422, 55)
         Me.btnCH018.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH018.Name = "btnCH018"
-        Me.btnCH018.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH018.Size = New System.Drawing.Size(43, 41)
         Me.btnCH018.TabIndex = 50
         Me.btnCH018.Text = "18"
         Me.btnCH018.UseVisualStyleBackColor = False
@@ -374,10 +375,10 @@ Partial Class AdminChaletInfo
         Me.btnCH017.FlatAppearance.BorderSize = 3
         Me.btnCH017.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH017.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH017.Location = New System.Drawing.Point(482, 67)
+        Me.btnCH017.Location = New System.Drawing.Point(362, 55)
         Me.btnCH017.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH017.Name = "btnCH017"
-        Me.btnCH017.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH017.Size = New System.Drawing.Size(43, 41)
         Me.btnCH017.TabIndex = 52
         Me.btnCH017.Text = "17"
         Me.btnCH017.UseVisualStyleBackColor = False
@@ -389,10 +390,10 @@ Partial Class AdminChaletInfo
         Me.btnCH002.FlatAppearance.BorderSize = 3
         Me.btnCH002.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH002.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH002.Location = New System.Drawing.Point(82, 2)
+        Me.btnCH002.Location = New System.Drawing.Point(62, 2)
         Me.btnCH002.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH002.Name = "btnCH002"
-        Me.btnCH002.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH002.Size = New System.Drawing.Size(43, 41)
         Me.btnCH002.TabIndex = 39
         Me.btnCH002.Text = "02"
         Me.btnCH002.UseVisualStyleBackColor = False
@@ -406,10 +407,10 @@ Partial Class AdminChaletInfo
         Me.btnCH011.FlatAppearance.BorderSize = 3
         Me.btnCH011.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH011.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH011.Location = New System.Drawing.Point(2, 67)
+        Me.btnCH011.Location = New System.Drawing.Point(2, 55)
         Me.btnCH011.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH011.Name = "btnCH011"
-        Me.btnCH011.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH011.Size = New System.Drawing.Size(43, 41)
         Me.btnCH011.TabIndex = 51
         Me.btnCH011.Text = "11"
         Me.btnCH011.UseVisualStyleBackColor = False
@@ -423,10 +424,10 @@ Partial Class AdminChaletInfo
         Me.btnCH012.FlatAppearance.BorderSize = 3
         Me.btnCH012.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH012.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH012.Location = New System.Drawing.Point(82, 67)
+        Me.btnCH012.Location = New System.Drawing.Point(62, 55)
         Me.btnCH012.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH012.Name = "btnCH012"
-        Me.btnCH012.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH012.Size = New System.Drawing.Size(43, 41)
         Me.btnCH012.TabIndex = 49
         Me.btnCH012.Text = "12"
         Me.btnCH012.UseVisualStyleBackColor = False
@@ -440,10 +441,10 @@ Partial Class AdminChaletInfo
         Me.btnCH016.FlatAppearance.BorderSize = 3
         Me.btnCH016.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH016.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH016.Location = New System.Drawing.Point(402, 67)
+        Me.btnCH016.Location = New System.Drawing.Point(302, 55)
         Me.btnCH016.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH016.Name = "btnCH016"
-        Me.btnCH016.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH016.Size = New System.Drawing.Size(43, 41)
         Me.btnCH016.TabIndex = 47
         Me.btnCH016.Text = "16"
         Me.btnCH016.UseVisualStyleBackColor = False
@@ -455,10 +456,10 @@ Partial Class AdminChaletInfo
         Me.btnCH003.FlatAppearance.BorderSize = 3
         Me.btnCH003.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH003.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH003.Location = New System.Drawing.Point(162, 2)
+        Me.btnCH003.Location = New System.Drawing.Point(122, 2)
         Me.btnCH003.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH003.Name = "btnCH003"
-        Me.btnCH003.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH003.Size = New System.Drawing.Size(43, 41)
         Me.btnCH003.TabIndex = 34
         Me.btnCH003.Text = "03"
         Me.btnCH003.UseVisualStyleBackColor = False
@@ -472,10 +473,10 @@ Partial Class AdminChaletInfo
         Me.btnCH015.FlatAppearance.BorderSize = 3
         Me.btnCH015.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH015.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH015.Location = New System.Drawing.Point(322, 67)
+        Me.btnCH015.Location = New System.Drawing.Point(242, 55)
         Me.btnCH015.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH015.Name = "btnCH015"
-        Me.btnCH015.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH015.Size = New System.Drawing.Size(43, 41)
         Me.btnCH015.TabIndex = 46
         Me.btnCH015.Text = "15"
         Me.btnCH015.UseVisualStyleBackColor = False
@@ -487,10 +488,10 @@ Partial Class AdminChaletInfo
         Me.btnCH004.FlatAppearance.BorderSize = 3
         Me.btnCH004.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH004.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH004.Location = New System.Drawing.Point(242, 2)
+        Me.btnCH004.Location = New System.Drawing.Point(182, 2)
         Me.btnCH004.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH004.Name = "btnCH004"
-        Me.btnCH004.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH004.Size = New System.Drawing.Size(43, 41)
         Me.btnCH004.TabIndex = 35
         Me.btnCH004.Text = "04"
         Me.btnCH004.UseVisualStyleBackColor = False
@@ -504,10 +505,10 @@ Partial Class AdminChaletInfo
         Me.btnCH014.FlatAppearance.BorderSize = 3
         Me.btnCH014.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH014.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH014.Location = New System.Drawing.Point(242, 67)
+        Me.btnCH014.Location = New System.Drawing.Point(182, 55)
         Me.btnCH014.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH014.Name = "btnCH014"
-        Me.btnCH014.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH014.Size = New System.Drawing.Size(43, 41)
         Me.btnCH014.TabIndex = 45
         Me.btnCH014.Text = "14"
         Me.btnCH014.UseVisualStyleBackColor = False
@@ -519,10 +520,10 @@ Partial Class AdminChaletInfo
         Me.btnCH005.FlatAppearance.BorderSize = 3
         Me.btnCH005.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH005.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH005.Location = New System.Drawing.Point(322, 2)
+        Me.btnCH005.Location = New System.Drawing.Point(242, 2)
         Me.btnCH005.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH005.Name = "btnCH005"
-        Me.btnCH005.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH005.Size = New System.Drawing.Size(43, 41)
         Me.btnCH005.TabIndex = 36
         Me.btnCH005.Text = "05"
         Me.btnCH005.UseVisualStyleBackColor = False
@@ -536,10 +537,10 @@ Partial Class AdminChaletInfo
         Me.btnCH013.FlatAppearance.BorderSize = 3
         Me.btnCH013.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH013.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH013.Location = New System.Drawing.Point(162, 67)
+        Me.btnCH013.Location = New System.Drawing.Point(122, 55)
         Me.btnCH013.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH013.Name = "btnCH013"
-        Me.btnCH013.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH013.Size = New System.Drawing.Size(43, 41)
         Me.btnCH013.TabIndex = 44
         Me.btnCH013.Text = "13"
         Me.btnCH013.UseVisualStyleBackColor = False
@@ -551,10 +552,10 @@ Partial Class AdminChaletInfo
         Me.btnCH006.FlatAppearance.BorderSize = 3
         Me.btnCH006.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH006.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH006.Location = New System.Drawing.Point(402, 2)
+        Me.btnCH006.Location = New System.Drawing.Point(302, 2)
         Me.btnCH006.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH006.Name = "btnCH006"
-        Me.btnCH006.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH006.Size = New System.Drawing.Size(43, 41)
         Me.btnCH006.TabIndex = 37
         Me.btnCH006.Text = "06"
         Me.btnCH006.UseVisualStyleBackColor = False
@@ -566,10 +567,10 @@ Partial Class AdminChaletInfo
         Me.btnCH007.FlatAppearance.BorderSize = 3
         Me.btnCH007.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH007.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH007.Location = New System.Drawing.Point(482, 2)
+        Me.btnCH007.Location = New System.Drawing.Point(362, 2)
         Me.btnCH007.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH007.Name = "btnCH007"
-        Me.btnCH007.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH007.Size = New System.Drawing.Size(43, 41)
         Me.btnCH007.TabIndex = 42
         Me.btnCH007.Text = "07"
         Me.btnCH007.UseVisualStyleBackColor = False
@@ -581,10 +582,10 @@ Partial Class AdminChaletInfo
         Me.btnCH008.FlatAppearance.BorderSize = 3
         Me.btnCH008.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH008.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH008.Location = New System.Drawing.Point(562, 2)
+        Me.btnCH008.Location = New System.Drawing.Point(422, 2)
         Me.btnCH008.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH008.Name = "btnCH008"
-        Me.btnCH008.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH008.Size = New System.Drawing.Size(43, 41)
         Me.btnCH008.TabIndex = 40
         Me.btnCH008.Text = "08"
         Me.btnCH008.UseVisualStyleBackColor = False
@@ -596,10 +597,10 @@ Partial Class AdminChaletInfo
         Me.btnCH009.FlatAppearance.BorderSize = 3
         Me.btnCH009.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH009.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH009.Location = New System.Drawing.Point(642, 2)
+        Me.btnCH009.Location = New System.Drawing.Point(482, 2)
         Me.btnCH009.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH009.Name = "btnCH009"
-        Me.btnCH009.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH009.Size = New System.Drawing.Size(43, 41)
         Me.btnCH009.TabIndex = 38
         Me.btnCH009.Text = "09"
         Me.btnCH009.UseVisualStyleBackColor = False
@@ -611,10 +612,10 @@ Partial Class AdminChaletInfo
         Me.btnCH010.FlatAppearance.BorderSize = 3
         Me.btnCH010.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH010.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH010.Location = New System.Drawing.Point(722, 2)
+        Me.btnCH010.Location = New System.Drawing.Point(542, 2)
         Me.btnCH010.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH010.Name = "btnCH010"
-        Me.btnCH010.Size = New System.Drawing.Size(57, 51)
+        Me.btnCH010.Size = New System.Drawing.Size(43, 41)
         Me.btnCH010.TabIndex = 43
         Me.btnCH010.Text = "10"
         Me.btnCH010.UseVisualStyleBackColor = False
@@ -622,10 +623,10 @@ Partial Class AdminChaletInfo
         'lblTest
         '
         Me.lblTest.AutoSize = True
-        Me.lblTest.Location = New System.Drawing.Point(411, 33)
+        Me.lblTest.Location = New System.Drawing.Point(308, 27)
         Me.lblTest.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTest.Name = "lblTest"
-        Me.lblTest.Size = New System.Drawing.Size(0, 19)
+        Me.lblTest.Size = New System.Drawing.Size(0, 13)
         Me.lblTest.TabIndex = 33
         '
         'CH020
@@ -792,10 +793,10 @@ Partial Class AdminChaletInfo
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Location = New System.Drawing.Point(5, 4)
+        Me.Panel1.Location = New System.Drawing.Point(4, 3)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(16, 15)
+        Me.Panel1.Size = New System.Drawing.Size(12, 13)
         Me.Panel1.TabIndex = 13
         '
         'Label6
@@ -803,10 +804,10 @@ Partial Class AdminChaletInfo
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(25, 4)
+        Me.Label6.Location = New System.Drawing.Point(19, 3)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(66, 19)
+        Me.Label6.Size = New System.Drawing.Size(54, 13)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Available"
         '
@@ -815,20 +816,20 @@ Partial Class AdminChaletInfo
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(25, 28)
+        Me.Label8.Location = New System.Drawing.Point(19, 23)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(69, 19)
+        Me.Label8.Size = New System.Drawing.Size(54, 13)
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "Occupied"
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Red
-        Me.Panel2.Location = New System.Drawing.Point(5, 30)
+        Me.Panel2.Location = New System.Drawing.Point(4, 24)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(16, 15)
+        Me.Panel2.Size = New System.Drawing.Size(12, 12)
         Me.Panel2.TabIndex = 15
         '
         'Label9
@@ -836,30 +837,30 @@ Partial Class AdminChaletInfo
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(25, 52)
+        Me.Label9.Location = New System.Drawing.Point(19, 42)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(62, 19)
+        Me.Label9.Size = New System.Drawing.Size(50, 13)
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Selected"
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel3.Location = New System.Drawing.Point(5, 54)
+        Me.Panel3.Location = New System.Drawing.Point(4, 44)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(16, 15)
+        Me.Panel3.Size = New System.Drawing.Size(12, 12)
         Me.Panel3.TabIndex = 17
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(50, 13)
+        Me.Label10.Location = New System.Drawing.Point(55, 10)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(65, 19)
+        Me.Label10.Size = New System.Drawing.Size(53, 13)
         Me.Label10.TabIndex = 9
         Me.Label10.Text = "Standard"
         '
@@ -867,10 +868,10 @@ Partial Class AdminChaletInfo
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(51, 60)
+        Me.Label11.Location = New System.Drawing.Point(55, 48)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(64, 19)
+        Me.Label11.Size = New System.Drawing.Size(52, 13)
         Me.Label11.TabIndex = 9
         Me.Label11.Text = "Supreme"
         '
@@ -881,10 +882,10 @@ Partial Class AdminChaletInfo
         Me.Panel4.Controls.Add(Me.Label10)
         Me.Panel4.Controls.Add(Me.Label11)
         Me.Panel4.Controls.Add(Me.Button2)
-        Me.Panel4.Location = New System.Drawing.Point(0, 438)
+        Me.Panel4.Location = New System.Drawing.Point(-3, 356)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(117, 86)
+        Me.Panel4.Size = New System.Drawing.Size(110, 70)
         Me.Panel4.TabIndex = 34
         '
         'Button3
@@ -895,10 +896,10 @@ Partial Class AdminChaletInfo
         Me.Button3.FlatAppearance.BorderSize = 3
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(2, 4)
+        Me.Button3.Location = New System.Drawing.Point(19, 2)
         Me.Button3.Margin = New System.Windows.Forms.Padding(2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(37, 36)
+        Me.Button3.Size = New System.Drawing.Size(28, 29)
         Me.Button3.TabIndex = 54
         Me.Button3.Text = " "
         Me.Button3.UseVisualStyleBackColor = False
@@ -913,10 +914,10 @@ Partial Class AdminChaletInfo
         Me.Button2.FlatAppearance.BorderSize = 3
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(2, 50)
+        Me.Button2.Location = New System.Drawing.Point(19, 40)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(37, 36)
+        Me.Button2.Size = New System.Drawing.Size(28, 29)
         Me.Button2.TabIndex = 55
         Me.Button2.Text = " "
         Me.Button2.UseVisualStyleBackColor = False
@@ -926,24 +927,24 @@ Partial Class AdminChaletInfo
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewDetailsToolStripMenuItem, Me.EditDetailsToolStripMenuItem, Me.CancelToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(161, 76)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(138, 70)
         '
         'ViewDetailsToolStripMenuItem
         '
         Me.ViewDetailsToolStripMenuItem.Name = "ViewDetailsToolStripMenuItem"
-        Me.ViewDetailsToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
+        Me.ViewDetailsToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.ViewDetailsToolStripMenuItem.Text = "View Details"
         '
         'EditDetailsToolStripMenuItem
         '
         Me.EditDetailsToolStripMenuItem.Name = "EditDetailsToolStripMenuItem"
-        Me.EditDetailsToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
+        Me.EditDetailsToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.EditDetailsToolStripMenuItem.Text = "Edit Details"
         '
         'CancelToolStripMenuItem
         '
         Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
-        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
+        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.CancelToolStripMenuItem.Text = "Cancel"
         '
         'Panel5
@@ -955,20 +956,20 @@ Partial Class AdminChaletInfo
         Me.Panel5.Controls.Add(Me.Label9)
         Me.Panel5.Controls.Add(Me.Panel3)
         Me.Panel5.Controls.Add(Me.Panel2)
-        Me.Panel5.Location = New System.Drawing.Point(843, 438)
+        Me.Panel5.Location = New System.Drawing.Point(647, 366)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(103, 86)
+        Me.Panel5.Size = New System.Drawing.Size(77, 61)
         Me.Panel5.TabIndex = 56
         '
         'AdminChaletInfo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(957, 546)
+        Me.ClientSize = New System.Drawing.Size(718, 444)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)

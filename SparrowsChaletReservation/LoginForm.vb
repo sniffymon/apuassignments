@@ -10,6 +10,7 @@ Public Class LoginForm
         Dim sql As String
 
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
         sql = "SELECT * FROM Users WHERE LoginUsername=@usrname AND Password=@pwd"
@@ -33,14 +34,6 @@ Public Class LoginForm
             MessageBox.Show("Incorrect Username or Password. Please check your Username or Password")
         End If
         conn.Close()
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs)
-        Dim reply As MsgBoxResult
-        reply = MessageBox.Show("Exit the application?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-        If reply = MsgBoxResult.Ok Then
-            Me.Close()
-        End If
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
