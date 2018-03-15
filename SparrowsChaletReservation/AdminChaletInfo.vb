@@ -5,8 +5,7 @@ Public Class AdminChaletInfo
     Public clickedchaletCH As String
     Dim conn As SqlConnection
     Dim cmd As SqlCommand
-    Dim chaletamt As String
-    Dim sql As String
+    Dim chaletamt, sql, guestnostorage As String
     Dim passportregex As Regex = New Regex("^ (?!^ 0 +$)[a-zA-Z0-9]{3,20}$")
     Private Sub ChaletBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
@@ -51,48 +50,76 @@ Public Class AdminChaletInfo
         clickedchalet = "Chalet " & sender.text
         clickedchaletCH = "CH0" & sender.text
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+
         If cboGuestID.Text = "" Then
             MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
+
+        For Each ctrl As Control In Me.tlpChaletButtons.Controls
+            If TypeOf ctrl Is Button Then
+                ctrl.Visible = False
+            End If
+        Next
 
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
 
         'GUEST DETAIL SECTION START
-
-        sql = "SELECT Guest_Name, Guest_Contact_No, Guest_Email FROM GuestDetail WHERE 
+        '
+        sql = "SELECT GuestNo, Guest_Name, Guest_Contact_No, Guest_Email FROM GuestDetail WHERE 
 [Guest_ID_PassNum]=@guestid"
 
         'Creating 1st Instance of SQL Command
+        '
         cmd = New SqlCommand(sql, conn)
         conn.Open()
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
+        '
         cmd.Parameters.AddWithValue("@guestid", cboGuestID.Text)
 
         Dim dr As SqlDataReader = cmd.ExecuteReader
 
         If dr.Read() Then
-            txtGuestName.Text = dr(0)
-            txtGuestMobile.Text = dr(1)
-            txtGuestEmail.Text = dr(2)
+            guestnostorage = dr(0)
+            txtGuestName.Text = dr(1)
+            txtGuestMobile.Text = dr(2)
+            txtGuestEmail.Text = dr(3)
         End If
 
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
-        'GUEST DETAIL SECTION END
-        ''CHALET BOOKING INFO START
-        'chaletamt = String.Join(",", checkedchalet.ToArray)
-        ''Creating 2nd Instance of SQL Command
-        'sql = "UPDATE Chalet SET ChaletStatusOccupied = 'True' WHERE ChaletNumber IN (" & chaletamt & ")"
-        'cmd = New SqlCommand(sql, conn)
+        conn.Open()
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno"
 
-        ''Execute SQL Query above and expecting no return
-        'cmd.ExecuteNonQuery()
-        ''CHALET BOOKING INFO END
-        'conn.Close()
-        'MessageBox.Show("Booking Details Stored", "Booking Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim chaletds As New DataSet
+        cmd = New SqlCommand(sql, conn)
+        cmd.Parameters.AddWithValue("@guestno", guestnostorage)
+        Dim adptr As New SqlDataAdapter(cmd)
+        adptr.Fill(chaletds, "SpecifiedCH")
+
+        Dim exdata As DataTable = chaletds.Tables("SpecifiedCH")
+        Dim row As DataRow
+
+        For Each row In exdata.Rows
+            DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).Visible = True
+        Next
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        cboGuestID.SelectedIndex = -1
+        txtGuestName.Text = ""
+        txtGuestEmail.Text = ""
+        txtGuestMobile.Text = ""
+
+        For Each ctrl As Control In Me.tlpChaletButtons.Controls
+            If TypeOf ctrl Is Button Then
+                ctrl.Visible = True
+            End If
+        Next
     End Sub
 
     Private Sub ViewDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewDetailsToolStripMenuItem.Click

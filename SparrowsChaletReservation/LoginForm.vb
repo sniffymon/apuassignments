@@ -27,7 +27,7 @@ Public Class LoginForm
             If dr("AdminRole") = "True" Then
                 AdminMenuForm.Show()
             ElseIf dr("AdminRole") = "False" Then
-                MainAppForm.Show()
+
             End If
             Me.Close()
         Else
@@ -39,4 +39,5 @@ Public Class LoginForm
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         txtPwd.UseSystemPasswordChar = Not txtPwd.UseSystemPasswordChar
     End Sub
+
 End Class

@@ -35,34 +35,40 @@ Partial Class LoginForm
         '
         'txtUsn
         '
-        Me.txtUsn.Location = New System.Drawing.Point(214, 235)
+        Me.txtUsn.ForeColor = System.Drawing.Color.DarkGray
+        Me.txtUsn.Location = New System.Drawing.Point(107, 122)
+        Me.txtUsn.Margin = New System.Windows.Forms.Padding(2)
         Me.txtUsn.Name = "txtUsn"
-        Me.txtUsn.Size = New System.Drawing.Size(316, 31)
+        Me.txtUsn.Size = New System.Drawing.Size(160, 20)
         Me.txtUsn.TabIndex = 0
+        Me.txtUsn.Text = "Username"
         '
         'txtPwd
         '
-        Me.txtPwd.Location = New System.Drawing.Point(214, 296)
+        Me.txtPwd.Location = New System.Drawing.Point(107, 154)
+        Me.txtPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPwd.Name = "txtPwd"
-        Me.txtPwd.Size = New System.Drawing.Size(316, 31)
+        Me.txtPwd.Size = New System.Drawing.Size(160, 20)
         Me.txtPwd.TabIndex = 1
         Me.txtPwd.UseSystemPasswordChar = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(90, 299)
+        Me.Label1.Location = New System.Drawing.Point(45, 155)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(106, 25)
+        Me.Label1.Size = New System.Drawing.Size(53, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Password"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(86, 241)
+        Me.Label2.Location = New System.Drawing.Point(43, 125)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(110, 25)
+        Me.Label2.Size = New System.Drawing.Size(55, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Username"
         '
@@ -72,9 +78,10 @@ Partial Class LoginForm
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Button1.FlatAppearance.BorderSize = 3
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(275, 420)
+        Me.Button1.Location = New System.Drawing.Point(138, 218)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(153, 61)
+        Me.Button1.Size = New System.Drawing.Size(76, 32)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Login"
         Me.Button1.UseVisualStyleBackColor = False
@@ -83,9 +90,10 @@ Partial Class LoginForm
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(156, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(78, 6)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(398, 261)
+        Me.PictureBox1.Size = New System.Drawing.Size(199, 136)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
@@ -93,19 +101,20 @@ Partial Class LoginForm
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(244, 356)
+        Me.CheckBox1.Location = New System.Drawing.Point(122, 185)
+        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(197, 29)
+        Me.CheckBox1.Size = New System.Drawing.Size(102, 17)
         Me.CheckBox1.TabIndex = 6
         Me.CheckBox1.Text = "Show Password"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'LoginForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(696, 519)
+        Me.ClientSize = New System.Drawing.Size(348, 270)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
@@ -115,6 +124,7 @@ Partial Class LoginForm
         Me.Controls.Add(Me.PictureBox1)
         Me.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "LoginForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

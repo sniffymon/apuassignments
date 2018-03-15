@@ -32,6 +32,7 @@ Partial Class GuestInfoEntry
         Me.txtGuestID = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -50,9 +51,9 @@ Partial Class GuestInfoEntry
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(24, 84)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(811, 264)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
@@ -61,10 +62,10 @@ Partial Class GuestInfoEntry
         'txtGuestEmail
         '
         Me.txtGuestEmail.Location = New System.Drawing.Point(361, 146)
-        Me.txtGuestEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtGuestEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestEmail.Name = "txtGuestEmail"
         Me.txtGuestEmail.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestEmail.Size = New System.Drawing.Size(201, 25)
+        Me.txtGuestEmail.Size = New System.Drawing.Size(201, 21)
         Me.txtGuestEmail.TabIndex = 8
         '
         'Label2
@@ -74,18 +75,18 @@ Partial Class GuestInfoEntry
         Me.Label2.Location = New System.Drawing.Point(221, 146)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 19)
+        Me.Label2.Size = New System.Drawing.Size(79, 13)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Email Address"
         '
         'txtGuestMobile
         '
         Me.txtGuestMobile.Location = New System.Drawing.Point(361, 111)
-        Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestMobile.Mask = "0000000000"
         Me.txtGuestMobile.Name = "txtGuestMobile"
         Me.txtGuestMobile.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestMobile.Size = New System.Drawing.Size(201, 25)
+        Me.txtGuestMobile.Size = New System.Drawing.Size(201, 21)
         Me.txtGuestMobile.TabIndex = 6
         Me.txtGuestMobile.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
@@ -96,17 +97,17 @@ Partial Class GuestInfoEntry
         Me.Label3.Location = New System.Drawing.Point(221, 111)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(108, 19)
+        Me.Label3.Size = New System.Drawing.Size(87, 13)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Mobile Number"
         '
         'txtGuestName
         '
         Me.txtGuestName.Location = New System.Drawing.Point(361, 75)
-        Me.txtGuestName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtGuestName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestName.Name = "txtGuestName"
         Me.txtGuestName.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestName.Size = New System.Drawing.Size(201, 25)
+        Me.txtGuestName.Size = New System.Drawing.Size(201, 21)
         Me.txtGuestName.TabIndex = 4
         '
         'lblGuestName
@@ -116,18 +117,18 @@ Partial Class GuestInfoEntry
         Me.lblGuestName.Location = New System.Drawing.Point(221, 75)
         Me.lblGuestName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGuestName.Name = "lblGuestName"
-        Me.lblGuestName.Size = New System.Drawing.Size(46, 19)
+        Me.lblGuestName.Size = New System.Drawing.Size(37, 13)
         Me.lblGuestName.TabIndex = 3
         Me.lblGuestName.Text = "Name"
         '
         'txtGuestID
         '
         Me.txtGuestID.Location = New System.Drawing.Point(361, 35)
-        Me.txtGuestID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtGuestID.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestID.Mask = "000000009"
         Me.txtGuestID.Name = "txtGuestID"
         Me.txtGuestID.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestID.Size = New System.Drawing.Size(201, 25)
+        Me.txtGuestID.Size = New System.Drawing.Size(201, 21)
         Me.txtGuestID.TabIndex = 2
         '
         'Label1
@@ -137,32 +138,48 @@ Partial Class GuestInfoEntry
         Me.Label1.Location = New System.Drawing.Point(221, 37)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(136, 19)
+        Me.Label1.Size = New System.Drawing.Size(110, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Passport/IC Number"
         '
         'Button1
         '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
         Me.Button1.Location = New System.Drawing.Point(369, 385)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(101, 40)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Enter"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(269, 20)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(301, 47)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "REGISTER GUEST"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'GuestInfoEntry
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(867, 462)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "GuestInfoEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "GuestInfoEntry"
@@ -170,6 +187,7 @@ Partial Class GuestInfoEntry
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -183,4 +201,5 @@ Partial Class GuestInfoEntry
     Friend WithEvents txtGuestID As MaskedTextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label4 As Label
 End Class

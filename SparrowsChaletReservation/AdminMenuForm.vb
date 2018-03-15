@@ -5,7 +5,6 @@
         SelectChaletForm.Close()
         GuestInfoEntry.Close()
     End Sub
-
     Private Sub btnRegisterGuest_Click(sender As Object, e As EventArgs) Handles btnRegisterGuest.Click, btnAdminInfoPanel.Click, btnEditChaletRecords.Click, btnEditGuestRecords.Click
         ' "TURN OFF" OTHER TABS
         '
@@ -25,7 +24,7 @@
                 GuestInfoEntry.BringToFront()
                 sender.BackColor = Color.FromArgb(50, 50, 50)
                 indSelectedTab.Visible = True
-                indSelectedTab.Location = New Point(142, 116)
+                indSelectedTab.Location = New Point(192, 89)
                 ' EDIT CHALET RECORDS
                 '
             Case btnEditChaletRecords.Name
@@ -35,7 +34,7 @@
                 SelectChaletForm.BringToFront()
                 sender.BackColor = Color.FromArgb(50, 50, 50)
                 indSelectedTab.Visible = True
-                indSelectedTab.Location = New Point(142, 291)
+                indSelectedTab.Location = New Point(192, 281)
                 ' EDIT GUEST RECORDS
                 '
             Case btnEditGuestRecords.Name
@@ -45,7 +44,7 @@
                 GuestInfoEdit.BringToFront()
                 sender.BackColor = Color.FromArgb(50, 50, 50)
                 indSelectedTab.Visible = True
-                indSelectedTab.Location = New Point(142, 205)
+                indSelectedTab.Location = New Point(192, 186)
                 ' ADMIN INFO PANEL
                 '
             Case btnAdminInfoPanel.Name
@@ -55,9 +54,12 @@
                 AdminChaletInfo.BringToFront()
                 sender.BackColor = Color.FromArgb(50, 50, 50)
                 indSelectedTab.Visible = True
-                indSelectedTab.Location = New Point(142, 384)
+                indSelectedTab.Location = New Point(192, 376)
         End Select
-
+        pnlMenuStatic.BringToFront()
+        Do Until pnlMenu.Location.X = -155
+            pnlMenu.Location = New Point(pnlMenu.Location.X - 1, -7)
+        Loop
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -72,5 +74,23 @@
         GuestInfoEdit.Hide()
         GuestInfoEntry.Hide()
         AdminChaletInfo.Hide()
+        pnlMenuStatic.BringToFront()
+        Do Until pnlMenu.Location.X = -155
+            pnlMenu.Location = New Point(pnlMenu.Location.X - 1, -7)
+        Loop
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click, PictureBox3.Click
+        If pnlMenu.Location = New Point(-155, -7) Then
+            Do Until pnlMenu.Location.X = 0
+                pnlMenu.Location = New Point(pnlMenu.Location.X + 1, -7)
+            Loop
+            'pnlMenu.Size = New Size(153, 481)
+        ElseIf pnlMenu.Location = New Point(0, -7) Then
+            'pnlMenu.Size = New Size(194, 481)
+            Do Until pnlMenu.Location.X = -155
+                pnlMenu.Location = New Point(pnlMenu.Location.X - 1, -7)
+            Loop
+        End If
     End Sub
 End Class
