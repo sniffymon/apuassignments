@@ -27,5 +27,11 @@ Public Class GuestInfoEntry
         cmd.ExecuteNonQuery()
         MsgBox("Guest Info Successfully Stored")
         'GUEST DETAIL SECTION END
+
+    End Sub
+    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtGuestEmail.KeyDown, txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestName.KeyDown, txtGuestID.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button1.PerformClick()
+        End If
     End Sub
 End Class

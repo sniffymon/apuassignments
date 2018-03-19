@@ -76,7 +76,8 @@ Public Class ExtendBooking
         End If
 
         dr.Close()
-
+        ' Select specific guests chalet from database 
+        '
         sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno"
 
         Dim chaletds As New DataSet

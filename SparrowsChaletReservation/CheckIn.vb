@@ -8,6 +8,7 @@ Public Class CheckIn
     Dim addedchalets, standardchalets, supremechalets, n, unavaich As Integer
     Public ChaletTotal, ChaletDeposit, dayduration As Double
 
+
     Private Sub ChaletButtons_Click(sender As Object, e As EventArgs) Handles btnCH001.Click, btnCH002.Click, btnCH003.Click, btnCH004.Click, btnCH005.Click, btnCH006.Click, btnCH007.Click, btnCH008.Click, btnCH009.Click, btnCH010.Click
         If sender.BackColor = Color.White Then
             DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255)

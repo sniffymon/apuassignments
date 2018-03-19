@@ -60,8 +60,15 @@ Public Class GuestInfoEdit
         End If
         conn.Close()
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MessageBox.Show("Update Successfully", "Guest Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+    End Sub
+    Private Sub TxtGuestName_KeyDown(sender As Object, e As KeyEventArgs) Handles cboGuestID.KeyDown, txtGuestName.KeyDown, txtGuestMobile.KeyDown, txtGuestEmail.KeyDown
+
+        If e.KeyCode = Keys.Enter Then
+
+            Button1.PerformClick()
+        End If
     End Sub
 End Class
