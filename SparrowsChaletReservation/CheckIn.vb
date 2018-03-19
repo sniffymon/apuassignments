@@ -39,19 +39,19 @@ Public Class CheckIn
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
-        sql = "SELECT ChaletNumber FROM Chalet WHERE ChaletStatusOccupied='True'"
+        'sql = "SELECT ChaletNumber FROM Chalet WHERE ChaletStatusOccupied='True'"
 
-        Dim chaletds As New DataSet
-        Dim adptr As New SqlDataAdapter(sql, conn)
-        adptr.Fill(chaletds, "BookedCH")
+        'Dim chaletds As New DataSet
+        'Dim adptr As New SqlDataAdapter(sql, conn)
+        'adptr.Fill(chaletds, "BookedCH")
 
-        Dim exdata As DataTable = chaletds.Tables("BookedCH")
-        Dim row As DataRow
+        'Dim exdata As DataTable = chaletds.Tables("BookedCH")
+        'Dim row As DataRow
 
-        For Each row In exdata.Rows
-            DirectCast(GroupBox2.Controls("btn" & row(0)), Button).BackColor = Color.Red
-            unavaich += 1
-        Next
+        'For Each row In exdata.Rows
+        '    DirectCast(GroupBox2.Controls("btn" & row(0)), Button).BackColor = Color.Red
+        '    unavaich += 1
+        'Next
 
         '
         'Start Loading For Guest ID In Search ComboBox
@@ -144,24 +144,24 @@ Public Class CheckIn
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
-        'conn.Open()
+        conn.Open()
 
-        'For x = 1 To addedchalets
-        '    sql = "SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber)"
-        '    cmd = New SqlCommand(sql, conn)
-        '    cmd.Parameters.AddWithValue("@checkindate", dtpCheckIn.Text)
-        '    cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Text)
-        '    cmd.Parameters.AddWithValue("@chaletnumber", checkedchalet(n))
+        For x = 1 To addedchalets
+            sql = "SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber)"
+            cmd = New SqlCommand(sql, conn)
+            cmd.Parameters.AddWithValue("@checkindate", dtpCheckIn.Text)
+            cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Text)
+            cmd.Parameters.AddWithValue("@chaletnumber", checkedchalet(n))
 
-        '    dr = cmd.ExecuteReader
+            dr = cmd.ExecuteReader
 
-        '    If dr.HasRows Then
-        '        MsgBox("Chalets selected are unavailable on specified date!")
-        '        Exit Sub
-        '    End If
-        '    dr.Close()
-        '    n += 1
-        'Next
+            If dr.HasRows Then
+                MsgBox("Chalets selected are unavailable on specified date!")
+                Exit Sub
+            End If
+            dr.Close()
+            n += 1
+        Next
         '
         ' PRICE CALCULATION
         '

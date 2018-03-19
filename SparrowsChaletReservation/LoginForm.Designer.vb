@@ -27,7 +27,7 @@ Partial Class LoginForm
         Me.txtPwd = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnLogin = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -35,13 +35,12 @@ Partial Class LoginForm
         '
         'txtUsn
         '
-        Me.txtUsn.ForeColor = System.Drawing.Color.DarkGray
+        Me.txtUsn.ForeColor = System.Drawing.Color.Black
         Me.txtUsn.Location = New System.Drawing.Point(107, 122)
         Me.txtUsn.Margin = New System.Windows.Forms.Padding(2)
         Me.txtUsn.Name = "txtUsn"
         Me.txtUsn.Size = New System.Drawing.Size(160, 20)
         Me.txtUsn.TabIndex = 0
-        Me.txtUsn.Text = "Username"
         '
         'txtPwd
         '
@@ -72,19 +71,19 @@ Partial Class LoginForm
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Username"
         '
-        'Button1
+        'btnLogin
         '
-        Me.Button1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button1.FlatAppearance.BorderSize = 3
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(138, 218)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(76, 32)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Login"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnLogin.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnLogin.FlatAppearance.BorderSize = 3
+        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogin.Location = New System.Drawing.Point(138, 218)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(76, 32)
+        Me.btnLogin.TabIndex = 4
+        Me.btnLogin.Text = "Login"
+        Me.btnLogin.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
@@ -116,7 +115,7 @@ Partial Class LoginForm
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(348, 270)
         Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtPwd)
@@ -139,7 +138,7 @@ Partial Class LoginForm
     Friend WithEvents txtPwd As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLogin As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents CheckBox1 As CheckBox
 End Class

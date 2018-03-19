@@ -112,10 +112,22 @@
     <Compile Include="ChaletEdit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChaletExtend.Designer.vb">
+      <DependentUpon>ChaletExtend.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChaletExtend.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CheckOut.Designer.vb">
       <DependentUpon>CheckOut.vb</DependentUpon>
     </Compile>
     <Compile Include="CheckOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtendBooking.Designer.vb">
+      <DependentUpon>ExtendBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendBooking.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GuestInfoEdit.Designer.vb">
@@ -176,6 +188,12 @@
     <Compile Include="Cart.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StaffMenuForm.Designer.vb">
+      <DependentUpon>StaffMenuForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffMenuForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminChaletInfo.resx">
@@ -189,6 +207,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChaletEdit.resx">
       <DependentUpon>ChaletEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChaletExtend.resx">
+      <DependentUpon>ChaletExtend.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendBooking.resx">
+      <DependentUpon>ExtendBooking.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuestInfoEdit.resx">
       <DependentUpon>GuestInfoEdit.vb</DependentUpon>
@@ -216,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cart.resx">
       <DependentUpon>Cart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffMenuForm.resx">
+      <DependentUpon>StaffMenuForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

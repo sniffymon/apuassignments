@@ -25,6 +25,7 @@ Partial Class AdminChaletInfo
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminChaletInfo))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.cboGuestID = New System.Windows.Forms.ComboBox()
         Me.txtGuestEmail = New System.Windows.Forms.Label()
         Me.txtGuestName = New System.Windows.Forms.Label()
@@ -35,6 +36,9 @@ Partial Class AdminChaletInfo
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnLeft = New System.Windows.Forms.Button()
+        Me.btnRight = New System.Windows.Forms.Button()
+        Me.dtpDateSpec = New System.Windows.Forms.DateTimePicker()
         Me.tlpChaletButtons = New System.Windows.Forms.TableLayoutPanel()
         Me.btnCH020 = New System.Windows.Forms.Button()
         Me.btnCH001 = New System.Windows.Forms.Button()
@@ -94,7 +98,7 @@ Partial Class AdminChaletInfo
         Me.CancelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnClear = New System.Windows.Forms.Button()
+        Me.lblChaletSpec = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.tlpChaletButtons.SuspendLayout()
@@ -138,7 +142,7 @@ Partial Class AdminChaletInfo
         Me.GroupBox1.Controls.Add(Me.btnSearch)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(172, 105)
+        Me.GroupBox1.Location = New System.Drawing.Point(170, 78)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
@@ -146,6 +150,17 @@ Partial Class AdminChaletInfo
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Guest Information Search"
+        '
+        'btnClear
+        '
+        Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnClear.Location = New System.Drawing.Point(386, 148)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(61, 22)
+        Me.btnClear.TabIndex = 12
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = True
         '
         'cboGuestID
         '
@@ -245,23 +260,62 @@ Partial Class AdminChaletInfo
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.tlpChaletButtons)
+        Me.GroupBox2.Controls.Add(Me.lblChaletSpec)
+        Me.GroupBox2.Controls.Add(Me.btnLeft)
+        Me.GroupBox2.Controls.Add(Me.btnRight)
+        Me.GroupBox2.Controls.Add(Me.dtpDateSpec)
         Me.GroupBox2.Controls.Add(Me.lblTest)
+        Me.GroupBox2.Controls.Add(Me.tlpChaletButtons)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.GroupBox2.Location = New System.Drawing.Point(18, 291)
+        Me.GroupBox2.Location = New System.Drawing.Point(18, 276)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Size = New System.Drawing.Size(828, 145)
+        Me.GroupBox2.Size = New System.Drawing.Size(828, 160)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Chalet Occupancy Map"
         '
+        'btnLeft
+        '
+        Me.btnLeft.BackColor = System.Drawing.Color.Transparent
+        Me.btnLeft.BackgroundImage = CType(resources.GetObject("btnLeft.BackgroundImage"), System.Drawing.Image)
+        Me.btnLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLeft.FlatAppearance.BorderSize = 0
+        Me.btnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLeft.Location = New System.Drawing.Point(334, 14)
+        Me.btnLeft.Name = "btnLeft"
+        Me.btnLeft.Size = New System.Drawing.Size(33, 27)
+        Me.btnLeft.TabIndex = 59
+        Me.btnLeft.UseVisualStyleBackColor = False
+        '
+        'btnRight
+        '
+        Me.btnRight.BackColor = System.Drawing.Color.Transparent
+        Me.btnRight.BackgroundImage = CType(resources.GetObject("btnRight.BackgroundImage"), System.Drawing.Image)
+        Me.btnRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnRight.FlatAppearance.BorderSize = 0
+        Me.btnRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRight.Location = New System.Drawing.Point(511, 14)
+        Me.btnRight.Name = "btnRight"
+        Me.btnRight.Size = New System.Drawing.Size(33, 28)
+        Me.btnRight.TabIndex = 58
+        Me.btnRight.UseVisualStyleBackColor = False
+        '
+        'dtpDateSpec
+        '
+        Me.dtpDateSpec.CustomFormat = "yyyy-MM-dd"
+        Me.dtpDateSpec.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDateSpec.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpDateSpec.Location = New System.Drawing.Point(373, 14)
+        Me.dtpDateSpec.Name = "dtpDateSpec"
+        Me.dtpDateSpec.Size = New System.Drawing.Size(132, 29)
+        Me.dtpDateSpec.TabIndex = 57
+        '
         'tlpChaletButtons
         '
-        Me.tlpChaletButtons.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.tlpChaletButtons.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tlpChaletButtons.ColumnCount = 10
         Me.tlpChaletButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
@@ -294,13 +348,13 @@ Partial Class AdminChaletInfo
         Me.tlpChaletButtons.Controls.Add(Me.btnCH008, 7, 0)
         Me.tlpChaletButtons.Controls.Add(Me.btnCH009, 8, 0)
         Me.tlpChaletButtons.Controls.Add(Me.btnCH010, 9, 0)
-        Me.tlpChaletButtons.Location = New System.Drawing.Point(35, 27)
+        Me.tlpChaletButtons.Location = New System.Drawing.Point(37, 45)
         Me.tlpChaletButtons.Margin = New System.Windows.Forms.Padding(2)
         Me.tlpChaletButtons.Name = "tlpChaletButtons"
         Me.tlpChaletButtons.RowCount = 2
         Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.0!))
         Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.0!))
-        Me.tlpChaletButtons.Size = New System.Drawing.Size(746, 101)
+        Me.tlpChaletButtons.Size = New System.Drawing.Size(744, 104)
         Me.tlpChaletButtons.TabIndex = 56
         '
         'btnCH020
@@ -312,7 +366,7 @@ Partial Class AdminChaletInfo
         Me.btnCH020.FlatAppearance.BorderSize = 3
         Me.btnCH020.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH020.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH020.Location = New System.Drawing.Point(668, 55)
+        Me.btnCH020.Location = New System.Drawing.Point(668, 57)
         Me.btnCH020.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH020.Name = "btnCH020"
         Me.btnCH020.Size = New System.Drawing.Size(43, 41)
@@ -344,7 +398,7 @@ Partial Class AdminChaletInfo
         Me.btnCH019.FlatAppearance.BorderSize = 3
         Me.btnCH019.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH019.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH019.Location = New System.Drawing.Point(594, 55)
+        Me.btnCH019.Location = New System.Drawing.Point(594, 57)
         Me.btnCH019.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH019.Name = "btnCH019"
         Me.btnCH019.Size = New System.Drawing.Size(43, 41)
@@ -361,7 +415,7 @@ Partial Class AdminChaletInfo
         Me.btnCH018.FlatAppearance.BorderSize = 3
         Me.btnCH018.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH018.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH018.Location = New System.Drawing.Point(520, 55)
+        Me.btnCH018.Location = New System.Drawing.Point(520, 57)
         Me.btnCH018.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH018.Name = "btnCH018"
         Me.btnCH018.Size = New System.Drawing.Size(43, 41)
@@ -378,7 +432,7 @@ Partial Class AdminChaletInfo
         Me.btnCH017.FlatAppearance.BorderSize = 3
         Me.btnCH017.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH017.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH017.Location = New System.Drawing.Point(446, 55)
+        Me.btnCH017.Location = New System.Drawing.Point(446, 57)
         Me.btnCH017.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH017.Name = "btnCH017"
         Me.btnCH017.Size = New System.Drawing.Size(43, 41)
@@ -410,7 +464,7 @@ Partial Class AdminChaletInfo
         Me.btnCH011.FlatAppearance.BorderSize = 3
         Me.btnCH011.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH011.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH011.Location = New System.Drawing.Point(2, 55)
+        Me.btnCH011.Location = New System.Drawing.Point(2, 57)
         Me.btnCH011.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH011.Name = "btnCH011"
         Me.btnCH011.Size = New System.Drawing.Size(43, 41)
@@ -427,7 +481,7 @@ Partial Class AdminChaletInfo
         Me.btnCH012.FlatAppearance.BorderSize = 3
         Me.btnCH012.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH012.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH012.Location = New System.Drawing.Point(76, 55)
+        Me.btnCH012.Location = New System.Drawing.Point(76, 57)
         Me.btnCH012.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH012.Name = "btnCH012"
         Me.btnCH012.Size = New System.Drawing.Size(43, 41)
@@ -444,7 +498,7 @@ Partial Class AdminChaletInfo
         Me.btnCH016.FlatAppearance.BorderSize = 3
         Me.btnCH016.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH016.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH016.Location = New System.Drawing.Point(372, 55)
+        Me.btnCH016.Location = New System.Drawing.Point(372, 57)
         Me.btnCH016.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH016.Name = "btnCH016"
         Me.btnCH016.Size = New System.Drawing.Size(43, 41)
@@ -476,7 +530,7 @@ Partial Class AdminChaletInfo
         Me.btnCH015.FlatAppearance.BorderSize = 3
         Me.btnCH015.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH015.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH015.Location = New System.Drawing.Point(298, 55)
+        Me.btnCH015.Location = New System.Drawing.Point(298, 57)
         Me.btnCH015.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH015.Name = "btnCH015"
         Me.btnCH015.Size = New System.Drawing.Size(43, 41)
@@ -508,7 +562,7 @@ Partial Class AdminChaletInfo
         Me.btnCH014.FlatAppearance.BorderSize = 3
         Me.btnCH014.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH014.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH014.Location = New System.Drawing.Point(224, 55)
+        Me.btnCH014.Location = New System.Drawing.Point(224, 57)
         Me.btnCH014.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH014.Name = "btnCH014"
         Me.btnCH014.Size = New System.Drawing.Size(43, 41)
@@ -540,7 +594,7 @@ Partial Class AdminChaletInfo
         Me.btnCH013.FlatAppearance.BorderSize = 3
         Me.btnCH013.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH013.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH013.Location = New System.Drawing.Point(150, 55)
+        Me.btnCH013.Location = New System.Drawing.Point(150, 57)
         Me.btnCH013.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH013.Name = "btnCH013"
         Me.btnCH013.Size = New System.Drawing.Size(43, 41)
@@ -885,7 +939,7 @@ Partial Class AdminChaletInfo
         Me.Panel4.Controls.Add(Me.Label10)
         Me.Panel4.Controls.Add(Me.Label11)
         Me.Panel4.Controls.Add(Me.Button2)
-        Me.Panel4.Location = New System.Drawing.Point(-1, 198)
+        Me.Panel4.Location = New System.Drawing.Point(-3, 171)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(110, 77)
@@ -959,7 +1013,7 @@ Partial Class AdminChaletInfo
         Me.Panel5.Controls.Add(Me.Label9)
         Me.Panel5.Controls.Add(Me.Panel3)
         Me.Panel5.Controls.Add(Me.Panel2)
-        Me.Panel5.Location = New System.Drawing.Point(788, 211)
+        Me.Panel5.Location = New System.Drawing.Point(786, 184)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(77, 61)
@@ -973,24 +1027,24 @@ Partial Class AdminChaletInfo
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(290, 20)
+        Me.Label4.Location = New System.Drawing.Point(211, 18)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(358, 47)
+        Me.Label4.Size = New System.Drawing.Size(509, 47)
         Me.Label4.TabIndex = 57
-        Me.Label4.Text = "ADMIN INFO PANEL"
+        Me.Label4.Text = "ADMIN OCCUPANCY REPORT"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btnClear
+        'lblChaletSpec
         '
-        Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnClear.Location = New System.Drawing.Point(386, 148)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(61, 22)
-        Me.btnClear.TabIndex = 12
-        Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.lblChaletSpec.AutoSize = True
+        Me.lblChaletSpec.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblChaletSpec.Location = New System.Drawing.Point(311, 77)
+        Me.lblChaletSpec.Name = "lblChaletSpec"
+        Me.lblChaletSpec.Size = New System.Drawing.Size(267, 25)
+        Me.lblChaletSpec.TabIndex = 60
+        Me.lblChaletSpec.Text = "There are no specified chalets."
+        Me.lblChaletSpec.Visible = False
         '
         'AdminChaletInfo
         '
@@ -1116,4 +1170,8 @@ Partial Class AdminChaletInfo
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents btnClear As Button
+    Friend WithEvents dtpDateSpec As DateTimePicker
+    Friend WithEvents btnLeft As Button
+    Friend WithEvents btnRight As Button
+    Friend WithEvents lblChaletSpec As Label
 End Class

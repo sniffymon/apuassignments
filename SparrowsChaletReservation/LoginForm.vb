@@ -6,7 +6,7 @@ Public Class LoginForm
     '
     ' LOGIN FUNCTIONS
     '
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim sql As String
 
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
@@ -27,7 +27,7 @@ Public Class LoginForm
             If dr("AdminRole") = "True" Then
                 AdminMenuForm.Show()
             ElseIf dr("AdminRole") = "False" Then
-
+                StaffMenuForm.Show()
             End If
             Me.Close()
         Else
@@ -40,4 +40,9 @@ Public Class LoginForm
         txtPwd.UseSystemPasswordChar = Not txtPwd.UseSystemPasswordChar
     End Sub
 
+    Private Sub txtUsn_TextChanged(sender As Object, e As KeyEventArgs) Handles txtUsn.KeyDown, txtPwd.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnLogin.PerformClick()
+        End If
+    End Sub
 End Class

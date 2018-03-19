@@ -1,22 +1,25 @@
-﻿Public Class AdminMenuForm
+﻿Public Class StaffMenuForm
     Private Sub AdminMenuForm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         GuestInfoEdit.Close()
-        AdminChaletInfo.Close()
-        SelectChaletForm.Close()
+        CheckOut.Close()
+        ExtendBooking.Close()
+        CheckIn.Close()
         GuestInfoEntry.Close()
     End Sub
-    Private Sub btnRegisterGuest_Click(sender As Object, e As EventArgs) Handles btnAddStaff.Click, btnAdminInfoPanel.Click, btnEditGuestRecords.Click
+    Private Sub btnRegisterGuest_Click(sender As Object, e As EventArgs) Handles btnRegisterGuest.Click, btnExtendBooking.Click, btnCheckIn.Click, btnEditGuestRecords.Click, btnCheckOut.Click
         ' "TURN OFF" OTHER TABS
         '
-        btnAdminInfoPanel.BackColor = Color.FromArgb(55, 71, 79)
-        btnAddStaff.BackColor = Color.FromArgb(55, 71, 79)
+        btnExtendBooking.BackColor = Color.FromArgb(55, 71, 79)
+        btnRegisterGuest.BackColor = Color.FromArgb(55, 71, 79)
         btnEditGuestRecords.BackColor = Color.FromArgb(55, 71, 79)
+        btnCheckOut.BackColor = Color.FromArgb(55, 71, 79)
+        btnCheckIn.BackColor = Color.FromArgb(55, 71, 79)
         ' Tabs Switches
         '
         Select Case DirectCast(sender, Button).Name
-            ' REGISTER GUEST
-            '
-            Case btnAddStaff.Name
+                ' REGISTER GUEST
+                '
+            Case btnRegisterGuest.Name
                 GuestInfoEntry.TopLevel = False
                 pnlMainView.Controls.Add(GuestInfoEntry)
                 GuestInfoEntry.Show()
@@ -33,17 +36,37 @@
                 GuestInfoEdit.BringToFront()
                 sender.BackColor = Color.FromArgb(50, 50, 50)
                 indSelectedTab.Visible = True
-                indSelectedTab.Location = New Point(192, 217)
-                ' ADMIN INFO PANEL
+                indSelectedTab.Location = New Point(192, 167)
+                ' CHECK IN
                 '
-            Case btnAdminInfoPanel.Name
-                AdminChaletInfo.TopLevel = False
-                pnlMainView.Controls.Add(AdminChaletInfo)
-                AdminChaletInfo.Show()
-                AdminChaletInfo.BringToFront()
+            Case btnCheckIn.Name
+                CheckIn.TopLevel = False
+                pnlMainView.Controls.Add(CheckIn)
+                CheckIn.Show()
+                CheckIn.BringToFront()
                 sender.BackColor = Color.FromArgb(50, 50, 50)
                 indSelectedTab.Visible = True
-                indSelectedTab.Location = New Point(192, 343)
+                indSelectedTab.Location = New Point(192, 243)
+                ' CHECK OUT
+                '
+            Case btnCheckOut.Name
+                CheckOut.TopLevel = False
+                pnlMainView.Controls.Add(CheckOut)
+                CheckOut.Show()
+                CheckOut.BringToFront()
+                sender.BackColor = Color.FromArgb(50, 50, 50)
+                indSelectedTab.Visible = True
+                indSelectedTab.Location = New Point(192, 319)
+                ' ADMIN INFO PANEL
+                '
+            Case btnExtendBooking.Name
+                ExtendBooking.TopLevel = False
+                pnlMainView.Controls.Add(ExtendBooking)
+                ExtendBooking.Show()
+                ExtendBooking.BringToFront()
+                sender.BackColor = Color.FromArgb(50, 50, 50)
+                indSelectedTab.Visible = True
+                indSelectedTab.Location = New Point(192, 395)
         End Select
         pnlMenuStatic.BringToFront()
         Do Until pnlMenu.Location.X = -155
@@ -54,9 +77,10 @@
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         ' "TURN OFF" ALL TABS
         '
-        btnAdminInfoPanel.BackColor = Color.FromArgb(55, 71, 79)
-        btnAddStaff.BackColor = Color.FromArgb(55, 71, 79)
+        btnExtendBooking.BackColor = Color.FromArgb(55, 71, 79)
+        btnRegisterGuest.BackColor = Color.FromArgb(55, 71, 79)
         btnEditGuestRecords.BackColor = Color.FromArgb(55, 71, 79)
+        btnCheckIn.BackColor = Color.FromArgb(55, 71, 79)
         indSelectedTab.Visible = False
         SelectChaletForm.Hide()
         GuestInfoEdit.Hide()
@@ -68,24 +92,31 @@
         Loop
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click, PictureBox3.Click
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         If pnlMenu.Location = New Point(-155, 2) Then
             Do Until pnlMenu.Location.X = 0
                 pnlMenu.Location = New Point(pnlMenu.Location.X + 1, 2)
             Loop
+            'pnlMenu.Size = New Size(153, 481)
         ElseIf pnlMenu.Location = New Point(0, 2) Then
+            'pnlMenu.Size = New Size(194, 481)
             Do Until pnlMenu.Location.X = -155
                 pnlMenu.Location = New Point(pnlMenu.Location.X - 1, 2)
             Loop
         End If
+    End Sub
+
+    Private Sub pnlMainView_Paint(sender As Object, e As PaintEventArgs) Handles pnlMainView.Click
+        Do Until pnlMenu.Location.X = -155
+            pnlMenu.Location = New Point(pnlMenu.Location.X - 1, 2)
+        Loop
     End Sub
     Private Sub pnlMenu_MouseLeave(sender As Object, e As EventArgs) Handles pnlMenu.MouseLeave
         Do Until pnlMenu.Location.X = -155
             pnlMenu.Location = New Point(pnlMenu.Location.X - 1, 2)
         Loop
     End Sub
-
-    Private Sub AdminMenuForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub StaffMenuForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim regDate As Date = Date.Now()
         lblDay.Text = regDate.ToString("dd")
         lblMonth.Text = regDate.ToString("MMM").ToUpper

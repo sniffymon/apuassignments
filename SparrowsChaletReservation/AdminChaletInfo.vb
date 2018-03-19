@@ -5,18 +5,21 @@ Public Class AdminChaletInfo
     Public clickedchaletCH As String
     Dim conn As SqlConnection
     Dim cmd As SqlCommand
+    Dim searchmode As Boolean = False
     Dim chaletamt, sql, guestnostorage As String
-    Dim passportregex As Regex = New Regex("^ (?!^ 0 +$)[a-zA-Z0-9]{3,20}$")
     Private Sub ChaletBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
-        sql = "SELECT ChaletNumber FROM Chalet WHERE ChaletStatusOccupied='True'"
+        sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
+               WHERE ChaletStatusOccupied='True' AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
 
         Dim chaletds As New DataSet
-        Dim adptr As New SqlDataAdapter(sql, conn)
+        cmd = New SqlCommand(sql, conn)
+        cmd.Parameters.AddWithValue("@date", dtpDateSpec.Text)
+        Dim adptr As New SqlDataAdapter(cmd)
         adptr.Fill(chaletds, "BookedCH")
 
         Dim exdata As DataTable = chaletds.Tables("BookedCH")
@@ -51,17 +54,12 @@ Public Class AdminChaletInfo
         clickedchaletCH = "CH0" & sender.text
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-
         If cboGuestID.Text = "" Then
             MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
-        For Each ctrl As Control In Me.tlpChaletButtons.Controls
-            If TypeOf ctrl Is Button Then
-                ctrl.Visible = False
-            End If
-        Next
+        searchmode = True
 
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
@@ -88,25 +86,33 @@ Public Class AdminChaletInfo
             txtGuestMobile.Text = dr(2)
             txtGuestEmail.Text = dr(3)
         End If
-
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-
-        conn.Open()
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno"
+        dr.Close()
+        ' Request for only specified guest chalets on that day
+        '
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@guestno", guestnostorage)
+        cmd.Parameters.AddWithValue("@date", dtpDateSpec.Text)
         Dim adptr As New SqlDataAdapter(cmd)
         adptr.Fill(chaletds, "SpecifiedCH")
 
         Dim exdata As DataTable = chaletds.Tables("SpecifiedCH")
         Dim row As DataRow
 
+        For Each ctrl As Control In Me.tlpChaletButtons.Controls
+            If TypeOf ctrl Is Button Then
+                ctrl.Visible = False
+                lblChaletSpec.Visible = True
+            End If
+        Next
+
         For Each row In exdata.Rows
             DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).Visible = True
+            lblChaletSpec.Visible = False
         Next
+        conn.Close()
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -114,12 +120,83 @@ Public Class AdminChaletInfo
         txtGuestName.Text = ""
         txtGuestEmail.Text = ""
         txtGuestMobile.Text = ""
+        lblChaletSpec.Visible = False
+        searchmode = False
 
         For Each ctrl As Control In Me.tlpChaletButtons.Controls
             If TypeOf ctrl Is Button Then
                 ctrl.Visible = True
             End If
         Next
+    End Sub
+
+    Private Sub btnLeft_Click(sender As Object, e As EventArgs) Handles btnLeft.Click, btnRight.Click
+        Select Case sender.Name
+            Case btnLeft.Name
+                dtpDateSpec.Value = dtpDateSpec.Value.AddDays(-1)
+            Case btnRight.Name
+                dtpDateSpec.Value = dtpDateSpec.Value.AddDays(1)
+        End Select
+    End Sub
+
+    Private Sub dtpDateSpec_ValueChanged(sender As Object, e As EventArgs) Handles dtpDateSpec.ValueChanged
+        For Each ctrl As Control In Me.tlpChaletButtons.Controls
+            If TypeOf ctrl Is Button Then
+                With ctrl
+                    .BackColor = Color.White
+                    .Visible = True
+                End With
+            End If
+        Next
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+
+        conn.Open()
+        Dim chaletds As New DataSet
+
+        If searchmode = False Then
+            sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
+               WHERE ChaletStatusOccupied='True' AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
+            cmd = New SqlCommand(sql, conn)
+            cmd.Parameters.AddWithValue("@date", dtpDateSpec.Text)
+            Dim adptr As New SqlDataAdapter(cmd)
+            adptr.Fill(chaletds, "BookedCH")
+
+            Dim exdata As DataTable = chaletds.Tables("BookedCH")
+            Dim row As DataRow
+
+            For Each row In exdata.Rows
+                DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).BackColor = Color.Red
+            Next
+
+        ElseIf searchmode = True Then
+            sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
+            cmd = New SqlCommand(sql, conn)
+            cmd.Parameters.AddWithValue("@date", dtpDateSpec.Text)
+            cmd.Parameters.AddWithValue("@guestno", guestnostorage)
+            Dim adptr As New SqlDataAdapter(cmd)
+            adptr.Fill(chaletds, "BookedCH")
+
+            Dim exdata As DataTable = chaletds.Tables("BookedCH")
+            Dim row As DataRow
+
+            For Each ctrl As Control In Me.tlpChaletButtons.Controls
+                If TypeOf ctrl Is Button Then
+                    ctrl.Visible = False
+                    lblChaletSpec.Visible = True
+                End If
+            Next
+
+
+            For Each row In exdata.Rows
+                DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).Visible = True
+                DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).BackColor = Color.Red
+                lblChaletSpec.Visible = False
+            Next
+
+        End If
+
+        conn.Close()
     End Sub
 
     Private Sub ViewDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewDetailsToolStripMenuItem.Click

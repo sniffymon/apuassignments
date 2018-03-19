@@ -66,8 +66,8 @@ Public Class Cart
             cmd.Parameters.AddWithValue("@deposit", CheckIn.ChaletDeposit)
             cmd.Parameters.AddWithValue("@totalamt", CheckIn.ChaletTotal)
             cmd.Parameters.AddWithValue("@memguestname", CheckIn.txtGuestName.Text)
-            cmd.Parameters.AddWithValue("@chaletnumber", CheckIn.checkedchalet(n))
-            cmd.Parameters.AddWithValue("@extrab", DirectCast(pnlOthers.Controls("Dropdown" & n.ToString), ComboBox).Text)
+            cmd.Parameters.AddWithValue("@chaletnumber", CheckIn.checkedchalet(x - 1))
+            cmd.Parameters.AddWithValue("@extrab", DirectCast(pnlOthers.Controls("Dropdown" & (x - 1).ToString), ComboBox).Text)
 
             recordcheck = cmd.ExecuteNonQuery
 
@@ -80,7 +80,7 @@ Public Class Cart
                WHERE ChaletNumber_FK = @chaletnumber;"
 
             cmd = New SqlCommand(sql, conn)
-            cmd.Parameters.AddWithValue("@chaletnumber", CheckIn.checkedchalet(n))
+            cmd.Parameters.AddWithValue("@chaletnumber", CheckIn.checkedchalet(x - 1))
             cmd.ExecuteNonQuery()
 
             n += 1
