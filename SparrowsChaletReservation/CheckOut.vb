@@ -31,7 +31,7 @@ Public Class CheckOut
         ' Display the date in the default (general) format.
         Console.WriteLine(thisDay.ToString())
         Console.WriteLine()
-        dtpCheckOut.Value = DateTime.Today
+        'dtpCheckOut.Value = DateTime.Today
 
         'If dtpCheckOut.Text = txtCheckIn.Text Or dtpCheckOut.Value < txtCheckIn.Text Then
         '    MessageBox.Show("Please check the check out date!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -49,7 +49,7 @@ Public Class CheckOut
 
         'GUEST DETAIL SECTION START
 
-        sql = "SELECT GuestNo,GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No,GuestDetail.Guest_Email, CheckIn_Date   
+        sql = "SELECT GuestNo,GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No,GuestDetail.Guest_Email, CheckIn_Date , CheckOut_Date  
                FROM GuestDetail  Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
                 WHERE [Guest_ID_PassNum]=@guestid"
 
@@ -67,7 +67,9 @@ Public Class CheckOut
             txtGuestMobile.Text = dr(2)
             txtGuestEmail.Text = dr(3)
             txtCheckIn.Text = dr(4).ToString
+            txtCheckOut.Text = dr(5).ToString
         End If
+
         dr.Close()
         conn.Close()
 

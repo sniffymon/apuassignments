@@ -40,21 +40,24 @@ Public Class CheckIn
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
-        'sql = "SELECT ChaletNumber FROM Chalet WHERE ChaletStatusOccupied='True'"
+        sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
+               WHERE ChaletStatusOccupied='True' AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
 
-        'Dim chaletds As New DataSet
-        'Dim adptr As New SqlDataAdapter(sql, conn)
-        'adptr.Fill(chaletds, "BookedCH")
+        Dim chaletds As New DataSet
+        cmd = New SqlCommand(sql, conn)
+        cmd.Parameters.AddWithValue("@date", Date.Today)
+        Dim adptr As New SqlDataAdapter(cmd)
+        adptr.Fill(chaletds, "BookedCH")
 
-        'Dim exdata As DataTable = chaletds.Tables("BookedCH")
-        'Dim row As DataRow
+        Dim exdata As DataTable = chaletds.Tables("BookedCH")
+        Dim row As DataRow
 
-        'For Each row In exdata.Rows
-        '    DirectCast(GroupBox2.Controls("btn" & row(0)), Button).BackColor = Color.Red
-        '    unavaich += 1
-        'Next
+        For Each row In exdata.Rows
+            DirectCast(GroupBox2.Controls("btn" & row(0)), Button).BackColor = Color.Red
+            unavaich += 1
+        Next
 
-        '
+
         'Start Loading For Guest ID In Search ComboBox
         '
 
