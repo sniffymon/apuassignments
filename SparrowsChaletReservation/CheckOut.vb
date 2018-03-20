@@ -23,24 +23,8 @@ Public Class CheckOut
         dr.Close()
         conn.Close()
 
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btncheckout.Click
-        ' Get the current date.
-        Dim thisDay As DateTime = DateTime.Today
-        ' Display the date in the default (general) format.
-        Console.WriteLine(thisDay.ToString())
-        Console.WriteLine()
-        'dtpCheckOut.Value = DateTime.Today
-
-        'If dtpCheckOut.Text = txtCheckIn.Text Or dtpCheckOut.Value < txtCheckIn.Text Then
-        '    MessageBox.Show("Please check the check out date!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        'End If
-
 
     End Sub
-
-
     Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGuestID.SelectedIndexChanged
         If cboGuestID.Text = "" Then
             MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -96,6 +80,33 @@ Public Class CheckOut
         Next
         conn.Close()
 
+        ' Get the current date.
+        Dim thisDay As DateTime = DateTime.Today
+
+        ' Display the date in the default (general) format.
+        Console.WriteLine(thisDay.ToString())
+        Console.WriteLine()
+        txtActualCheckOut.Text = DateTime.Today
+
+        'get the overdue days
+        Dim date1 As Date = Date.Now
+        Dim date2 As Date = txtCheckOut.Text
+        Dim days As Integer = (date1 - date2).Days
+
+        If (days <= 0) Then
+            txtOverdue.Text = 0
+        ElseIf (days >= 1) Then
+            txtOverdue.Text = days
+        End If
+    End Sub
+
+    Private Sub btncheckout_Click(sender As Object, e As EventArgs) Handles btncheckout.Click
+        If txtOverdue.Text = 0 Then
+            CheckOutCart.ShowDialog()
+        ElseIf txtOverdue.Text >= 1 Then
+            MessageBox.Show("You will be charged RM XX each day due to .... ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
 
     End Sub
+
 End Class
