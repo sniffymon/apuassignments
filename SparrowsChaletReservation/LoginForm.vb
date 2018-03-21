@@ -21,17 +21,21 @@ Public Class LoginForm
 
         dr = cmd.ExecuteReader
 
-
-        If dr.HasRows Then
+        If txtUsn.Text = "" Or txtPwd.Text = "" Then
+            MessageBox.Show("Please fill in the required details.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtUsn.Focus()
+        ElseIf dr.HasRows Then
             dr.Read()
             If dr("AdminRole") = "True" Then
                 AdminMenuForm.Show()
+                Me.Close()
             ElseIf dr("AdminRole") = "False" Then
                 StaffMenuForm.Show()
             End If
             Me.Close()
         Else
-            MessageBox.Show("Incorrect Username or Password. Please check your Username or Password")
+            MessageBox.Show("Incorrect Username or Password. Please check your Username or Password", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtUsn.Focus()
         End If
         conn.Close()
     End Sub

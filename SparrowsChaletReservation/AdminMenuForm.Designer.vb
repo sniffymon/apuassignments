@@ -34,10 +34,10 @@ Partial Class AdminMenuForm
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tlpMenuBtn = New System.Windows.Forms.TableLayoutPanel()
         Me.pnlMenuStatic = New System.Windows.Forms.Panel()
+        Me.lblYear = New System.Windows.Forms.Label()
+        Me.lblMonth = New System.Windows.Forms.Label()
         Me.lblDay = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.lblMonth = New System.Windows.Forms.Label()
-        Me.lblYear = New System.Windows.Forms.Label()
         Me.pnlMenu.SuspendLayout()
         CType(Me.indSelectedTab, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -203,6 +203,28 @@ Partial Class AdminMenuForm
         Me.pnlMenuStatic.Size = New System.Drawing.Size(50, 481)
         Me.pnlMenuStatic.TabIndex = 6
         '
+        'lblYear
+        '
+        Me.lblYear.AutoSize = True
+        Me.lblYear.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.lblYear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.lblYear.Location = New System.Drawing.Point(10, 456)
+        Me.lblYear.Name = "lblYear"
+        Me.lblYear.Size = New System.Drawing.Size(40, 17)
+        Me.lblYear.TabIndex = 2
+        Me.lblYear.Text = "2020"
+        '
+        'lblMonth
+        '
+        Me.lblMonth.AutoSize = True
+        Me.lblMonth.Font = New System.Drawing.Font("Segoe UI Light", 10.0!)
+        Me.lblMonth.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.lblMonth.Location = New System.Drawing.Point(10, 437)
+        Me.lblMonth.Name = "lblMonth"
+        Me.lblMonth.Size = New System.Drawing.Size(38, 19)
+        Me.lblMonth.TabIndex = 1
+        Me.lblMonth.Text = "NOV"
+        '
         'lblDay
         '
         Me.lblDay.AutoSize = True
@@ -223,28 +245,6 @@ Partial Class AdminMenuForm
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
-        '
-        'lblMonth
-        '
-        Me.lblMonth.AutoSize = True
-        Me.lblMonth.Font = New System.Drawing.Font("Segoe UI Light", 10.0!)
-        Me.lblMonth.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.lblMonth.Location = New System.Drawing.Point(10, 437)
-        Me.lblMonth.Name = "lblMonth"
-        Me.lblMonth.Size = New System.Drawing.Size(38, 19)
-        Me.lblMonth.TabIndex = 1
-        Me.lblMonth.Text = "NOV"
-        '
-        'lblYear
-        '
-        Me.lblYear.AutoSize = True
-        Me.lblYear.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.lblYear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.lblYear.Location = New System.Drawing.Point(10, 456)
-        Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(40, 17)
-        Me.lblYear.TabIndex = 2
-        Me.lblYear.Text = "2020"
         '
         'AdminMenuForm
         '
