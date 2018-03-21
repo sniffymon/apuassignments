@@ -35,13 +35,15 @@ Public Class CheckOut
 
         sql = "SELECT GuestNo,GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No,GuestDetail.Guest_Email, CheckIn_Date , CheckOut_Date  
                FROM GuestDetail  Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
-                WHERE [Guest_ID_PassNum]=@guestid"
+                WHERE [Guest_ID_PassNum]=@guestid "
+
 
         'Creating 1st Instance of SQL Command
         cmd = New SqlCommand(sql, conn)
         conn.Open()
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         cmd.Parameters.AddWithValue("@guestid", cboGuestID.Text)
+
 
         Dim dr As SqlDataReader = cmd.ExecuteReader
 
@@ -58,11 +60,12 @@ Public Class CheckOut
         conn.Close()
 
         'chalet booked by guest
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND @currentdate >= Checkout_Date"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@guestno", guestnostorage)
+        cmd.Parameters.AddWithValue("@currentdate", Date.Today)
         Dim adptr As New SqlDataAdapter(cmd)
         adptr.Fill(chaletds, "SpecifiedCH")
 
@@ -75,9 +78,13 @@ Public Class CheckOut
             End If
         Next
 
-        For Each row In exdata.Rows
-            DirectCast(GroupBox2.Controls("btn" & row(0)), Button).Visible = True
-        Next
+        If exdata.Rows.Count > 0 Then
+            For Each row In exdata.Rows
+                DirectCast(GroupBox2.Controls("btn" & row(0)), Button).Visible = True
+            Next
+        Else
+            MsgBox("There are no checkout details today!")
+        End If
         conn.Close()
 
         ' Get the current date.
@@ -106,7 +113,6 @@ Public Class CheckOut
         ElseIf txtOverdue.Text >= 1 Then
             MessageBox.Show("You will be charged RM XX each day due to .... ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
-
     End Sub
 
 End Class

@@ -83,7 +83,7 @@ Partial Class GuestInfoEntry
         '
         Me.txtGuestMobile.Location = New System.Drawing.Point(361, 111)
         Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtGuestMobile.Mask = "0000000000"
+        Me.txtGuestMobile.Mask = "999 0000000"
         Me.txtGuestMobile.Name = "txtGuestMobile"
         Me.txtGuestMobile.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txtGuestMobile.Size = New System.Drawing.Size(201, 28)

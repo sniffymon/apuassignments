@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 Public Class GuestInfoEdit
     Dim conn As SqlConnection
     Dim sql As String
@@ -61,10 +62,50 @@ Public Class GuestInfoEdit
         conn.Close()
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MessageBox.Show("Update Successfully", "Guest Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+        If EmailCheck(txtGuestEmail.Text) = False Then
+            MessageBox.Show("Invalid Email")
+            txtGuestEmail.Focus()
+            txtGuestEmail.BackColor = Color.AliceBlue
+            Exit Sub
+        ElseIf txtGuestEmail.Text = "" Or txtGuestMobile.Text = "" Or txtGuestName.Text = "" Then
+            MessageBox.Show("Please complete all the field.")
+            Exit Sub
+        End If
+
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+
+        conn.Open()
+        'GUEST DETAIL SECTION START
+        sql = "UPDATE INTO GuestDetail(Guest_Name, Guest_Contact_No, Guest_Email) VALUES(@guestname, @guestmobile, @guestemail)"
+
+        'Creating 1st Instance of SQL Command
+        cmd = New SqlCommand(sql, conn)
+        'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
+        cmd.Parameters.AddWithValue("@guestemail", txtGuestEmail.Text)
+        cmd.Parameters.AddWithValue("@guestmobile", txtGuestMobile.Text)
+        cmd.Parameters.AddWithValue("@guestname", txtGuestName.Text)
+        'Execute SQL Query above and expecting no return
+        cmd.ExecuteNonQuery()
+
+        MessageBox.Show("Update Successfully", "Guest Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
-    Private Sub TxtGuestName_KeyDown(sender As Object, e As KeyEventArgs) Handles cboGuestID.KeyDown, txtGuestName.KeyDown, txtGuestMobile.KeyDown, txtGuestEmail.KeyDown
+
+       Function EmailCheck(ByVal emailaddress As String) As Boolean
+
+        Dim pattern As String = "\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+        Dim emailAddressMatch As Match = Regex.Match(emailaddress, pattern)
+        If emailAddressMatch.Success Then
+            emailcheck = True
+        Else
+            emailcheck = False
+        End If
+    End Function
+
+
+
+    Private Sub TxtGuestName_KeyDown(sender As Object, e As KeyEventArgs) Handles cboGuestID.KeyDown, txtGuestName.KeyDown, txtGuestEmail.KeyDown
 
         If e.KeyCode = Keys.Enter Then
 

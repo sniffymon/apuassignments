@@ -156,7 +156,7 @@ Partial Class CheckOutCart
         Me.Controls.Add(Me.lblCheckIn)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.lblName)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "CheckOutCart"
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
