@@ -91,4 +91,13 @@
         lblMonth.Text = regDate.ToString("MMM").ToUpper
         lblYear.Text = regDate.ToString("yyyy")
     End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        Dim answer As MsgBoxResult
+        answer = MessageBox.Show("Logout?", "Are you sure", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If answer = MsgBoxResult.Yes Then
+            LoginForm.Show()
+            Me.Close()
+        End If
+    End Sub
 End Class

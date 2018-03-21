@@ -22,6 +22,35 @@ Public Class CheckIn
             checkedchalet.Remove("CH0" & sender.text)
         End If
     End Sub
+
+    Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+        For Each ctrl As Control In Me.GroupBox2.Controls
+            If TypeOf ctrl Is Button Then
+                With ctrl
+                    .BackColor = Color.White
+                    .Visible = True
+                End With
+            End If
+        Next
+        conn.Open()
+        Dim chaletds As New DataSet
+        sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
+               WHERE ChaletStatusOccupied='True' AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
+            cmd = New SqlCommand(sql, conn)
+        cmd.Parameters.AddWithValue("@date", dtpCheckIn.Text)
+        Dim adptr As New SqlDataAdapter(cmd)
+            adptr.Fill(chaletds, "BookedCH")
+
+            Dim exdata As DataTable = chaletds.Tables("BookedCH")
+            Dim row As DataRow
+
+            For Each row In exdata.Rows
+            DirectCast(GroupBox2.Controls("btn" & row(0)), Button).BackColor = Color.Red
+        Next
+    End Sub
+
     Private Sub btnCH011_Click(sender As Object, e As EventArgs) Handles btnCH011.Click, btnCH012.Click, btnCH013.Click, btnCH014.Click, btnCH015.Click, btnCH016.Click, btnCH017.Click, btnCH018.Click, btnCH019.Click, btnCH020.Click
         If sender.BackColor = Color.White Then
             DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255)

@@ -82,10 +82,11 @@
         btnEditGuestRecords.BackColor = Color.FromArgb(55, 71, 79)
         btnCheckIn.BackColor = Color.FromArgb(55, 71, 79)
         indSelectedTab.Visible = False
-        SelectChaletForm.Hide()
-        GuestInfoEdit.Hide()
         GuestInfoEntry.Hide()
-        AdminChaletInfo.Hide()
+        GuestInfoEdit.Hide()
+        CheckOut.Hide()
+        CheckIn.Hide()
+        ExtendBooking.Hide()
         pnlMenuStatic.BringToFront()
         Do Until pnlMenu.Location.X = -155
             pnlMenu.Location = New Point(pnlMenu.Location.X - 1, 2)
@@ -105,12 +106,6 @@
             Loop
         End If
     End Sub
-
-    Private Sub pnlMainView_Paint(sender As Object, e As PaintEventArgs) Handles pnlMainView.Click
-        Do Until pnlMenu.Location.X = -155
-            pnlMenu.Location = New Point(pnlMenu.Location.X - 1, 2)
-        Loop
-    End Sub
     Private Sub pnlMenu_MouseLeave(sender As Object, e As EventArgs) Handles pnlMenu.MouseLeave
         Do Until pnlMenu.Location.X = -155
             pnlMenu.Location = New Point(pnlMenu.Location.X - 1, 2)
@@ -121,5 +116,14 @@
         lblDay.Text = regDate.ToString("dd")
         lblMonth.Text = regDate.ToString("MMM").ToUpper
         lblYear.Text = regDate.ToString("yyyy")
+    End Sub
+
+    Private Sub PictureBox2_Click_1(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Dim answer As MsgBoxResult
+        answer = MessageBox.Show("Logout?", "Are you sure", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If answer = MsgBoxResult.Yes Then
+            LoginForm.Show()
+            Me.Close()
+        End If
     End Sub
 End Class
