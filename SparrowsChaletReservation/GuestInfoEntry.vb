@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
+
 Public Class GuestInfoEntry
     Dim conn As SqlConnection
     Dim Sql As String
@@ -27,5 +29,30 @@ Public Class GuestInfoEntry
         cmd.ExecuteNonQuery()
         MsgBox("Guest Info Successfully Stored")
         'GUEST DETAIL SECTION END
+
+
+        If EmailCheck(txtGuestEmail.Text) = False Then
+            MessageBox.Show("Invalid Email")
+            txtGuestEmail.Focus()
+            txtGuestEmail.BackColor = Color.AliceBlue
+            Exit Sub
+        End If
+
+
+    End Sub
+    Function EmailCheck(ByVal emailaddress As String) As Boolean
+
+        Dim pattern As String = "\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+        Dim emailAddressMatch As Match = Regex.Match(emailaddress, pattern)
+        If emailAddressMatch.Success Then
+            EmailCheck = True
+        Else
+            EmailCheck = False
+        End If
+    End Function
+    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtGuestEmail.KeyDown, txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestName.KeyDown, txtGuestID.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button1.PerformClick()
+        End If
     End Sub
 End Class

@@ -3,9 +3,6 @@ Public Class GuestInfoSearch
     Dim conn As SqlConnection
     Dim cmd As SqlCommand
     Dim sql As String
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub GuestInfoSearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '
