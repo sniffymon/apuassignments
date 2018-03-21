@@ -49,10 +49,6 @@ Public Class Cart
         Next
     End Sub
 
-    Private Sub pnlOthers_Paint(sender As Object, e As PaintEventArgs) Handles pnlOthers.Paint
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="sparrowsresortConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sparrowsresortConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SparrowReservation.My.MySettings.GlobalReference.Default.sparrowsresortConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sparrowsresortConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        GuestDetail.GuestNo, GuestDetail.Guest_ID_PassNum,                      GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No, GuestDetail.Guest_Email, Reservation.CheckIn_Date,Reservation.CheckOut_Date, 
+                         Reservation.ChaletNumber_FK
+FROM            GuestDetail INNER JOIN
+                         Reservation ON GuestDetail.GuestNo = Reservation.GuestNo_FK
+WHERE          CheckIn_Date &lt;= GetDate() AND CheckOut_Date &gt; GetDate()  </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="GuestNo" DataSetColumn="GuestNo" />
+              <Mapping SourceColumn="Guest_ID_PassNum" DataSetColumn="Guest_ID_PassNum" />
+              <Mapping SourceColumn="Guest_Name" DataSetColumn="Guest_Name" />
+              <Mapping SourceColumn="Guest_Contact_No" DataSetColumn="Guest_Contact_No" />
+              <Mapping SourceColumn="Guest_Email" DataSetColumn="Guest_Email" />
+              <Mapping SourceColumn="ChaletNumber_FK" DataSetColumn="ChaletNumber_FK" />
+              <Mapping SourceColumn="CheckIn_Date" DataSetColumn="CheckIn_Date" />
+              <Mapping SourceColumn="CheckOut_Date" DataSetColumn="CheckOut_Date" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GuestNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnGuestNo" msprop:Generator_ColumnPropNameInRow="GuestNo" msprop:Generator_ColumnPropNameInTable="GuestNoColumn" msprop:Generator_UserColumnName="GuestNo" type="xs:int" />
+              <xs:element name="Guest_ID_PassNum" msprop:Generator_ColumnVarNameInTable="columnGuest_ID_PassNum" msprop:Generator_ColumnPropNameInRow="Guest_ID_PassNum" msprop:Generator_ColumnPropNameInTable="Guest_ID_PassNumColumn" msprop:Generator_UserColumnName="Guest_ID_PassNum">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Guest_Name" msprop:Generator_ColumnVarNameInTable="columnGuest_Name" msprop:Generator_ColumnPropNameInRow="Guest_Name" msprop:Generator_ColumnPropNameInTable="Guest_NameColumn" msprop:Generator_UserColumnName="Guest_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Guest_Contact_No" msprop:Generator_ColumnVarNameInTable="columnGuest_Contact_No" msprop:Generator_ColumnPropNameInRow="Guest_Contact_No" msprop:Generator_ColumnPropNameInTable="Guest_Contact_NoColumn" msprop:Generator_UserColumnName="Guest_Contact_No">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Guest_Email" msprop:Generator_ColumnVarNameInTable="columnGuest_Email" msprop:Generator_ColumnPropNameInRow="Guest_Email" msprop:Generator_ColumnPropNameInTable="Guest_EmailColumn" msprop:Generator_UserColumnName="Guest_Email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChaletNumber_FK" msprop:Generator_ColumnVarNameInTable="columnChaletNumber_FK" msprop:Generator_ColumnPropNameInRow="ChaletNumber_FK" msprop:Generator_ColumnPropNameInTable="ChaletNumber_FKColumn" msprop:Generator_UserColumnName="ChaletNumber_FK" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CheckIn_Date" msprop:Generator_ColumnVarNameInTable="columnCheckIn_Date" msprop:Generator_ColumnPropNameInRow="CheckIn_Date" msprop:Generator_ColumnPropNameInTable="CheckIn_DateColumn" msprop:Generator_UserColumnName="CheckIn_Date" type="xs:dateTime" />
+              <xs:element name="CheckOut_Date" msprop:Generator_ColumnVarNameInTable="columnCheckOut_Date" msprop:Generator_ColumnPropNameInRow="CheckOut_Date" msprop:Generator_ColumnPropNameInTable="CheckOut_DateColumn" msprop:Generator_UserColumnName="CheckOut_Date" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
