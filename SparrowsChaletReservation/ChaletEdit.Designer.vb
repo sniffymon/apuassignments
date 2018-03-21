@@ -32,6 +32,7 @@ Partial Class ChaletEdit
         Me.dtpCheckOut = New System.Windows.Forms.DateTimePicker()
         Me.ddmGuestName = New System.Windows.Forms.ComboBox()
         Me.cboEB = New System.Windows.Forms.ComboBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label9
@@ -99,8 +100,8 @@ Partial Class ChaletEdit
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(148, 321)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Location = New System.Drawing.Point(59, 321)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(96, 40)
         Me.Button1.TabIndex = 21
@@ -113,10 +114,12 @@ Partial Class ChaletEdit
         Me.dtpCheckIn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dtpCheckIn.Location = New System.Drawing.Point(154, 184)
-        Me.dtpCheckIn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpCheckIn.Margin = New System.Windows.Forms.Padding(2)
+        Me.dtpCheckIn.MinDate = New Date(1998, 1, 1, 0, 0, 0, 0)
         Me.dtpCheckIn.Name = "dtpCheckIn"
         Me.dtpCheckIn.Size = New System.Drawing.Size(145, 22)
         Me.dtpCheckIn.TabIndex = 22
+        Me.dtpCheckIn.Value = New Date(2018, 3, 20, 22, 35, 34, 0)
         '
         'dtpCheckOut
         '
@@ -124,7 +127,7 @@ Partial Class ChaletEdit
         Me.dtpCheckOut.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dtpCheckOut.Location = New System.Drawing.Point(154, 219)
-        Me.dtpCheckOut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpCheckOut.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpCheckOut.Name = "dtpCheckOut"
         Me.dtpCheckOut.Size = New System.Drawing.Size(145, 22)
         Me.dtpCheckOut.TabIndex = 23
@@ -134,7 +137,7 @@ Partial Class ChaletEdit
         Me.ddmGuestName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddmGuestName.FormattingEnabled = True
         Me.ddmGuestName.Location = New System.Drawing.Point(154, 151)
-        Me.ddmGuestName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ddmGuestName.Margin = New System.Windows.Forms.Padding(2)
         Me.ddmGuestName.Name = "ddmGuestName"
         Me.ddmGuestName.Size = New System.Drawing.Size(145, 21)
         Me.ddmGuestName.TabIndex = 24
@@ -146,10 +149,23 @@ Partial Class ChaletEdit
         Me.cboEB.FormattingEnabled = True
         Me.cboEB.Items.AddRange(New Object() {"No Extra Beds", "1", "2"})
         Me.cboEB.Location = New System.Drawing.Point(154, 254)
-        Me.cboEB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboEB.Margin = New System.Windows.Forms.Padding(2)
         Me.cboEB.Name = "cboEB"
         Me.cboEB.Size = New System.Drawing.Size(145, 21)
         Me.cboEB.TabIndex = 25
+        '
+        'Button2
+        '
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.Button2.Location = New System.Drawing.Point(203, 321)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(96, 40)
+        Me.Button2.TabIndex = 26
+        Me.Button2.Text = "Delete" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Records"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'ChaletEdit
         '
@@ -157,6 +173,7 @@ Partial Class ChaletEdit
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(375, 396)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.cboEB)
         Me.Controls.Add(Me.ddmGuestName)
         Me.Controls.Add(Me.dtpCheckOut)
@@ -168,7 +185,7 @@ Partial Class ChaletEdit
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "ChaletEdit"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
@@ -188,4 +205,5 @@ Partial Class ChaletEdit
     Friend WithEvents dtpCheckOut As DateTimePicker
     Friend WithEvents ddmGuestName As ComboBox
     Friend WithEvents cboEB As ComboBox
+    Friend WithEvents Button2 As Button
 End Class

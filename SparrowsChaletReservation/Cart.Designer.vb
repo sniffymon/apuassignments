@@ -22,7 +22,6 @@ Partial Class Cart
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cart))
         Me.pnlOthers = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -40,8 +39,6 @@ Partial Class Cart
         'pnlOthers
         '
         Me.pnlOthers.AutoScroll = True
-        Me.pnlOthers.BackgroundImage = CType(resources.GetObject("pnlOthers.BackgroundImage"), System.Drawing.Image)
-        Me.pnlOthers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pnlOthers.Location = New System.Drawing.Point(2, 41)
         Me.pnlOthers.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pnlOthers.Name = "pnlOthers"
@@ -50,8 +47,6 @@ Partial Class Cart
         '
         'Button1
         '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
         Me.Button1.Location = New System.Drawing.Point(234, 348)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
@@ -164,8 +159,7 @@ Partial Class Cart
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(578, 397)
+        Me.ClientSize = New System.Drawing.Size(578, 389)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label5)

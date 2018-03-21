@@ -9,7 +9,6 @@ Public Class ChaletEdit
     Private Sub ChaletEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpCheckIn.CustomFormat = " "
         dtpCheckOut.CustomFormat = " "
-
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         conn.Open()
@@ -75,6 +74,8 @@ Public Class ChaletEdit
                WHERE GuestDetail.Guest_Name = @memguestname AND ChaletNumber_FK = @clickedchaletCH;"
 
 
+
+
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
         cmd.Parameters.AddWithValue("@memguestname", namememory)
@@ -93,15 +94,33 @@ Public Class ChaletEdit
 
     End Sub
 
+    Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged
+        If dtpCheckIn.Value <> dtpCheckIn.MinDate Then
+            dtpCheckOut.MinDate = dtpCheckIn.Value
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim Recorddeleted As Integer
+        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        conn.Open()
+
+        sql = " DELETE FROM Reservation WHERE ChaletNumber_FK = @clickedchaletCH"
+        cmd = New SqlCommand(sql, conn)
+        cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
+
+        Recorddeleted = cmd.ExecuteNonQuery()
+        If Recorddeleted = 0 Then
+            MessageBox.Show("Error occured when deleting data. Please try again.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf Recorddeleted = 1 Then
+            MessageBox.Show("Record successfully deleted.", "Success")
+        End If
+
+        conn.Close()
+    End Sub
     'Private Sub ChaletButtons_Click(sender As Object, e As EventArgs) Handles btnCH001.Click, btnCH002.Click, btnCH003.Click, btnCH004.Click, btnCH005.Click, btnCH006.Click, btnCH007.Click, btnCH008.Click, btnCH009.Click, btnCH010.Click, btnCH011.Click, btnCH012.Click, btnCH013.Click, btnCH014.Click, btnCH015.Click, btnCH016.Click, btnCH017.Click, btnCH018.Click, btnCH019.Click, btnCH020.Click
     '    ContextMenuStrip1.Show(sender, sender.Height, 0)
     '    clickedchalet = "Chalet " & sender.text
     '    clickedchaletCH = "CH0" & sender.text
     'End Sub
-
-
-    Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged, dtpCheckOut.ValueChanged
-        sender.CustomFormat = "yyyy-MM-dd"
-    End Sub
-
 End Class

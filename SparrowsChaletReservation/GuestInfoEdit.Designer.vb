@@ -22,17 +22,18 @@ Partial Class GuestInfoEdit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GuestInfoEdit))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtGuestEmail = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.txtGuestMobile = New System.Windows.Forms.TextBox()
-        Me.txtGuestName = New System.Windows.Forms.TextBox()
         Me.cboGuestID = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblGuestName = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtGuestMobile = New System.Windows.Forms.MaskedTextBox()
+        Me.txtGuestName = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,9 +42,9 @@ Partial Class GuestInfoEdit
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.txtGuestMobile)
         Me.GroupBox1.Controls.Add(Me.txtGuestEmail)
         Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.txtGuestMobile)
         Me.GroupBox1.Controls.Add(Me.txtGuestName)
         Me.GroupBox1.Controls.Add(Me.cboGuestID)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -76,20 +77,6 @@ Partial Class GuestInfoEdit
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Update"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'txtGuestMobile
-        '
-        Me.txtGuestMobile.Location = New System.Drawing.Point(640, 282)
-        Me.txtGuestMobile.Name = "txtGuestMobile"
-        Me.txtGuestMobile.Size = New System.Drawing.Size(258, 28)
-        Me.txtGuestMobile.TabIndex = 13
-        '
-        'txtGuestName
-        '
-        Me.txtGuestName.Location = New System.Drawing.Point(640, 195)
-        Me.txtGuestName.Name = "txtGuestName"
-        Me.txtGuestName.Size = New System.Drawing.Size(258, 28)
-        Me.txtGuestName.TabIndex = 12
         '
         'cboGuestID
         '
@@ -151,6 +138,25 @@ Partial Class GuestInfoEdit
         Me.Label4.Text = "EDIT GUEST INFO"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'txtGuestMobile
+        '
+        Me.txtGuestMobile.AllowPromptAsInput = False
+        Me.txtGuestMobile.HidePromptOnLeave = True
+        Me.txtGuestMobile.Location = New System.Drawing.Point(640, 279)
+        Me.txtGuestMobile.Mask = resources.GetString("txtGuestMobile.Mask")
+        Me.txtGuestMobile.Name = "txtGuestMobile"
+        Me.txtGuestMobile.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+        Me.txtGuestMobile.Size = New System.Drawing.Size(258, 28)
+        Me.txtGuestMobile.TabIndex = 15
+        Me.txtGuestMobile.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        '
+        'txtGuestName
+        '
+        Me.txtGuestName.Location = New System.Drawing.Point(640, 195)
+        Me.txtGuestName.Name = "txtGuestName"
+        Me.txtGuestName.Size = New System.Drawing.Size(258, 28)
+        Me.txtGuestName.TabIndex = 12
+        '
         'GuestInfoEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -173,8 +179,6 @@ Partial Class GuestInfoEdit
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents txtGuestEmail As TextBox
-    Friend WithEvents txtGuestMobile As TextBox
-    Friend WithEvents txtGuestName As TextBox
     Friend WithEvents cboGuestID As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -182,4 +186,6 @@ Partial Class GuestInfoEdit
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents txtGuestMobile As MaskedTextBox
+    Friend WithEvents txtGuestName As TextBox
 End Class

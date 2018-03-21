@@ -130,6 +130,12 @@
     <Compile Include="ExtendBooking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GuestInfoEdit.Designer.vb">
       <DependentUpon>GuestInfoEdit.vb</DependentUpon>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExtendBooking.resx">
       <DependentUpon>ExtendBooking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuestInfoEdit.resx">
       <DependentUpon>GuestInfoEdit.vb</DependentUpon>
