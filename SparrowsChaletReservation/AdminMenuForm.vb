@@ -3,9 +3,9 @@
         GuestInfoEdit.Close()
         AdminChaletInfo.Close()
         SelectChaletForm.Close()
-        GuestInfoEntry.Close()
+        RegisterStaff.Close()
     End Sub
-    Private Sub btnRegisterGuest_Click(sender As Object, e As EventArgs) Handles btnAddStaff.Click, btnAdminInfoPanel.Click, btnEditGuestRecords.Click
+    Private Sub btnAddStaff_Click(sender As Object, e As EventArgs) Handles btnAddStaff.Click, btnAdminInfoPanel.Click, btnEditGuestRecords.Click
         ' "TURN OFF" OTHER TABS
         '
         btnAdminInfoPanel.BackColor = Color.FromArgb(55, 71, 79)
@@ -17,10 +17,10 @@
             ' REGISTER GUEST
             '
             Case btnAddStaff.Name
-                GuestInfoEntry.TopLevel = False
-                pnlMainView.Controls.Add(GuestInfoEntry)
-                GuestInfoEntry.Show()
-                GuestInfoEntry.BringToFront()
+                RegisterStaff.TopLevel = False
+                pnlMainView.Controls.Add(RegisterStaff)
+                RegisterStaff.Show()
+                RegisterStaff.BringToFront()
                 sender.BackColor = Color.FromArgb(50, 50, 50)
                 indSelectedTab.Visible = True
                 indSelectedTab.Location = New Point(192, 91)
@@ -60,7 +60,7 @@
         indSelectedTab.Visible = False
         SelectChaletForm.Hide()
         GuestInfoEdit.Hide()
-        GuestInfoEntry.Hide()
+        RegisterStaff.Hide()
         AdminChaletInfo.Hide()
         pnlMenuStatic.BringToFront()
         Do Until pnlMenu.Location.X = -155
