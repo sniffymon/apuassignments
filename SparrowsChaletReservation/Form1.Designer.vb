@@ -141,7 +141,7 @@ Partial Class CheckOutCart
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(240, 29)
         Me.lblName.TabIndex = 12
-        Me.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'CheckOutCart
         '

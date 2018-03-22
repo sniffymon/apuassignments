@@ -64,6 +64,8 @@ Partial Class CheckOut
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtOverdue = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lblNightsStay = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -565,13 +567,32 @@ Partial Class CheckOut
         Me.Label9.TabIndex = 80
         Me.Label9.Text = "Overdue Days"
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(842, 309)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(108, 20)
+        Me.Label15.TabIndex = 80
+        Me.Label15.Text = "Nights of Stay"
+        '
+        'lblNightsStay
+        '
+        Me.lblNightsStay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblNightsStay.Location = New System.Drawing.Point(960, 308)
+        Me.lblNightsStay.Name = "lblNightsStay"
+        Me.lblNightsStay.Size = New System.Drawing.Size(106, 26)
+        Me.lblNightsStay.TabIndex = 81
+        '
         'CheckOut
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1371, 709)
+        Me.Controls.Add(Me.lblNightsStay)
         Me.Controls.Add(Me.txtOverdue)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtActualCheckOut)
         Me.Controls.Add(Me.Label7)
@@ -637,4 +658,6 @@ Partial Class CheckOut
     Friend WithEvents Label7 As Label
     Friend WithEvents txtOverdue As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents lblNightsStay As Label
 End Class
