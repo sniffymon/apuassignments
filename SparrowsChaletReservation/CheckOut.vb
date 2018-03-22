@@ -3,8 +3,10 @@
 Public Class CheckOut
     Dim conn As SqlConnection = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
     Dim cmd As SqlCommand
-    Dim sql, guestnostorage As String
+    Public sql, guestnostorage As String
+    Public checkedchalet As New List(Of String)
     Dim dr As SqlDataReader
+    Public ChaletTotal, ChaletDeposit, dayduration As Double
 
     Private Sub CheckOut_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn.Open()
@@ -33,7 +35,7 @@ Public Class CheckOut
 
         'GUEST DETAIL SECTION START
 
-        sql = "SELECT GuestNo,GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No,GuestDetail.Guest_Email, CheckIn_Date , CheckOut_Date  
+        sql = "SELECT GuestNo,GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No,GuestDetail.Guest_Email, CONVERT(Varchar, CheckIn_Date) ,CONVERT(Varchar, CheckOut_Date)  
                FROM GuestDetail  Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
                 WHERE [Guest_ID_PassNum]=@guestid "
 
@@ -80,6 +82,8 @@ Public Class CheckOut
 
         If exdata.Rows.Count > 0 Then
             For Each row In exdata.Rows
+                checkedchalet.Add("btn" & row(0))
+
                 DirectCast(GroupBox2.Controls("btn" & row(0)), Button).Visible = True
             Next
         Else
@@ -93,7 +97,7 @@ Public Class CheckOut
         ' Display the date in the default (general) format.
         Console.WriteLine(thisDay.ToString())
         Console.WriteLine()
-        txtActualCheckOut.Text = DateTime.Today
+        txtActualCheckOut.Text = DateTime.Today.ToString("yyyy-MM-dd")
 
         'get the overdue days
         Dim date1 As Date = Date.Now
@@ -105,13 +109,22 @@ Public Class CheckOut
         ElseIf (days >= 1) Then
             txtOverdue.Text = days
         End If
+
+        Dim StartTime, EndTime As DateTime
+        Dim TimeSpan As TimeSpan
+        StartTime = txtCheckIn.Text
+        EndTime = txtActualCheckOut.Text
+        TimeSpan = EndTime.Subtract(StartTime)
+        dayduration = TimeSpan.Days
+        lblNightsStay.Text = dayduration
     End Sub
 
     Private Sub btncheckout_Click(sender As Object, e As EventArgs) Handles btncheckout.Click
         If txtOverdue.Text = 0 Then
             CheckOutCart.ShowDialog()
         ElseIf txtOverdue.Text >= 1 Then
-            MessageBox.Show("You will be charged RM XX each day due to .... ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("You will be charged RM 50 for Supreme Room and RM100 for Standard Room each day due to Late CheckOut ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            CheckOutCart.ShowDialog()
         End If
     End Sub
 
