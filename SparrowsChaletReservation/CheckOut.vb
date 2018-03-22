@@ -5,7 +5,7 @@ Public Class CheckOut
     Dim cmd As SqlCommand
     Public sql, guestnostorage As String
     Public checkedchalet As New List(Of String)
-    Dim standardchalets, supremechalets As Integer
+    Public standardchalets, supremechalets As Integer
     Dim dr As SqlDataReader
     Dim cmdUpdate As SqlCommand
     Public ChaletTotal, ChaletDeposit, dayduration, OverstayCharged, standardprice, supremeprice, overstandard, oversupreme,

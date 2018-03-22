@@ -145,10 +145,10 @@
     <Compile Include="ExtendBooking.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="CartCheckOut.Designer.vb">
+      <DependentUpon>CartCheckOut.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="CartCheckOut.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OccupancyReport.Designer.vb">
@@ -173,6 +173,17 @@
       <DependentUpon>CheckIn.vb</DependentUpon>
     </Compile>
     <Compile Include="CheckIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceiptDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptForm.Designer.vb">
+      <DependentUpon>ReceiptForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegisterStaff.Designer.vb">
@@ -215,10 +226,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Cart.Designer.vb">
-      <DependentUpon>Cart.vb</DependentUpon>
+    <Compile Include="CartCheckIn.Designer.vb">
+      <DependentUpon>CartCheckIn.vb</DependentUpon>
     </Compile>
-    <Compile Include="Cart.vb">
+    <Compile Include="CartCheckIn.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StaffMenuForm.Designer.vb">
@@ -250,8 +261,8 @@
     <EmbeddedResource Include="ExtendBooking.resx">
       <DependentUpon>ExtendBooking.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="CartCheckOut.resx">
+      <DependentUpon>CartCheckOut.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OccupancyReport.resx">
       <DependentUpon>OccupancyReport.vb</DependentUpon>
@@ -264,6 +275,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckIn.resx">
       <DependentUpon>CheckIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt.rdlc" />
+    <EmbeddedResource Include="ReceiptForm.resx">
+      <DependentUpon>ReceiptForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterStaff.resx">
       <DependentUpon>RegisterStaff.vb</DependentUpon>
@@ -284,8 +299,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cart.resx">
-      <DependentUpon>Cart.vb</DependentUpon>
+    <EmbeddedResource Include="CartCheckIn.resx">
+      <DependentUpon>CartCheckIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffMenuForm.resx">
       <DependentUpon>StaffMenuForm.vb</DependentUpon>
@@ -316,6 +331,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\StaffMenuForm.zip" />
+    <None Include="ReceiptDataSet.xsc">
+      <DependentUpon>ReceiptDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReceiptDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceiptDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ReceiptDataSet.xss">
+      <DependentUpon>ReceiptDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\available.png" />
   </ItemGroup>
   <ItemGroup>
