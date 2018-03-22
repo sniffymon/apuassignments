@@ -91,54 +91,55 @@ Public Class CheckOut
 
                 DirectCast(GroupBox2.Controls("btn" & row(0)), Button).Visible = True
             Next
+
+            ' Display the date in the default (general) format.
+            txtActualCheckOut.Text = DateTime.Today.ToString("yyyy-MM-dd")
+
+            'get the overdue days
+            Dim date1 As Date = Date.Now
+            Dim date2 As Date = txtCheckOut.Text
+            Dim days As Integer = (date1 - date2).Days
+
+            If (days <= 0) Then
+                txtOverdue.Text = 0
+            ElseIf (days >= 1) Then
+                txtOverdue.Text = days
+            End If
+
+            'duration of stay
+            Dim StartTime, EndTime As DateTime
+            Dim TimeSpan As TimeSpan
+            StartTime = txtCheckIn.Text
+            EndTime = txtActualCheckOut.Text
+            TimeSpan = EndTime.Subtract(StartTime)
+            lblNightsStay.Text = TimeSpan.Days
+
+            Dim StartTime1, EndTime1 As DateTime
+            Dim TimeSpan1 As TimeSpan
+            StartTime1 = txtCheckIn.Text
+            EndTime1 = txtCheckOut.Text
+            TimeSpan1 = EndTime.Subtract(StartTime)
+            dayduration = TimeSpan.Days
+
+            Dim overstaydays As Double
+            overstaydays = txtOverdue.Text
+
+            'price calculation
+            OverstayCharged = (standardchalets * overstaydays * 250) + (supremechalets * overstaydays * 350)
+            ChaletDeposit = (standardchalets * dayduration * 150 * 0.4) + (supremechalets * dayduration * 250 * 0.4)
+
+            overstandard = (standardchalets * overstaydays * 250)
+            oversupreme = (supremechalets * overstaydays * 350)
+            standardprice = (standardchalets * dayduration * 150)
+            supremeprice = (supremechalets * dayduration * 250)
+            totalstandard = (overstandard + standardprice)
+            totalsupreme = (oversupreme + supremeprice)
+            overalltotal = (totalstandard + totalsupreme)
         Else
             MsgBox("There are no checkout details today!")
         End If
         conn.Close()
 
-        ' Display the date in the default (general) format.
-        txtActualCheckOut.Text = DateTime.Today.ToString("yyyy-MM-dd")
-
-        'get the overdue days
-        Dim date1 As Date = Date.Now
-        Dim date2 As Date = txtCheckOut.Text
-        Dim days As Integer = (date1 - date2).Days
-
-        If (days <= 0) Then
-            txtOverdue.Text = 0
-        ElseIf (days >= 1) Then
-            txtOverdue.Text = days
-        End If
-
-        'duration of stay
-        Dim StartTime, EndTime As DateTime
-        Dim TimeSpan As TimeSpan
-        StartTime = txtCheckIn.Text
-        EndTime = txtActualCheckOut.Text
-        TimeSpan = EndTime.Subtract(StartTime)
-        lblNightsStay.Text = TimeSpan.Days
-
-        Dim StartTime1, EndTime1 As DateTime
-        Dim TimeSpan1 As TimeSpan
-        StartTime1 = txtCheckIn.Text
-        EndTime1 = txtCheckOut.Text
-        TimeSpan1 = EndTime.Subtract(StartTime)
-        dayduration = TimeSpan.Days
-
-        Dim overstaydays As Double
-        overstaydays = txtOverdue.Text
-
-        'price calculation
-        OverstayCharged = (standardchalets * overstaydays * 250) + (supremechalets * overstaydays * 350)
-        ChaletDeposit = (standardchalets * dayduration * 150 * 0.4) + (supremechalets * dayduration * 250 * 0.4)
-
-        overstandard = (standardchalets * overstaydays * 250)
-        oversupreme = (supremechalets * overstaydays * 350)
-        standardprice = (standardchalets * dayduration * 150)
-        supremeprice = (supremechalets * dayduration * 250)
-        totalstandard = (overstandard + standardprice)
-        totalsupreme = (oversupreme + supremeprice)
-        overalltotal = (totalstandard + totalsupreme)
     End Sub
 
     Private Sub btncheckout_Click(sender As Object, e As EventArgs) Handles btncheckout.Click

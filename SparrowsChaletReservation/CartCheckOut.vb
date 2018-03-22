@@ -7,16 +7,14 @@ Public Class CheckOutCart
     Dim spadd As Boolean = False
     Dim stadd As Boolean = False
     Dim lastButtonPos, i, recordcheck As Integer
-
+    Dim addedchalets, standardchalets, supremechalets As Integer
+    Public ChaletTotal, ChaletDeposit, dayduration As Double
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         ReceiptForm.ShowDialog()
     End Sub
-    'Public ChaletTotal, ChaletDeposit, dayduration As Double
-
     Private Sub CheckOutCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        lblDeposit.Text = CheckIn.ChaletDeposit.ToString("c")
-        lblTAmount.Text = CheckIn.ChaletTotal.ToString("c")
+        lblTAmount.Text = CheckOut.overalltotal.ToString("c")
         lblName.Text = CheckIn.txtGuestName.Text
         lblCheckIn.Text = "From " & CheckOut.txtCheckIn.Text & " Until " & CheckOut.txtActualCheckOut.Text
 
@@ -41,7 +39,7 @@ Public Class CheckOutCart
                 .Location = New Point(300, lastButtonPos + 10)
                 .Text = CheckOut.lblNightsStay.Text & “Days”
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -59,9 +57,9 @@ Public Class CheckOutCart
             Dim newDurationofOverstay As New Label
             With newDurationofOverstay
                 .Location = New Point(300, lastButtonPos + 40)
-                .Text = CheckOut.txtOverdue.Text & “Days”
+                .Text = CheckOut.txtOverdue.Text & “Day”
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -79,9 +77,15 @@ Public Class CheckOutCart
             Dim newroomamount As New Label
             With newroomamount
                 .Location = New Point(450, lastButtonPos + 10)
-                .Text = "RM300"
+
+                If CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) >= 11 Then
+                    .Text = CheckOut.supremeprice.ToString("c")
+                ElseIf CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) <= 10 Then
+                    .Text = CheckOut.standardprice.ToString("c")
+                End If
+
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -98,10 +102,15 @@ Public Class CheckOutCart
 
             Dim newoverstayamount As New Label
             With newoverstayamount
-                .Location = New Point(450, lastButtonPos + 40)
-                .Text = "RM 50"
-                .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Location = New Point(450, lastButtonPos + 43)
+
+                If CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) >= 11 Then
+                    .Text = CheckOut.oversupreme.ToString("c")
+                ElseIf CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) <= 10 Then
+                    .Text = CheckOut.overstandard.ToString("c")
+                End If
+
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -120,9 +129,13 @@ Public Class CheckOutCart
             Dim newTotalamount As New Label
             With newTotalamount
                 .Location = New Point(450, lastButtonPos + 70)
-                .Text = "RM 50"
+                If CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) >= 11 Then
+                    .Text = CheckOut.totalsupreme.ToString("c")
+                ElseIf CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) <= 10 Then
+                    .Text = CheckOut.totalstandard.ToString("c")
+                End If
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 11)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -132,7 +145,7 @@ Public Class CheckOutCart
                 .Location = New Point(350, lastButtonPos + 70)
                 .Text = "Total"
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 10)
+                .Font = New Drawing.Font("Segoe UI Semibold", 11)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -154,7 +167,7 @@ Public Class CheckOutCart
 
         Dim n As Integer = 0
         For x = 1 To i
-            sql = "SELECT CheckIn_Date, CheckOut_Date, Deposit, Total_Amount, ChaletNumber_FK, ExtraBed, GuestNo_FK, GuestNo,Guest_Name FROM Reservation INNER JOIN
+            sql = "SELECT CheckIn_Date, CheckOut_Date, Deposit, ChaletNumber_FK, ExtraBed, GuestNo_FK, GuestNo,Guest_Name FROM Reservation INNER JOIN
                    GuestDetail on GuestDetail.GuestNo = Reservation.GuestNo_FK  WHERE Reservation.GuestNo_FK=@guestid "
             'Creating 1st Instance of SQL Command
             cmd = New SqlCommand(sql, conn)
@@ -163,11 +176,11 @@ Public Class CheckOutCart
             lblName.Text = CheckOut.txtGuestName.Text
             Dim dr As SqlDataReader = cmd.ExecuteReader
             If dr.Read() Then
-                lblDeposit.Text = dr(2)
-                lblTAmount.Text = dr(3)
+                lblDeposit.Text = CInt(dr(2)).ToString("c")
             End If
             dr.Close()
             conn.Close()
         Next
+        lblBalance.Text = (CheckOut.overalltotal - CDbl(lblDeposit.Text)).ToString("c")
     End Sub
 End Class
