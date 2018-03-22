@@ -23,7 +23,6 @@ Partial Class ChaletExtend
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.dtpCheckOut = New System.Windows.Forms.DateTimePicker()
-        Me.dtpCheckIn = New System.Windows.Forms.DateTimePicker()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -32,6 +31,7 @@ Partial Class ChaletExtend
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtGuestName = New System.Windows.Forms.TextBox()
         Me.txtEB = New System.Windows.Forms.TextBox()
+        Me.txtCheckIn = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'dtpCheckOut
@@ -44,17 +44,6 @@ Partial Class ChaletExtend
         Me.dtpCheckOut.Name = "dtpCheckOut"
         Me.dtpCheckOut.Size = New System.Drawing.Size(145, 22)
         Me.dtpCheckOut.TabIndex = 33
-        '
-        'dtpCheckIn
-        '
-        Me.dtpCheckIn.CustomFormat = "yyyy-MM-dd"
-        Me.dtpCheckIn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpCheckIn.Location = New System.Drawing.Point(166, 178)
-        Me.dtpCheckIn.Margin = New System.Windows.Forms.Padding(2)
-        Me.dtpCheckIn.Name = "dtpCheckIn"
-        Me.dtpCheckIn.Size = New System.Drawing.Size(145, 22)
-        Me.dtpCheckIn.TabIndex = 32
         '
         'Button1
         '
@@ -145,16 +134,24 @@ Partial Class ChaletExtend
         Me.txtEB.Size = New System.Drawing.Size(145, 20)
         Me.txtEB.TabIndex = 35
         '
+        'txtCheckIn
+        '
+        Me.txtCheckIn.Location = New System.Drawing.Point(166, 178)
+        Me.txtCheckIn.Name = "txtCheckIn"
+        Me.txtCheckIn.ReadOnly = True
+        Me.txtCheckIn.Size = New System.Drawing.Size(145, 20)
+        Me.txtCheckIn.TabIndex = 36
+        '
         'ChaletExtend
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(379, 392)
+        Me.Controls.Add(Me.txtCheckIn)
         Me.Controls.Add(Me.txtEB)
         Me.Controls.Add(Me.txtGuestName)
         Me.Controls.Add(Me.dtpCheckOut)
-        Me.Controls.Add(Me.dtpCheckIn)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label7)
@@ -168,7 +165,6 @@ Partial Class ChaletExtend
 
     End Sub
     Friend WithEvents dtpCheckOut As DateTimePicker
-    Friend WithEvents dtpCheckIn As DateTimePicker
     Friend WithEvents Button1 As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents Label7 As Label
@@ -177,4 +173,5 @@ Partial Class ChaletExtend
     Friend WithEvents Label1 As Label
     Friend WithEvents txtGuestName As TextBox
     Friend WithEvents txtEB As TextBox
+    Friend WithEvents txtCheckIn As TextBox
 End Class

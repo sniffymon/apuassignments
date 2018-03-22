@@ -36,9 +36,11 @@ Partial Class AdminChaletInfo
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.lblChaletSpec = New System.Windows.Forms.Label()
         Me.btnLeft = New System.Windows.Forms.Button()
         Me.btnRight = New System.Windows.Forms.Button()
         Me.dtpDateSpec = New System.Windows.Forms.DateTimePicker()
+        Me.lblTest = New System.Windows.Forms.Label()
         Me.tlpChaletButtons = New System.Windows.Forms.TableLayoutPanel()
         Me.btnCH020 = New System.Windows.Forms.Button()
         Me.btnCH001 = New System.Windows.Forms.Button()
@@ -60,7 +62,6 @@ Partial Class AdminChaletInfo
         Me.btnCH008 = New System.Windows.Forms.Button()
         Me.btnCH009 = New System.Windows.Forms.Button()
         Me.btnCH010 = New System.Windows.Forms.Button()
-        Me.lblTest = New System.Windows.Forms.Label()
         Me.CH020 = New System.Windows.Forms.PictureBox()
         Me.CH013 = New System.Windows.Forms.PictureBox()
         Me.CH011 = New System.Windows.Forms.PictureBox()
@@ -98,7 +99,6 @@ Partial Class AdminChaletInfo
         Me.CancelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblChaletSpec = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.tlpChaletButtons.SuspendLayout()
@@ -277,6 +277,17 @@ Partial Class AdminChaletInfo
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Chalet Occupancy Map"
         '
+        'lblChaletSpec
+        '
+        Me.lblChaletSpec.AutoSize = True
+        Me.lblChaletSpec.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblChaletSpec.Location = New System.Drawing.Point(311, 77)
+        Me.lblChaletSpec.Name = "lblChaletSpec"
+        Me.lblChaletSpec.Size = New System.Drawing.Size(267, 25)
+        Me.lblChaletSpec.TabIndex = 60
+        Me.lblChaletSpec.Text = "There are no specified chalets."
+        Me.lblChaletSpec.Visible = False
+        '
         'btnLeft
         '
         Me.btnLeft.BackColor = System.Drawing.Color.Transparent
@@ -312,6 +323,15 @@ Partial Class AdminChaletInfo
         Me.dtpDateSpec.Name = "dtpDateSpec"
         Me.dtpDateSpec.Size = New System.Drawing.Size(132, 29)
         Me.dtpDateSpec.TabIndex = 57
+        '
+        'lblTest
+        '
+        Me.lblTest.AutoSize = True
+        Me.lblTest.Location = New System.Drawing.Point(308, 27)
+        Me.lblTest.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTest.Name = "lblTest"
+        Me.lblTest.Size = New System.Drawing.Size(0, 13)
+        Me.lblTest.TabIndex = 33
         '
         'tlpChaletButtons
         '
@@ -677,15 +697,6 @@ Partial Class AdminChaletInfo
         Me.btnCH010.Text = "10"
         Me.btnCH010.UseVisualStyleBackColor = False
         '
-        'lblTest
-        '
-        Me.lblTest.AutoSize = True
-        Me.lblTest.Location = New System.Drawing.Point(308, 27)
-        Me.lblTest.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblTest.Name = "lblTest"
-        Me.lblTest.Size = New System.Drawing.Size(0, 13)
-        Me.lblTest.TabIndex = 33
-        '
         'CH020
         '
         Me.CH020.Location = New System.Drawing.Point(0, 0)
@@ -1034,17 +1045,6 @@ Partial Class AdminChaletInfo
         Me.Label4.TabIndex = 57
         Me.Label4.Text = "ADMIN OCCUPANCY REPORT"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblChaletSpec
-        '
-        Me.lblChaletSpec.AutoSize = True
-        Me.lblChaletSpec.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblChaletSpec.Location = New System.Drawing.Point(311, 77)
-        Me.lblChaletSpec.Name = "lblChaletSpec"
-        Me.lblChaletSpec.Size = New System.Drawing.Size(267, 25)
-        Me.lblChaletSpec.TabIndex = 60
-        Me.lblChaletSpec.Text = "There are no specified chalets."
-        Me.lblChaletSpec.Visible = False
         '
         'AdminChaletInfo
         '
