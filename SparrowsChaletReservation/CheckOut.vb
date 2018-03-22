@@ -28,10 +28,10 @@ Public Class CheckOut
 
     End Sub
     Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGuestID.SelectedIndexChanged
-        If cboGuestID.Text = "" Then
-            MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
+        'If cboGuestID.Text = "" Then
+        '    MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Exit Sub
+        'End If
 
         'GUEST DETAIL SECTION START
 

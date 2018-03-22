@@ -33,6 +33,8 @@ Partial Class RegisterStaff
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,6 +43,8 @@ Partial Class RegisterStaff
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.CheckBox1)
+        Me.GroupBox1.Controls.Add(Me.CheckBox2)
         Me.GroupBox1.Controls.Add(Me.txtCfmPwd)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtPwd)
@@ -64,10 +68,10 @@ Partial Class RegisterStaff
         Me.txtCfmPwd.Location = New System.Drawing.Point(361, 144)
         Me.txtCfmPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCfmPwd.Name = "txtCfmPwd"
-        Me.txtCfmPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtCfmPwd.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txtCfmPwd.Size = New System.Drawing.Size(201, 21)
         Me.txtCfmPwd.TabIndex = 8
+        Me.txtCfmPwd.UseSystemPasswordChar = True
         '
         'Label2
         '
@@ -85,11 +89,11 @@ Partial Class RegisterStaff
         Me.txtPwd.Location = New System.Drawing.Point(361, 104)
         Me.txtPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPwd.Name = "txtPwd"
-        Me.txtPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPwd.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txtPwd.Size = New System.Drawing.Size(201, 21)
         Me.txtPwd.TabIndex = 6
         Me.txtPwd.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        Me.txtPwd.UseSystemPasswordChar = True
         '
         'Label3
         '
@@ -170,6 +174,26 @@ Partial Class RegisterStaff
         Me.Label4.Text = "REGISTER STAFF"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(581, 106)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(107, 17)
+        Me.CheckBox1.TabIndex = 10
+        Me.CheckBox1.Text = "Show Password"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(581, 146)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(107, 17)
+        Me.CheckBox2.TabIndex = 9
+        Me.CheckBox2.Text = "Show Password"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
         'RegisterStaff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -204,4 +228,6 @@ Partial Class RegisterStaff
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
 End Class

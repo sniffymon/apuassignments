@@ -92,4 +92,19 @@ Public Class RegisterStaff
     Private Sub txtFullName_Leave(sender As Object, e As EventArgs) Handles txtFullName.Leave
         txtPwd.Focus()
     End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        txtPwd.UseSystemPasswordChar = Not txtPwd.UseSystemPasswordChar
+    End Sub
+
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        txtCfmPwd.UseSystemPasswordChar = Not txtCfmPwd.UseSystemPasswordChar
+    End Sub
+
+    Private Sub CheckBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles CheckBox1.KeyDown, CheckBox2.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            CheckBox1.Checked = True
+            CheckBox2.Checked = True
+        End If
+    End Sub
 End Class

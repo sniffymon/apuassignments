@@ -112,7 +112,6 @@ Public Class CheckOutCart
                 .BackColor = Color.White
             End With
 
-
             Dim newTotalamount As New Label
             With newTotalamount
                 .Location = New Point(450, lastButtonPos + 70)
