@@ -95,8 +95,4 @@ Public Class Cart
         End If
 
     End Sub
-
-    Private Sub Cart_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        CheckIn.Close()
-    End Sub
 End Class
