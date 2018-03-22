@@ -1,20 +1,16 @@
 ﻿Imports System.Data.SqlClient
 Public Class LoginForm
-    Dim conn As SqlConnection
+    Dim conn As SqlConnection = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+    'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
     Dim dr As SqlDataReader
     Dim cmd As SqlCommand
+    Dim sql As String
     '
     ' LOGIN FUNCTIONS
     '
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim sql As String
-
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-
         conn.Open()
         sql = "SELECT * FROM Users WHERE LoginUsername=@usrname AND Password=@pwd"
-
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@usrname", txtUsn.Text)
         cmd.Parameters.AddWithValue("@pwd", txtPwd.Text)
