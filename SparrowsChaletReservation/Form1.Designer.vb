@@ -25,17 +25,17 @@ Partial Class CheckOutCart
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CheckOutCart))
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblTAmount = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblDeposit = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.pnlOthers = New System.Windows.Forms.Panel()
         Me.lblCheckIn = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblDeposit = New System.Windows.Forms.Label()
+        Me.lblTAmount = New System.Windows.Forms.Label()
+        Me.lblBalance = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -50,11 +50,11 @@ Partial Class CheckOutCart
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.lblBalance)
         Me.GroupBox1.Controls.Add(Me.lblTAmount)
+        Me.GroupBox1.Controls.Add(Me.lblDeposit)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.lblDeposit)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(81, 502)
         Me.GroupBox1.Name = "GroupBox1"
@@ -63,14 +63,14 @@ Partial Class CheckOutCart
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Calculated Charges"
         '
-        'lblTAmount
+        'Label2
         '
-        Me.lblTAmount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTAmount.Location = New System.Drawing.Point(383, 27)
-        Me.lblTAmount.Name = "lblTAmount"
-        Me.lblTAmount.Size = New System.Drawing.Size(140, 29)
-        Me.lblTAmount.TabIndex = 3
-        Me.lblTAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(590, 31)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(67, 20)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Balance"
         '
         'Label4
         '
@@ -80,15 +80,6 @@ Partial Class CheckOutCart
         Me.Label4.Size = New System.Drawing.Size(104, 20)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Total Amount"
-        '
-        'lblDeposit
-        '
-        Me.lblDeposit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblDeposit.Location = New System.Drawing.Point(105, 27)
-        Me.lblDeposit.Name = "lblDeposit"
-        Me.lblDeposit.Size = New System.Drawing.Size(124, 29)
-        Me.lblDeposit.TabIndex = 1
-        Me.lblDeposit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1
         '
@@ -147,23 +138,32 @@ Partial Class CheckOutCart
         Me.lblName.TabIndex = 12
         Me.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label2
+        'lblDeposit
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(590, 31)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 20)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Balance"
+        Me.lblDeposit.BackColor = System.Drawing.SystemColors.Window
+        Me.lblDeposit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblDeposit.Location = New System.Drawing.Point(116, 31)
+        Me.lblDeposit.Name = "lblDeposit"
+        Me.lblDeposit.Size = New System.Drawing.Size(100, 23)
+        Me.lblDeposit.TabIndex = 3
         '
-        'Label3
+        'lblTAmount
         '
-        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label3.Location = New System.Drawing.Point(663, 27)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(140, 29)
-        Me.Label3.TabIndex = 3
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTAmount.BackColor = System.Drawing.SystemColors.Window
+        Me.lblTAmount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTAmount.Location = New System.Drawing.Point(384, 30)
+        Me.lblTAmount.Name = "lblTAmount"
+        Me.lblTAmount.Size = New System.Drawing.Size(100, 23)
+        Me.lblTAmount.TabIndex = 3
+        '
+        'lblBalance
+        '
+        Me.lblBalance.BackColor = System.Drawing.SystemColors.Window
+        Me.lblBalance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblBalance.Location = New System.Drawing.Point(663, 31)
+        Me.lblBalance.Name = "lblBalance"
+        Me.lblBalance.Size = New System.Drawing.Size(100, 23)
+        Me.lblBalance.TabIndex = 3
         '
         'CheckOutCart
         '
@@ -190,15 +190,15 @@ Partial Class CheckOutCart
 
     Friend WithEvents Label6 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents lblTAmount As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents lblDeposit As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents pnlOthers As Panel
     Friend WithEvents lblCheckIn As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents lblName As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents lblBalance As Label
+    Friend WithEvents lblTAmount As Label
+    Friend WithEvents lblDeposit As Label
 End Class
