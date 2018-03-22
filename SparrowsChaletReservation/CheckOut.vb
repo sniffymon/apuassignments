@@ -123,7 +123,8 @@ Public Class CheckOut
         If txtOverdue.Text = 0 Then
             CheckOutCart.ShowDialog()
         ElseIf txtOverdue.Text >= 1 Then
-            MessageBox.Show("You will be charged RM XX each day due to .... ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("You will be charged RM 50 for Supreme Room and RM100 for Standard Room each day due to Late CheckOut ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            CheckOutCart.ShowDialog()
         End If
     End Sub
 

@@ -5,8 +5,9 @@ Public Class CheckOutCart
     Dim sql As String
     Dim dr As SqlDataReader
     Dim lastButtonPos, i, recordcheck As Integer
-    'Public ChaletTotal, ChaletDeposit, dayduration As Double
 
+    Dim addedchalets, standardchalets, supremechalets As Integer
+    'Public ChaletTotal, ChaletDeposit, dayduration As Double
 
     Private Sub CheckOutCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -33,24 +34,113 @@ Public Class CheckOutCart
 
             Dim newDurationofstay As New Label
             With newDurationofstay
-                .Location = New Point(200, lastButtonPos + 10)
+                .Location = New Point(300, lastButtonPos + 10)
                 .Text = CheckOut.lblNightsStay.Text & “Days”
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 10)
+                .Font = New Drawing.Font("Segoe UI Semibold", 8)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
 
             Dim newlblDurationOfStay As New Label
             With newlblDurationOfStay
-                .Location = New Point(100, lastButtonPos + 10)
+                .Location = New Point(190, lastButtonPos + 10)
                 .Text = "Days of Stay"
-                .TextAlign = ContentAlignment.MiddleCenter
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 10)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
-
             End With
 
+            Dim newDurationofOverstay As New Label
+            With newDurationofOverstay
+                .Location = New Point(300, lastButtonPos + 40)
+                .Text = CheckOut.txtOverdue.Text & “Days”
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+            End With
+
+            Dim newlblDurationOfOverStay As New Label
+            With newlblDurationOfOverStay
+                .Location = New Point(190, lastButtonPos + 40)
+                .Text = "Overdue Days"
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 10)
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+            End With
+
+            Dim newroomamount As New Label
+            With newroomamount
+                .Location = New Point(450, lastButtonPos + 10)
+                .Text = "RM300"
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+            End With
+
+            Dim newlblroomamount As New Label
+            With newlblroomamount
+                .Location = New Point(350, lastButtonPos + 10)
+                .Text = "Price of Room"
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 10)
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+            End With
+
+            Dim newoverstayamount As New Label
+            With newoverstayamount
+                .Location = New Point(450, lastButtonPos + 40)
+                .Text = "RM 50"
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+            End With
+
+            Dim newlbloverstayamount As New Label
+            With newlbloverstayamount
+                .Location = New Point(350, lastButtonPos + 40)
+                .Text = "Overstay Charged"
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 10)
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+            End With
+
+
+            Dim newTotalamount As New Label
+            With newTotalamount
+                .Location = New Point(450, lastButtonPos + 70)
+                .Text = "RM 50"
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+            End With
+
+            Dim newlblTotalamount As New Label
+            With newlblTotalamount
+                .Location = New Point(350, lastButtonPos + 70)
+                .Text = "Total"
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 10)
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+            End With
+
+            pnlOthers.Controls.Add(newTotalamount)
+            pnlOthers.Controls.Add(newlblTotalamount)
+            pnlOthers.Controls.Add(newlbloverstayamount)
+            pnlOthers.Controls.Add(newoverstayamount)
+            pnlOthers.Controls.Add(newlblroomamount)
+            pnlOthers.Controls.Add(newroomamount)
+            pnlOthers.Controls.Add(newDurationofOverstay)
+            pnlOthers.Controls.Add(newlblDurationOfOverStay)
             pnlOthers.Controls.Add(newlblDurationOfStay)
             pnlOthers.Controls.Add(newDurationofstay)
             pnlOthers.Controls.Add(NewSubPanel)
@@ -72,7 +162,6 @@ Public Class CheckOutCart
                 lblDeposit.Text = dr(2)
                 lblTAmount.Text = dr(3)
             End If
-
             dr.Close()
             conn.Close()
         Next
