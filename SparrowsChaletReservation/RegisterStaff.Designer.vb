@@ -170,7 +170,7 @@ Partial Class RegisterStaff
         Me.Label4.Text = "REGISTER STAFF"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'RegisterGuest
+        'RegisterStaff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -182,7 +182,7 @@ Partial Class RegisterStaff
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "RegisterGuest"
+        Me.Name = "RegisterStaff"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "GuestInfoEntry"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
