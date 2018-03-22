@@ -35,7 +35,7 @@ Public Class CheckOutCart
                 .Location = New Point(300, lastButtonPos + 10)
                 .Text = CheckOut.lblNightsStay.Text & “Days”
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -53,9 +53,9 @@ Public Class CheckOutCart
             Dim newDurationofOverstay As New Label
             With newDurationofOverstay
                 .Location = New Point(300, lastButtonPos + 40)
-                .Text = CheckOut.txtOverdue.Text & “Days”
+                .Text = CheckOut.txtOverdue.Text & "Day"
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -81,7 +81,7 @@ Public Class CheckOutCart
                 End If
 
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -98,7 +98,7 @@ Public Class CheckOutCart
 
             Dim newoverstayamount As New Label
             With newoverstayamount
-                .Location = New Point(450, lastButtonPos + 40)
+                .Location = New Point(450, lastButtonPos + 43)
 
                 If CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) >= 11 Then
                     .Text = CheckOut.oversupreme.ToString("c")
@@ -106,7 +106,7 @@ Public Class CheckOutCart
                     .Text = CheckOut.overstandard.ToString("c")
                 End If
 
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -131,7 +131,7 @@ Public Class CheckOutCart
                     .Text = CheckOut.totalstandard.ToString("c")
                 End If
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 11)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -141,7 +141,7 @@ Public Class CheckOutCart
                 .Location = New Point(350, lastButtonPos + 70)
                 .Text = "Total"
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 10)
+                .Font = New Drawing.Font("Segoe UI Semibold", 11)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With

@@ -5,9 +5,7 @@ Public Class GuestInfoSearch
     Dim sql As String
 
     Private Sub GuestInfoSearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        '
         'Start Loading For Guest ID In Search ComboBox
-        '
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
@@ -15,7 +13,6 @@ Public Class GuestInfoSearch
 
         sql = "SELECT Guest_ID_PassNum FROM GuestDetail"
         cmd = New SqlCommand(sql, conn)
-
 
         Dim dr As SqlDataReader = cmd.ExecuteReader
 
@@ -30,14 +27,13 @@ Public Class GuestInfoSearch
     End Sub
 
     Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGuestID.SelectedIndexChanged
-        'If cboGuestID.Text = "" Then
-        '    MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    Exit Sub
-        'End If
+        If cboGuestID.Text = "" Then
+            MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
 
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-
 
         'GUEST DETAIL SECTION START
 
@@ -56,6 +52,14 @@ Public Class GuestInfoSearch
             txtGuestName.Text = dr(0)
             txtGuestMobile.Text = dr(1)
             txtGuestEmail.Text = dr(2)
+        End If
+    End Sub
+
+    Private Sub cboGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboGuestID.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
         End If
     End Sub
 End Class

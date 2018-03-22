@@ -25,6 +25,9 @@ Partial Class CheckOutCart
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CheckOutCart))
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblBalance = New System.Windows.Forms.Label()
+        Me.lblTAmount = New System.Windows.Forms.Label()
+        Me.lblDeposit = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -33,9 +36,6 @@ Partial Class CheckOutCart
         Me.lblCheckIn = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.lblDeposit = New System.Windows.Forms.Label()
-        Me.lblTAmount = New System.Windows.Forms.Label()
-        Me.lblBalance = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -62,6 +62,33 @@ Partial Class CheckOutCart
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Calculated Charges"
+        '
+        'lblBalance
+        '
+        Me.lblBalance.BackColor = System.Drawing.SystemColors.Window
+        Me.lblBalance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblBalance.Location = New System.Drawing.Point(663, 31)
+        Me.lblBalance.Name = "lblBalance"
+        Me.lblBalance.Size = New System.Drawing.Size(124, 23)
+        Me.lblBalance.TabIndex = 3
+        '
+        'lblTAmount
+        '
+        Me.lblTAmount.BackColor = System.Drawing.SystemColors.Window
+        Me.lblTAmount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTAmount.Location = New System.Drawing.Point(384, 31)
+        Me.lblTAmount.Name = "lblTAmount"
+        Me.lblTAmount.Size = New System.Drawing.Size(124, 23)
+        Me.lblTAmount.TabIndex = 3
+        '
+        'lblDeposit
+        '
+        Me.lblDeposit.BackColor = System.Drawing.SystemColors.Window
+        Me.lblDeposit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblDeposit.Location = New System.Drawing.Point(106, 28)
+        Me.lblDeposit.Name = "lblDeposit"
+        Me.lblDeposit.Size = New System.Drawing.Size(124, 23)
+        Me.lblDeposit.TabIndex = 3
         '
         'Label2
         '
@@ -137,33 +164,6 @@ Partial Class CheckOutCart
         Me.lblName.Size = New System.Drawing.Size(240, 29)
         Me.lblName.TabIndex = 12
         Me.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblDeposit
-        '
-        Me.lblDeposit.BackColor = System.Drawing.SystemColors.Window
-        Me.lblDeposit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblDeposit.Location = New System.Drawing.Point(116, 31)
-        Me.lblDeposit.Name = "lblDeposit"
-        Me.lblDeposit.Size = New System.Drawing.Size(100, 23)
-        Me.lblDeposit.TabIndex = 3
-        '
-        'lblTAmount
-        '
-        Me.lblTAmount.BackColor = System.Drawing.SystemColors.Window
-        Me.lblTAmount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTAmount.Location = New System.Drawing.Point(384, 30)
-        Me.lblTAmount.Name = "lblTAmount"
-        Me.lblTAmount.Size = New System.Drawing.Size(100, 23)
-        Me.lblTAmount.TabIndex = 3
-        '
-        'lblBalance
-        '
-        Me.lblBalance.BackColor = System.Drawing.SystemColors.Window
-        Me.lblBalance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblBalance.Location = New System.Drawing.Point(663, 31)
-        Me.lblBalance.Name = "lblBalance"
-        Me.lblBalance.Size = New System.Drawing.Size(100, 23)
-        Me.lblBalance.TabIndex = 3
         '
         'CheckOutCart
         '
