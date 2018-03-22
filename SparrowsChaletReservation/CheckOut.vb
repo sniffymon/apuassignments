@@ -5,10 +5,9 @@ Public Class CheckOut
     Dim cmd As SqlCommand
     Public sql, guestnostorage As String
     Public checkedchalet As New List(Of String)
-    Public standardchalets, supremechalets As Integer
     Dim dr As SqlDataReader
-    Public ChaletTotal, ChaletDeposit, dayduration, OverstayCharged, standardprice, supremeprice, overstandard, oversupreme,
-        totalstandard, totalsupreme, overalltotal As Double
+    Public ChaletTotal, ChaletDeposit, dayduration As Double
+
     Private Sub CheckOut_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn.Open()
         sql = "SELECT Guest_ID_PassNum FROM GuestDetail"
@@ -80,15 +79,9 @@ Public Class CheckOut
                 ctrl.Visible = False
             End If
         Next
-        Dim removedCH As String
+
         If exdata.Rows.Count > 0 Then
             For Each row In exdata.Rows
-                removedCH = row(0).ToString.Remove(0, 2)
-                If removedCH > 10 Then
-                    supremechalets += 1
-                ElseIf removedCH < 11 Then
-                    standardchalets += 1
-                End If
                 checkedchalet.Add("btn" & row(0))
 
                 DirectCast(GroupBox2.Controls("btn" & row(0)), Button).Visible = True
@@ -98,7 +91,12 @@ Public Class CheckOut
         End If
         conn.Close()
 
+        ' Get the current date.
+        Dim thisDay As DateTime = DateTime.Today
+
         ' Display the date in the default (general) format.
+        Console.WriteLine(thisDay.ToString())
+        Console.WriteLine()
         txtActualCheckOut.Text = DateTime.Today.ToString("yyyy-MM-dd")
 
         'get the overdue days
@@ -117,44 +115,17 @@ Public Class CheckOut
         StartTime = txtCheckIn.Text
         EndTime = txtActualCheckOut.Text
         TimeSpan = EndTime.Subtract(StartTime)
-        lblNightsStay.Text = TimeSpan.Days
-
-        Dim StartTime1, EndTime1 As DateTime
-        Dim TimeSpan1 As TimeSpan
-        StartTime1 = txtCheckIn.Text
-        EndTime1 = txtCheckOut.Text
-        TimeSpan1 = EndTime.Subtract(StartTime)
         dayduration = TimeSpan.Days
-
-        Dim overstaydays As Double
-        overstaydays = txtOverdue.Text
-
-        OverstayCharged = (standardchalets * overstaydays * 250) + (supremechalets * overstaydays * 350)
-        ChaletDeposit = (standardchalets * dayduration * 150 * 0.4) + (supremechalets * dayduration * 250 * 0.4)
-
-        overstandard = (standardchalets * overstaydays * 250)
-        oversupreme = (supremechalets * overstaydays * 350)
-        standardprice = (standardchalets * dayduration * 150)
-        supremeprice = (supremechalets * dayduration * 250)
-        totalstandard = (overstandard + standardprice)
-        totalsupreme = (oversupreme + supremeprice)
-        overalltotal = (totalstandard + totalsupreme)
-
+        lblNightsStay.Text = dayduration
     End Sub
 
     Private Sub btncheckout_Click(sender As Object, e As EventArgs) Handles btncheckout.Click
         If txtOverdue.Text = 0 Then
             CheckOutCart.ShowDialog()
         ElseIf txtOverdue.Text >= 1 Then
-            MessageBox.Show("You will be charged RM 250 for Supreme Room and RM350 for Standard Room each day if you Late CheckOut ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("You will be charged RM 50 for Supreme Room and RM100 for Standard Room each day due to Late CheckOut ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
             CheckOutCart.ShowDialog()
         End If
     End Sub
-    Private Sub cboGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboGuestID.KeyPress
-        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
-        End If
-    End Sub
+
 End Class
