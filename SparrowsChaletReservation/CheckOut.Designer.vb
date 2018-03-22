@@ -340,7 +340,7 @@ Partial Class CheckOut
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(762, 178)
+        Me.Label6.Location = New System.Drawing.Point(799, 165)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(192, 20)
         Me.Label6.TabIndex = 71
@@ -349,7 +349,7 @@ Partial Class CheckOut
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(843, 134)
+        Me.Label5.Location = New System.Drawing.Point(799, 128)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(112, 20)
         Me.Label5.TabIndex = 70
@@ -520,7 +520,7 @@ Partial Class CheckOut
         'txtCheckIn
         '
         Me.txtCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtCheckIn.Location = New System.Drawing.Point(960, 128)
+        Me.txtCheckIn.Location = New System.Drawing.Point(1010, 122)
         Me.txtCheckIn.Name = "txtCheckIn"
         Me.txtCheckIn.Size = New System.Drawing.Size(106, 26)
         Me.txtCheckIn.TabIndex = 76
@@ -528,7 +528,7 @@ Partial Class CheckOut
         'txtCheckOut
         '
         Me.txtCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtCheckOut.Location = New System.Drawing.Point(960, 177)
+        Me.txtCheckOut.Location = New System.Drawing.Point(1010, 159)
         Me.txtCheckOut.Name = "txtCheckOut"
         Me.txtCheckOut.Size = New System.Drawing.Size(106, 26)
         Me.txtCheckOut.TabIndex = 77
@@ -536,7 +536,7 @@ Partial Class CheckOut
         'txtActualCheckOut
         '
         Me.txtActualCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtActualCheckOut.Location = New System.Drawing.Point(960, 226)
+        Me.txtActualCheckOut.Location = New System.Drawing.Point(1010, 197)
         Me.txtActualCheckOut.Name = "txtActualCheckOut"
         Me.txtActualCheckOut.Size = New System.Drawing.Size(106, 26)
         Me.txtActualCheckOut.TabIndex = 79
@@ -544,7 +544,7 @@ Partial Class CheckOut
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(782, 228)
+        Me.Label7.Location = New System.Drawing.Point(799, 203)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(173, 20)
         Me.Label7.TabIndex = 78
@@ -553,7 +553,7 @@ Partial Class CheckOut
         'txtOverdue
         '
         Me.txtOverdue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtOverdue.Location = New System.Drawing.Point(960, 268)
+        Me.txtOverdue.Location = New System.Drawing.Point(1010, 233)
         Me.txtOverdue.Name = "txtOverdue"
         Me.txtOverdue.Size = New System.Drawing.Size(106, 26)
         Me.txtOverdue.TabIndex = 81
@@ -561,7 +561,7 @@ Partial Class CheckOut
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(842, 269)
+        Me.Label9.Location = New System.Drawing.Point(799, 239)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(109, 20)
         Me.Label9.TabIndex = 80
@@ -570,7 +570,7 @@ Partial Class CheckOut
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(842, 309)
+        Me.Label15.Location = New System.Drawing.Point(799, 273)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(108, 20)
         Me.Label15.TabIndex = 80
@@ -579,7 +579,7 @@ Partial Class CheckOut
         'lblNightsStay
         '
         Me.lblNightsStay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblNightsStay.Location = New System.Drawing.Point(960, 308)
+        Me.lblNightsStay.Location = New System.Drawing.Point(1010, 267)
         Me.lblNightsStay.Name = "lblNightsStay"
         Me.lblNightsStay.Size = New System.Drawing.Size(106, 26)
         Me.lblNightsStay.TabIndex = 81

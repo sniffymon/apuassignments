@@ -9,7 +9,6 @@ Public Class CheckOut
     Dim dr As SqlDataReader
     Public ChaletTotal, ChaletDeposit, dayduration, OverstayCharged, standardprice, supremeprice, overstandard, oversupreme,
         totalstandard, totalsupreme, overalltotal As Double
-
     Private Sub CheckOut_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn.Open()
         sql = "SELECT Guest_ID_PassNum FROM GuestDetail"
@@ -147,9 +146,15 @@ Public Class CheckOut
         If txtOverdue.Text = 0 Then
             CheckOutCart.ShowDialog()
         ElseIf txtOverdue.Text >= 1 Then
-            MessageBox.Show("You will be charged RM 250 for Supreme Room and RM350 for Standard Room each day due to Late CheckOut ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("You will be charged RM 250 for Supreme Room and RM350 for Standard Room each day if you Late CheckOut ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
             CheckOutCart.ShowDialog()
         End If
     End Sub
-
+    Private Sub cboGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboGuestID.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
 End Class
