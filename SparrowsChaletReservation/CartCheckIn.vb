@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
-Public Class Cart
-    Dim conn As SqlConnection
+Public Class CartCheckIn
+    Dim conn As SqlConnection = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+    'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
     Dim cmd As SqlCommand
     Dim sql As String
     Dim lastButtonPos, i, recordcheck As Integer
@@ -50,8 +51,6 @@ Public Class Cart
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         conn.Open()
         Dim n As Integer = 0
         For x = 1 To i

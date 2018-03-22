@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReceiptDataSet" targetNamespace="http://tempuri.org/ReceiptDataSet.xsd" xmlns:mstns="http://tempuri.org/ReceiptDataSet.xsd" xmlns="http://tempuri.org/ReceiptDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReceiptDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReceiptDataSet" msprop:Generator_UserDSName="ReceiptDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="receipttable" msprop:Generator_TableClassName="receipttableDataTable" msprop:Generator_TableVarName="tablereceipttable" msprop:Generator_TablePropName="receipttable" msprop:Generator_RowDeletingName="receipttableRowDeleting" msprop:Generator_RowChangingName="receipttableRowChanging" msprop:Generator_RowEvHandlerName="receipttableRowChangeEventHandler" msprop:Generator_RowDeletedName="receipttableRowDeleted" msprop:Generator_UserTableName="receipttable" msprop:Generator_RowChangedName="receipttableRowChanged" msprop:Generator_RowEvArgName="receipttableRowChangeEvent" msprop:Generator_RowClassName="receipttableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RoomType" msprop:Generator_ColumnVarNameInTable="columnRoomType" msprop:Generator_ColumnPropNameInRow="RoomType" msprop:Generator_ColumnPropNameInTable="RoomTypeColumn" msprop:Generator_UserColumnName="RoomType" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:string" minOccurs="0" />
+              <xs:element name="IndividualPrice" msprop:Generator_ColumnVarNameInTable="columnIndividualPrice" msprop:Generator_ColumnPropNameInRow="IndividualPrice" msprop:Generator_ColumnPropNameInTable="IndividualPriceColumn" msprop:Generator_UserColumnName="IndividualPrice" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
