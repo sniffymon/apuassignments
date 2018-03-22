@@ -151,10 +151,10 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="OccupancyReport.Designer.vb">
+      <DependentUpon>OccupancyReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="OccupancyReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GuestInfoEdit.Designer.vb">
@@ -247,8 +247,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="OccupancyReport.resx">
+      <DependentUpon>OccupancyReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuestInfoEdit.resx">
       <DependentUpon>GuestInfoEdit.vb</DependentUpon>
@@ -259,7 +259,6 @@
     <EmbeddedResource Include="CheckIn.resx">
       <DependentUpon>CheckIn.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="SelectChaletForm.resx">
       <DependentUpon>SelectChaletForm.vb</DependentUpon>
