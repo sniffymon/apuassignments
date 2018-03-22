@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Cart
+Partial Class CartCheckIn
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -40,7 +40,7 @@ Partial Class Cart
         '
         Me.pnlOthers.AutoScroll = True
         Me.pnlOthers.Location = New System.Drawing.Point(2, 41)
-        Me.pnlOthers.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlOthers.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlOthers.Name = "pnlOthers"
         Me.pnlOthers.Size = New System.Drawing.Size(576, 248)
         Me.pnlOthers.TabIndex = 0
@@ -48,7 +48,7 @@ Partial Class Cart
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(234, 348)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(114, 42)
         Me.Button1.TabIndex = 1
@@ -62,9 +62,9 @@ Partial Class Cart
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(62, 300)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(486, 40)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -168,9 +168,9 @@ Partial Class Cart
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.pnlOthers)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Cart"
-        Me.Text = "Trolley"
+        Me.Text = "Check-In Cart"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

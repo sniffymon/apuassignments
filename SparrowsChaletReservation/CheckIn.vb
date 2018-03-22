@@ -208,7 +208,7 @@ Public Class CheckIn
         ChaletTotal = (standardchalets * dayduration * 150) + (supremechalets * dayduration * 250)
         ChaletDeposit = (standardchalets * dayduration * 150 * 0.4) + (supremechalets * dayduration * 250 * 0.4)
 
-        Dim TrolleyNew As New Cart
+        Dim TrolleyNew As New CartCheckIn
         TrolleyNew.ShowDialog()
     End Sub
 End Class
