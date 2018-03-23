@@ -7,7 +7,6 @@ Public Class CheckOut
     Public checkedchalet As New List(Of String)
     Public standardchalets, supremechalets As Integer
     Dim dr As SqlDataReader
-    Dim cmdUpdate As SqlCommand
     Public ChaletTotal, ChaletDeposit, dayduration, OverstayCharged, standardprice, supremeprice, overstandard, oversupreme,
         totalstandard, totalsupreme, overalltotal As Double
     Private Sub CheckOut_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -27,6 +26,7 @@ Public Class CheckOut
         dr.Close()
         conn.Close()
 
+
     End Sub
     Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGuestID.SelectedIndexChanged
         'If cboGuestID.Text = "" Then
@@ -35,9 +35,11 @@ Public Class CheckOut
         'End If
 
         'GUEST DETAIL SECTION START
+
         sql = "SELECT GuestNo,GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No,GuestDetail.Guest_Email, CONVERT(Varchar, CheckIn_Date) ,CONVERT(Varchar, CheckOut_Date)  
                FROM GuestDetail  Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
                 WHERE [Guest_ID_PassNum]=@guestid "
+
 
         'Creating 1st Instance of SQL Command
         cmd = New SqlCommand(sql, conn)
@@ -110,7 +112,6 @@ Public Class CheckOut
             txtOverdue.Text = days
         End If
 
-        'duration of stay
         Dim StartTime, EndTime As DateTime
         Dim TimeSpan As TimeSpan
         StartTime = txtCheckIn.Text
@@ -128,7 +129,6 @@ Public Class CheckOut
         Dim overstaydays As Double
         overstaydays = txtOverdue.Text
 
-        'price calculation
         OverstayCharged = (standardchalets * overstaydays * 250) + (supremechalets * overstaydays * 350)
         ChaletDeposit = (standardchalets * dayduration * 150 * 0.4) + (supremechalets * dayduration * 250 * 0.4)
 
@@ -139,17 +139,10 @@ Public Class CheckOut
         totalstandard = (overstandard + standardprice)
         totalsupreme = (oversupreme + supremeprice)
         overalltotal = (totalstandard + totalsupreme)
+
     End Sub
 
     Private Sub btncheckout_Click(sender As Object, e As EventArgs) Handles btncheckout.Click
-        conn.Open()
-        sql = "UPDATE Chalet SET Status='False'INNER JOIN GuestDetail on GuestDetail.GuestNo = Reservation.GuestNo_FK 
-WHERE Reservation.GuestNo_FK=@guestid "
-        cmdUpdate = New SqlCommand(sql, conn)
-        cmd.Parameters.AddWithValue("@guestid", guestnostorage)
-        conn.Close()
-
-        'Info box for overdue charge
         If txtOverdue.Text = 0 Then
             CheckOutCart.ShowDialog()
         ElseIf txtOverdue.Text >= 1 Then

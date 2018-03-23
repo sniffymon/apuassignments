@@ -73,7 +73,7 @@ Partial Class CheckOut
         'lblGuestName
         '
         Me.lblGuestName.AutoSize = True
-        Me.lblGuestName.Location = New System.Drawing.Point(79, 121)
+        Me.lblGuestName.Location = New System.Drawing.Point(84, 108)
         Me.lblGuestName.Name = "lblGuestName"
         Me.lblGuestName.Size = New System.Drawing.Size(51, 20)
         Me.lblGuestName.TabIndex = 3
@@ -82,7 +82,7 @@ Partial Class CheckOut
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(79, 76)
+        Me.Label4.Location = New System.Drawing.Point(84, 63)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(152, 20)
         Me.Label4.TabIndex = 1
@@ -96,7 +96,7 @@ Partial Class CheckOut
         Me.btnCH020.FlatAppearance.BorderSize = 3
         Me.btnCH020.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH020.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH020.Location = New System.Drawing.Point(917, 171)
+        Me.btnCH020.Location = New System.Drawing.Point(922, 158)
         Me.btnCH020.Name = "btnCH020"
         Me.btnCH020.Size = New System.Drawing.Size(63, 63)
         Me.btnCH020.TabIndex = 53
@@ -111,7 +111,7 @@ Partial Class CheckOut
         Me.btnCH017.FlatAppearance.BorderSize = 3
         Me.btnCH017.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH017.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH017.Location = New System.Drawing.Point(613, 171)
+        Me.btnCH017.Location = New System.Drawing.Point(618, 158)
         Me.btnCH017.Name = "btnCH017"
         Me.btnCH017.Size = New System.Drawing.Size(63, 63)
         Me.btnCH017.TabIndex = 52
@@ -126,7 +126,7 @@ Partial Class CheckOut
         Me.btnCH011.FlatAppearance.BorderSize = 3
         Me.btnCH011.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH011.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH011.Location = New System.Drawing.Point(28, 171)
+        Me.btnCH011.Location = New System.Drawing.Point(33, 158)
         Me.btnCH011.Name = "btnCH011"
         Me.btnCH011.Size = New System.Drawing.Size(63, 63)
         Me.btnCH011.TabIndex = 51
@@ -141,7 +141,7 @@ Partial Class CheckOut
         Me.btnCH018.FlatAppearance.BorderSize = 3
         Me.btnCH018.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH018.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH018.Location = New System.Drawing.Point(717, 171)
+        Me.btnCH018.Location = New System.Drawing.Point(722, 158)
         Me.btnCH018.Name = "btnCH018"
         Me.btnCH018.Size = New System.Drawing.Size(63, 63)
         Me.btnCH018.TabIndex = 50
@@ -156,7 +156,7 @@ Partial Class CheckOut
         Me.btnCH012.FlatAppearance.BorderSize = 3
         Me.btnCH012.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH012.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH012.Location = New System.Drawing.Point(117, 171)
+        Me.btnCH012.Location = New System.Drawing.Point(122, 158)
         Me.btnCH012.Name = "btnCH012"
         Me.btnCH012.Size = New System.Drawing.Size(63, 63)
         Me.btnCH012.TabIndex = 49
@@ -171,7 +171,7 @@ Partial Class CheckOut
         Me.btnCH019.FlatAppearance.BorderSize = 3
         Me.btnCH019.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH019.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH019.Location = New System.Drawing.Point(814, 171)
+        Me.btnCH019.Location = New System.Drawing.Point(819, 158)
         Me.btnCH019.Name = "btnCH019"
         Me.btnCH019.Size = New System.Drawing.Size(63, 63)
         Me.btnCH019.TabIndex = 48
@@ -186,7 +186,7 @@ Partial Class CheckOut
         Me.btnCH016.FlatAppearance.BorderSize = 3
         Me.btnCH016.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH016.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH016.Location = New System.Drawing.Point(511, 171)
+        Me.btnCH016.Location = New System.Drawing.Point(516, 158)
         Me.btnCH016.Name = "btnCH016"
         Me.btnCH016.Size = New System.Drawing.Size(63, 63)
         Me.btnCH016.TabIndex = 47
@@ -201,7 +201,7 @@ Partial Class CheckOut
         Me.btnCH015.FlatAppearance.BorderSize = 3
         Me.btnCH015.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH015.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH015.Location = New System.Drawing.Point(409, 171)
+        Me.btnCH015.Location = New System.Drawing.Point(414, 158)
         Me.btnCH015.Name = "btnCH015"
         Me.btnCH015.Size = New System.Drawing.Size(63, 63)
         Me.btnCH015.TabIndex = 46
@@ -216,7 +216,7 @@ Partial Class CheckOut
         Me.btnCH014.FlatAppearance.BorderSize = 3
         Me.btnCH014.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH014.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH014.Location = New System.Drawing.Point(313, 171)
+        Me.btnCH014.Location = New System.Drawing.Point(318, 158)
         Me.btnCH014.Name = "btnCH014"
         Me.btnCH014.Size = New System.Drawing.Size(63, 63)
         Me.btnCH014.TabIndex = 45
@@ -231,7 +231,7 @@ Partial Class CheckOut
         Me.btnCH013.FlatAppearance.BorderSize = 3
         Me.btnCH013.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH013.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH013.Location = New System.Drawing.Point(215, 171)
+        Me.btnCH013.Location = New System.Drawing.Point(220, 158)
         Me.btnCH013.Name = "btnCH013"
         Me.btnCH013.Size = New System.Drawing.Size(63, 63)
         Me.btnCH013.TabIndex = 44
@@ -241,7 +241,7 @@ Partial Class CheckOut
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(79, 205)
+        Me.Label2.Location = New System.Drawing.Point(84, 192)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(111, 20)
         Me.Label2.TabIndex = 7
@@ -250,7 +250,7 @@ Partial Class CheckOut
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(79, 164)
+        Me.Label1.Location = New System.Drawing.Point(84, 151)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(115, 20)
         Me.Label1.TabIndex = 5
@@ -259,7 +259,7 @@ Partial Class CheckOut
         'txtGuestName
         '
         Me.txtGuestName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtGuestName.Location = New System.Drawing.Point(259, 116)
+        Me.txtGuestName.Location = New System.Drawing.Point(264, 103)
         Me.txtGuestName.Name = "txtGuestName"
         Me.txtGuestName.Size = New System.Drawing.Size(256, 26)
         Me.txtGuestName.TabIndex = 9
@@ -270,7 +270,7 @@ Partial Class CheckOut
         Me.btnCH010.FlatAppearance.BorderSize = 3
         Me.btnCH010.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH010.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH010.Location = New System.Drawing.Point(917, 55)
+        Me.btnCH010.Location = New System.Drawing.Point(922, 42)
         Me.btnCH010.Name = "btnCH010"
         Me.btnCH010.Size = New System.Drawing.Size(63, 63)
         Me.btnCH010.TabIndex = 43
@@ -283,7 +283,7 @@ Partial Class CheckOut
         Me.btnCH007.FlatAppearance.BorderSize = 3
         Me.btnCH007.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH007.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH007.Location = New System.Drawing.Point(613, 55)
+        Me.btnCH007.Location = New System.Drawing.Point(618, 42)
         Me.btnCH007.Name = "btnCH007"
         Me.btnCH007.Size = New System.Drawing.Size(63, 63)
         Me.btnCH007.TabIndex = 42
@@ -296,7 +296,7 @@ Partial Class CheckOut
         Me.btnCH001.FlatAppearance.BorderSize = 3
         Me.btnCH001.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH001.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH001.Location = New System.Drawing.Point(28, 55)
+        Me.btnCH001.Location = New System.Drawing.Point(33, 42)
         Me.btnCH001.Name = "btnCH001"
         Me.btnCH001.Size = New System.Drawing.Size(63, 63)
         Me.btnCH001.TabIndex = 41
@@ -309,7 +309,7 @@ Partial Class CheckOut
         Me.btnCH008.FlatAppearance.BorderSize = 3
         Me.btnCH008.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH008.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH008.Location = New System.Drawing.Point(717, 55)
+        Me.btnCH008.Location = New System.Drawing.Point(722, 42)
         Me.btnCH008.Name = "btnCH008"
         Me.btnCH008.Size = New System.Drawing.Size(63, 63)
         Me.btnCH008.TabIndex = 40
@@ -322,7 +322,7 @@ Partial Class CheckOut
         Me.btnCH009.FlatAppearance.BorderSize = 3
         Me.btnCH009.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH009.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH009.Location = New System.Drawing.Point(814, 55)
+        Me.btnCH009.Location = New System.Drawing.Point(819, 42)
         Me.btnCH009.Name = "btnCH009"
         Me.btnCH009.Size = New System.Drawing.Size(63, 63)
         Me.btnCH009.TabIndex = 38
@@ -332,7 +332,7 @@ Partial Class CheckOut
         'txtGuestMobile
         '
         Me.txtGuestMobile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtGuestMobile.Location = New System.Drawing.Point(259, 159)
+        Me.txtGuestMobile.Location = New System.Drawing.Point(264, 146)
         Me.txtGuestMobile.Name = "txtGuestMobile"
         Me.txtGuestMobile.Size = New System.Drawing.Size(256, 26)
         Me.txtGuestMobile.TabIndex = 8
@@ -340,7 +340,7 @@ Partial Class CheckOut
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(794, 178)
+        Me.Label6.Location = New System.Drawing.Point(799, 165)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(192, 20)
         Me.Label6.TabIndex = 71
@@ -349,7 +349,7 @@ Partial Class CheckOut
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(794, 141)
+        Me.Label5.Location = New System.Drawing.Point(799, 128)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(112, 20)
         Me.Label5.TabIndex = 70
@@ -361,7 +361,7 @@ Partial Class CheckOut
         Me.btnCH002.FlatAppearance.BorderSize = 3
         Me.btnCH002.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH002.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH002.Location = New System.Drawing.Point(117, 55)
+        Me.btnCH002.Location = New System.Drawing.Point(122, 42)
         Me.btnCH002.Name = "btnCH002"
         Me.btnCH002.Size = New System.Drawing.Size(63, 63)
         Me.btnCH002.TabIndex = 39
@@ -376,7 +376,7 @@ Partial Class CheckOut
         Me.lblCheckout.AutoSize = True
         Me.lblCheckout.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCheckout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.lblCheckout.Location = New System.Drawing.Point(505, 15)
+        Me.lblCheckout.Location = New System.Drawing.Point(510, 2)
         Me.lblCheckout.Name = "lblCheckout"
         Me.lblCheckout.Size = New System.Drawing.Size(323, 71)
         Me.lblCheckout.TabIndex = 73
@@ -389,7 +389,7 @@ Partial Class CheckOut
         Me.btnCH006.FlatAppearance.BorderSize = 3
         Me.btnCH006.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH006.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH006.Location = New System.Drawing.Point(511, 55)
+        Me.btnCH006.Location = New System.Drawing.Point(516, 42)
         Me.btnCH006.Name = "btnCH006"
         Me.btnCH006.Size = New System.Drawing.Size(63, 63)
         Me.btnCH006.TabIndex = 37
@@ -401,7 +401,7 @@ Partial Class CheckOut
         Me.cboGuestID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cboGuestID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboGuestID.FormattingEnabled = True
-        Me.cboGuestID.Location = New System.Drawing.Point(259, 68)
+        Me.cboGuestID.Location = New System.Drawing.Point(264, 55)
         Me.cboGuestID.Name = "cboGuestID"
         Me.cboGuestID.Size = New System.Drawing.Size(258, 28)
         Me.cboGuestID.TabIndex = 11
@@ -416,7 +416,7 @@ Partial Class CheckOut
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.lblGuestName)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(131, 88)
+        Me.GroupBox1.Location = New System.Drawing.Point(136, 75)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(614, 272)
         Me.GroupBox1.TabIndex = 67
@@ -426,7 +426,7 @@ Partial Class CheckOut
         'txtGuestEmail
         '
         Me.txtGuestEmail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtGuestEmail.Location = New System.Drawing.Point(259, 204)
+        Me.txtGuestEmail.Location = New System.Drawing.Point(264, 191)
         Me.txtGuestEmail.Name = "txtGuestEmail"
         Me.txtGuestEmail.Size = New System.Drawing.Size(256, 26)
         Me.txtGuestEmail.TabIndex = 10
@@ -437,7 +437,7 @@ Partial Class CheckOut
         Me.btnCH005.FlatAppearance.BorderSize = 3
         Me.btnCH005.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH005.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH005.Location = New System.Drawing.Point(409, 55)
+        Me.btnCH005.Location = New System.Drawing.Point(414, 42)
         Me.btnCH005.Name = "btnCH005"
         Me.btnCH005.Size = New System.Drawing.Size(63, 63)
         Me.btnCH005.TabIndex = 36
@@ -450,7 +450,7 @@ Partial Class CheckOut
         Me.btnCH004.FlatAppearance.BorderSize = 3
         Me.btnCH004.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH004.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH004.Location = New System.Drawing.Point(313, 55)
+        Me.btnCH004.Location = New System.Drawing.Point(318, 42)
         Me.btnCH004.Name = "btnCH004"
         Me.btnCH004.Size = New System.Drawing.Size(63, 63)
         Me.btnCH004.TabIndex = 35
@@ -463,7 +463,7 @@ Partial Class CheckOut
         Me.btnCH003.FlatAppearance.BorderSize = 3
         Me.btnCH003.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH003.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCH003.Location = New System.Drawing.Point(215, 55)
+        Me.btnCH003.Location = New System.Drawing.Point(220, 42)
         Me.btnCH003.Name = "btnCH003"
         Me.btnCH003.Size = New System.Drawing.Size(63, 63)
         Me.btnCH003.TabIndex = 34
@@ -473,14 +473,14 @@ Partial Class CheckOut
         'lblTest
         '
         Me.lblTest.AutoSize = True
-        Me.lblTest.Location = New System.Drawing.Point(457, 55)
+        Me.lblTest.Location = New System.Drawing.Point(462, 42)
         Me.lblTest.Name = "lblTest"
         Me.lblTest.Size = New System.Drawing.Size(0, 20)
         Me.lblTest.TabIndex = 33
         '
         'btncheckout
         '
-        Me.btncheckout.Location = New System.Drawing.Point(611, 658)
+        Me.btncheckout.Location = New System.Drawing.Point(616, 645)
         Me.btncheckout.Name = "btncheckout"
         Me.btncheckout.Size = New System.Drawing.Size(153, 48)
         Me.btncheckout.TabIndex = 72
@@ -510,7 +510,7 @@ Partial Class CheckOut
         Me.GroupBox2.Controls.Add(Me.btnCH004)
         Me.GroupBox2.Controls.Add(Me.btnCH003)
         Me.GroupBox2.Controls.Add(Me.lblTest)
-        Me.GroupBox2.Location = New System.Drawing.Point(131, 388)
+        Me.GroupBox2.Location = New System.Drawing.Point(136, 375)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(1023, 255)
         Me.GroupBox2.TabIndex = 66
@@ -520,7 +520,7 @@ Partial Class CheckOut
         'txtCheckIn
         '
         Me.txtCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtCheckIn.Location = New System.Drawing.Point(1005, 135)
+        Me.txtCheckIn.Location = New System.Drawing.Point(1010, 122)
         Me.txtCheckIn.Name = "txtCheckIn"
         Me.txtCheckIn.Size = New System.Drawing.Size(106, 26)
         Me.txtCheckIn.TabIndex = 76
@@ -528,7 +528,7 @@ Partial Class CheckOut
         'txtCheckOut
         '
         Me.txtCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtCheckOut.Location = New System.Drawing.Point(1005, 172)
+        Me.txtCheckOut.Location = New System.Drawing.Point(1010, 159)
         Me.txtCheckOut.Name = "txtCheckOut"
         Me.txtCheckOut.Size = New System.Drawing.Size(106, 26)
         Me.txtCheckOut.TabIndex = 77
@@ -536,7 +536,7 @@ Partial Class CheckOut
         'txtActualCheckOut
         '
         Me.txtActualCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtActualCheckOut.Location = New System.Drawing.Point(1005, 210)
+        Me.txtActualCheckOut.Location = New System.Drawing.Point(1010, 197)
         Me.txtActualCheckOut.Name = "txtActualCheckOut"
         Me.txtActualCheckOut.Size = New System.Drawing.Size(106, 26)
         Me.txtActualCheckOut.TabIndex = 79
@@ -544,7 +544,7 @@ Partial Class CheckOut
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(794, 216)
+        Me.Label7.Location = New System.Drawing.Point(799, 203)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(173, 20)
         Me.Label7.TabIndex = 78
@@ -553,7 +553,7 @@ Partial Class CheckOut
         'txtOverdue
         '
         Me.txtOverdue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtOverdue.Location = New System.Drawing.Point(1005, 246)
+        Me.txtOverdue.Location = New System.Drawing.Point(1010, 233)
         Me.txtOverdue.Name = "txtOverdue"
         Me.txtOverdue.Size = New System.Drawing.Size(106, 26)
         Me.txtOverdue.TabIndex = 81
@@ -561,7 +561,7 @@ Partial Class CheckOut
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(794, 252)
+        Me.Label9.Location = New System.Drawing.Point(799, 239)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(109, 20)
         Me.Label9.TabIndex = 80
@@ -570,7 +570,7 @@ Partial Class CheckOut
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(794, 286)
+        Me.Label15.Location = New System.Drawing.Point(799, 273)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(108, 20)
         Me.Label15.TabIndex = 80
@@ -579,7 +579,7 @@ Partial Class CheckOut
         'lblNightsStay
         '
         Me.lblNightsStay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblNightsStay.Location = New System.Drawing.Point(1005, 280)
+        Me.lblNightsStay.Location = New System.Drawing.Point(1010, 267)
         Me.lblNightsStay.Name = "lblNightsStay"
         Me.lblNightsStay.Size = New System.Drawing.Size(106, 26)
         Me.lblNightsStay.TabIndex = 81
@@ -589,7 +589,7 @@ Partial Class CheckOut
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1322, 749)
+        Me.ClientSize = New System.Drawing.Size(1371, 709)
         Me.Controls.Add(Me.lblNightsStay)
         Me.Controls.Add(Me.txtOverdue)
         Me.Controls.Add(Me.Label15)
