@@ -34,31 +34,30 @@ Partial Class CheckOutCart
         Me.lblCheckIn = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(99, 63)
+        Me.Label6.Location = New System.Drawing.Point(66, 41)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(99, 20)
+        Me.Label6.Size = New System.Drawing.Size(66, 13)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Guest Name"
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.lblTAmount)
-        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.lblDeposit)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(81, 502)
+        Me.GroupBox1.Location = New System.Drawing.Point(102, 326)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(837, 78)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(486, 40)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Calculated Charges"
@@ -66,36 +65,40 @@ Partial Class CheckOutCart
         'lblTAmount
         '
         Me.lblTAmount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTAmount.Location = New System.Drawing.Point(383, 27)
+        Me.lblTAmount.Location = New System.Drawing.Point(319, 14)
+        Me.lblTAmount.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTAmount.Name = "lblTAmount"
-        Me.lblTAmount.Size = New System.Drawing.Size(140, 29)
+        Me.lblTAmount.Size = New System.Drawing.Size(93, 19)
         Me.lblTAmount.TabIndex = 3
         Me.lblTAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(274, 31)
+        Me.Label4.Location = New System.Drawing.Point(246, 17)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(104, 20)
+        Me.Label4.Size = New System.Drawing.Size(70, 13)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Total Amount"
         '
         'lblDeposit
         '
         Me.lblDeposit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblDeposit.Location = New System.Drawing.Point(105, 27)
+        Me.lblDeposit.Location = New System.Drawing.Point(126, 14)
+        Me.lblDeposit.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDeposit.Name = "lblDeposit"
-        Me.lblDeposit.Size = New System.Drawing.Size(124, 29)
+        Me.lblDeposit.Size = New System.Drawing.Size(83, 19)
         Me.lblDeposit.TabIndex = 1
         Me.lblDeposit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(36, 31)
+        Me.Label1.Location = New System.Drawing.Point(80, 17)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 20)
+        Me.Label1.Size = New System.Drawing.Size(43, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Deposit"
         '
@@ -103,9 +106,10 @@ Partial Class CheckOutCart
         '
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(408, 586)
+        Me.Button1.Location = New System.Drawing.Point(272, 381)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(171, 65)
+        Me.Button1.Size = New System.Drawing.Size(114, 42)
         Me.Button1.TabIndex = 10
         Me.Button1.Text = "Confirm Checkout"
         Me.Button1.UseVisualStyleBackColor = True
@@ -115,62 +119,48 @@ Partial Class CheckOutCart
         Me.pnlOthers.AutoScroll = True
         Me.pnlOthers.BackgroundImage = CType(resources.GetObject("pnlOthers.BackgroundImage"), System.Drawing.Image)
         Me.pnlOthers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pnlOthers.Location = New System.Drawing.Point(63, 103)
+        Me.pnlOthers.Location = New System.Drawing.Point(42, 67)
+        Me.pnlOthers.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pnlOthers.Name = "pnlOthers"
-        Me.pnlOthers.Size = New System.Drawing.Size(864, 382)
+        Me.pnlOthers.Size = New System.Drawing.Size(576, 248)
         Me.pnlOthers.TabIndex = 9
         '
         'lblCheckIn
         '
         Me.lblCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblCheckIn.Location = New System.Drawing.Point(615, 57)
+        Me.lblCheckIn.Location = New System.Drawing.Point(410, 37)
+        Me.lblCheckIn.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCheckIn.Name = "lblCheckIn"
-        Me.lblCheckIn.Size = New System.Drawing.Size(303, 29)
+        Me.lblCheckIn.Size = New System.Drawing.Size(202, 19)
         Me.lblCheckIn.TabIndex = 14
         Me.lblCheckIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(486, 63)
+        Me.Label8.Location = New System.Drawing.Point(324, 41)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(114, 20)
+        Me.Label8.Size = New System.Drawing.Size(77, 13)
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "Booking Dates"
         '
         'lblName
         '
         Me.lblName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblName.Location = New System.Drawing.Point(201, 57)
+        Me.lblName.Location = New System.Drawing.Point(134, 37)
+        Me.lblName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(240, 29)
+        Me.lblName.Size = New System.Drawing.Size(160, 19)
         Me.lblName.TabIndex = 12
         Me.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(590, 31)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 20)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Balance"
-        '
-        'Label3
-        '
-        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label3.Location = New System.Drawing.Point(663, 27)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(140, 29)
-        Me.Label3.TabIndex = 3
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'CheckOutCart
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(1002, 668)
+        Me.ClientSize = New System.Drawing.Size(668, 434)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)
@@ -179,6 +169,7 @@ Partial Class CheckOutCart
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.lblName)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "CheckOutCart"
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
@@ -199,6 +190,4 @@ Partial Class CheckOutCart
     Friend WithEvents lblCheckIn As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents lblName As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
 End Class
