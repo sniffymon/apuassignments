@@ -65,7 +65,7 @@ Partial Class GuestInfoEntry
         Me.txtGuestEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestEmail.Name = "txtGuestEmail"
         Me.txtGuestEmail.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestEmail.Size = New System.Drawing.Size(201, 28)
+        Me.txtGuestEmail.Size = New System.Drawing.Size(201, 21)
         Me.txtGuestEmail.TabIndex = 8
         '
         'Label2
@@ -75,7 +75,7 @@ Partial Class GuestInfoEntry
         Me.Label2.Location = New System.Drawing.Point(198, 147)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(112, 21)
+        Me.Label2.Size = New System.Drawing.Size(79, 13)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Email Address"
         '
@@ -83,10 +83,10 @@ Partial Class GuestInfoEntry
         '
         Me.txtGuestMobile.Location = New System.Drawing.Point(361, 111)
         Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtGuestMobile.Mask = "999 0000000"
+        Me.txtGuestMobile.Mask = "+9999-00000000"
         Me.txtGuestMobile.Name = "txtGuestMobile"
         Me.txtGuestMobile.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestMobile.Size = New System.Drawing.Size(201, 28)
+        Me.txtGuestMobile.Size = New System.Drawing.Size(201, 21)
         Me.txtGuestMobile.TabIndex = 6
         Me.txtGuestMobile.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
@@ -97,7 +97,7 @@ Partial Class GuestInfoEntry
         Me.Label3.Location = New System.Drawing.Point(198, 112)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(126, 21)
+        Me.Label3.Size = New System.Drawing.Size(87, 13)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Mobile Number"
         '
@@ -107,7 +107,7 @@ Partial Class GuestInfoEntry
         Me.txtGuestName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestName.Name = "txtGuestName"
         Me.txtGuestName.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestName.Size = New System.Drawing.Size(201, 28)
+        Me.txtGuestName.Size = New System.Drawing.Size(201, 21)
         Me.txtGuestName.TabIndex = 4
         '
         'lblGuestName
@@ -117,7 +117,7 @@ Partial Class GuestInfoEntry
         Me.lblGuestName.Location = New System.Drawing.Point(198, 76)
         Me.lblGuestName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGuestName.Name = "lblGuestName"
-        Me.lblGuestName.Size = New System.Drawing.Size(53, 21)
+        Me.lblGuestName.Size = New System.Drawing.Size(37, 13)
         Me.lblGuestName.TabIndex = 3
         Me.lblGuestName.Text = "Name"
         '
@@ -128,7 +128,7 @@ Partial Class GuestInfoEntry
         Me.txtGuestID.Mask = "000000009"
         Me.txtGuestID.Name = "txtGuestID"
         Me.txtGuestID.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestID.Size = New System.Drawing.Size(201, 28)
+        Me.txtGuestID.Size = New System.Drawing.Size(201, 21)
         Me.txtGuestID.TabIndex = 2
         '
         'Label1
@@ -138,7 +138,7 @@ Partial Class GuestInfoEntry
         Me.Label1.Location = New System.Drawing.Point(198, 38)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(159, 21)
+        Me.Label1.Size = New System.Drawing.Size(110, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Passport/IC Number"
         '
@@ -163,14 +163,14 @@ Partial Class GuestInfoEntry
         Me.Label4.Location = New System.Drawing.Point(269, 20)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(452, 71)
+        Me.Label4.Size = New System.Drawing.Size(301, 47)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "REGISTER GUEST"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GuestInfoEntry
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(867, 462)

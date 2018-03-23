@@ -22,7 +22,6 @@ Partial Class GuestInfoEdit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GuestInfoEdit))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtGuestMobile = New System.Windows.Forms.MaskedTextBox()
         Me.txtGuestEmail = New System.Windows.Forms.TextBox()
@@ -53,9 +52,9 @@ Partial Class GuestInfoEdit
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(11, 65)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(900, 410)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
@@ -66,8 +65,8 @@ Partial Class GuestInfoEdit
         Me.txtGuestMobile.AllowPromptAsInput = False
         Me.txtGuestMobile.HidePromptOnLeave = True
         Me.txtGuestMobile.Location = New System.Drawing.Point(427, 181)
-        Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtGuestMobile.Mask = resources.GetString("txtGuestMobile.Mask")
+        Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtGuestMobile.Mask = "+9999-00000000"
         Me.txtGuestMobile.Name = "txtGuestMobile"
         Me.txtGuestMobile.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txtGuestMobile.Size = New System.Drawing.Size(173, 21)
@@ -77,7 +76,7 @@ Partial Class GuestInfoEdit
         'txtGuestEmail
         '
         Me.txtGuestEmail.Location = New System.Drawing.Point(427, 237)
-        Me.txtGuestEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtGuestEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestEmail.Name = "txtGuestEmail"
         Me.txtGuestEmail.Size = New System.Drawing.Size(173, 21)
         Me.txtGuestEmail.TabIndex = 14
@@ -88,7 +87,7 @@ Partial Class GuestInfoEdit
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
         Me.Button1.Location = New System.Drawing.Point(384, 318)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(104, 38)
         Me.Button1.TabIndex = 2
@@ -98,7 +97,7 @@ Partial Class GuestInfoEdit
         'txtGuestName
         '
         Me.txtGuestName.Location = New System.Drawing.Point(427, 127)
-        Me.txtGuestName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtGuestName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestName.Name = "txtGuestName"
         Me.txtGuestName.Size = New System.Drawing.Size(173, 21)
         Me.txtGuestName.TabIndex = 12
@@ -107,7 +106,7 @@ Partial Class GuestInfoEdit
         '
         Me.cboGuestID.FormattingEnabled = True
         Me.cboGuestID.Location = New System.Drawing.Point(427, 71)
-        Me.cboGuestID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboGuestID.Margin = New System.Windows.Forms.Padding(2)
         Me.cboGuestID.Name = "cboGuestID"
         Me.cboGuestID.Size = New System.Drawing.Size(173, 20)
         Me.cboGuestID.TabIndex = 11
@@ -178,7 +177,7 @@ Partial Class GuestInfoEdit
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "GuestInfoEdit"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "GuestInfoEdit"

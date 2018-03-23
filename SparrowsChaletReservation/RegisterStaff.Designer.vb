@@ -23,11 +23,12 @@ Partial Class RegisterStaff
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblUsrName = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.txtCfmPwd = New System.Windows.Forms.MaskedTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPwd = New System.Windows.Forms.MaskedTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtUsrName = New System.Windows.Forms.MaskedTextBox()
         Me.lblGuestName = New System.Windows.Forms.Label()
         Me.txtFullName = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -41,11 +42,12 @@ Partial Class RegisterStaff
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.lblUsrName)
+        Me.GroupBox1.Controls.Add(Me.CheckBox1)
         Me.GroupBox1.Controls.Add(Me.txtCfmPwd)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtPwd)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.txtUsrName)
         Me.GroupBox1.Controls.Add(Me.lblGuestName)
         Me.GroupBox1.Controls.Add(Me.txtFullName)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -59,15 +61,35 @@ Partial Class RegisterStaff
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Staff Information Enter"
         '
+        'lblUsrName
+        '
+        Me.lblUsrName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblUsrName.Location = New System.Drawing.Point(361, 68)
+        Me.lblUsrName.Name = "lblUsrName"
+        Me.lblUsrName.Size = New System.Drawing.Size(201, 21)
+        Me.lblUsrName.TabIndex = 11
+        Me.lblUsrName.Text = "*This field is auto generated*"
+        Me.lblUsrName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(581, 106)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(107, 17)
+        Me.CheckBox1.TabIndex = 10
+        Me.CheckBox1.Text = "Show Password"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'txtCfmPwd
         '
         Me.txtCfmPwd.Location = New System.Drawing.Point(361, 144)
         Me.txtCfmPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCfmPwd.Name = "txtCfmPwd"
-        Me.txtCfmPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtCfmPwd.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txtCfmPwd.Size = New System.Drawing.Size(201, 21)
         Me.txtCfmPwd.TabIndex = 8
+        Me.txtCfmPwd.UseSystemPasswordChar = True
         '
         'Label2
         '
@@ -85,11 +107,11 @@ Partial Class RegisterStaff
         Me.txtPwd.Location = New System.Drawing.Point(361, 104)
         Me.txtPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPwd.Name = "txtPwd"
-        Me.txtPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPwd.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txtPwd.Size = New System.Drawing.Size(201, 21)
         Me.txtPwd.TabIndex = 6
         Me.txtPwd.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        Me.txtPwd.UseSystemPasswordChar = True
         '
         'Label3
         '
@@ -101,17 +123,6 @@ Partial Class RegisterStaff
         Me.Label3.Size = New System.Drawing.Size(55, 13)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Password"
-        '
-        'txtUsrName
-        '
-        Me.txtUsrName.Location = New System.Drawing.Point(361, 68)
-        Me.txtUsrName.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtUsrName.Name = "txtUsrName"
-        Me.txtUsrName.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtUsrName.ReadOnly = True
-        Me.txtUsrName.Size = New System.Drawing.Size(201, 21)
-        Me.txtUsrName.TabIndex = 4
-        Me.txtUsrName.Text = "*This field is auto generated*"
         '
         'lblGuestName
         '
@@ -198,10 +209,11 @@ Partial Class RegisterStaff
     Friend WithEvents Label2 As Label
     Friend WithEvents txtPwd As MaskedTextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtUsrName As MaskedTextBox
     Friend WithEvents lblGuestName As Label
     Friend WithEvents txtFullName As MaskedTextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents lblUsrName As Label
 End Class
