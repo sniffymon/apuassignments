@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class CheckOutCart
     Dim conn As SqlConnection = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-    Dim cmd As SqlCommand
+    Dim cmd, cmdupdate As SqlCommand
     Dim sql As String
     Dim dr As SqlDataReader
     Dim spadd As Boolean = False
@@ -11,6 +11,29 @@ Public Class CheckOutCart
     Public ChaletTotal, ChaletDeposit, dayduration As Double
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         ReceiptForm.ShowDialog()
+
+        'change chalet status
+        conn.Open()
+        Dim n As Integer = 0
+        For x = 1 To i
+            'Dim n as integer =1
+            'for x=1 to i
+            sql = "UPDATE Chalet
+               SET ChaletStatusOccupied = 'False'
+			   FROM Reservation
+			   INNER JOIN
+			   Chalet
+               ON Reservation.ChaletNumber_FK = Chalet.ChaletNumber 
+               WHERE ChaletNumber_FK = @chaletnumber;"
+
+            cmd = New SqlCommand(sql, conn)
+            cmd.Parameters.AddWithValue("@chaletnumber", CheckOut.checkedchalet(x - 1))
+            'cmd.Parameters.AddWithValue("@chaletnumber", CheckOut.checkedchalet(x + 1))
+            cmd.ExecuteNonQuery()
+            n += 1
+            'n-=1
+        Next
+        conn.Close()
     End Sub
     Private Sub CheckOutCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 

@@ -42,6 +42,7 @@ Public Class CheckOut
         'Creating 1st Instance of SQL Command
         cmd = New SqlCommand(sql, conn)
         conn.Open()
+
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         cmd.Parameters.AddWithValue("@guestid", cboGuestID.Text)
 
@@ -143,13 +144,6 @@ Public Class CheckOut
     End Sub
 
     Private Sub btncheckout_Click(sender As Object, e As EventArgs) Handles btncheckout.Click
-        conn.Open()
-        sql = "UPDATE Chalet SET Status='False'INNER JOIN GuestDetail on GuestDetail.GuestNo = Reservation.GuestNo_FK 
-WHERE Reservation.GuestNo_FK=@guestid "
-        cmdUpdate = New SqlCommand(sql, conn)
-        cmd.Parameters.AddWithValue("@guestid", guestnostorage)
-        conn.Close()
-
         'Info box for overdue charge
         If txtOverdue.Text = 0 Then
             CheckOutCart.ShowDialog()
