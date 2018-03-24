@@ -34,11 +34,14 @@ Public Class CheckIn
                 End With
             End If
         Next
+        addedchalets = 0
+        standardchalets = 0
+        supremechalets = 0
+
         conn.Open()
         Dim chaletds As New DataSet
-        sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
-               WHERE ChaletStatusOccupied='True' AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
-            cmd = New SqlCommand(sql, conn)
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE CheckIn_Date <= @date AND CheckOut_Date >= @date"
+        cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@date", dtpCheckIn.Text)
         Dim adptr As New SqlDataAdapter(cmd)
             adptr.Fill(chaletds, "BookedCH")
@@ -69,8 +72,7 @@ Public Class CheckIn
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
-        sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
-               WHERE ChaletStatusOccupied='True' AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE CheckIn_Date <= @date AND CheckOut_Date >= @date"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
