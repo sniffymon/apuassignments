@@ -125,7 +125,7 @@ Partial Class GuestInfoEntry
         '
         Me.txtGuestID.Location = New System.Drawing.Point(361, 35)
         Me.txtGuestID.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtGuestID.Mask = "000000009"
+        Me.txtGuestID.Mask = "000000000009"
         Me.txtGuestID.Name = "txtGuestID"
         Me.txtGuestID.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txtGuestID.Size = New System.Drawing.Size(201, 21)

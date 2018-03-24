@@ -87,6 +87,7 @@ Public Class CartCheckIn
         conn.Close()
         If recordcheck = 1 Then
             MessageBox.Show("Chalet/Chalets Successfully Booked", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            CheckIn.Controls.Clear()
             Me.Close()
         Else
             MessageBox.Show("There was an unexpected error. Please check your booking details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
