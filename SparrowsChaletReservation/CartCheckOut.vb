@@ -6,33 +6,31 @@ Public Class CheckOutCart
     Dim dr As SqlDataReader
     Dim spadd As Boolean = False
     Dim stadd As Boolean = False
-    Dim lastButtonPos, i, recordcheck As Integer
-    Dim addedchalets, standardchalets, supremechalets As Integer
+    Dim lastButtonPos, i, recordcheck, addedchalets, standardchalets, supremechalets As Integer
     Public ChaletTotal, ChaletDeposit, dayduration As Double
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ReceiptForm.ShowDialog()
-
         'change chalet status
         conn.Open()
         Dim n As Integer = 0
         For x = 1 To i
             'Dim n as integer =1
             'for x=1 to i
-            sql = "UPDATE Chalet
-               SET ChaletStatusOccupied = 'False'
-			   FROM Reservation
-			   INNER JOIN
-			   Chalet
-               ON Reservation.ChaletNumber_FK = Chalet.ChaletNumber 
+            sql = "UPDATE Reservation
+               SET Reservation_Status = 'False'
                WHERE ChaletNumber_FK = @chaletnumber;"
 
             cmd = New SqlCommand(sql, conn)
-            cmd.Parameters.AddWithValue("@chaletnumber", CheckOut.checkedchalet(x - 1))
+            cmd.Parameters.AddWithValue("@chaletnumber", CheckOut.checkedchalet(x - 1).Remove(0, 3))
             'cmd.Parameters.AddWithValue("@chaletnumber", CheckOut.checkedchalet(x + 1))
             cmd.ExecuteNonQuery()
             n += 1
             'n-=1
         Next
+
+        CheckOut.checkedchalet.Clear()
+
+        MessageBox.Show("Please click on the print button to print the receipt!", "Important", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ReceiptForm.ShowDialog()
         conn.Close()
     End Sub
     Private Sub CheckOutCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -44,19 +42,20 @@ Public Class CheckOutCart
 
         For Each Item In CheckOut.checkedchalet
             Dim NewSubPanel As New Button
-            NewSubPanel.Location = New Point(5, lastButtonPos)
-            NewSubPanel.Size = New Size(550, 100)
-            NewSubPanel.Text = "Chalet = " & CheckOut.checkedchalet(i)
-            NewSubPanel.TextAlign = ContentAlignment.MiddleLeft
-            NewSubPanel.Font = New Drawing.Font("Segoe UI Semibold", 13.875)
-            NewSubPanel.FlatStyle = FlatStyle.Flat
-            NewSubPanel.FlatAppearance.BorderColor = Color.Black
-            NewSubPanel.ForeColor = Color.Black
-            NewSubPanel.BackColor = Color.White
-            NewSubPanel.FlatAppearance.BorderSize = 1
-            NewSubPanel.FlatAppearance.MouseOverBackColor = Color.White
-            NewSubPanel.FlatAppearance.MouseDownBackColor = Color.White
-
+            With NewSubPanel
+                .Location = New Point(5, lastButtonPos)
+                .Size = New Size(550, 100)
+                .Text = "Chalet = " & CheckOut.checkedchalet(i).Remove(0, 3)
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 13.875)
+                .FlatStyle = FlatStyle.Flat
+                .FlatAppearance.BorderColor = Color.Black
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+                .FlatAppearance.BorderSize = 1
+                .FlatAppearance.MouseOverBackColor = Color.White
+                .FlatAppearance.MouseDownBackColor = Color.White
+            End With
             Dim newDurationofstay As New Label
             With newDurationofstay
                 .Location = New Point(300, lastButtonPos + 10)
@@ -173,17 +172,20 @@ Public Class CheckOutCart
                 .BackColor = Color.White
             End With
 
-            pnlOthers.Controls.Add(newTotalamount)
-            pnlOthers.Controls.Add(newlblTotalamount)
-            pnlOthers.Controls.Add(newlbloverstayamount)
-            pnlOthers.Controls.Add(newoverstayamount)
-            pnlOthers.Controls.Add(newlblroomamount)
-            pnlOthers.Controls.Add(newroomamount)
-            pnlOthers.Controls.Add(newDurationofOverstay)
-            pnlOthers.Controls.Add(newlblDurationOfOverStay)
-            pnlOthers.Controls.Add(newlblDurationOfStay)
-            pnlOthers.Controls.Add(newDurationofstay)
-            pnlOthers.Controls.Add(NewSubPanel)
+            With pnlOthers.Controls
+                .Add(newTotalamount)
+                .Add(newlblTotalamount)
+                .Add(newlbloverstayamount)
+                .Add(newoverstayamount)
+                .Add(newlblroomamount)
+                .Add(newroomamount)
+                .Add(newDurationofOverstay)
+                .Add(newlblDurationOfOverStay)
+                .Add(newlblDurationOfStay)
+                .Add(newDurationofstay)
+                .Add(NewSubPanel)
+            End With
+
             lastButtonPos = lastButtonPos + 110
             i = i + 1
         Next

@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class CheckIn
-    Dim conn As SqlConnection
+    Dim conn As New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
     Dim sql As String
@@ -24,8 +24,9 @@ Public Class CheckIn
     End Sub
 
     Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+
         For Each ctrl As Control In Me.GroupBox2.Controls
             If TypeOf ctrl Is Button Then
                 With ctrl
@@ -37,21 +38,23 @@ Public Class CheckIn
         addedchalets = 0
         standardchalets = 0
         supremechalets = 0
+        checkedchalet.Clear()
 
         conn.Open()
         Dim chaletds As New DataSet
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE CheckIn_Date <= @date AND CheckOut_Date >= @date"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @date AND CheckOut_Date >= @date) OR (CheckOut_Date <= @date AND Reservation_Status = 'True')"
         cmd = New SqlCommand(sql, conn)
-        cmd.Parameters.AddWithValue("@date", dtpCheckIn.Text)
+        cmd.Parameters.AddWithValue("@date", dtpCheckIn.Value.ToString("yyyy-MM-dd"))
         Dim adptr As New SqlDataAdapter(cmd)
-            adptr.Fill(chaletds, "BookedCH")
+        adptr.Fill(chaletds, "BookedCH")
 
-            Dim exdata As DataTable = chaletds.Tables("BookedCH")
-            Dim row As DataRow
+        Dim exdata As DataTable = chaletds.Tables("BookedCH")
+        Dim row As DataRow
 
-            For Each row In exdata.Rows
+        For Each row In exdata.Rows
             DirectCast(GroupBox2.Controls("btn" & row(0)), Button).BackColor = Color.Red
         Next
+        conn.Close()
     End Sub
 
     Private Sub btnCH011_Click(sender As Object, e As EventArgs) Handles btnCH011.Click, btnCH012.Click, btnCH013.Click, btnCH014.Click, btnCH015.Click, btnCH016.Click, btnCH017.Click, btnCH018.Click, btnCH019.Click, btnCH020.Click
@@ -68,11 +71,11 @@ Public Class CheckIn
         End If
     End Sub
     Private Sub RegisterChalet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        'conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE CheckIn_Date <= @date AND CheckOut_Date >= @date"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @date AND CheckOut_Date >= @date) OR (CheckOut_Date <= @date AND Reservation_Status = 'True')"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
@@ -114,7 +117,7 @@ Public Class CheckIn
             Exit Sub
         End If
 
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
 
@@ -136,6 +139,7 @@ Public Class CheckIn
             txtGuestMobile.Text = dr(1)
             txtGuestEmail.Text = dr(2)
         End If
+        conn.Close()
     End Sub
     Private Sub txtPax_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPax.KeyPress
         If Not Char.IsDigit(e.KeyChar) Then
@@ -176,7 +180,7 @@ Public Class CheckIn
         '' AVAILABILITY CHECK
         ''
         'n = 0
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+        ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
@@ -184,8 +188,8 @@ Public Class CheckIn
         For x = 1 To addedchalets
             sql = "SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber)"
             cmd = New SqlCommand(sql, conn)
-            cmd.Parameters.AddWithValue("@checkindate", dtpCheckIn.Text)
-            cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Text)
+            cmd.Parameters.AddWithValue("@checkindate", dtpCheckIn.Value.ToString("yyyy-MM-dd"))
+            cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Value.ToString("yyyy-MM-dd"))
             cmd.Parameters.AddWithValue("@chaletnumber", checkedchalet(n))
 
             dr = cmd.ExecuteReader
@@ -197,6 +201,7 @@ Public Class CheckIn
             dr.Close()
             n += 1
         Next
+        conn.Close()
         '
         ' PRICE CALCULATION
         '

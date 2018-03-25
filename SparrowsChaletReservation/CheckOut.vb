@@ -37,7 +37,7 @@ Public Class CheckOut
         'GUEST DETAIL SECTION START
         sql = "SELECT GuestNo,GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No,GuestDetail.Guest_Email, CONVERT(Varchar, CheckIn_Date) ,CONVERT(Varchar, CheckOut_Date)  
                FROM GuestDetail  Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
-                WHERE [Guest_ID_PassNum]=@guestid "
+                WHERE [Guest_ID_PassNum]=@guestid"
 
         'Creating 1st Instance of SQL Command
         cmd = New SqlCommand(sql, conn)
@@ -61,8 +61,8 @@ Public Class CheckOut
         dr.Close()
         conn.Close()
 
-        'chalet booked by guest
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND @currentdate >= Checkout_Date"
+        'DETECT CHALETS THAT ARE BOOKED
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND @currentdate >= Checkout_Date AND Reservation_Status='True'"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
@@ -79,8 +79,12 @@ Public Class CheckOut
                 ctrl.Visible = False
             End If
         Next
+
         Dim removedCH As String
-        If exdata.Rows.Count > 0 Then
+        If exdata.Rows.Count = 0 Then
+            MsgBox("There are no checkout details today!")
+            Exit Sub
+        ElseIf exdata.Rows.Count > 0 Then
             For Each row In exdata.Rows
                 removedCH = row(0).ToString.Remove(0, 2)
                 If removedCH > 10 Then
@@ -135,9 +139,7 @@ Public Class CheckOut
             supremeprice = (supremechalets * dayduration * 250)
             totalstandard = (overstandard + standardprice)
             totalsupreme = (oversupreme + supremeprice)
-            overalltotal = (totalstandard + totalsupreme)
-        Else
-            MsgBox("There are no checkout details today!")
+        overalltotal = (totalstandard + totalsupreme)
         End If
         conn.Close()
 
@@ -148,7 +150,7 @@ Public Class CheckOut
         If txtOverdue.Text = 0 Then
             CheckOutCart.ShowDialog()
         ElseIf txtOverdue.Text >= 1 Then
-            MessageBox.Show("You will be charged RM 250 for Supreme Room and RM350 for Standard Room each day if you Late CheckOut ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Reminder that client will be charged RM 250 for Supreme Room and RM350 for Standard Room each day due to overstay", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
             CheckOutCart.ShowDialog()
         End If
     End Sub

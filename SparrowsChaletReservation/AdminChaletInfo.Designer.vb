@@ -295,7 +295,7 @@ Partial Class AdminChaletInfo
         Me.btnLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnLeft.FlatAppearance.BorderSize = 0
         Me.btnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLeft.Location = New System.Drawing.Point(334, 14)
+        Me.btnLeft.Location = New System.Drawing.Point(296, 13)
         Me.btnLeft.Name = "btnLeft"
         Me.btnLeft.Size = New System.Drawing.Size(33, 27)
         Me.btnLeft.TabIndex = 59
@@ -308,7 +308,7 @@ Partial Class AdminChaletInfo
         Me.btnRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnRight.FlatAppearance.BorderSize = 0
         Me.btnRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRight.Location = New System.Drawing.Point(511, 14)
+        Me.btnRight.Location = New System.Drawing.Point(503, 12)
         Me.btnRight.Name = "btnRight"
         Me.btnRight.Size = New System.Drawing.Size(33, 28)
         Me.btnRight.TabIndex = 58
@@ -317,11 +317,10 @@ Partial Class AdminChaletInfo
         'dtpDateSpec
         '
         Me.dtpDateSpec.CustomFormat = "yyyy-MM-dd"
-        Me.dtpDateSpec.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpDateSpec.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpDateSpec.Location = New System.Drawing.Point(373, 14)
+        Me.dtpDateSpec.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDateSpec.Location = New System.Drawing.Point(335, 13)
         Me.dtpDateSpec.Name = "dtpDateSpec"
-        Me.dtpDateSpec.Size = New System.Drawing.Size(132, 29)
+        Me.dtpDateSpec.Size = New System.Drawing.Size(162, 25)
         Me.dtpDateSpec.TabIndex = 57
         '
         'lblTest

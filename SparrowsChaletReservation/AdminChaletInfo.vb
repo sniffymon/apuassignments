@@ -158,7 +158,7 @@ Public Class AdminChaletInfo
             sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
                WHERE ChaletStatusOccupied='True' AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
             cmd = New SqlCommand(sql, conn)
-            cmd.Parameters.AddWithValue("@date", dtpDateSpec.Text)
+            cmd.Parameters.AddWithValue("@date", dtpDateSpec.Value.ToString("yyyy-MM-dd"))
             Dim adptr As New SqlDataAdapter(cmd)
             adptr.Fill(chaletds, "BookedCH")
 

@@ -107,11 +107,11 @@ Partial Class CheckIn
         Me.GroupBox2.Controls.Add(Me.btnCH004)
         Me.GroupBox2.Controls.Add(Me.btnCH003)
         Me.GroupBox2.Controls.Add(Me.lblTest)
-        Me.GroupBox2.Location = New System.Drawing.Point(89, 263)
+        Me.GroupBox2.Location = New System.Drawing.Point(89, 267)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Size = New System.Drawing.Size(682, 166)
+        Me.GroupBox2.Size = New System.Drawing.Size(682, 162)
         Me.GroupBox2.TabIndex = 38
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Chalet Map"
@@ -525,7 +525,6 @@ Partial Class CheckIn
         'dtpCheckOut
         '
         Me.dtpCheckOut.CustomFormat = "yyyy-MM-dd"
-        Me.dtpCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dtpCheckOut.Location = New System.Drawing.Point(631, 194)
         Me.dtpCheckOut.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpCheckOut.Name = "dtpCheckOut"
@@ -535,7 +534,6 @@ Partial Class CheckIn
         'dtpCheckIn
         '
         Me.dtpCheckIn.CustomFormat = "yyyy-MM-dd"
-        Me.dtpCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dtpCheckIn.Location = New System.Drawing.Point(631, 153)
         Me.dtpCheckIn.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpCheckIn.Name = "dtpCheckIn"
