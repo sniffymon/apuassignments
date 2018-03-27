@@ -23,6 +23,7 @@ Public Class CheckIn
         End If
     End Sub
 
+
     Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged
         ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
@@ -142,8 +143,9 @@ Public Class CheckIn
         conn.Close()
     End Sub
     Private Sub txtPax_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPax.KeyPress
-        If Not Char.IsDigit(e.KeyChar) Then
-            e.Handled = True
+        If Not Char.IsDigit(e.KeyChar) Or e.KeyChar = ControlChars.Back Then
+            e.Handled = False
+
         End If
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click

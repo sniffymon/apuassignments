@@ -60,8 +60,8 @@ Public Class CartCheckIn
                WHERE NOT EXISTS (SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber))"
 
             cmd = New SqlCommand(sql, conn)
-            cmd.Parameters.AddWithValue("@checkindate", CheckIn.dtpCheckIn.Text)
-            cmd.Parameters.AddWithValue("@checkoutdate", CheckIn.dtpCheckOut.Text)
+            cmd.Parameters.AddWithValue("@checkindate", CheckIn.dtpCheckIn.Value.ToString("yyyy-MM-dd"))
+            cmd.Parameters.AddWithValue("@checkoutdate", CheckIn.dtpCheckOut.Value.ToString("yyyy-MM-dd"))
             cmd.Parameters.AddWithValue("@deposit", CheckIn.ChaletDeposit)
             cmd.Parameters.AddWithValue("@totalamt", CheckIn.ChaletTotal)
             cmd.Parameters.AddWithValue("@memguestname", CheckIn.txtGuestName.Text)
