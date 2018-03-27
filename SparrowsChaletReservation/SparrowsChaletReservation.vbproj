@@ -283,7 +283,7 @@
     <EmbeddedResource Include="RegisterStaff.resx">
       <DependentUpon>RegisterStaff.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Occupancy.rdlc" />
     <EmbeddedResource Include="SelectChaletForm.resx">
       <DependentUpon>SelectChaletForm.vb</DependentUpon>
     </EmbeddedResource>

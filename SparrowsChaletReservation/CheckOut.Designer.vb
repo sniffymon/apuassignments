@@ -73,7 +73,7 @@ Partial Class CheckOut
         'lblGuestName
         '
         Me.lblGuestName.AutoSize = True
-        Me.lblGuestName.Location = New System.Drawing.Point(79, 121)
+        Me.lblGuestName.Location = New System.Drawing.Point(80, 108)
         Me.lblGuestName.Name = "lblGuestName"
         Me.lblGuestName.Size = New System.Drawing.Size(51, 20)
         Me.lblGuestName.TabIndex = 3
@@ -82,7 +82,7 @@ Partial Class CheckOut
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(79, 76)
+        Me.Label4.Location = New System.Drawing.Point(80, 63)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(152, 20)
         Me.Label4.TabIndex = 1
@@ -241,7 +241,7 @@ Partial Class CheckOut
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(79, 205)
+        Me.Label2.Location = New System.Drawing.Point(80, 192)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(111, 20)
         Me.Label2.TabIndex = 7
@@ -250,7 +250,7 @@ Partial Class CheckOut
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(79, 164)
+        Me.Label1.Location = New System.Drawing.Point(80, 151)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(115, 20)
         Me.Label1.TabIndex = 5
@@ -259,7 +259,7 @@ Partial Class CheckOut
         'txtGuestName
         '
         Me.txtGuestName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtGuestName.Location = New System.Drawing.Point(259, 116)
+        Me.txtGuestName.Location = New System.Drawing.Point(260, 103)
         Me.txtGuestName.Name = "txtGuestName"
         Me.txtGuestName.Size = New System.Drawing.Size(256, 26)
         Me.txtGuestName.TabIndex = 9
@@ -332,7 +332,7 @@ Partial Class CheckOut
         'txtGuestMobile
         '
         Me.txtGuestMobile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtGuestMobile.Location = New System.Drawing.Point(259, 159)
+        Me.txtGuestMobile.Location = New System.Drawing.Point(260, 146)
         Me.txtGuestMobile.Name = "txtGuestMobile"
         Me.txtGuestMobile.Size = New System.Drawing.Size(256, 26)
         Me.txtGuestMobile.TabIndex = 8
@@ -401,7 +401,7 @@ Partial Class CheckOut
         Me.cboGuestID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cboGuestID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboGuestID.FormattingEnabled = True
-        Me.cboGuestID.Location = New System.Drawing.Point(259, 68)
+        Me.cboGuestID.Location = New System.Drawing.Point(260, 55)
         Me.cboGuestID.Name = "cboGuestID"
         Me.cboGuestID.Size = New System.Drawing.Size(258, 28)
         Me.cboGuestID.TabIndex = 11
@@ -426,7 +426,7 @@ Partial Class CheckOut
         'txtGuestEmail
         '
         Me.txtGuestEmail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.txtGuestEmail.Location = New System.Drawing.Point(259, 204)
+        Me.txtGuestEmail.Location = New System.Drawing.Point(260, 191)
         Me.txtGuestEmail.Name = "txtGuestEmail"
         Me.txtGuestEmail.Size = New System.Drawing.Size(256, 26)
         Me.txtGuestEmail.TabIndex = 10

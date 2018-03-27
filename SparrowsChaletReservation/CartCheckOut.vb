@@ -1,47 +1,67 @@
 ﻿Imports System.Data.SqlClient
 Public Class CheckOutCart
     Dim conn As SqlConnection = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-    Dim cmd As SqlCommand
+    Dim cmd, cmdupdate As SqlCommand
     Dim sql As String
     Dim dr As SqlDataReader
     Dim spadd As Boolean = False
     Dim stadd As Boolean = False
-    Dim lastButtonPos, i, recordcheck As Integer
-
+    Dim lastButtonPos, i, recordcheck, addedchalets, standardchalets, supremechalets As Integer
+    Public ChaletTotal, ChaletDeposit, dayduration As Double
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ReceiptForm.ShowDialog()
-    End Sub
-    'Public ChaletTotal, ChaletDeposit, dayduration As Double
+        'change chalet status
+        conn.Open()
+        Dim n As Integer = 0
+        For x = 1 To i
+            'Dim n as integer =1
+            'for x=1 to i
+            sql = "UPDATE Reservation
+               SET Reservation_Status = 'False'
+               WHERE ChaletNumber_FK = @chaletnumber;"
 
+            cmd = New SqlCommand(sql, conn)
+            cmd.Parameters.AddWithValue("@chaletnumber", CheckOut.checkedchalet(x - 1).Remove(0, 3))
+            'cmd.Parameters.AddWithValue("@chaletnumber", CheckOut.checkedchalet(x + 1))
+            cmd.ExecuteNonQuery()
+            n += 1
+            'n-=1
+        Next
+
+        CheckOut.checkedchalet.Clear()
+
+        MessageBox.Show("Please click on the print button to print the receipt!", "Important", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ReceiptForm.ShowDialog()
+        conn.Close()
+    End Sub
     Private Sub CheckOutCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        lblDeposit.Text = CheckIn.ChaletDeposit.ToString("c")
-        lblTAmount.Text = CheckIn.ChaletTotal.ToString("c")
+        lblTAmount.Text = CheckOut.overalltotal.ToString("c")
         lblName.Text = CheckIn.txtGuestName.Text
         lblCheckIn.Text = "From " & CheckOut.txtCheckIn.Text & " Until " & CheckOut.txtActualCheckOut.Text
 
 
         For Each Item In CheckOut.checkedchalet
             Dim NewSubPanel As New Button
-            NewSubPanel.Location = New Point(5, lastButtonPos)
-            NewSubPanel.Size = New Size(550, 100)
-            NewSubPanel.Text = "Chalet = " & CheckOut.checkedchalet(i)
-            NewSubPanel.TextAlign = ContentAlignment.MiddleLeft
-            NewSubPanel.Font = New Drawing.Font("Segoe UI Semibold", 13.875)
-            NewSubPanel.FlatStyle = FlatStyle.Flat
-            NewSubPanel.FlatAppearance.BorderColor = Color.Black
-            NewSubPanel.ForeColor = Color.Black
-            NewSubPanel.BackColor = Color.White
-            NewSubPanel.FlatAppearance.BorderSize = 1
-            NewSubPanel.FlatAppearance.MouseOverBackColor = Color.White
-            NewSubPanel.FlatAppearance.MouseDownBackColor = Color.White
-
+            With NewSubPanel
+                .Location = New Point(5, lastButtonPos)
+                .Size = New Size(550, 100)
+                .Text = "Chalet = " & CheckOut.checkedchalet(i).Remove(0, 3)
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 13.875)
+                .FlatStyle = FlatStyle.Flat
+                .FlatAppearance.BorderColor = Color.Black
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+                .FlatAppearance.BorderSize = 1
+                .FlatAppearance.MouseOverBackColor = Color.White
+                .FlatAppearance.MouseDownBackColor = Color.White
+            End With
             Dim newDurationofstay As New Label
             With newDurationofstay
                 .Location = New Point(300, lastButtonPos + 10)
                 .Text = CheckOut.lblNightsStay.Text & “Days”
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -59,9 +79,9 @@ Public Class CheckOutCart
             Dim newDurationofOverstay As New Label
             With newDurationofOverstay
                 .Location = New Point(300, lastButtonPos + 40)
-                .Text = CheckOut.txtOverdue.Text & “Days”
+                .Text = CheckOut.txtOverdue.Text & “Day”
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -79,9 +99,15 @@ Public Class CheckOutCart
             Dim newroomamount As New Label
             With newroomamount
                 .Location = New Point(450, lastButtonPos + 10)
-                .Text = "RM300"
+
+                If CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) >= 11 Then
+                    .Text = CheckOut.supremeprice.ToString("c")
+                ElseIf CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) <= 10 Then
+                    .Text = CheckOut.standardprice.ToString("c")
+                End If
+
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -98,10 +124,15 @@ Public Class CheckOutCart
 
             Dim newoverstayamount As New Label
             With newoverstayamount
-                .Location = New Point(450, lastButtonPos + 40)
-                .Text = "RM 50"
-                .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Location = New Point(450, lastButtonPos + 43)
+
+                If CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) >= 11 Then
+                    .Text = CheckOut.oversupreme.ToString("c")
+                ElseIf CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) <= 10 Then
+                    .Text = CheckOut.overstandard.ToString("c")
+                End If
+
+                .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -120,9 +151,13 @@ Public Class CheckOutCart
             Dim newTotalamount As New Label
             With newTotalamount
                 .Location = New Point(450, lastButtonPos + 70)
-                .Text = "RM 50"
+                If CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) >= 11 Then
+                    .Text = CheckOut.totalsupreme.ToString("c")
+                ElseIf CDbl((CheckOut.checkedchalet(i).ToString).Remove(0, 6)) <= 10 Then
+                    .Text = CheckOut.totalstandard.ToString("c")
+                End If
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 8)
+                .Font = New Drawing.Font("Segoe UI Semibold", 11)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
@@ -132,29 +167,32 @@ Public Class CheckOutCart
                 .Location = New Point(350, lastButtonPos + 70)
                 .Text = "Total"
                 .TextAlign = ContentAlignment.MiddleLeft
-                .Font = New Drawing.Font("Segoe UI Semibold", 10)
+                .Font = New Drawing.Font("Segoe UI Semibold", 11)
                 .ForeColor = Color.Black
                 .BackColor = Color.White
             End With
 
-            pnlOthers.Controls.Add(newTotalamount)
-            pnlOthers.Controls.Add(newlblTotalamount)
-            pnlOthers.Controls.Add(newlbloverstayamount)
-            pnlOthers.Controls.Add(newoverstayamount)
-            pnlOthers.Controls.Add(newlblroomamount)
-            pnlOthers.Controls.Add(newroomamount)
-            pnlOthers.Controls.Add(newDurationofOverstay)
-            pnlOthers.Controls.Add(newlblDurationOfOverStay)
-            pnlOthers.Controls.Add(newlblDurationOfStay)
-            pnlOthers.Controls.Add(newDurationofstay)
-            pnlOthers.Controls.Add(NewSubPanel)
+            With pnlOthers.Controls
+                .Add(newTotalamount)
+                .Add(newlblTotalamount)
+                .Add(newlbloverstayamount)
+                .Add(newoverstayamount)
+                .Add(newlblroomamount)
+                .Add(newroomamount)
+                .Add(newDurationofOverstay)
+                .Add(newlblDurationOfOverStay)
+                .Add(newlblDurationOfStay)
+                .Add(newDurationofstay)
+                .Add(NewSubPanel)
+            End With
+
             lastButtonPos = lastButtonPos + 110
             i = i + 1
         Next
 
         Dim n As Integer = 0
         For x = 1 To i
-            sql = "SELECT CheckIn_Date, CheckOut_Date, Deposit, Total_Amount, ChaletNumber_FK, ExtraBed, GuestNo_FK, GuestNo,Guest_Name FROM Reservation INNER JOIN
+            sql = "SELECT CheckIn_Date, CheckOut_Date, Deposit, ChaletNumber_FK, ExtraBed, GuestNo_FK, GuestNo,Guest_Name FROM Reservation INNER JOIN
                    GuestDetail on GuestDetail.GuestNo = Reservation.GuestNo_FK  WHERE Reservation.GuestNo_FK=@guestid "
             'Creating 1st Instance of SQL Command
             cmd = New SqlCommand(sql, conn)
@@ -163,11 +201,11 @@ Public Class CheckOutCart
             lblName.Text = CheckOut.txtGuestName.Text
             Dim dr As SqlDataReader = cmd.ExecuteReader
             If dr.Read() Then
-                lblDeposit.Text = dr(2)
-                lblTAmount.Text = dr(3)
+                lblDeposit.Text = CInt(dr(2)).ToString("c")
             End If
             dr.Close()
             conn.Close()
         Next
+        lblBalance.Text = (CheckOut.overalltotal - CDbl(lblDeposit.Text)).ToString("c")
     End Sub
 End Class

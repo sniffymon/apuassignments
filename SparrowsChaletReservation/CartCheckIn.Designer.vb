@@ -154,12 +154,12 @@ Partial Class CartCheckIn
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Booking Dates"
         '
-        'Cart
+        'CartCheckIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(578, 389)
+        Me.ClientSize = New System.Drawing.Size(578, 397)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label5)
@@ -169,7 +169,7 @@ Partial Class CartCheckIn
         Me.Controls.Add(Me.pnlOthers)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "Cart"
+        Me.Name = "CartCheckIn"
         Me.Text = "Check-In Cart"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

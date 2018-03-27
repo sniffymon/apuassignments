@@ -29,19 +29,20 @@ Public Class CheckOut
 
     End Sub
     Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGuestID.SelectedIndexChanged
-        'If cboGuestID.Text = "" Then
-        '    MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    Exit Sub
-        'End If
+        If cboGuestID.Text = "" Then
+            MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
 
         'GUEST DETAIL SECTION START
         sql = "SELECT GuestNo,GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No,GuestDetail.Guest_Email, CONVERT(Varchar, CheckIn_Date) ,CONVERT(Varchar, CheckOut_Date)  
                FROM GuestDetail  Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
-                WHERE [Guest_ID_PassNum]=@guestid "
+                WHERE [Guest_ID_PassNum]=@guestid"
 
         'Creating 1st Instance of SQL Command
         cmd = New SqlCommand(sql, conn)
         conn.Open()
+
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         cmd.Parameters.AddWithValue("@guestid", cboGuestID.Text)
 
@@ -60,8 +61,8 @@ Public Class CheckOut
         dr.Close()
         conn.Close()
 
-        'chalet booked by guest
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND @currentdate >= Checkout_Date"
+        'DETECT CHALETS THAT ARE BOOKED
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND @currentdate >= Checkout_Date AND Reservation_Status='True'"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
@@ -78,8 +79,12 @@ Public Class CheckOut
                 ctrl.Visible = False
             End If
         Next
+
         Dim removedCH As String
-        If exdata.Rows.Count > 0 Then
+        If exdata.Rows.Count = 0 Then
+            MsgBox("There are no checkout details today!")
+            Exit Sub
+        ElseIf exdata.Rows.Count > 0 Then
             For Each row In exdata.Rows
                 removedCH = row(0).ToString.Remove(0, 2)
                 If removedCH > 10 Then
@@ -91,69 +96,61 @@ Public Class CheckOut
 
                 DirectCast(GroupBox2.Controls("btn" & row(0)), Button).Visible = True
             Next
-        Else
-            MsgBox("There are no checkout details today!")
+
+            ' Display the date in the default (general) format.
+            txtActualCheckOut.Text = DateTime.Today.ToString("yyyy-MM-dd")
+
+            'get the overdue days
+            Dim date1 As Date = Date.Now
+            Dim date2 As Date = txtCheckOut.Text
+            Dim days As Integer = (date1 - date2).Days
+
+            If (days <= 0) Then
+                txtOverdue.Text = 0
+            ElseIf (days >= 1) Then
+                txtOverdue.Text = days
+            End If
+
+            'duration of stay
+            Dim StartTime, EndTime As DateTime
+            Dim TimeSpan As TimeSpan
+            StartTime = txtCheckIn.Text
+            EndTime = txtActualCheckOut.Text
+            TimeSpan = EndTime.Subtract(StartTime)
+            lblNightsStay.Text = TimeSpan.Days
+
+            Dim StartTime1, EndTime1 As DateTime
+            Dim TimeSpan1 As TimeSpan
+            StartTime1 = txtCheckIn.Text
+            EndTime1 = txtCheckOut.Text
+            TimeSpan1 = EndTime.Subtract(StartTime)
+            dayduration = TimeSpan.Days
+
+            Dim overstaydays As Double
+            overstaydays = txtOverdue.Text
+
+            'price calculation
+            OverstayCharged = (standardchalets * overstaydays * 250) + (supremechalets * overstaydays * 350)
+            ChaletDeposit = (standardchalets * dayduration * 150 * 0.4) + (supremechalets * dayduration * 250 * 0.4)
+
+            overstandard = (standardchalets * overstaydays * 250)
+            oversupreme = (supremechalets * overstaydays * 350)
+            standardprice = (standardchalets * dayduration * 150)
+            supremeprice = (supremechalets * dayduration * 250)
+            totalstandard = (overstandard + standardprice)
+            totalsupreme = (oversupreme + supremeprice)
+        overalltotal = (totalstandard + totalsupreme)
         End If
         conn.Close()
 
-        ' Display the date in the default (general) format.
-        txtActualCheckOut.Text = DateTime.Today.ToString("yyyy-MM-dd")
-
-        'get the overdue days
-        Dim date1 As Date = Date.Now
-        Dim date2 As Date = txtCheckOut.Text
-        Dim days As Integer = (date1 - date2).Days
-
-        If (days <= 0) Then
-            txtOverdue.Text = 0
-        ElseIf (days >= 1) Then
-            txtOverdue.Text = days
-        End If
-
-        'duration of stay
-        Dim StartTime, EndTime As DateTime
-        Dim TimeSpan As TimeSpan
-        StartTime = txtCheckIn.Text
-        EndTime = txtActualCheckOut.Text
-        TimeSpan = EndTime.Subtract(StartTime)
-        lblNightsStay.Text = TimeSpan.Days
-
-        Dim StartTime1, EndTime1 As DateTime
-        Dim TimeSpan1 As TimeSpan
-        StartTime1 = txtCheckIn.Text
-        EndTime1 = txtCheckOut.Text
-        TimeSpan1 = EndTime.Subtract(StartTime)
-        dayduration = TimeSpan.Days
-
-        Dim overstaydays As Double
-        overstaydays = txtOverdue.Text
-
-        'price calculation
-        OverstayCharged = (standardchalets * overstaydays * 250) + (supremechalets * overstaydays * 350)
-        ChaletDeposit = (standardchalets * dayduration * 150 * 0.4) + (supremechalets * dayduration * 250 * 0.4)
-
-        overstandard = (standardchalets * overstaydays * 250)
-        oversupreme = (supremechalets * overstaydays * 350)
-        standardprice = (standardchalets * dayduration * 150)
-        supremeprice = (supremechalets * dayduration * 250)
-        totalstandard = (overstandard + standardprice)
-        totalsupreme = (oversupreme + supremeprice)
-        overalltotal = (totalstandard + totalsupreme)
     End Sub
 
     Private Sub btncheckout_Click(sender As Object, e As EventArgs) Handles btncheckout.Click
-        conn.Open()
-        sql = "UPDATE Chalet SET Status='False'INNER JOIN GuestDetail on GuestDetail.GuestNo = Reservation.GuestNo_FK 
-WHERE Reservation.GuestNo_FK=@guestid "
-        cmdUpdate = New SqlCommand(sql, conn)
-        cmd.Parameters.AddWithValue("@guestid", guestnostorage)
-        conn.Close()
-
         'Info box for overdue charge
         If txtOverdue.Text = 0 Then
             CheckOutCart.ShowDialog()
         ElseIf txtOverdue.Text >= 1 Then
-            MessageBox.Show("You will be charged RM 250 for Supreme Room and RM350 for Standard Room each day if you Late CheckOut ", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Reminder that client will be charged RM 250 for Supreme Room and RM350 for Standard Room each day due to overstay", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
             CheckOutCart.ShowDialog()
         End If
     End Sub

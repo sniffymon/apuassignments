@@ -24,13 +24,23 @@ Partial Class ReceiptForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.receipttableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ReceiptDataSet = New SparrowReservation.ReceiptDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.ReceiptDataSet = New SparrowReservation.ReceiptDataSet()
-        Me.receipttableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.ReceiptDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.receipttableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ReceiptDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'receipttableBindingSource
+        '
+        Me.receipttableBindingSource.DataMember = "receipttable"
+        Me.receipttableBindingSource.DataSource = Me.ReceiptDataSet
+        '
+        'ReceiptDataSet
+        '
+        Me.ReceiptDataSet.DataSetName = "ReceiptDataSet"
+        Me.ReceiptDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -58,16 +68,6 @@ Partial Class ReceiptForm
         Me.Label4.Text = "RECEIPT"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ReceiptDataSet
-        '
-        Me.ReceiptDataSet.DataSetName = "ReceiptDataSet"
-        Me.ReceiptDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'receipttableBindingSource
-        '
-        Me.receipttableBindingSource.DataMember = "receipttable"
-        Me.receipttableBindingSource.DataSource = Me.ReceiptDataSet
-        '
         'ReceiptForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -79,8 +79,8 @@ Partial Class ReceiptForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "ReceiptForm"
         Me.Text = "ReceiptForm"
-        CType(Me.ReceiptDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.receipttableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ReceiptDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
