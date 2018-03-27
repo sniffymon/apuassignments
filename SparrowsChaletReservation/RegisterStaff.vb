@@ -21,11 +21,10 @@ Public Class RegisterStaff
             Exit Sub
         End If
 
-        Dim s As Integer = 3
-        If txtfullname.textlength >= 3 Then
-            threeinitials = txtFullName.Text
-            threeinitials = threeinitials.Replace(" ", "")
-            lblUsrName.Text = (threeinitials.Substring(0, 3)).ToUpper
+        If txtFullName.TextLength >= 3 Then
+            Dim initialarray() As String = txtFullName.Text.Split(" "c)
+            lblUsrName.Text = String.Join("", Array.ConvertAll(initialarray, Function(n) n.Substring(0, 1).ToUpper))
+
             conn.Open()
 
             sql = "SELECT LoginUsername FROM Users"
@@ -37,20 +36,17 @@ Public Class RegisterStaff
             Dim stafftable As DataTable = chaletds.Tables("Username")
             Dim row As DataRow
             For Each row In stafftable.Rows
-                If s >= threeinitials.Length Then
-                    MessageBox.Show("Sorry, name is too similar with existing staff to generate username, please consult admin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    conn.Close()
-                    Exit Sub
-                ElseIf row(0) = lblUsrName.Text Then
+                If row(0) = lblUsrName.Text Then
                     MessageBox.Show("Username already taken. New Username will be generated.", "Username already taken", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                    lblUsrName.Text = (threeinitials.Substring(0, 2) & threeinitials.Substring(s, 1)).ToUpper
-                    s = s + 1
+                    threeinitials = txtFullName.Text
+                    threeinitials = threeinitials.Replace(" ", "")
+                    lblUsrName.Text = (threeinitials.Substring(0, 3)).ToUpper
                 End If
             Next
             conn.Close()
 
-                ElseIf txtFullName.TextLength < 3 Then
-                    MessageBox.Show("Name is too short to generate Login Username. Please try again by inserting your fullname as per IC", "Name too short", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf txtFullName.TextLength < 3 Then
+            MessageBox.Show("Name is too short to generate Login Username. Please try again by inserting your fullname as per IC", "Name too short", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtFullName.Select()
             Exit Sub
         End If
