@@ -9,14 +9,13 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="sparrowsresortConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="sparrowsresortConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        GuestDetail.GuestNo, GuestDetail.Guest_ID_PassNum,                      GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No, GuestDetail.Guest_Email, Reservation.CheckIn_Date,Reservation.CheckOut_Date, 
-                         Reservation.ChaletNumber_FK
+                    <CommandText>SELECT        GuestDetail.GuestNo, Reservation.GuestNo_FK, GuestDetail.Guest_Name, Reservation.CheckIn_Date, Reservation.CheckOut_Date, Reservation.ChaletNumber_FK
 FROM            GuestDetail INNER JOIN
                          Reservation ON GuestDetail.GuestNo = Reservation.GuestNo_FK
-WHERE          CheckIn_Date &lt;= GetDate() AND CheckOut_Date &gt; GetDate()  </CommandText>
+WHERE        (Reservation.CheckIn_Date &lt;= GETDATE()) AND (Reservation.CheckOut_Date &gt;= GETDATE()) AND (Reservation.Reservation_Status = 'True')</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -24,13 +23,11 @@ WHERE          CheckIn_Date &lt;= GetDate() AND CheckOut_Date &gt; GetDate()  </
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="GuestNo" DataSetColumn="GuestNo" />
-              <Mapping SourceColumn="Guest_ID_PassNum" DataSetColumn="Guest_ID_PassNum" />
+              <Mapping SourceColumn="GuestNo_FK" DataSetColumn="GuestNo_FK" />
               <Mapping SourceColumn="Guest_Name" DataSetColumn="Guest_Name" />
-              <Mapping SourceColumn="Guest_Contact_No" DataSetColumn="Guest_Contact_No" />
-              <Mapping SourceColumn="Guest_Email" DataSetColumn="Guest_Email" />
-              <Mapping SourceColumn="ChaletNumber_FK" DataSetColumn="ChaletNumber_FK" />
               <Mapping SourceColumn="CheckIn_Date" DataSetColumn="CheckIn_Date" />
               <Mapping SourceColumn="CheckOut_Date" DataSetColumn="CheckOut_Date" />
+              <Mapping SourceColumn="ChaletNumber_FK" DataSetColumn="ChaletNumber_FK" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -46,35 +43,8 @@ WHERE          CheckIn_Date &lt;= GetDate() AND CheckOut_Date &gt; GetDate()  </
           <xs:complexType>
             <xs:sequence>
               <xs:element name="GuestNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnGuestNo" msprop:Generator_ColumnPropNameInRow="GuestNo" msprop:Generator_ColumnPropNameInTable="GuestNoColumn" msprop:Generator_UserColumnName="GuestNo" type="xs:int" />
-              <xs:element name="Guest_ID_PassNum" msprop:Generator_ColumnVarNameInTable="columnGuest_ID_PassNum" msprop:Generator_ColumnPropNameInRow="Guest_ID_PassNum" msprop:Generator_ColumnPropNameInTable="Guest_ID_PassNumColumn" msprop:Generator_UserColumnName="Guest_ID_PassNum">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="GuestNo_FK" msprop:Generator_ColumnVarNameInTable="columnGuestNo_FK" msprop:Generator_ColumnPropNameInRow="GuestNo_FK" msprop:Generator_ColumnPropNameInTable="GuestNo_FKColumn" msprop:Generator_UserColumnName="GuestNo_FK" type="xs:int" minOccurs="0" />
               <xs:element name="Guest_Name" msprop:Generator_ColumnVarNameInTable="columnGuest_Name" msprop:Generator_ColumnPropNameInRow="Guest_Name" msprop:Generator_ColumnPropNameInTable="Guest_NameColumn" msprop:Generator_UserColumnName="Guest_Name">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Guest_Contact_No" msprop:Generator_ColumnVarNameInTable="columnGuest_Contact_No" msprop:Generator_ColumnPropNameInRow="Guest_Contact_No" msprop:Generator_ColumnPropNameInTable="Guest_Contact_NoColumn" msprop:Generator_UserColumnName="Guest_Contact_No">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Guest_Email" msprop:Generator_ColumnVarNameInTable="columnGuest_Email" msprop:Generator_ColumnPropNameInRow="Guest_Email" msprop:Generator_ColumnPropNameInTable="Guest_EmailColumn" msprop:Generator_UserColumnName="Guest_Email">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ChaletNumber_FK" msprop:Generator_ColumnVarNameInTable="columnChaletNumber_FK" msprop:Generator_ColumnPropNameInRow="ChaletNumber_FK" msprop:Generator_ColumnPropNameInTable="ChaletNumber_FKColumn" msprop:Generator_UserColumnName="ChaletNumber_FK" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -83,6 +53,13 @@ WHERE          CheckIn_Date &lt;= GetDate() AND CheckOut_Date &gt; GetDate()  </
               </xs:element>
               <xs:element name="CheckIn_Date" msprop:Generator_ColumnVarNameInTable="columnCheckIn_Date" msprop:Generator_ColumnPropNameInRow="CheckIn_Date" msprop:Generator_ColumnPropNameInTable="CheckIn_DateColumn" msprop:Generator_UserColumnName="CheckIn_Date" type="xs:dateTime" />
               <xs:element name="CheckOut_Date" msprop:Generator_ColumnVarNameInTable="columnCheckOut_Date" msprop:Generator_ColumnPropNameInRow="CheckOut_Date" msprop:Generator_ColumnPropNameInTable="CheckOut_DateColumn" msprop:Generator_UserColumnName="CheckOut_Date" type="xs:dateTime" />
+              <xs:element name="ChaletNumber_FK" msprop:Generator_ColumnVarNameInTable="columnChaletNumber_FK" msprop:Generator_ColumnPropNameInRow="ChaletNumber_FK" msprop:Generator_ColumnPropNameInTable="ChaletNumber_FKColumn" msprop:Generator_UserColumnName="ChaletNumber_FK" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -7,8 +7,8 @@ Public Class GuestInfoEntry
     Dim Sql As String
     Dim cmd As SqlCommand
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If txtGuestID.Text = "" Or txtGuestName.Text = "" Or txtGuestEmail.Text = "" Or txtGuestMobile.Text = "" Then
-            MessageBox.Show("Please enter all needed information into the textboxes", "Guest Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If String.IsNullOrWhiteSpace(txtGuestName.Text) Or txtGuestID.Text = "" Or txtGuestEmail.Text = "" Or txtGuestMobile.Text = "" Then
+            MessageBox.Show("Please check that you've entered all needed and valid information into the textboxes", "Guest Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
         conn.Open()
@@ -50,6 +50,13 @@ Public Class GuestInfoEntry
     Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtGuestEmail.KeyDown, txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestName.KeyDown, txtGuestID.KeyDown
         If e.KeyCode = Keys.Enter Then
             Button1.PerformClick()
+        End If
+    End Sub
+
+
+    Private Sub txtGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGuestID.KeyPress, txtGuestEmail.KeyPress, txtGuestMobile.KeyPress
+        If Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
         End If
     End Sub
 End Class

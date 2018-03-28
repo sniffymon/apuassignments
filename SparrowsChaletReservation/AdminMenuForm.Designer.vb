@@ -33,6 +33,7 @@ Partial Class AdminMenuForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tlpMenuBtn = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnOccupancyReport = New System.Windows.Forms.Button()
         Me.pnlMenuStatic = New System.Windows.Forms.Panel()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.lblYear = New System.Windows.Forms.Label()
@@ -57,12 +58,12 @@ Partial Class AdminMenuForm
         Me.btnAdminInfoPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdminInfoPanel.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdminInfoPanel.ForeColor = System.Drawing.Color.White
-        Me.btnAdminInfoPanel.Location = New System.Drawing.Point(2, 256)
+        Me.btnAdminInfoPanel.Location = New System.Drawing.Point(2, 192)
         Me.btnAdminInfoPanel.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAdminInfoPanel.Name = "btnAdminInfoPanel"
-        Me.btnAdminInfoPanel.Size = New System.Drawing.Size(145, 123)
+        Me.btnAdminInfoPanel.Size = New System.Drawing.Size(145, 91)
         Me.btnAdminInfoPanel.TabIndex = 0
-        Me.btnAdminInfoPanel.Text = "Admin Info Report"
+        Me.btnAdminInfoPanel.Text = "Admin Info Panel"
         Me.btnAdminInfoPanel.UseVisualStyleBackColor = False
         '
         'btnAddStaff
@@ -76,7 +77,7 @@ Partial Class AdminMenuForm
         Me.btnAddStaff.Location = New System.Drawing.Point(2, 2)
         Me.btnAddStaff.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAddStaff.Name = "btnAddStaff"
-        Me.btnAddStaff.Size = New System.Drawing.Size(145, 122)
+        Me.btnAddStaff.Size = New System.Drawing.Size(145, 91)
         Me.btnAddStaff.TabIndex = 2
         Me.btnAddStaff.Text = "Add Staff"
         Me.btnAddStaff.UseVisualStyleBackColor = False
@@ -89,10 +90,10 @@ Partial Class AdminMenuForm
         Me.btnEditGuestRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditGuestRecords.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditGuestRecords.ForeColor = System.Drawing.Color.White
-        Me.btnEditGuestRecords.Location = New System.Drawing.Point(2, 129)
+        Me.btnEditGuestRecords.Location = New System.Drawing.Point(2, 97)
         Me.btnEditGuestRecords.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEditGuestRecords.Name = "btnEditGuestRecords"
-        Me.btnEditGuestRecords.Size = New System.Drawing.Size(145, 122)
+        Me.btnEditGuestRecords.Size = New System.Drawing.Size(145, 91)
         Me.btnEditGuestRecords.TabIndex = 3
         Me.btnEditGuestRecords.Text = "Edit Guest Records"
         Me.btnEditGuestRecords.UseVisualStyleBackColor = False
@@ -131,9 +132,9 @@ Partial Class AdminMenuForm
         'indSelectedTab
         '
         Me.indSelectedTab.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.indSelectedTab.Location = New System.Drawing.Point(192, 91)
+        Me.indSelectedTab.Location = New System.Drawing.Point(192, 377)
         Me.indSelectedTab.Name = "indSelectedTab"
-        Me.indSelectedTab.Size = New System.Drawing.Size(10, 128)
+        Me.indSelectedTab.Size = New System.Drawing.Size(10, 91)
         Me.indSelectedTab.TabIndex = 0
         Me.indSelectedTab.TabStop = False
         Me.indSelectedTab.Visible = False
@@ -175,19 +176,36 @@ Partial Class AdminMenuForm
         '
         Me.tlpMenuBtn.ColumnCount = 1
         Me.tlpMenuBtn.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpMenuBtn.Controls.Add(Me.btnOccupancyReport, 0, 3)
         Me.tlpMenuBtn.Controls.Add(Me.btnAdminInfoPanel, 0, 2)
         Me.tlpMenuBtn.Controls.Add(Me.btnEditGuestRecords, 0, 1)
         Me.tlpMenuBtn.Controls.Add(Me.btnAddStaff, 0, 0)
         Me.tlpMenuBtn.Location = New System.Drawing.Point(43, 89)
         Me.tlpMenuBtn.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.tlpMenuBtn.Name = "tlpMenuBtn"
-        Me.tlpMenuBtn.RowCount = 3
-        Me.tlpMenuBtn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.tlpMenuBtn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.tlpMenuBtn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.tlpMenuBtn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlpMenuBtn.RowCount = 4
+        Me.tlpMenuBtn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpMenuBtn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpMenuBtn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpMenuBtn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.tlpMenuBtn.Size = New System.Drawing.Size(149, 381)
         Me.tlpMenuBtn.TabIndex = 4
+        '
+        'btnOccupancyReport
+        '
+        Me.btnOccupancyReport.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.btnOccupancyReport.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnOccupancyReport.FlatAppearance.BorderSize = 0
+        Me.btnOccupancyReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOccupancyReport.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOccupancyReport.ForeColor = System.Drawing.Color.White
+        Me.btnOccupancyReport.Location = New System.Drawing.Point(2, 287)
+        Me.btnOccupancyReport.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnOccupancyReport.Name = "btnOccupancyReport"
+        Me.btnOccupancyReport.Size = New System.Drawing.Size(145, 91)
+        Me.btnOccupancyReport.TabIndex = 4
+        Me.btnOccupancyReport.Text = "Occupancy Report"
+        Me.btnOccupancyReport.UseVisualStyleBackColor = False
         '
         'pnlMenuStatic
         '
@@ -304,4 +322,5 @@ Partial Class AdminMenuForm
     Friend WithEvents lblMonth As Label
     Friend WithEvents lblYear As Label
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents btnOccupancyReport As Button
 End Class

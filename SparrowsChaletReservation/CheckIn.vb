@@ -23,7 +23,7 @@ Public Class CheckIn
         End If
     End Sub
 
-    Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged
+    Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged, dtpCheckOut.ValueChanged
         ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
@@ -42,9 +42,10 @@ Public Class CheckIn
 
         conn.Open()
         Dim chaletds As New DataSet
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @date AND CheckOut_Date >= @date) OR (CheckOut_Date <= @date AND Reservation_Status = 'True')"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @cidate AND CheckOut_Date >= @cidate) OR (CheckIn_Date < @codate AND CheckOut_Date >= @codate) OR (CheckOut_Date <= @cidate AND Reservation_Status = 'True')"
         cmd = New SqlCommand(sql, conn)
-        cmd.Parameters.AddWithValue("@date", dtpCheckIn.Value.ToString("yyyy-MM-dd"))
+        cmd.Parameters.AddWithValue("@cidate", dtpCheckIn.Value.ToString("yyyy-MM-dd"))
+        cmd.Parameters.AddWithValue("@codate", dtpCheckOut.Value.ToString("yyyy-MM-dd"))
         Dim adptr As New SqlDataAdapter(cmd)
         adptr.Fill(chaletds, "BookedCH")
 

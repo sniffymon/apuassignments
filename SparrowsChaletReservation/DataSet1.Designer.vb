@@ -285,19 +285,15 @@ Partial Public Class DataSet1
         
         Private columnGuestNo As Global.System.Data.DataColumn
         
-        Private columnGuest_ID_PassNum As Global.System.Data.DataColumn
+        Private columnGuestNo_FK As Global.System.Data.DataColumn
         
         Private columnGuest_Name As Global.System.Data.DataColumn
-        
-        Private columnGuest_Contact_No As Global.System.Data.DataColumn
-        
-        Private columnGuest_Email As Global.System.Data.DataColumn
-        
-        Private columnChaletNumber_FK As Global.System.Data.DataColumn
         
         Private columnCheckIn_Date As Global.System.Data.DataColumn
         
         Private columnCheckOut_Date As Global.System.Data.DataColumn
+        
+        Private columnChaletNumber_FK As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -344,9 +340,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Guest_ID_PassNumColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property GuestNo_FKColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnGuest_ID_PassNum
+                Return Me.columnGuestNo_FK
             End Get
         End Property
         
@@ -355,30 +351,6 @@ Partial Public Class DataSet1
         Public ReadOnly Property Guest_NameColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnGuest_Name
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Guest_Contact_NoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnGuest_Contact_No
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Guest_EmailColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnGuest_Email
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ChaletNumber_FKColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnChaletNumber_FK
             End Get
         End Property
         
@@ -395,6 +367,14 @@ Partial Public Class DataSet1
         Public ReadOnly Property CheckOut_DateColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnCheckOut_Date
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ChaletNumber_FKColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnChaletNumber_FK
             End Get
         End Property
         
@@ -435,9 +415,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddDataTable1Row(ByVal Guest_ID_PassNum As String, ByVal Guest_Name As String, ByVal Guest_Contact_No As String, ByVal Guest_Email As String, ByVal ChaletNumber_FK As String, ByVal CheckIn_Date As Date, ByVal CheckOut_Date As Date) As DataTable1Row
+        Public Overloads Function AddDataTable1Row(ByVal GuestNo_FK As Integer, ByVal Guest_Name As String, ByVal CheckIn_Date As Date, ByVal CheckOut_Date As Date, ByVal ChaletNumber_FK As String) As DataTable1Row
             Dim rowDataTable1Row As DataTable1Row = CType(Me.NewRow,DataTable1Row)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Guest_ID_PassNum, Guest_Name, Guest_Contact_No, Guest_Email, ChaletNumber_FK, CheckIn_Date, CheckOut_Date}
+            Dim columnValuesArray() As Object = New Object() {Nothing, GuestNo_FK, Guest_Name, CheckIn_Date, CheckOut_Date, ChaletNumber_FK}
             rowDataTable1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataTable1Row)
             Return rowDataTable1Row
@@ -461,13 +441,11 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnGuestNo = MyBase.Columns("GuestNo")
-            Me.columnGuest_ID_PassNum = MyBase.Columns("Guest_ID_PassNum")
+            Me.columnGuestNo_FK = MyBase.Columns("GuestNo_FK")
             Me.columnGuest_Name = MyBase.Columns("Guest_Name")
-            Me.columnGuest_Contact_No = MyBase.Columns("Guest_Contact_No")
-            Me.columnGuest_Email = MyBase.Columns("Guest_Email")
-            Me.columnChaletNumber_FK = MyBase.Columns("ChaletNumber_FK")
             Me.columnCheckIn_Date = MyBase.Columns("CheckIn_Date")
             Me.columnCheckOut_Date = MyBase.Columns("CheckOut_Date")
+            Me.columnChaletNumber_FK = MyBase.Columns("ChaletNumber_FK")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -475,36 +453,26 @@ Partial Public Class DataSet1
         Private Sub InitClass()
             Me.columnGuestNo = New Global.System.Data.DataColumn("GuestNo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGuestNo)
-            Me.columnGuest_ID_PassNum = New Global.System.Data.DataColumn("Guest_ID_PassNum", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnGuest_ID_PassNum)
+            Me.columnGuestNo_FK = New Global.System.Data.DataColumn("GuestNo_FK", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGuestNo_FK)
             Me.columnGuest_Name = New Global.System.Data.DataColumn("Guest_Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGuest_Name)
-            Me.columnGuest_Contact_No = New Global.System.Data.DataColumn("Guest_Contact_No", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnGuest_Contact_No)
-            Me.columnGuest_Email = New Global.System.Data.DataColumn("Guest_Email", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnGuest_Email)
-            Me.columnChaletNumber_FK = New Global.System.Data.DataColumn("ChaletNumber_FK", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnChaletNumber_FK)
             Me.columnCheckIn_Date = New Global.System.Data.DataColumn("CheckIn_Date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCheckIn_Date)
             Me.columnCheckOut_Date = New Global.System.Data.DataColumn("CheckOut_Date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCheckOut_Date)
+            Me.columnChaletNumber_FK = New Global.System.Data.DataColumn("ChaletNumber_FK", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnChaletNumber_FK)
             Me.columnGuestNo.AutoIncrement = true
             Me.columnGuestNo.AutoIncrementSeed = -1
             Me.columnGuestNo.AutoIncrementStep = -1
             Me.columnGuestNo.AllowDBNull = false
             Me.columnGuestNo.ReadOnly = true
-            Me.columnGuest_ID_PassNum.AllowDBNull = false
-            Me.columnGuest_ID_PassNum.MaxLength = 50
             Me.columnGuest_Name.AllowDBNull = false
             Me.columnGuest_Name.MaxLength = 50
-            Me.columnGuest_Contact_No.AllowDBNull = false
-            Me.columnGuest_Contact_No.MaxLength = 50
-            Me.columnGuest_Email.AllowDBNull = false
-            Me.columnGuest_Email.MaxLength = 50
-            Me.columnChaletNumber_FK.MaxLength = 50
             Me.columnCheckIn_Date.AllowDBNull = false
             Me.columnCheckOut_Date.AllowDBNull = false
+            Me.columnChaletNumber_FK.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -662,12 +630,16 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Guest_ID_PassNum() As String
+        Public Property GuestNo_FK() As Integer
             Get
-                Return CType(Me(Me.tableDataTable1.Guest_ID_PassNumColumn),String)
+                Try 
+                    Return CType(Me(Me.tableDataTable1.GuestNo_FKColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GuestNo_FK' in table 'DataTable1' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tableDataTable1.Guest_ID_PassNumColumn) = value
+                Me(Me.tableDataTable1.GuestNo_FKColumn) = value
             End Set
         End Property
         
@@ -679,43 +651,6 @@ Partial Public Class DataSet1
             End Get
             Set
                 Me(Me.tableDataTable1.Guest_NameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Guest_Contact_No() As String
-            Get
-                Return CType(Me(Me.tableDataTable1.Guest_Contact_NoColumn),String)
-            End Get
-            Set
-                Me(Me.tableDataTable1.Guest_Contact_NoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Guest_Email() As String
-            Get
-                Return CType(Me(Me.tableDataTable1.Guest_EmailColumn),String)
-            End Get
-            Set
-                Me(Me.tableDataTable1.Guest_EmailColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ChaletNumber_FK() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableDataTable1.ChaletNumber_FKColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ChaletNumber_FK' in table 'DataTable1' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableDataTable1.ChaletNumber_FKColumn) = value
             End Set
         End Property
         
@@ -740,6 +675,33 @@ Partial Public Class DataSet1
                 Me(Me.tableDataTable1.CheckOut_DateColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ChaletNumber_FK() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataTable1.ChaletNumber_FKColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ChaletNumber_FK' in table 'DataTable1' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataTable1.ChaletNumber_FKColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsGuestNo_FKNull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.GuestNo_FKColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetGuestNo_FKNull()
+            Me(Me.tableDataTable1.GuestNo_FKColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -921,13 +883,11 @@ Namespace DataSet1TableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "DataTable1"
             tableMapping.ColumnMappings.Add("GuestNo", "GuestNo")
-            tableMapping.ColumnMappings.Add("Guest_ID_PassNum", "Guest_ID_PassNum")
+            tableMapping.ColumnMappings.Add("GuestNo_FK", "GuestNo_FK")
             tableMapping.ColumnMappings.Add("Guest_Name", "Guest_Name")
-            tableMapping.ColumnMappings.Add("Guest_Contact_No", "Guest_Contact_No")
-            tableMapping.ColumnMappings.Add("Guest_Email", "Guest_Email")
-            tableMapping.ColumnMappings.Add("ChaletNumber_FK", "ChaletNumber_FK")
             tableMapping.ColumnMappings.Add("CheckIn_Date", "CheckIn_Date")
             tableMapping.ColumnMappings.Add("CheckOut_Date", "CheckOut_Date")
+            tableMapping.ColumnMappings.Add("ChaletNumber_FK", "ChaletNumber_FK")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -944,12 +904,12 @@ Namespace DataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        GuestDetail.GuestNo, GuestDetail.Guest_ID_PassNum,                 "& _ 
-                "     GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No, GuestDetail.Guest_Emai"& _ 
-                "l, Reservation.CheckIn_Date,Reservation.CheckOut_Date, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
-                "  Reservation.ChaletNumber_FK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            GuestDetail INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
-                "                Reservation ON GuestDetail.GuestNo = Reservation.GuestNo_FK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
-                "RE          CheckIn_Date <= GetDate() AND CheckOut_Date > GetDate()  "
+            Me._commandCollection(0).CommandText = "SELECT        GuestDetail.GuestNo, Reservation.GuestNo_FK, GuestDetail.Guest_Name"& _ 
+                ", Reservation.CheckIn_Date, Reservation.CheckOut_Date, Reservation.ChaletNumber_"& _ 
+                "FK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            GuestDetail INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Reservation"& _ 
+                " ON GuestDetail.GuestNo = Reservation.GuestNo_FK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Reservation.Chec"& _ 
+                "kIn_Date <= GETDATE()) AND (Reservation.CheckOut_Date >= GETDATE()) AND (Reserva"& _ 
+                "tion.Reservation_Status = 'True')"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
