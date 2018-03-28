@@ -25,10 +25,10 @@ Public Class ChaletEdit
 
         If dr2.HasRows Then
             While (dr2.Read())
-                ddmGuestName.Items.Add(dr2(0))
+                CboGuestName.Items.Add(dr2(0))
             End While
         Else
-            ddmGuestName.Items.Add("No Existing Guests")
+            CboGuestName.Items.Add("No Existing Guests")
         End If
         dr2.Close()
         '
@@ -42,16 +42,16 @@ Public Class ChaletEdit
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
         dr = cmd.ExecuteReader
-        Label1.Text = AdminChaletInfo.clickedchalet
+        lblChalet.Text = AdminChaletInfo.clickedchalet
 
         If dr.Read() Then
             dtpCheckIn.CustomFormat = "yyyy-MM-dd"
             dtpCheckOut.CustomFormat = "yyyy-MM-dd"
-            ddmGuestName.Text = dr(0)
+            CboGuestName.Text = dr(0)
             dtpCheckIn.Value = dr(3)
             dtpCheckOut.Value = dr(4)
-            cboEB.Text = dr(5)
-            namememory = ddmGuestName.Text
+            CboEB.Text = dr(5)
+            namememory = CboGuestName.Text
         End If
         '
         'LOAD Existing Info on Chalet
@@ -60,7 +60,7 @@ Public Class ChaletEdit
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Dim EditCheck As Integer
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
@@ -79,10 +79,10 @@ Public Class ChaletEdit
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
         cmd.Parameters.AddWithValue("@memguestname", namememory)
-        cmd.Parameters.AddWithValue("@guestname", ddmGuestName.SelectedText)
+        cmd.Parameters.AddWithValue("@guestname", CboGuestName.SelectedText)
         cmd.Parameters.AddWithValue("@checkindate", dtpCheckIn.Text)
         cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Text)
-        cmd.Parameters.AddWithValue("@eb", cboEB.Text)
+        cmd.Parameters.AddWithValue("@eb", CboEB.Text)
 
         EditCheck = cmd.ExecuteNonQuery()
 
@@ -100,7 +100,7 @@ Public Class ChaletEdit
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Dim Recorddeleted As Integer
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         conn.Open()

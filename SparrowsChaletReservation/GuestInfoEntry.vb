@@ -6,7 +6,7 @@ Public Class GuestInfoEntry
     'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
     Dim Sql As String
     Dim cmd As SqlCommand
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         If txtGuestID.Text = "" Or txtGuestName.Text = "" Or txtGuestEmail.Text = "" Or txtGuestMobile.Text = "" Then
             MessageBox.Show("Please enter all needed information into the textboxes", "Guest Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -47,9 +47,9 @@ Public Class GuestInfoEntry
             EmailCheck = False
         End If
     End Function
-    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles  txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestID.KeyDown
+    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestID.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Button1.PerformClick()
+            btnRegister.PerformClick()
         End If
     End Sub
 End Class

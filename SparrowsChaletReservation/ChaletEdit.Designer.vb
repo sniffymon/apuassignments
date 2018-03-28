@@ -22,91 +22,91 @@ Partial Class ChaletEdit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.lblEB = New System.Windows.Forms.Label()
+        Me.lblCheckOut = New System.Windows.Forms.Label()
+        Me.lblCheckIn = New System.Windows.Forms.Label()
+        Me.lblGuestName = New System.Windows.Forms.Label()
+        Me.lblChalet = New System.Windows.Forms.Label()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.dtpCheckIn = New System.Windows.Forms.DateTimePicker()
         Me.dtpCheckOut = New System.Windows.Forms.DateTimePicker()
-        Me.ddmGuestName = New System.Windows.Forms.ComboBox()
-        Me.cboEB = New System.Windows.Forms.ComboBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.CboGuestName = New System.Windows.Forms.ComboBox()
+        Me.CboEB = New System.Windows.Forms.ComboBox()
+        Me.btnDelete = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label9
+        'lblEB
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(79, 256)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(60, 13)
-        Me.Label9.TabIndex = 16
-        Me.Label9.Text = "Extra Beds"
+        Me.lblEB.AutoSize = True
+        Me.lblEB.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEB.ForeColor = System.Drawing.Color.White
+        Me.lblEB.Location = New System.Drawing.Point(79, 256)
+        Me.lblEB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblEB.Name = "lblEB"
+        Me.lblEB.Size = New System.Drawing.Size(60, 13)
+        Me.lblEB.TabIndex = 16
+        Me.lblEB.Text = "Extra Beds"
         '
-        'Label7
+        'lblCheckOut
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(56, 223)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(89, 13)
-        Me.Label7.TabIndex = 14
-        Me.Label7.Text = "Check-Out Date"
+        Me.lblCheckOut.AutoSize = True
+        Me.lblCheckOut.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCheckOut.ForeColor = System.Drawing.Color.White
+        Me.lblCheckOut.Location = New System.Drawing.Point(56, 223)
+        Me.lblCheckOut.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCheckOut.Name = "lblCheckOut"
+        Me.lblCheckOut.Size = New System.Drawing.Size(89, 13)
+        Me.lblCheckOut.TabIndex = 14
+        Me.lblCheckOut.Text = "Check-Out Date"
         '
-        'Label5
+        'lblCheckIn
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(62, 187)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(79, 13)
-        Me.Label5.TabIndex = 12
-        Me.Label5.Text = "Check-In Date"
+        Me.lblCheckIn.AutoSize = True
+        Me.lblCheckIn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCheckIn.ForeColor = System.Drawing.Color.White
+        Me.lblCheckIn.Location = New System.Drawing.Point(62, 187)
+        Me.lblCheckIn.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCheckIn.Name = "lblCheckIn"
+        Me.lblCheckIn.Size = New System.Drawing.Size(79, 13)
+        Me.lblCheckIn.TabIndex = 12
+        Me.lblCheckIn.Text = "Check-In Date"
         '
-        'Label2
+        'lblGuestName
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(76, 151)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 13)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Guest Name"
+        Me.lblGuestName.AutoSize = True
+        Me.lblGuestName.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGuestName.ForeColor = System.Drawing.Color.White
+        Me.lblGuestName.Location = New System.Drawing.Point(76, 151)
+        Me.lblGuestName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblGuestName.Name = "lblGuestName"
+        Me.lblGuestName.Size = New System.Drawing.Size(69, 13)
+        Me.lblGuestName.TabIndex = 10
+        Me.lblGuestName.Text = "Guest Name"
         '
-        'Label1
+        'lblChalet
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(141, 44)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(102, 37)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Label1"
+        Me.lblChalet.AutoSize = True
+        Me.lblChalet.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblChalet.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.lblChalet.Location = New System.Drawing.Point(141, 44)
+        Me.lblChalet.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblChalet.Name = "lblChalet"
+        Me.lblChalet.Size = New System.Drawing.Size(102, 37)
+        Me.lblChalet.TabIndex = 9
+        Me.lblChalet.Text = "Label1"
         '
-        'Button1
+        'btnUpdate
         '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(59, 321)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(96, 40)
-        Me.Button1.TabIndex = 21
-        Me.Button1.Text = "Update Records"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.btnUpdate.Location = New System.Drawing.Point(59, 321)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(96, 40)
+        Me.btnUpdate.TabIndex = 21
+        Me.btnUpdate.Text = "Update Records"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'dtpCheckIn
         '
@@ -132,40 +132,40 @@ Partial Class ChaletEdit
         Me.dtpCheckOut.Size = New System.Drawing.Size(145, 22)
         Me.dtpCheckOut.TabIndex = 23
         '
-        'ddmGuestName
+        'CboGuestName
         '
-        Me.ddmGuestName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ddmGuestName.FormattingEnabled = True
-        Me.ddmGuestName.Location = New System.Drawing.Point(154, 151)
-        Me.ddmGuestName.Margin = New System.Windows.Forms.Padding(2)
-        Me.ddmGuestName.Name = "ddmGuestName"
-        Me.ddmGuestName.Size = New System.Drawing.Size(145, 21)
-        Me.ddmGuestName.TabIndex = 24
+        Me.CboGuestName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboGuestName.FormattingEnabled = True
+        Me.CboGuestName.Location = New System.Drawing.Point(154, 151)
+        Me.CboGuestName.Margin = New System.Windows.Forms.Padding(2)
+        Me.CboGuestName.Name = "CboGuestName"
+        Me.CboGuestName.Size = New System.Drawing.Size(145, 21)
+        Me.CboGuestName.TabIndex = 24
         '
-        'cboEB
+        'CboEB
         '
-        Me.cboEB.AutoCompleteCustomSource.AddRange(New String() {"None", "1", "2"})
-        Me.cboEB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboEB.FormattingEnabled = True
-        Me.cboEB.Items.AddRange(New Object() {"No Extra Beds", "1", "2"})
-        Me.cboEB.Location = New System.Drawing.Point(154, 254)
-        Me.cboEB.Margin = New System.Windows.Forms.Padding(2)
-        Me.cboEB.Name = "cboEB"
-        Me.cboEB.Size = New System.Drawing.Size(145, 21)
-        Me.cboEB.TabIndex = 25
+        Me.CboEB.AutoCompleteCustomSource.AddRange(New String() {"None", "1", "2"})
+        Me.CboEB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboEB.FormattingEnabled = True
+        Me.CboEB.Items.AddRange(New Object() {"No Extra Beds", "1", "2"})
+        Me.CboEB.Location = New System.Drawing.Point(154, 254)
+        Me.CboEB.Margin = New System.Windows.Forms.Padding(2)
+        Me.CboEB.Name = "CboEB"
+        Me.CboEB.Size = New System.Drawing.Size(145, 21)
+        Me.CboEB.TabIndex = 25
         '
-        'Button2
+        'btnDelete
         '
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.Button2.Location = New System.Drawing.Point(203, 321)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(96, 40)
-        Me.Button2.TabIndex = 26
-        Me.Button2.Text = "Delete" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Records"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelete.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.btnDelete.Location = New System.Drawing.Point(203, 321)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(96, 40)
+        Me.btnDelete.TabIndex = 26
+        Me.btnDelete.Text = "Delete" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Records"
+        Me.btnDelete.UseVisualStyleBackColor = True
         '
         'ChaletEdit
         '
@@ -173,17 +173,17 @@ Partial Class ChaletEdit
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(375, 396)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.cboEB)
-        Me.Controls.Add(Me.ddmGuestName)
+        Me.Controls.Add(Me.btnDelete)
+        Me.Controls.Add(Me.CboEB)
+        Me.Controls.Add(Me.CboGuestName)
         Me.Controls.Add(Me.dtpCheckOut)
         Me.Controls.Add(Me.dtpCheckIn)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnUpdate)
+        Me.Controls.Add(Me.lblEB)
+        Me.Controls.Add(Me.lblCheckOut)
+        Me.Controls.Add(Me.lblCheckIn)
+        Me.Controls.Add(Me.lblGuestName)
+        Me.Controls.Add(Me.lblChalet)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
@@ -195,15 +195,15 @@ Partial Class ChaletEdit
 
     End Sub
 
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents lblEB As Label
+    Friend WithEvents lblCheckOut As Label
+    Friend WithEvents lblCheckIn As Label
+    Friend WithEvents lblGuestName As Label
+    Friend WithEvents lblChalet As Label
+    Friend WithEvents btnUpdate As Button
     Friend WithEvents dtpCheckIn As DateTimePicker
     Friend WithEvents dtpCheckOut As DateTimePicker
-    Friend WithEvents ddmGuestName As ComboBox
-    Friend WithEvents cboEB As ComboBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents CboGuestName As ComboBox
+    Friend WithEvents CboEB As ComboBox
+    Friend WithEvents btnDelete As Button
 End Class

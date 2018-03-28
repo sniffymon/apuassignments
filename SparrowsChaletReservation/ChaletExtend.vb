@@ -24,7 +24,7 @@ Public Class ChaletExtend
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
         dr = cmd.ExecuteReader
-        Label1.Text = AdminChaletInfo.clickedchalet
+        lblChalet.Text = AdminChaletInfo.clickedchalet
 
         If dr.Read() Then
             dtpCheckOut.CustomFormat = "yyyy-MM-dd"
@@ -38,7 +38,7 @@ Public Class ChaletExtend
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExtendBooking.Click
         Dim EditCheck As Integer
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")

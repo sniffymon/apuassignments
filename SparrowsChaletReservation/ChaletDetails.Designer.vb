@@ -22,40 +22,40 @@ Partial Class ChaletDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblChalet = New System.Windows.Forms.Label()
+        Me.lblGuestName = New System.Windows.Forms.Label()
         Me.txtGuestName = New System.Windows.Forms.Label()
         Me.txtCheckIn = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblCheckIn = New System.Windows.Forms.Label()
         Me.txtCheckOut = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblCheckOut = New System.Windows.Forms.Label()
         Me.txtEB = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblEB = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblChalet
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(128, 5)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(102, 37)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Label1"
+        Me.lblChalet.AutoSize = True
+        Me.lblChalet.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblChalet.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.lblChalet.Location = New System.Drawing.Point(128, 5)
+        Me.lblChalet.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblChalet.Name = "lblChalet"
+        Me.lblChalet.Size = New System.Drawing.Size(102, 37)
+        Me.lblChalet.TabIndex = 0
+        Me.lblChalet.Text = "Label1"
         '
-        'Label2
+        'lblGuestName
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(45, 131)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Guest Name"
+        Me.lblGuestName.AutoSize = True
+        Me.lblGuestName.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGuestName.ForeColor = System.Drawing.Color.White
+        Me.lblGuestName.Location = New System.Drawing.Point(45, 131)
+        Me.lblGuestName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblGuestName.Name = "lblGuestName"
+        Me.lblGuestName.Size = New System.Drawing.Size(69, 13)
+        Me.lblGuestName.TabIndex = 1
+        Me.lblGuestName.Text = "Guest Name"
         '
         'txtGuestName
         '
@@ -82,17 +82,17 @@ Partial Class ChaletDetails
         Me.txtCheckIn.TabIndex = 4
         Me.txtCheckIn.Text = "Not Available Yet"
         '
-        'Label5
+        'lblCheckIn
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(32, 166)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(79, 13)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Check-In Date"
+        Me.lblCheckIn.AutoSize = True
+        Me.lblCheckIn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCheckIn.ForeColor = System.Drawing.Color.White
+        Me.lblCheckIn.Location = New System.Drawing.Point(32, 166)
+        Me.lblCheckIn.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCheckIn.Name = "lblCheckIn"
+        Me.lblCheckIn.Size = New System.Drawing.Size(79, 13)
+        Me.lblCheckIn.TabIndex = 3
+        Me.lblCheckIn.Text = "Check-In Date"
         '
         'txtCheckOut
         '
@@ -106,17 +106,17 @@ Partial Class ChaletDetails
         Me.txtCheckOut.TabIndex = 6
         Me.txtCheckOut.Text = "Not Available Yet"
         '
-        'Label7
+        'lblCheckOut
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(25, 202)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(89, 13)
-        Me.Label7.TabIndex = 5
-        Me.Label7.Text = "Check-Out Date"
+        Me.lblCheckOut.AutoSize = True
+        Me.lblCheckOut.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCheckOut.ForeColor = System.Drawing.Color.White
+        Me.lblCheckOut.Location = New System.Drawing.Point(25, 202)
+        Me.lblCheckOut.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCheckOut.Name = "lblCheckOut"
+        Me.lblCheckOut.Size = New System.Drawing.Size(89, 13)
+        Me.lblCheckOut.TabIndex = 5
+        Me.lblCheckOut.Text = "Check-Out Date"
         '
         'txtEB
         '
@@ -130,17 +130,17 @@ Partial Class ChaletDetails
         Me.txtEB.TabIndex = 8
         Me.txtEB.Text = "Not Available Yet"
         '
-        'Label9
+        'lblEB
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(48, 235)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(60, 13)
-        Me.Label9.TabIndex = 7
-        Me.Label9.Text = "Extra Beds"
+        Me.lblEB.AutoSize = True
+        Me.lblEB.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEB.ForeColor = System.Drawing.Color.White
+        Me.lblEB.Location = New System.Drawing.Point(48, 235)
+        Me.lblEB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblEB.Name = "lblEB"
+        Me.lblEB.Size = New System.Drawing.Size(60, 13)
+        Me.lblEB.TabIndex = 7
+        Me.lblEB.Text = "Extra Beds"
         '
         'ChaletDetails
         '
@@ -149,14 +149,14 @@ Partial Class ChaletDetails
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(355, 335)
         Me.Controls.Add(Me.txtEB)
-        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.lblEB)
         Me.Controls.Add(Me.txtCheckOut)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblCheckOut)
         Me.Controls.Add(Me.txtCheckIn)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblCheckIn)
         Me.Controls.Add(Me.txtGuestName)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblGuestName)
+        Me.Controls.Add(Me.lblChalet)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "ChaletDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
@@ -166,13 +166,13 @@ Partial Class ChaletDetails
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblChalet As Label
+    Friend WithEvents lblGuestName As Label
     Friend WithEvents txtGuestName As Label
     Friend WithEvents txtCheckIn As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblCheckIn As Label
     Friend WithEvents txtCheckOut As Label
-    Friend WithEvents Label7 As Label
+    Friend WithEvents lblCheckOut As Label
     Friend WithEvents txtEB As Label
-    Friend WithEvents Label9 As Label
+    Friend WithEvents lblEB As Label
 End Class

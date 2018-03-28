@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class CheckIn
+Public Class GboChaletMap
     Dim conn As New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
@@ -28,7 +28,7 @@ Public Class CheckIn
         ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
-        For Each ctrl As Control In Me.GroupBox2.Controls
+        For Each ctrl As Control In Me.GboChalet.Controls
             If TypeOf ctrl Is Button Then
                 With ctrl
                     .BackColor = Color.White
@@ -53,7 +53,7 @@ Public Class CheckIn
         Dim row As DataRow
 
         For Each row In exdata.Rows
-            DirectCast(GroupBox2.Controls("btn" & row(0)), Button).BackColor = Color.Red
+            DirectCast(GboChalet.Controls("btn" & row(0)), Button).BackColor = Color.Red
         Next
         conn.Close()
     End Sub
@@ -88,7 +88,7 @@ Public Class CheckIn
         Dim row As DataRow
 
         For Each row In exdata.Rows
-            DirectCast(GroupBox2.Controls("btn" & row(0)), Button).BackColor = Color.Red
+            DirectCast(GboChalet.Controls("btn" & row(0)), Button).BackColor = Color.Red
             unavaich += 1
         Next
 
@@ -104,16 +104,16 @@ Public Class CheckIn
 
         If dr.HasRows Then
             While (dr.Read())
-                cboGuestID.Items.Add(dr(0))
+                CboGuestID.Items.Add(dr(0))
             End While
         Else
-            cboGuestID.Items.Add("No Existing Guests")
+            CboGuestID.Items.Add("No Existing Guests")
         End If
         conn.Close()
     End Sub
 
-    Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGuestID.SelectedIndexChanged
-        If cboGuestID.Text = "" Then
+    Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboGuestID.SelectedIndexChanged
+        If CboGuestID.Text = "" Then
             MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
@@ -131,7 +131,7 @@ Public Class CheckIn
         cmd = New SqlCommand(sql, conn)
         conn.Open()
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
-        cmd.Parameters.AddWithValue("@guestid", cboGuestID.Text)
+        cmd.Parameters.AddWithValue("@guestid", CboGuestID.Text)
 
         Dim dr As SqlDataReader = cmd.ExecuteReader
 
@@ -148,7 +148,7 @@ Public Class CheckIn
 
         End If
     End Sub
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCheckIn.Click
         '
         'INPUT VALIDATION & OCCUPANCY SPACE CHECK
         '

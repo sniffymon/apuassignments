@@ -22,53 +22,53 @@ Partial Class GuestInfoEntry
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.GboInfoEntry = New System.Windows.Forms.GroupBox()
+        Me.lblGuestEmail = New System.Windows.Forms.Label()
         Me.txtGuestMobile = New System.Windows.Forms.MaskedTextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblGuestMobile = New System.Windows.Forms.Label()
         Me.lblGuestName = New System.Windows.Forms.Label()
         Me.txtGuestID = New System.Windows.Forms.MaskedTextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblGuestID = New System.Windows.Forms.Label()
+        Me.btnRegister = New System.Windows.Forms.Button()
+        Me.lblRegisterGuest = New System.Windows.Forms.Label()
         Me.txtGuestName = New System.Windows.Forms.TextBox()
         Me.txtGuestEmail = New System.Windows.Forms.TextBox()
-        Me.GroupBox1.SuspendLayout()
+        Me.GboInfoEntry.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupBox1
+        'GboInfoEntry
         '
-        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.GboInfoEntry.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.txtGuestEmail)
-        Me.GroupBox1.Controls.Add(Me.txtGuestName)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txtGuestMobile)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.lblGuestName)
-        Me.GroupBox1.Controls.Add(Me.txtGuestID)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(24, 84)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(811, 264)
-        Me.GroupBox1.TabIndex = 2
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Guest Information Enter"
+        Me.GboInfoEntry.Controls.Add(Me.txtGuestEmail)
+        Me.GboInfoEntry.Controls.Add(Me.txtGuestName)
+        Me.GboInfoEntry.Controls.Add(Me.lblGuestEmail)
+        Me.GboInfoEntry.Controls.Add(Me.txtGuestMobile)
+        Me.GboInfoEntry.Controls.Add(Me.lblGuestMobile)
+        Me.GboInfoEntry.Controls.Add(Me.lblGuestName)
+        Me.GboInfoEntry.Controls.Add(Me.txtGuestID)
+        Me.GboInfoEntry.Controls.Add(Me.lblGuestID)
+        Me.GboInfoEntry.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GboInfoEntry.Location = New System.Drawing.Point(24, 84)
+        Me.GboInfoEntry.Margin = New System.Windows.Forms.Padding(2)
+        Me.GboInfoEntry.Name = "GboInfoEntry"
+        Me.GboInfoEntry.Padding = New System.Windows.Forms.Padding(2)
+        Me.GboInfoEntry.Size = New System.Drawing.Size(811, 264)
+        Me.GboInfoEntry.TabIndex = 2
+        Me.GboInfoEntry.TabStop = False
+        Me.GboInfoEntry.Text = "Guest Information Enter"
         '
-        'Label2
+        'lblGuestEmail
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(198, 147)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(79, 13)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Email Address"
+        Me.lblGuestEmail.AutoSize = True
+        Me.lblGuestEmail.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGuestEmail.Location = New System.Drawing.Point(198, 147)
+        Me.lblGuestEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblGuestEmail.Name = "lblGuestEmail"
+        Me.lblGuestEmail.Size = New System.Drawing.Size(79, 13)
+        Me.lblGuestEmail.TabIndex = 7
+        Me.lblGuestEmail.Text = "Email Address"
         '
         'txtGuestMobile
         '
@@ -81,16 +81,16 @@ Partial Class GuestInfoEntry
         Me.txtGuestMobile.TabIndex = 6
         Me.txtGuestMobile.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
-        'Label3
+        'lblGuestMobile
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(198, 112)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Mobile Number"
+        Me.lblGuestMobile.AutoSize = True
+        Me.lblGuestMobile.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGuestMobile.Location = New System.Drawing.Point(198, 112)
+        Me.lblGuestMobile.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblGuestMobile.Name = "lblGuestMobile"
+        Me.lblGuestMobile.Size = New System.Drawing.Size(87, 13)
+        Me.lblGuestMobile.TabIndex = 5
+        Me.lblGuestMobile.Text = "Mobile Number"
         '
         'lblGuestName
         '
@@ -113,42 +113,42 @@ Partial Class GuestInfoEntry
         Me.txtGuestID.Size = New System.Drawing.Size(201, 21)
         Me.txtGuestID.TabIndex = 2
         '
-        'Label1
+        'lblGuestID
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(198, 38)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(110, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Passport/IC Number"
+        Me.lblGuestID.AutoSize = True
+        Me.lblGuestID.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGuestID.Location = New System.Drawing.Point(198, 38)
+        Me.lblGuestID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblGuestID.Name = "lblGuestID"
+        Me.lblGuestID.Size = New System.Drawing.Size(110, 13)
+        Me.lblGuestID.TabIndex = 1
+        Me.lblGuestID.Text = "Passport/IC Number"
         '
-        'Button1
+        'btnRegister
         '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(369, 385)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 40)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Enter"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegister.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegister.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.btnRegister.Location = New System.Drawing.Point(369, 385)
+        Me.btnRegister.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnRegister.Name = "btnRegister"
+        Me.btnRegister.Size = New System.Drawing.Size(101, 40)
+        Me.btnRegister.TabIndex = 3
+        Me.btnRegister.Text = "Enter"
+        Me.btnRegister.UseVisualStyleBackColor = True
         '
-        'Label4
+        'lblRegisterGuest
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(269, 20)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(301, 47)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "REGISTER GUEST"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblRegisterGuest.AutoSize = True
+        Me.lblRegisterGuest.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRegisterGuest.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.lblRegisterGuest.Location = New System.Drawing.Point(269, 20)
+        Me.lblRegisterGuest.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblRegisterGuest.Name = "lblRegisterGuest"
+        Me.lblRegisterGuest.Size = New System.Drawing.Size(301, 47)
+        Me.lblRegisterGuest.TabIndex = 9
+        Me.lblRegisterGuest.Text = "REGISTER GUEST"
+        Me.lblRegisterGuest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtGuestName
         '
@@ -170,9 +170,9 @@ Partial Class GuestInfoEntry
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(867, 462)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.lblRegisterGuest)
+        Me.Controls.Add(Me.btnRegister)
+        Me.Controls.Add(Me.GboInfoEntry)
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -180,22 +180,22 @@ Partial Class GuestInfoEntry
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "GuestInfoEntry"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GboInfoEntry.ResumeLayout(False)
+        Me.GboInfoEntry.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents GboInfoEntry As GroupBox
+    Friend WithEvents lblGuestEmail As Label
     Friend WithEvents txtGuestMobile As MaskedTextBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblGuestMobile As Label
     Friend WithEvents lblGuestName As Label
     Friend WithEvents txtGuestID As MaskedTextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblGuestID As Label
+    Friend WithEvents btnRegister As Button
+    Friend WithEvents lblRegisterGuest As Label
     Friend WithEvents txtGuestEmail As TextBox
     Friend WithEvents txtGuestName As TextBox
 End Class

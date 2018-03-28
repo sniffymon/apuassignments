@@ -23,8 +23,15 @@ Public Class RegisterStaff
 
         If txtFullName.TextLength >= 3 Then
             Dim initialarray() As String = txtFullName.Text.Split(" "c)
-            lblUsrName.Text = String.Join("", Array.ConvertAll(initialarray, Function(n) n.Substring(0, 1).ToUpper))
-
+            Dim wholename As String = ""
+            Dim i = 1
+            For Each word In initialarray
+                If word.Length > 0 And i <= 3 Then
+                    wholename = wholename + word.Chars(0)
+                End If
+                lblUsrName.Text = wholename.ToString.ToUpper
+                i += 1
+            Next
             conn.Open()
 
             sql = "SELECT LoginUsername FROM Users"
@@ -84,5 +91,4 @@ Public Class RegisterStaff
         txtPwd.UseSystemPasswordChar = Not txtPwd.UseSystemPasswordChar
         txtCfmPwd.UseSystemPasswordChar = Not txtCfmPwd.UseSystemPasswordChar
     End Sub
-
 End Class

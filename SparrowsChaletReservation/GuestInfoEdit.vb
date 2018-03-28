@@ -15,16 +15,16 @@ Public Class GuestInfoEdit
         dr = cmd.ExecuteReader
         If dr.HasRows Then
             While (dr.Read())
-                cboGuestID.Items.Add(dr(0))
+                CboGuestID.Items.Add(dr(0))
             End While
         Else
-            cboGuestID.Items.Add("No Existing Guests")
-            cboGuestID.SelectedIndex = 0
+            CboGuestID.Items.Add("No Existing Guests")
+            CboGuestID.SelectedIndex = 0
         End If
         conn.Close()
     End Sub
 
-    Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGuestID.SelectedIndexChanged
+    Private Sub CboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboGuestID.SelectedIndexChanged
         'If cboGuestID.Text = "" Then
         '    MessageBox.Show("Please select a guest information to edit", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
         '    Exit Sub
@@ -38,7 +38,7 @@ Public Class GuestInfoEdit
         cmd = New SqlCommand(sql, conn)
         conn.Open()
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
-        cmd.Parameters.AddWithValue("@guestid", cboGuestID.Text)
+        cmd.Parameters.AddWithValue("@guestid", CboGuestID.Text)
         dr = cmd.ExecuteReader
 
         If dr.Read() Then
@@ -50,7 +50,7 @@ Public Class GuestInfoEdit
         conn.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         sql = "UPDATE GuestDetail
                SET Guest_ID_PassNum = @ICnum, Guest_Name = @guestname, Guest_Contact_No = @contactnum, Guest_Email = @email
                WHERE GuestNo = @idmemory"
@@ -58,7 +58,7 @@ Public Class GuestInfoEdit
         If EmailCheck(txtGuestEmail.Text) = True Then
             cmd = New SqlCommand(sql, conn)
             conn.Open()
-            cmd.Parameters.AddWithValue("@ICnum", cboGuestID.Text)
+            cmd.Parameters.AddWithValue("@ICnum", CboGuestID.Text)
             cmd.Parameters.AddWithValue("@guestname", txtGuestName.Text)
             cmd.Parameters.AddWithValue("@contactnum", txtGuestMobile.Text)
             cmd.Parameters.AddWithValue("@email", txtGuestEmail.Text)
@@ -76,12 +76,12 @@ Public Class GuestInfoEdit
         ElseIf EmailCheck(txtGuestEmail.Text) = False Then
             MessageBox.Show("Invalid Email, please try again", "Invalid Email or GuestID", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtGuestEmail.Focus()
-                txtGuestEmail.BackColor = Color.AliceBlue
-                Exit Sub
-            End If
+            txtGuestEmail.BackColor = Color.AliceBlue
+            Exit Sub
+        End If
     End Sub
 
-    Private Sub cboGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboGuestID.KeyPress
+    Private Sub CboGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CboGuestID.KeyPress
         If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If

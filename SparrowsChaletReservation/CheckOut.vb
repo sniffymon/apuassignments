@@ -10,6 +10,8 @@ Public Class CheckOut
     Dim cmdUpdate As SqlCommand
     Public ChaletTotal, ChaletDeposit, dayduration, OverstayCharged, standardprice, supremeprice, overstandard, oversupreme,
         totalstandard, totalsupreme, overalltotal As Double
+
+
     Private Sub CheckOut_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn.Open()
         sql = "SELECT Guest_ID_PassNum FROM GuestDetail"
@@ -19,17 +21,17 @@ Public Class CheckOut
 
         If dr.HasRows Then
             While (dr.Read())
-                cboGuestID.Items.Add(dr(0))
+                CboGuestID.Items.Add(dr(0))
             End While
         Else
-            cboGuestID.Items.Add("No Existing Guests")
+            CboGuestID.Items.Add("No Existing Guests")
         End If
         dr.Close()
         conn.Close()
 
     End Sub
-    Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGuestID.SelectedIndexChanged
-        If cboGuestID.Text = "" Then
+    Private Sub CboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboGuestID.SelectedIndexChanged
+        If CboGuestID.Text = "" Then
             MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
@@ -44,7 +46,7 @@ Public Class CheckOut
         conn.Open()
 
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
-        cmd.Parameters.AddWithValue("@guestid", cboGuestID.Text)
+        cmd.Parameters.AddWithValue("@guestid", CboGuestID.Text)
 
 
         Dim dr As SqlDataReader = cmd.ExecuteReader
@@ -74,7 +76,7 @@ Public Class CheckOut
         Dim exdata As DataTable = chaletds.Tables("SpecifiedCH")
         Dim row As DataRow
 
-        For Each ctrl As Control In Me.GroupBox2.Controls
+        For Each ctrl As Control In Me.GboChalet.Controls
             If TypeOf ctrl Is Button Then
                 ctrl.Visible = False
             End If
@@ -94,7 +96,7 @@ Public Class CheckOut
                 End If
                 checkedchalet.Add("btn" & row(0))
 
-                DirectCast(GroupBox2.Controls("btn" & row(0)), Button).Visible = True
+                DirectCast(GboChalet.Controls("btn" & row(0)), Button).Visible = True
             Next
 
             ' Display the date in the default (general) format.
@@ -117,7 +119,7 @@ Public Class CheckOut
             StartTime = txtCheckIn.Text
             EndTime = txtActualCheckOut.Text
             TimeSpan = EndTime.Subtract(StartTime)
-            lblNightsStay.Text = TimeSpan.Days
+            txtDuration.Text = TimeSpan.Days
 
             Dim StartTime1, EndTime1 As DateTime
             Dim TimeSpan1 As TimeSpan
@@ -139,13 +141,13 @@ Public Class CheckOut
             supremeprice = (supremechalets * dayduration * 250)
             totalstandard = (overstandard + standardprice)
             totalsupreme = (oversupreme + supremeprice)
-        overalltotal = (totalstandard + totalsupreme)
+            overalltotal = (totalstandard + totalsupreme)
         End If
         conn.Close()
 
     End Sub
 
-    Private Sub btncheckout_Click(sender As Object, e As EventArgs) Handles btncheckout.Click
+    Private Sub btnCheckOut_Click(sender As Object, e As EventArgs) Handles btnCheckOut.Click
         'Info box for overdue charge
         If txtOverdue.Text = 0 Then
             CheckOutCart.ShowDialog()
@@ -154,7 +156,7 @@ Public Class CheckOut
             CheckOutCart.ShowDialog()
         End If
     End Sub
-    Private Sub cboGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboGuestID.KeyPress
+    Private Sub CboGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CboGuestID.KeyPress
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
