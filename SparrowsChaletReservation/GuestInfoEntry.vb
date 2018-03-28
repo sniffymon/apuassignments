@@ -6,9 +6,9 @@ Public Class GuestInfoEntry
     'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
     Dim Sql As String
     Dim cmd As SqlCommand
-    Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        If txtGuestID.Text = "" Or txtGuestName.Text = "" Or txtGuestEmail.Text = "" Or txtGuestMobile.Text = "" Then
-            MessageBox.Show("Please enter all needed information into the textboxes", "Guest Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If String.IsNullOrWhiteSpace(txtGuestName.Text) Or txtGuestID.Text = "" Or txtGuestEmail.Text = "" Or txtGuestMobile.Text = "" Then
+            MessageBox.Show("Please check that you've entered all needed and valid information into the textboxes", "Guest Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
         conn.Open()
@@ -47,9 +47,16 @@ Public Class GuestInfoEntry
             EmailCheck = False
         End If
     End Function
-    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestID.KeyDown
+    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles  txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestID.KeyDown
         If e.KeyCode = Keys.Enter Then
-            btnRegister.PerformClick()
+            Button1.PerformClick()
+        End If
+    End Sub
+
+
+    Private Sub txtGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGuestID.KeyPress, txtGuestEmail.KeyPress, txtGuestMobile.KeyPress
+        If Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
         End If
     End Sub
 End Class

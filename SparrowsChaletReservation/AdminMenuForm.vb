@@ -2,15 +2,16 @@
     Private Sub AdminMenuForm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         GuestInfoEdit.Close()
         AdminChaletInfo.Close()
-        SelectChaletForm.Close()
+        OccupancyReportForm.Close()
         RegisterStaff.Close()
     End Sub
-    Private Sub btnAddStaff_Click(sender As Object, e As EventArgs) Handles btnAddStaff.Click, btnAdminInfoPanel.Click, btnEditGuestRecords.Click
+    Private Sub btnAddStaff_Click(sender As Object, e As EventArgs) Handles btnAddStaff.Click, btnAdminInfoPanel.Click, btnEditGuestRecords.Click, btnOccupancyReport.Click
         ' "TURN OFF" OTHER TABS
         '
         btnAdminInfoPanel.BackColor = Color.FromArgb(55, 71, 79)
         btnAddStaff.BackColor = Color.FromArgb(55, 71, 79)
         btnEditGuestRecords.BackColor = Color.FromArgb(55, 71, 79)
+        btnOccupancyReport.BackColor = Color.FromArgb(55, 71, 79)
         ' Tabs Switches
         '
         Select Case DirectCast(sender, Button).Name
@@ -33,7 +34,7 @@
                 GuestInfoEdit.BringToFront()
                 sender.BackColor = Color.FromArgb(50, 50, 50)
                 indSelectedTab.Visible = True
-                indSelectedTab.Location = New Point(192, 217)
+                indSelectedTab.Location = New Point(192, 185)
                 ' ADMIN INFO PANEL
                 '
             Case btnAdminInfoPanel.Name
@@ -43,7 +44,17 @@
                 AdminChaletInfo.BringToFront()
                 sender.BackColor = Color.FromArgb(50, 50, 50)
                 indSelectedTab.Visible = True
-                indSelectedTab.Location = New Point(192, 343)
+                indSelectedTab.Location = New Point(192, 281)
+                ' OCCUPANCY REPORT
+                '
+            Case btnOccupancyReport.Name
+                OccupancyReportForm.TopLevel = False
+                pnlMainView.Controls.Add(OccupancyReportForm)
+                OccupancyReportForm.Show()
+                OccupancyReportForm.BringToFront()
+                sender.BackColor = Color.FromArgb(50, 50, 50)
+                indSelectedTab.Visible = True
+                indSelectedTab.Location = New Point(192, 377)
         End Select
         pnlMenuStatic.BringToFront()
         Do Until pnlMenu.Location.X = -155
@@ -57,8 +68,9 @@
         btnAdminInfoPanel.BackColor = Color.FromArgb(55, 71, 79)
         btnAddStaff.BackColor = Color.FromArgb(55, 71, 79)
         btnEditGuestRecords.BackColor = Color.FromArgb(55, 71, 79)
+        btnOccupancyReport.BackColor = Color.FromArgb(55, 71, 79)
         indSelectedTab.Visible = False
-        SelectChaletForm.Hide()
+        OccupancyReportForm.Hide()
         GuestInfoEdit.Hide()
         RegisterStaff.Hide()
         AdminChaletInfo.Hide()
@@ -100,4 +112,5 @@
             Me.Close()
         End If
     End Sub
+
 End Class

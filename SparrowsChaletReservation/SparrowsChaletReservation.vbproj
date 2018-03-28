@@ -136,9 +136,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet1.vb">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ExtendBooking.Designer.vb">
       <DependentUpon>ExtendBooking.vb</DependentUpon>
     </Compile>
@@ -149,12 +146,6 @@
       <DependentUpon>CartCheckOut.vb</DependentUpon>
     </Compile>
     <Compile Include="CartCheckOut.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OccupancyReport.Designer.vb">
-      <DependentUpon>OccupancyReport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="OccupancyReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GuestInfoEdit.Designer.vb">
@@ -173,6 +164,12 @@
       <DependentUpon>CheckIn.vb</DependentUpon>
     </Compile>
     <Compile Include="CheckIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OccupancyReportForm.Designer.vb">
+      <DependentUpon>OccupancyReportForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OccupancyReportForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReceiptDataSet.Designer.vb">
@@ -264,9 +261,6 @@
     <EmbeddedResource Include="CartCheckOut.resx">
       <DependentUpon>CartCheckOut.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OccupancyReport.resx">
-      <DependentUpon>OccupancyReport.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GuestInfoEdit.resx">
       <DependentUpon>GuestInfoEdit.vb</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +270,9 @@
     <EmbeddedResource Include="CheckIn.resx">
       <DependentUpon>CheckIn.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OccupancyReportForm.resx">
+      <DependentUpon>OccupancyReportForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Receipt.rdlc" />
     <EmbeddedResource Include="ReceiptForm.resx">
       <DependentUpon>ReceiptForm.vb</DependentUpon>
@@ -283,7 +280,7 @@
     <EmbeddedResource Include="RegisterStaff.resx">
       <DependentUpon>RegisterStaff.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Occupancy.rdlc" />
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="SelectChaletForm.resx">
       <DependentUpon>SelectChaletForm.vb</DependentUpon>
     </EmbeddedResource>

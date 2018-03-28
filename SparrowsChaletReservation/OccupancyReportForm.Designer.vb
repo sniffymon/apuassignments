@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class OccupancyReport
+Partial Class OccupancyReportForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -49,14 +49,11 @@ Partial Class OccupancyReport
         ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.DataTable1BindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SparrowReservation.Report2.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 63)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SparrowReservation.Report1.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 54)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.ShowContextMenu = False
-        Me.ReportViewer1.ShowDocumentMapButton = False
-        Me.ReportViewer1.ShowPageNavigationControls = False
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 387)
+        Me.ReportViewer1.Size = New System.Drawing.Size(915, 396)
         Me.ReportViewer1.TabIndex = 0
         '
         'DataTable1TableAdapter
@@ -65,32 +62,29 @@ Partial Class OccupancyReport
         '
         'Label4
         '
-        Me.Label4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(224, 9)
+        Me.Label4.Location = New System.Drawing.Point(260, 4)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(375, 47)
-        Me.Label4.TabIndex = 58
+        Me.Label4.TabIndex = 11
         Me.Label4.Text = "OCCUPANCY REPORT"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'OccupancyReport
+        'OccupancyReportForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(915, 450)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Name = "OccupancyReport"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Occupancy Report"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Name = "OccupancyReportForm"
+        Me.Text = "OccupancyReportForm"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
