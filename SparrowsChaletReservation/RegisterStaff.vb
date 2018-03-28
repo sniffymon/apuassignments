@@ -63,7 +63,7 @@ Public Class RegisterStaff
         registercheck = cmd.ExecuteNonQuery()
 
         If registercheck = 1 Then
-            MessageBox.Show("Guest Info Successfully Stored", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Staff Info Successfully Stored", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ElseIf registercheck = 0 Then
             MessageBox.Show("Unexpected error occured during registration. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -84,4 +84,5 @@ Public Class RegisterStaff
         txtPwd.UseSystemPasswordChar = Not txtPwd.UseSystemPasswordChar
         txtCfmPwd.UseSystemPasswordChar = Not txtCfmPwd.UseSystemPasswordChar
     End Sub
+
 End Class
