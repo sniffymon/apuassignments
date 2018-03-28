@@ -150,7 +150,7 @@ Public Class CheckOut
         If txtOverdue.Text = 0 Then
             CheckOutCart.ShowDialog()
         ElseIf txtOverdue.Text >= 1 Then
-            MessageBox.Show("Reminder that client will be charged RM 250 for Supreme Room and RM350 for Standard Room each day due to overstay", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Reminder that client will be charged RM 250 for Standard Room and RM350 for Supreme Room each day due to overstay", "Check Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
             CheckOutCart.ShowDialog()
         End If
     End Sub

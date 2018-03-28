@@ -18,7 +18,7 @@ Public Class AdminChaletInfo
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
-        cmd.Parameters.AddWithValue("@date", dtpDateSpec.Value)
+        cmd.Parameters.AddWithValue("@date", dtpDateSpec.Value.ToString("yyyy-MM-dd"))
         Dim adptr As New SqlDataAdapter(cmd)
         adptr.Fill(chaletds, "BookedCH")
 
@@ -94,7 +94,7 @@ Public Class AdminChaletInfo
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@guestno", guestnostorage)
-        cmd.Parameters.AddWithValue("@date", dtpDateSpec.Value)
+        cmd.Parameters.AddWithValue("@date", dtpDateSpec.Value.ToString("yyyy-MM-dd"))
         Dim adptr As New SqlDataAdapter(cmd)
         adptr.Fill(chaletds, "SpecifiedCH")
 
@@ -172,7 +172,7 @@ Public Class AdminChaletInfo
         ElseIf searchmode = True Then
             sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
             cmd = New SqlCommand(sql, conn)
-            cmd.Parameters.AddWithValue("@date", dtpDateSpec.Text)
+            cmd.Parameters.AddWithValue("@date", dtpDateSpec.Value.ToString("yyyy-MM-dd"))
             cmd.Parameters.AddWithValue("@guestno", guestnostorage)
             Dim adptr As New SqlDataAdapter(cmd)
             adptr.Fill(chaletds, "BookedCH")
