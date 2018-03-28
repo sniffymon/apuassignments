@@ -18,7 +18,7 @@ Public Class AdminChaletInfo
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
-        cmd.Parameters.AddWithValue("@date", dtpDateSpec.Text)
+        cmd.Parameters.AddWithValue("@date", dtpDateSpec.Value)
         Dim adptr As New SqlDataAdapter(cmd)
         adptr.Fill(chaletds, "BookedCH")
 
@@ -94,7 +94,7 @@ Public Class AdminChaletInfo
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@guestno", guestnostorage)
-        cmd.Parameters.AddWithValue("@date", dtpDateSpec.Text)
+        cmd.Parameters.AddWithValue("@date", dtpDateSpec.Value)
         Dim adptr As New SqlDataAdapter(cmd)
         adptr.Fill(chaletds, "SpecifiedCH")
 

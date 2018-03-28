@@ -23,16 +23,16 @@ Partial Class GuestInfoEntry
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtGuestEmail = New System.Windows.Forms.MaskedTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtGuestMobile = New System.Windows.Forms.MaskedTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtGuestName = New System.Windows.Forms.MaskedTextBox()
         Me.lblGuestName = New System.Windows.Forms.Label()
         Me.txtGuestID = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtGuestName = New System.Windows.Forms.TextBox()
+        Me.txtGuestEmail = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,10 +42,10 @@ Partial Class GuestInfoEntry
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.txtGuestEmail)
+        Me.GroupBox1.Controls.Add(Me.txtGuestName)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtGuestMobile)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.txtGuestName)
         Me.GroupBox1.Controls.Add(Me.lblGuestName)
         Me.GroupBox1.Controls.Add(Me.txtGuestID)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -58,15 +58,6 @@ Partial Class GuestInfoEntry
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Guest Information Enter"
-        '
-        'txtGuestEmail
-        '
-        Me.txtGuestEmail.Location = New System.Drawing.Point(361, 146)
-        Me.txtGuestEmail.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtGuestEmail.Name = "txtGuestEmail"
-        Me.txtGuestEmail.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestEmail.Size = New System.Drawing.Size(201, 21)
-        Me.txtGuestEmail.TabIndex = 8
         '
         'Label2
         '
@@ -100,15 +91,6 @@ Partial Class GuestInfoEntry
         Me.Label3.Size = New System.Drawing.Size(87, 13)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Mobile Number"
-        '
-        'txtGuestName
-        '
-        Me.txtGuestName.Location = New System.Drawing.Point(361, 75)
-        Me.txtGuestName.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtGuestName.Name = "txtGuestName"
-        Me.txtGuestName.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestName.Size = New System.Drawing.Size(201, 21)
-        Me.txtGuestName.TabIndex = 4
         '
         'lblGuestName
         '
@@ -168,6 +150,20 @@ Partial Class GuestInfoEntry
         Me.Label4.Text = "REGISTER GUEST"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'txtGuestName
+        '
+        Me.txtGuestName.Location = New System.Drawing.Point(361, 76)
+        Me.txtGuestName.Name = "txtGuestName"
+        Me.txtGuestName.Size = New System.Drawing.Size(201, 21)
+        Me.txtGuestName.TabIndex = 9
+        '
+        'txtGuestEmail
+        '
+        Me.txtGuestEmail.Location = New System.Drawing.Point(361, 147)
+        Me.txtGuestEmail.Name = "txtGuestEmail"
+        Me.txtGuestEmail.Size = New System.Drawing.Size(201, 21)
+        Me.txtGuestEmail.TabIndex = 10
+        '
         'GuestInfoEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -192,14 +188,14 @@ Partial Class GuestInfoEntry
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents txtGuestEmail As MaskedTextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txtGuestMobile As MaskedTextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtGuestName As MaskedTextBox
     Friend WithEvents lblGuestName As Label
     Friend WithEvents txtGuestID As MaskedTextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents txtGuestEmail As TextBox
+    Friend WithEvents txtGuestName As TextBox
 End Class
