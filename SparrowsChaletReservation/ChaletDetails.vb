@@ -20,8 +20,9 @@ Public Class ChaletDetails
         Label1.Text = AdminChaletInfo.clickedchalet
         If dr.Read() Then
             txtGuestName.Text = dr(0).ToString
-            conn.Close()
+
         End If
+        conn.Close()
 
         cmd = New SqlCommand(secondsql, conn)
         conn.Open()

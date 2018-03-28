@@ -47,7 +47,7 @@ Public Class GuestInfoEntry
             EmailCheck = False
         End If
     End Function
-    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtGuestEmail.KeyDown, txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestName.KeyDown, txtGuestID.KeyDown
+    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles  txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestID.KeyDown
         If e.KeyCode = Keys.Enter Then
             Button1.PerformClick()
         End If

@@ -76,7 +76,7 @@ Partial Class RegisterStaff
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Location = New System.Drawing.Point(581, 106)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(107, 17)
+        Me.CheckBox1.Size = New System.Drawing.Size(145, 25)
         Me.CheckBox1.TabIndex = 10
         Me.CheckBox1.Text = "Show Password"
         Me.CheckBox1.UseVisualStyleBackColor = True
@@ -87,7 +87,7 @@ Partial Class RegisterStaff
         Me.txtCfmPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCfmPwd.Name = "txtCfmPwd"
         Me.txtCfmPwd.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtCfmPwd.Size = New System.Drawing.Size(201, 21)
+        Me.txtCfmPwd.Size = New System.Drawing.Size(201, 28)
         Me.txtCfmPwd.TabIndex = 8
         Me.txtCfmPwd.UseSystemPasswordChar = True
         '
@@ -98,7 +98,7 @@ Partial Class RegisterStaff
         Me.Label2.Location = New System.Drawing.Point(198, 147)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(99, 13)
+        Me.Label2.Size = New System.Drawing.Size(142, 21)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Confirm Password"
         '
@@ -108,7 +108,7 @@ Partial Class RegisterStaff
         Me.txtPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPwd.Name = "txtPwd"
         Me.txtPwd.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtPwd.Size = New System.Drawing.Size(201, 21)
+        Me.txtPwd.Size = New System.Drawing.Size(201, 28)
         Me.txtPwd.TabIndex = 6
         Me.txtPwd.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         Me.txtPwd.UseSystemPasswordChar = True
@@ -120,7 +120,7 @@ Partial Class RegisterStaff
         Me.Label3.Location = New System.Drawing.Point(198, 112)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(55, 13)
+        Me.Label3.Size = New System.Drawing.Size(79, 21)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Password"
         '
@@ -131,7 +131,7 @@ Partial Class RegisterStaff
         Me.lblGuestName.Location = New System.Drawing.Point(198, 76)
         Me.lblGuestName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGuestName.Name = "lblGuestName"
-        Me.lblGuestName.Size = New System.Drawing.Size(89, 13)
+        Me.lblGuestName.Size = New System.Drawing.Size(128, 21)
         Me.lblGuestName.TabIndex = 3
         Me.lblGuestName.Text = "Login Username"
         '
@@ -141,7 +141,7 @@ Partial Class RegisterStaff
         Me.txtFullName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFullName.Name = "txtFullName"
         Me.txtFullName.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtFullName.Size = New System.Drawing.Size(201, 21)
+        Me.txtFullName.Size = New System.Drawing.Size(201, 28)
         Me.txtFullName.TabIndex = 2
         '
         'Label1
@@ -151,7 +151,7 @@ Partial Class RegisterStaff
         Me.Label1.Location = New System.Drawing.Point(198, 38)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 13)
+        Me.Label1.Size = New System.Drawing.Size(75, 21)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Fullname"
         '
@@ -176,14 +176,14 @@ Partial Class RegisterStaff
         Me.Label4.Location = New System.Drawing.Point(269, 20)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(291, 47)
+        Me.Label4.Size = New System.Drawing.Size(437, 71)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "REGISTER STAFF"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'RegisterStaff
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(867, 462)

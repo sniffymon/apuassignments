@@ -8,7 +8,7 @@ Public Class ChaletExtend
 
     Private Sub ChaletEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpCheckOut.CustomFormat = " "
-        dtpCheckOut.MinDate = dtpCheckOut.Value
+        dtpCheckOut.MinDate = dtpCheckOut.Value.ToString("yyyy-MM-dd")
 
         'LOAD Existing Info on Chalet
         '
@@ -30,7 +30,7 @@ Public Class ChaletExtend
             dtpCheckOut.CustomFormat = "yyyy-MM-dd"
             txtGuestName.Text = dr(0)
             txtCheckIn.text = dr(3).ToString
-            dtpCheckOut.Value = dr(4)
+            dtpCheckOut.value = dr(4)
             txtEB.Text = dr(5)
         End If
 
@@ -55,7 +55,7 @@ Public Class ChaletExtend
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
         cmd.Parameters.AddWithValue("@memguestname", txtGuestName.Text)
-        cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Text)
+        cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Value.ToString("yyyy-MM-dd"))
 
         EditCheck = cmd.ExecuteNonQuery()
 
@@ -64,6 +64,7 @@ Public Class ChaletExtend
         ElseIf EditCheck = 1 Then
             MsgBox("Stay Successfully Extended")
         End If
+        Me.Close()
 
     End Sub
 
