@@ -55,38 +55,39 @@ Public Class CartCheckIn
         Dim n As Integer = 0
         For x = 1 To i
 
-            sql = "INSERT INTO Reservation (CheckIn_Date, CheckOut_Date, Deposit, Total_Amount, ChaletNumber_FK, ExtraBed, GuestNo_FK)
-               SELECT @checkindate, @checkoutdate, @deposit, @totalamt, @chaletnumber, @extrab, (SELECT GuestNo FROM GuestDetail WHERE Guest_Name = @memguestname)
+            sql = "INSERT INTO Reservation (CheckIn_Date, CheckOut_Date, ChaletNumber_FK, ExtraBed, GuestNo_FK)
+               SELECT @checkindate, @checkoutdate, @chaletnumber, @extrab, (SELECT GuestNo FROM GuestDetail WHERE Guest_Name = @memguestname)
                WHERE NOT EXISTS (SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber))"
 
             cmd = New SqlCommand(sql, conn)
             cmd.Parameters.AddWithValue("@checkindate", CheckIn.dtpCheckIn.Value.ToString("yyyy-MM-dd"))
             cmd.Parameters.AddWithValue("@checkoutdate", CheckIn.dtpCheckOut.Value.ToString("yyyy-MM-dd"))
-            cmd.Parameters.AddWithValue("@deposit", CheckIn.ChaletDeposit)
-            cmd.Parameters.AddWithValue("@totalamt", CheckIn.ChaletTotal)
+            ' cmd.Parameters.AddWithValue("@deposit", CheckIn.ChaletDeposit)
+            'cmd.Parameters.AddWithValue("@totalamt", CheckIn.ChaletTotal)
             cmd.Parameters.AddWithValue("@memguestname", CheckIn.txtGuestName.Text)
             cmd.Parameters.AddWithValue("@chaletnumber", CheckIn.checkedchalet(x - 1))
             cmd.Parameters.AddWithValue("@extrab", DirectCast(pnlOthers.Controls("Dropdown" & (x - 1).ToString), ComboBox).Text)
 
             recordcheck = cmd.ExecuteNonQuery
 
-            sql = "UPDATE Chalet
-               SET ChaletStatusOccupied = 'True'
-			   FROM Reservation
-			   INNER JOIN
-			   Chalet
-               ON Reservation.ChaletNumber_FK = Chalet.ChaletNumber
-               WHERE ChaletNumber_FK = @chaletnumber;"
+            '      sql = "UPDATE Chalet
+            '         SET ChaletStatusOccupied = 'True'
+            'FROM Reservation
+            'INNER JOIN
+            'Chalet
+            '         ON Reservation.ChaletNumber_FK = Chalet.ChaletNumber
+            '         WHERE ChaletNumber_FK = @chaletnumber;"
 
-            cmd = New SqlCommand(sql, conn)
-            cmd.Parameters.AddWithValue("@chaletnumber", CheckIn.checkedchalet(x - 1))
-            cmd.ExecuteNonQuery()
+            '      cmd = New SqlCommand(sql, conn)
+            '      cmd.Parameters.AddWithValue("@chaletnumber", CheckIn.checkedchalet(x - 1))
+            '      cmd.ExecuteNonQuery()
 
             n += 1
         Next
         conn.Close()
         If recordcheck = 1 Then
             MessageBox.Show("Chalet/Chalets Successfully Booked", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            CheckIn.RefreshForm(e)
             Me.Close()
         Else
             MessageBox.Show("There was an unexpected error. Please check your booking details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

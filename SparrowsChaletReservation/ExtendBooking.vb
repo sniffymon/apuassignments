@@ -9,7 +9,7 @@ Public Class ExtendBooking
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
-        sql = "SELECT ChaletNumber FROM Chalet WHERE ChaletStatusOccupied='True'"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE Reservation_Status ='True'"
 
         Dim chaletds As New DataSet
         Dim adptr As New SqlDataAdapter(sql, conn)

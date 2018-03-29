@@ -14,7 +14,7 @@ Public Class AdminChaletInfo
 
         conn.Open()
         sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
-               WHERE ChaletStatusOccupied='True' AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
+               WHERE CheckIn_Date <= @date AND CheckOut_Date >= @date AND Reservation_Status = 'True'"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
@@ -156,7 +156,7 @@ Public Class AdminChaletInfo
 
         If searchmode = False Then
             sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
-               WHERE ChaletStatusOccupied='True' AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
+               WHERE AND CheckIn_Date <= @date AND CheckOut_Date >= @date AND Reservation_Status = 'True'"
             cmd = New SqlCommand(sql, conn)
             cmd.Parameters.AddWithValue("@date", dtpDateSpec.Value.ToString("yyyy-MM-dd"))
             Dim adptr As New SqlDataAdapter(cmd)

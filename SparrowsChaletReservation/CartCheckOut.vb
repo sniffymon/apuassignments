@@ -192,7 +192,7 @@ Public Class CheckOutCart
 
         Dim n As Integer = 0
         For x = 1 To i
-            sql = "SELECT CheckIn_Date, CheckOut_Date, Deposit, ChaletNumber_FK, ExtraBed, GuestNo_FK, GuestNo,Guest_Name FROM Reservation INNER JOIN
+            sql = "SELECT CheckIn_Date, CheckOut_Date, ChaletNumber_FK, ExtraBed, GuestNo_FK, GuestNo,Guest_Name FROM Reservation INNER JOIN
                    GuestDetail on GuestDetail.GuestNo = Reservation.GuestNo_FK  WHERE Reservation.GuestNo_FK=@guestid "
             'Creating 1st Instance of SQL Command
             cmd = New SqlCommand(sql, conn)

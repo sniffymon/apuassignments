@@ -71,7 +71,7 @@ Public Class CheckIn
             checkedchalet.Remove("CH0" & sender.text)
         End If
     End Sub
-    Private Sub RegisterChalet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub CheckIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
@@ -143,7 +143,7 @@ Public Class CheckIn
         conn.Close()
     End Sub
     Private Sub txtPax_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPax.KeyPress
-        If Not Char.IsDigit(e.KeyChar) Then
+        If Not Char.IsDigit(e.KeyChar) Or Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
@@ -184,25 +184,25 @@ Public Class CheckIn
         ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
-        conn.Open()
+        'conn.Open()
 
-        For x = 1 To addedchalets
-            sql = "SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber)"
-            cmd = New SqlCommand(sql, conn)
-            cmd.Parameters.AddWithValue("@checkindate", dtpCheckIn.Value.ToString("yyyy-MM-dd"))
-            cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Value.ToString("yyyy-MM-dd"))
-            cmd.Parameters.AddWithValue("@chaletnumber", checkedchalet(n))
+        'For x = 1 To addedchalets
+        '    sql = "SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber)"
+        '    cmd = New SqlCommand(sql, conn)
+        '    cmd.Parameters.AddWithValue("@checkindate", dtpCheckIn.Value.ToString("yyyy-MM-dd"))
+        '    cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Value.ToString("yyyy-MM-dd"))
+        '    cmd.Parameters.AddWithValue("@chaletnumber", checkedchalet(n))
 
-            dr = cmd.ExecuteReader
+        '    dr = cmd.ExecuteReader
 
-            If dr.HasRows Then
-                MsgBox("Chalets selected are unavailable on specified date!")
-                Exit Sub
-            End If
-            dr.Close()
-            n += 1
-        Next
-        conn.Close()
+        '    If dr.HasRows Then
+        '        MsgBox("Chalets selected are unavailable on specified date!")
+        '        Exit Sub
+        '    End If
+        '    dr.Close()
+        '    n += 1
+        'Next
+        'conn.Close()
         '
         ' PRICE CALCULATION
         '
@@ -218,5 +218,11 @@ Public Class CheckIn
 
         Dim TrolleyNew As New CartCheckIn
         TrolleyNew.ShowDialog()
+    End Sub
+
+    Public Sub RefreshForm(e As EventArgs)
+        Me.Controls.Clear()
+        InitializeComponent()
+        CheckIn_Load(e, e)
     End Sub
 End Class

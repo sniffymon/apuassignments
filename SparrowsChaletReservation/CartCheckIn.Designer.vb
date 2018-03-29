@@ -159,6 +159,7 @@ Partial Class CartCheckIn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(578, 397)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
