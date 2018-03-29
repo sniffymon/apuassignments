@@ -17,7 +17,7 @@ Public Class ChaletDetails
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
         dr = cmd.ExecuteReader
 
-        Label1.Text = AdminChaletInfo.clickedchalet
+        lblChalet.Text = AdminChaletInfo.clickedchalet
         If dr.Read() Then
             txtGuestName.Text = dr(0).ToString
 

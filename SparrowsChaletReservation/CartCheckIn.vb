@@ -6,17 +6,17 @@ Public Class CartCheckIn
     Dim sql As String
     Dim lastButtonPos, i, recordcheck As Integer
     Private Sub Trolley_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label2.Text = CheckIn.ChaletDeposit.ToString("c")
-        Label3.Text = CheckIn.ChaletTotal.ToString("c")
-        Label5.Text = CheckIn.txtGuestName.Text
-        Label7.Text = "From " & CheckIn.dtpCheckIn.Text & " Until " & CheckIn.dtpCheckOut.Text
+        Label2.Text = GboChaletMap.ChaletDeposit.ToString("c")
+        Label3.Text = GboChaletMap.ChaletTotal.ToString("c")
+        Label5.Text = GboChaletMap.txtGuestName.Text
+        Label7.Text = "From " & GboChaletMap.dtpCheckIn.Text & " Until " & GboChaletMap.dtpCheckOut.Text
 
 
-        For Each Item In CheckIn.checkedchalet
+        For Each Item In GboChaletMap.checkedchalet
             Dim NewSubPanel As New Button
             NewSubPanel.Location = New Point(5, lastButtonPos)
             NewSubPanel.Size = New Size(550, 100)
-            NewSubPanel.Text = "Chalet = " & CheckIn.checkedchalet(i)
+            NewSubPanel.Text = "Chalet = " & GboChaletMap.checkedchalet(i)
             NewSubPanel.TextAlign = ContentAlignment.MiddleLeft
             NewSubPanel.Font = New Drawing.Font("Segoe UI Semibold", 13.875)
             NewSubPanel.FlatStyle = FlatStyle.Flat
@@ -55,39 +55,38 @@ Public Class CartCheckIn
         Dim n As Integer = 0
         For x = 1 To i
 
-            sql = "INSERT INTO Reservation (CheckIn_Date, CheckOut_Date, ChaletNumber_FK, ExtraBed, GuestNo_FK)
-               SELECT @checkindate, @checkoutdate, @chaletnumber, @extrab, (SELECT GuestNo FROM GuestDetail WHERE Guest_Name = @memguestname)
+            sql = "INSERT INTO Reservation (CheckIn_Date, CheckOut_Date, Deposit, Total_Amount, ChaletNumber_FK, ExtraBed, GuestNo_FK)
+               SELECT @checkindate, @checkoutdate, @deposit, @totalamt, @chaletnumber, @extrab, (SELECT GuestNo FROM GuestDetail WHERE Guest_Name = @memguestname)
                WHERE NOT EXISTS (SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber))"
 
             cmd = New SqlCommand(sql, conn)
-            cmd.Parameters.AddWithValue("@checkindate", CheckIn.dtpCheckIn.Value.ToString("yyyy-MM-dd"))
-            cmd.Parameters.AddWithValue("@checkoutdate", CheckIn.dtpCheckOut.Value.ToString("yyyy-MM-dd"))
-            ' cmd.Parameters.AddWithValue("@deposit", CheckIn.ChaletDeposit)
-            'cmd.Parameters.AddWithValue("@totalamt", CheckIn.ChaletTotal)
-            cmd.Parameters.AddWithValue("@memguestname", CheckIn.txtGuestName.Text)
-            cmd.Parameters.AddWithValue("@chaletnumber", CheckIn.checkedchalet(x - 1))
+            cmd.Parameters.AddWithValue("@checkindate", GboChaletMap.dtpCheckIn.Value.ToString("yyyy-MM-dd"))
+            cmd.Parameters.AddWithValue("@checkoutdate", GboChaletMap.dtpCheckOut.Value.ToString("yyyy-MM-dd"))
+            cmd.Parameters.AddWithValue("@deposit", GboChaletMap.ChaletDeposit)
+            cmd.Parameters.AddWithValue("@totalamt", GboChaletMap.ChaletTotal)
+            cmd.Parameters.AddWithValue("@memguestname", GboChaletMap.txtGuestName.Text)
+            cmd.Parameters.AddWithValue("@chaletnumber", GboChaletMap.checkedchalet(x - 1))
             cmd.Parameters.AddWithValue("@extrab", DirectCast(pnlOthers.Controls("Dropdown" & (x - 1).ToString), ComboBox).Text)
 
             recordcheck = cmd.ExecuteNonQuery
 
-            '      sql = "UPDATE Chalet
-            '         SET ChaletStatusOccupied = 'True'
-            'FROM Reservation
-            'INNER JOIN
-            'Chalet
-            '         ON Reservation.ChaletNumber_FK = Chalet.ChaletNumber
-            '         WHERE ChaletNumber_FK = @chaletnumber;"
+            sql = "UPDATE Chalet
+               SET ChaletStatusOccupied = 'True'
+			   FROM Reservation
+			   INNER JOIN
+			   Chalet
+               ON Reservation.ChaletNumber_FK = Chalet.ChaletNumber
+               WHERE ChaletNumber_FK = @chaletnumber;"
 
-            '      cmd = New SqlCommand(sql, conn)
-            '      cmd.Parameters.AddWithValue("@chaletnumber", CheckIn.checkedchalet(x - 1))
-            '      cmd.ExecuteNonQuery()
+            cmd = New SqlCommand(sql, conn)
+            cmd.Parameters.AddWithValue("@chaletnumber", GboChaletMap.checkedchalet(x - 1))
+            cmd.ExecuteNonQuery()
 
             n += 1
         Next
         conn.Close()
         If recordcheck = 1 Then
             MessageBox.Show("Chalet/Chalets Successfully Booked", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            CheckIn.RefreshForm(e)
             Me.Close()
         Else
             MessageBox.Show("There was an unexpected error. Please check your booking details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

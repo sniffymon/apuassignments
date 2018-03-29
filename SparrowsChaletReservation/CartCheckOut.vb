@@ -36,7 +36,7 @@ Public Class CheckOutCart
     Private Sub CheckOutCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         lblTAmount.Text = CheckOut.overalltotal.ToString("c")
-        lblName.Text = CheckIn.txtGuestName.Text
+        lblName.Text = GboChaletMap.txtGuestName.Text
         lblCheckIn.Text = "From " & CheckOut.txtCheckIn.Text & " Until " & CheckOut.txtActualCheckOut.Text
 
 
@@ -59,7 +59,7 @@ Public Class CheckOutCart
             Dim newDurationofstay As New Label
             With newDurationofstay
                 .Location = New Point(300, lastButtonPos + 10)
-                .Text = CheckOut.lblNightsStay.Text & “Days”
+                .Text = CheckOut.txtDuration.Text & “Days”
                 .TextAlign = ContentAlignment.MiddleLeft
                 .Font = New Drawing.Font("Segoe UI Semibold", 9)
                 .ForeColor = Color.Black

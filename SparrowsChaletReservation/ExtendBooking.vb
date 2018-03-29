@@ -39,16 +39,16 @@ Public Class ExtendBooking
 
         If dr.HasRows Then
             While (dr.Read())
-                cboGuestID.Items.Add(dr(0))
+                CboGuestID.Items.Add(dr(0))
             End While
         Else
-            cboGuestID.Items.Add("No Existing Guests")
+            CboGuestID.Items.Add("No Existing Guests")
         End If
         dr.Close()
         conn.Close()
     End Sub
 
-    Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGuestID.SelectedIndexChanged
+    Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboGuestID.SelectedIndexChanged
 
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
@@ -64,7 +64,7 @@ Public Class ExtendBooking
         cmd = New SqlCommand(sql, conn)
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         '
-        cmd.Parameters.AddWithValue("@guestid", cboGuestID.Text)
+        cmd.Parameters.AddWithValue("@guestid", CboGuestID.Text)
 
         dr = cmd.ExecuteReader
 
