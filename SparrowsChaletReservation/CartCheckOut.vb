@@ -36,7 +36,7 @@ Public Class CheckOutCart
     Private Sub CheckOutCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         lblTAmount.Text = CheckOut.overalltotal.ToString("c")
-        lblName.Text = GboChaletMap.txtGuestName.Text
+        lblName.Text = CheckIn.txtGuestName.Text
         lblCheckIn.Text = "From " & CheckOut.txtCheckIn.Text & " Until " & CheckOut.txtActualCheckOut.Text
 
 
@@ -192,8 +192,7 @@ Public Class CheckOutCart
 
         Dim n As Integer = 0
         For x = 1 To i
-            sql = "SELECT CheckIn_Date, CheckOut_Date, ChaletNumber_FK, ExtraBed, GuestNo_FK, GuestNo,Guest_Name FROM Reservation INNER JOIN
-                   GuestDetail on GuestDetail.GuestNo = Reservation.GuestNo_FK  WHERE Reservation.GuestNo_FK=@guestid "
+            sql = "SELECT Deposit FROM Reservation WHERE GuestNo_FK=@guestid "
             'Creating 1st Instance of SQL Command
             cmd = New SqlCommand(sql, conn)
             cmd.Parameters.AddWithValue("@guestid", CheckOut.guestnostorage)
@@ -201,7 +200,8 @@ Public Class CheckOutCart
             lblName.Text = CheckOut.txtGuestName.Text
             Dim dr As SqlDataReader = cmd.ExecuteReader
             If dr.Read() Then
-                lblDeposit.Text = CInt(dr(2)).ToString("c")
+                ChaletDeposit = dr(0)
+                lblDeposit.Text = ChaletDeposit.ToString("c")
             End If
             dr.Close()
             conn.Close()

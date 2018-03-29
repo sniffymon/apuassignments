@@ -8,7 +8,7 @@ Public Class CheckOut
     Public standardchalets, supremechalets As Integer
     Dim dr As SqlDataReader
     Dim cmdUpdate As SqlCommand
-    Public ChaletTotal, ChaletDeposit, dayduration, OverstayCharged, standardprice, supremeprice, overstandard, oversupreme,
+    Public ChaletTotal, dayduration, OverstayCharged, standardprice, supremeprice, overstandard, oversupreme,
         totalstandard, totalsupreme, overalltotal As Double
 
 
@@ -133,7 +133,6 @@ Public Class CheckOut
 
             'price calculation
             OverstayCharged = (standardchalets * overstaydays * 250) + (supremechalets * overstaydays * 350)
-            ChaletDeposit = (standardchalets * dayduration * 150 * 0.4) + (supremechalets * dayduration * 250 * 0.4)
 
             overstandard = (standardchalets * overstaydays * 250)
             oversupreme = (supremechalets * overstaydays * 350)

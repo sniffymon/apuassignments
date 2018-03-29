@@ -3,7 +3,7 @@
         GuestInfoEdit.Close()
         CheckOut.Close()
         ExtendBooking.Close()
-        GboChaletMap.Close()
+        CheckIn.Close()
         GuestInfoEntry.Close()
     End Sub
     Private Sub btnRegisterGuest_Click(sender As Object, e As EventArgs) Handles btnRegisterGuest.Click, btnExtendBooking.Click, btnCheckIn.Click, btnEditGuestRecords.Click, btnCheckOut.Click
@@ -40,10 +40,10 @@
                 ' CHECK IN
                 '
             Case btnCheckIn.Name
-                GboChaletMap.TopLevel = False
-                pnlMainView.Controls.Add(GboChaletMap)
-                GboChaletMap.Show()
-                GboChaletMap.BringToFront()
+                CheckIn.TopLevel = False
+                pnlMainView.Controls.Add(CheckIn)
+                CheckIn.Show()
+                CheckIn.BringToFront()
                 sender.BackColor = Color.FromArgb(50, 50, 50)
                 indSelectedTab.Visible = True
                 indSelectedTab.Location = New Point(192, 243)
@@ -85,7 +85,7 @@
         GuestInfoEntry.Hide()
         GuestInfoEdit.Hide()
         CheckOut.Hide()
-        GboChaletMap.Hide()
+        CheckIn.Hide()
         ExtendBooking.Hide()
         pnlMenuStatic.BringToFront()
         Do Until pnlMenu.Location.X = -155

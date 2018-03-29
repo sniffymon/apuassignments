@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class GboChaletMap
+Public Class CheckIn
     Dim conn As New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
@@ -143,7 +143,7 @@ Public Class GboChaletMap
         conn.Close()
     End Sub
     Private Sub txtPax_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPax.KeyPress
-        If Not Char.IsDigit(e.KeyChar) Or Not Char.IsControl(e.KeyChar) Then
+        If Not Char.IsDigit(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
@@ -151,7 +151,7 @@ Public Class GboChaletMap
         '
         'INPUT VALIDATION & OCCUPANCY SPACE CHECK
         '
-        If txtGuestName.Text = "" Then
+        If String.IsNullOrWhiteSpace(txtGuestName.Text) Then
             MessageBox.Show("Please select a guest that is booking the chalet!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         ElseIf dtpCheckIn.Text = dtpCheckOut.Text Or dtpCheckIn.Value > dtpCheckOut.Value Then

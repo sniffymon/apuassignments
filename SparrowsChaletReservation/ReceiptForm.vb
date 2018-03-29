@@ -1,8 +1,8 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Public Class ReceiptForm
     Private Sub ReceiptForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim AmountOwedP As New ReportParameter("AmountOwed", (CheckOut.overalltotal - CheckOut.ChaletDeposit))
-        Dim TotalDepositP As New ReportParameter("TotalDeposit", CheckOut.ChaletDeposit)
+        Dim AmountOwedP As New ReportParameter("AmountOwed", (CheckOut.overalltotal - CheckOutCart.ChaletDeposit))
+        Dim TotalDepositP As New ReportParameter("TotalDeposit", CheckOutCart.ChaletDeposit)
         Dim TotalAmountP As New ReportParameter("TotalAmount", CheckOut.overalltotal)
         Dim StandardAmountP As New ReportParameter("StandardAmount", CheckOut.standardchalets)
         Dim SupremeAmountP As New ReportParameter("SupremeAmount", CheckOut.supremechalets)

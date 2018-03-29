@@ -22,6 +22,7 @@ Partial Class CartCheckIn
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CartCheckIn))
         Me.pnlOthers = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -39,6 +40,8 @@ Partial Class CartCheckIn
         'pnlOthers
         '
         Me.pnlOthers.AutoScroll = True
+        Me.pnlOthers.BackgroundImage = CType(resources.GetObject("pnlOthers.BackgroundImage"), System.Drawing.Image)
+        Me.pnlOthers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pnlOthers.Location = New System.Drawing.Point(2, 41)
         Me.pnlOthers.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlOthers.Name = "pnlOthers"
