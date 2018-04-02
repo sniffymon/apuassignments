@@ -26,7 +26,7 @@ Public Class CheckIn
     Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged, dtpCheckOut.ValueChanged
         ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-
+        dtpCheckOut.MinDate = dtpCheckIn.Value.AddDays(1)
         For Each ctrl As Control In Me.GboChalet.Controls
             If TypeOf ctrl Is Button Then
                 With ctrl
