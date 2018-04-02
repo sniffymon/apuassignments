@@ -54,8 +54,15 @@ Public Class CheckOut
             Exit Sub
         End If
 
+        'clear the textbox before selectign guest
+        txtCheckIn.Text = ""
+        txtCheckOut.Text = ""
+        txtActualCheckOut.Text = ""
+        txtOverdue.Text = ""
+        txtDuration.Text = ""
+
         'GUEST DETAIL SECTION START
-        sql = "SELECT GuestNo,GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No,GuestDetail.Guest_Email, CONVERT(Varchar, CheckIn_Date) ,CONVERT(Varchar, CheckOut_Date)  
+        sql = "SELECT GuestNo,GuestDetail.Guest_Name,GuestDetail.Guest_Contact_No,GuestDetail.Guest_Email  
                FROM GuestDetail  Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
                 WHERE [Guest_ID_PassNum]=@guestid"
 
@@ -76,22 +83,32 @@ Public Class CheckOut
             txtGuestName.Text = dr(1)
             txtGuestMobile.Text = dr(2)
             txtGuestEmail.Text = dr(3)
-            txtCheckIn.Text = dr(4).ToString
-            txtCheckOut.Text = dr(5).ToString
         End If
 
         dr.Close()
         conn.Close()
 
         'DETECT CHALETS THAT ARE BOOKED
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND @currentdate >= Checkout_Date AND Reservation_Status='True'"
+        sql = "SELECT ChaletNumber_FK , CONVERT(Varchar, CheckIn_Date) ,CONVERT(Varchar, CheckOut_Date)
+            FROM Reservation WHERE GuestNo_FK=@guestno AND @currentdate >= Checkout_Date AND Reservation_Status='True'"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
+        conn.Open()
         cmd.Parameters.AddWithValue("@guestno", guestnostorage)
         cmd.Parameters.AddWithValue("@currentdate", Date.Today)
         Dim adptr As New SqlDataAdapter(cmd)
         adptr.Fill(chaletds, "SpecifiedCH")
+
+        'show checkin and checkout date if condition match
+        Dim dr1 As SqlDataReader = cmd.ExecuteReader
+        If dr1.Read() Then
+            txtCheckIn.Text = dr1(1).ToString
+            txtCheckOut.Text = dr1(2).ToString
+        End If
+
+        dr1.Close()
+        conn.Close()
 
         Dim exdata As DataTable = chaletds.Tables("SpecifiedCH")
         Dim row As DataRow
