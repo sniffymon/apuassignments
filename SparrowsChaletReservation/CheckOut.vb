@@ -1,9 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class CheckOut
-    Dim conn As SqlConnection = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+    Dim conn As SqlConnection = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123; MultipleActiveResultSets=True")
     Dim cmd As SqlCommand
-    Public sql, guestnostorage As String
+    Public sql, guestnostorage, contraname, contraname2 As String
     Public checkedchalet As New List(Of String)
     Public standardchalets, supremechalets As Integer
     Dim dr As SqlDataReader
@@ -13,16 +13,34 @@ Public Class CheckOut
 
 
     Private Sub CheckOut_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.Open()
+        ' Booking Contradiction CHECK
+        '
+        If StaffMenuForm.contracheck > 0 Then
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            sql = "SELECT Guest_ID_PassNum FROM GuestDetail WHERE GuestNo =" & StaffMenuForm.contraguestno
+                cmd = New SqlCommand(sql, conn)
+                dr = cmd.ExecuteReader
+                dr.Read()
+                CboGuestID.SelectedText = dr(0)
+                CboGuestID_SelectedIndexChanged(e, e)
+                dr.Close()
+                conn.Close()
+            End If
+        If conn.State = ConnectionState.Closed Then
+            conn.Open()
+        End If
         sql = "SELECT Guest_ID_PassNum FROM GuestDetail"
         cmd = New SqlCommand(sql, conn)
 
-        Dim dr As SqlDataReader = cmd.ExecuteReader
+        dr = cmd.ExecuteReader
 
         If dr.HasRows Then
             While (dr.Read())
                 CboGuestID.Items.Add(dr(0))
             End While
+
         Else
             CboGuestID.Items.Add("No Existing Guests")
         End If
@@ -43,13 +61,15 @@ Public Class CheckOut
 
         'Creating 1st Instance of SQL Command
         cmd = New SqlCommand(sql, conn)
-        conn.Open()
+        If conn.State = ConnectionState.Closed Then
+            conn.Open()
+        End If
 
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         cmd.Parameters.AddWithValue("@guestid", CboGuestID.Text)
 
 
-        Dim dr As SqlDataReader = cmd.ExecuteReader
+        dr = cmd.ExecuteReader
 
         If dr.Read() Then
             guestnostorage = dr(0)
@@ -84,7 +104,7 @@ Public Class CheckOut
 
         Dim removedCH As String
         If exdata.Rows.Count = 0 Then
-            MsgBox("There are no checkout details today!")
+            MsgBox("There are no checkout details for this guest today!")
             Exit Sub
         ElseIf exdata.Rows.Count > 0 Then
             For Each row In exdata.Rows

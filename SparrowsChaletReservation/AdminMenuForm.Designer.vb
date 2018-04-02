@@ -95,7 +95,7 @@ Partial Class AdminMenuForm
         Me.btnEditGuestRecords.Name = "btnEditGuestRecords"
         Me.btnEditGuestRecords.Size = New System.Drawing.Size(145, 91)
         Me.btnEditGuestRecords.TabIndex = 3
-        Me.btnEditGuestRecords.Text = "Edit Guest Records"
+        Me.btnEditGuestRecords.Text = "Search && Edit Guest Records"
         Me.btnEditGuestRecords.UseVisualStyleBackColor = False
         '
         'pnlMainView

@@ -104,6 +104,8 @@ Partial Class GuestInfoEdit
         '
         'CboGuestID
         '
+        Me.CboGuestID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboGuestID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.CboGuestID.FormattingEnabled = True
         Me.CboGuestID.Location = New System.Drawing.Point(427, 71)
         Me.CboGuestID.Margin = New System.Windows.Forms.Padding(2)
@@ -160,12 +162,12 @@ Partial Class GuestInfoEdit
         Me.lblGuestEdit.AutoSize = True
         Me.lblGuestEdit.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblGuestEdit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.lblGuestEdit.Location = New System.Drawing.Point(319, 16)
+        Me.lblGuestEdit.Location = New System.Drawing.Point(233, 9)
         Me.lblGuestEdit.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGuestEdit.Name = "lblGuestEdit"
-        Me.lblGuestEdit.Size = New System.Drawing.Size(311, 47)
+        Me.lblGuestEdit.Size = New System.Drawing.Size(497, 47)
         Me.lblGuestEdit.TabIndex = 10
-        Me.lblGuestEdit.Text = "EDIT GUEST INFO"
+        Me.lblGuestEdit.Text = "SEARCH && EDIT GUEST INFO"
         Me.lblGuestEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GuestInfoEdit

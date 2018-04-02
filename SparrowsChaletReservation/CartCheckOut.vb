@@ -26,8 +26,13 @@ Public Class CheckOutCart
             n += 1
             'n-=1
         Next
-
+        If StaffMenuForm.contracheck > 0 Then
+            StaffMenuForm.btnCheckOut.ForeColor = Color.White
+            StaffMenuForm.RefreshForm(e)
+            CheckOut.Close()
+        End If
         CheckOut.checkedchalet.Clear()
+        i = 0
 
         MessageBox.Show("Please click on the print button to print the receipt!", "Important", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ReceiptForm.ShowDialog()
@@ -187,7 +192,7 @@ Public Class CheckOutCart
             End With
 
             lastButtonPos = lastButtonPos + 110
-            i = i + 1
+            i += 1
         Next
 
         Dim n As Integer = 0

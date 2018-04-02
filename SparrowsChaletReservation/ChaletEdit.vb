@@ -96,7 +96,7 @@ Public Class ChaletEdit
 
     Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged
         If dtpCheckIn.Value <> dtpCheckIn.MinDate Then
-            dtpCheckOut.MinDate = dtpCheckIn.Value
+            dtpCheckOut.MinDate = dtpCheckIn.Value.AddDays(1)
         End If
     End Sub
 

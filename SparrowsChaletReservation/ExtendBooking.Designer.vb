@@ -66,6 +66,7 @@ Partial Class ExtendBooking
         Me.lblStandard = New System.Windows.Forms.Label()
         Me.lblSupreme = New System.Windows.Forms.Label()
         Me.btnSupreme = New System.Windows.Forms.Button()
+        Me.lblChaletSpec = New System.Windows.Forms.Label()
         Me.pnlChaletAvailability.SuspendLayout()
         Me.GboBookedChalets.SuspendLayout()
         Me.tlpChaletButtons.SuspendLayout()
@@ -97,7 +98,7 @@ Partial Class ExtendBooking
         Me.pnlChaletAvailability.Controls.Add(Me.lblOccupied)
         Me.pnlChaletAvailability.Controls.Add(Me.pnlOccupied)
         Me.pnlChaletAvailability.Location = New System.Drawing.Point(773, 167)
-        Me.pnlChaletAvailability.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlChaletAvailability.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlChaletAvailability.Name = "pnlChaletAvailability"
         Me.pnlChaletAvailability.Size = New System.Drawing.Size(77, 61)
         Me.pnlChaletAvailability.TabIndex = 61
@@ -119,7 +120,7 @@ Partial Class ExtendBooking
         Me.pnlAvailable.BackColor = System.Drawing.Color.White
         Me.pnlAvailable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlAvailable.Location = New System.Drawing.Point(4, 2)
-        Me.pnlAvailable.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlAvailable.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlAvailable.Name = "pnlAvailable"
         Me.pnlAvailable.Size = New System.Drawing.Size(12, 13)
         Me.pnlAvailable.TabIndex = 13
@@ -140,7 +141,7 @@ Partial Class ExtendBooking
         '
         Me.pnlOccupied.BackColor = System.Drawing.Color.Red
         Me.pnlOccupied.Location = New System.Drawing.Point(4, 24)
-        Me.pnlOccupied.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlOccupied.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlOccupied.Name = "pnlOccupied"
         Me.pnlOccupied.Size = New System.Drawing.Size(12, 12)
         Me.pnlOccupied.TabIndex = 15
@@ -148,14 +149,15 @@ Partial Class ExtendBooking
         'GboBookedChalets
         '
         Me.GboBookedChalets.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GboBookedChalets.Controls.Add(Me.lblChaletSpec)
         Me.GboBookedChalets.Controls.Add(Me.tlpChaletButtons)
         Me.GboBookedChalets.Controls.Add(Me.lblTest)
         Me.GboBookedChalets.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GboBookedChalets.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.GboBookedChalets.Location = New System.Drawing.Point(30, 249)
-        Me.GboBookedChalets.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GboBookedChalets.Margin = New System.Windows.Forms.Padding(2)
         Me.GboBookedChalets.Name = "GboBookedChalets"
-        Me.GboBookedChalets.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GboBookedChalets.Padding = New System.Windows.Forms.Padding(2)
         Me.GboBookedChalets.Size = New System.Drawing.Size(780, 145)
         Me.GboBookedChalets.TabIndex = 59
         Me.GboBookedChalets.TabStop = False
@@ -198,7 +200,7 @@ Partial Class ExtendBooking
         Me.tlpChaletButtons.Controls.Add(Me.btnCH009, 8, 0)
         Me.tlpChaletButtons.Controls.Add(Me.btnCH010, 9, 0)
         Me.tlpChaletButtons.Location = New System.Drawing.Point(35, 27)
-        Me.tlpChaletButtons.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tlpChaletButtons.Margin = New System.Windows.Forms.Padding(2)
         Me.tlpChaletButtons.Name = "tlpChaletButtons"
         Me.tlpChaletButtons.RowCount = 2
         Me.tlpChaletButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.0!))
@@ -216,7 +218,7 @@ Partial Class ExtendBooking
         Me.btnCH020.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH020.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH020.Location = New System.Drawing.Point(623, 55)
-        Me.btnCH020.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH020.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH020.Name = "btnCH020"
         Me.btnCH020.Size = New System.Drawing.Size(43, 41)
         Me.btnCH020.TabIndex = 53
@@ -231,7 +233,7 @@ Partial Class ExtendBooking
         Me.btnCH001.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH001.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH001.Location = New System.Drawing.Point(2, 2)
-        Me.btnCH001.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH001.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH001.Name = "btnCH001"
         Me.btnCH001.Size = New System.Drawing.Size(43, 41)
         Me.btnCH001.TabIndex = 41
@@ -248,7 +250,7 @@ Partial Class ExtendBooking
         Me.btnCH019.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH019.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH019.Location = New System.Drawing.Point(554, 55)
-        Me.btnCH019.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH019.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH019.Name = "btnCH019"
         Me.btnCH019.Size = New System.Drawing.Size(43, 41)
         Me.btnCH019.TabIndex = 48
@@ -265,7 +267,7 @@ Partial Class ExtendBooking
         Me.btnCH018.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH018.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH018.Location = New System.Drawing.Point(485, 55)
-        Me.btnCH018.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH018.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH018.Name = "btnCH018"
         Me.btnCH018.Size = New System.Drawing.Size(43, 41)
         Me.btnCH018.TabIndex = 50
@@ -282,7 +284,7 @@ Partial Class ExtendBooking
         Me.btnCH017.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH017.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH017.Location = New System.Drawing.Point(416, 55)
-        Me.btnCH017.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH017.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH017.Name = "btnCH017"
         Me.btnCH017.Size = New System.Drawing.Size(43, 41)
         Me.btnCH017.TabIndex = 52
@@ -297,7 +299,7 @@ Partial Class ExtendBooking
         Me.btnCH002.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH002.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH002.Location = New System.Drawing.Point(71, 2)
-        Me.btnCH002.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH002.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH002.Name = "btnCH002"
         Me.btnCH002.Size = New System.Drawing.Size(43, 41)
         Me.btnCH002.TabIndex = 39
@@ -314,7 +316,7 @@ Partial Class ExtendBooking
         Me.btnCH011.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH011.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH011.Location = New System.Drawing.Point(2, 55)
-        Me.btnCH011.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH011.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH011.Name = "btnCH011"
         Me.btnCH011.Size = New System.Drawing.Size(43, 41)
         Me.btnCH011.TabIndex = 51
@@ -331,7 +333,7 @@ Partial Class ExtendBooking
         Me.btnCH012.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH012.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH012.Location = New System.Drawing.Point(71, 55)
-        Me.btnCH012.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH012.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH012.Name = "btnCH012"
         Me.btnCH012.Size = New System.Drawing.Size(43, 41)
         Me.btnCH012.TabIndex = 49
@@ -348,7 +350,7 @@ Partial Class ExtendBooking
         Me.btnCH016.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH016.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH016.Location = New System.Drawing.Point(347, 55)
-        Me.btnCH016.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH016.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH016.Name = "btnCH016"
         Me.btnCH016.Size = New System.Drawing.Size(43, 41)
         Me.btnCH016.TabIndex = 47
@@ -363,7 +365,7 @@ Partial Class ExtendBooking
         Me.btnCH003.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH003.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH003.Location = New System.Drawing.Point(140, 2)
-        Me.btnCH003.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH003.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH003.Name = "btnCH003"
         Me.btnCH003.Size = New System.Drawing.Size(43, 41)
         Me.btnCH003.TabIndex = 34
@@ -380,7 +382,7 @@ Partial Class ExtendBooking
         Me.btnCH015.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH015.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH015.Location = New System.Drawing.Point(278, 55)
-        Me.btnCH015.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH015.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH015.Name = "btnCH015"
         Me.btnCH015.Size = New System.Drawing.Size(43, 41)
         Me.btnCH015.TabIndex = 46
@@ -395,7 +397,7 @@ Partial Class ExtendBooking
         Me.btnCH004.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH004.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH004.Location = New System.Drawing.Point(209, 2)
-        Me.btnCH004.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH004.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH004.Name = "btnCH004"
         Me.btnCH004.Size = New System.Drawing.Size(43, 41)
         Me.btnCH004.TabIndex = 35
@@ -412,7 +414,7 @@ Partial Class ExtendBooking
         Me.btnCH014.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH014.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH014.Location = New System.Drawing.Point(209, 55)
-        Me.btnCH014.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH014.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH014.Name = "btnCH014"
         Me.btnCH014.Size = New System.Drawing.Size(43, 41)
         Me.btnCH014.TabIndex = 45
@@ -427,7 +429,7 @@ Partial Class ExtendBooking
         Me.btnCH005.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH005.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH005.Location = New System.Drawing.Point(278, 2)
-        Me.btnCH005.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH005.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH005.Name = "btnCH005"
         Me.btnCH005.Size = New System.Drawing.Size(43, 41)
         Me.btnCH005.TabIndex = 36
@@ -444,7 +446,7 @@ Partial Class ExtendBooking
         Me.btnCH013.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH013.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH013.Location = New System.Drawing.Point(140, 55)
-        Me.btnCH013.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH013.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH013.Name = "btnCH013"
         Me.btnCH013.Size = New System.Drawing.Size(43, 41)
         Me.btnCH013.TabIndex = 44
@@ -459,7 +461,7 @@ Partial Class ExtendBooking
         Me.btnCH006.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH006.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH006.Location = New System.Drawing.Point(347, 2)
-        Me.btnCH006.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH006.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH006.Name = "btnCH006"
         Me.btnCH006.Size = New System.Drawing.Size(43, 41)
         Me.btnCH006.TabIndex = 37
@@ -474,7 +476,7 @@ Partial Class ExtendBooking
         Me.btnCH007.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH007.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH007.Location = New System.Drawing.Point(416, 2)
-        Me.btnCH007.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH007.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH007.Name = "btnCH007"
         Me.btnCH007.Size = New System.Drawing.Size(43, 41)
         Me.btnCH007.TabIndex = 42
@@ -489,7 +491,7 @@ Partial Class ExtendBooking
         Me.btnCH008.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH008.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH008.Location = New System.Drawing.Point(485, 2)
-        Me.btnCH008.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH008.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH008.Name = "btnCH008"
         Me.btnCH008.Size = New System.Drawing.Size(43, 41)
         Me.btnCH008.TabIndex = 40
@@ -504,7 +506,7 @@ Partial Class ExtendBooking
         Me.btnCH009.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH009.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH009.Location = New System.Drawing.Point(554, 2)
-        Me.btnCH009.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH009.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH009.Name = "btnCH009"
         Me.btnCH009.Size = New System.Drawing.Size(43, 41)
         Me.btnCH009.TabIndex = 38
@@ -519,7 +521,7 @@ Partial Class ExtendBooking
         Me.btnCH010.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH010.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCH010.Location = New System.Drawing.Point(623, 2)
-        Me.btnCH010.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCH010.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCH010.Name = "btnCH010"
         Me.btnCH010.Size = New System.Drawing.Size(43, 41)
         Me.btnCH010.TabIndex = 43
@@ -549,9 +551,9 @@ Partial Class ExtendBooking
         Me.GboInfoSearch.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GboInfoSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.GboInfoSearch.Location = New System.Drawing.Point(140, 80)
-        Me.GboInfoSearch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GboInfoSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.GboInfoSearch.Name = "GboInfoSearch"
-        Me.GboInfoSearch.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GboInfoSearch.Padding = New System.Windows.Forms.Padding(2)
         Me.GboInfoSearch.Size = New System.Drawing.Size(609, 157)
         Me.GboInfoSearch.TabIndex = 58
         Me.GboInfoSearch.TabStop = False
@@ -561,7 +563,7 @@ Partial Class ExtendBooking
         '
         Me.CboGuestID.FormattingEnabled = True
         Me.CboGuestID.Location = New System.Drawing.Point(274, 31)
-        Me.CboGuestID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CboGuestID.Margin = New System.Windows.Forms.Padding(2)
         Me.CboGuestID.Name = "CboGuestID"
         Me.CboGuestID.Size = New System.Drawing.Size(173, 20)
         Me.CboGuestID.TabIndex = 11
@@ -649,7 +651,7 @@ Partial Class ExtendBooking
         Me.pnlChalet.Controls.Add(Me.lblSupreme)
         Me.pnlChalet.Controls.Add(Me.btnSupreme)
         Me.pnlChalet.Location = New System.Drawing.Point(11, 145)
-        Me.pnlChalet.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlChalet.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlChalet.Name = "pnlChalet"
         Me.pnlChalet.Size = New System.Drawing.Size(110, 70)
         Me.pnlChalet.TabIndex = 60
@@ -663,7 +665,7 @@ Partial Class ExtendBooking
         Me.btnStandard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStandard.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStandard.Location = New System.Drawing.Point(19, 2)
-        Me.btnStandard.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnStandard.Margin = New System.Windows.Forms.Padding(2)
         Me.btnStandard.Name = "btnStandard"
         Me.btnStandard.Size = New System.Drawing.Size(28, 29)
         Me.btnStandard.TabIndex = 54
@@ -703,12 +705,23 @@ Partial Class ExtendBooking
         Me.btnSupreme.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSupreme.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSupreme.Location = New System.Drawing.Point(19, 40)
-        Me.btnSupreme.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSupreme.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSupreme.Name = "btnSupreme"
         Me.btnSupreme.Size = New System.Drawing.Size(28, 29)
         Me.btnSupreme.TabIndex = 55
         Me.btnSupreme.Text = " "
         Me.btnSupreme.UseVisualStyleBackColor = False
+        '
+        'lblChaletSpec
+        '
+        Me.lblChaletSpec.AutoSize = True
+        Me.lblChaletSpec.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblChaletSpec.Location = New System.Drawing.Point(257, 60)
+        Me.lblChaletSpec.Name = "lblChaletSpec"
+        Me.lblChaletSpec.Size = New System.Drawing.Size(267, 25)
+        Me.lblChaletSpec.TabIndex = 61
+        Me.lblChaletSpec.Text = "There are no specified chalets."
+        Me.lblChaletSpec.Visible = False
         '
         'ExtendBooking
         '
@@ -782,4 +795,5 @@ Partial Class ExtendBooking
     Friend WithEvents lblStandard As Label
     Friend WithEvents lblSupreme As Label
     Friend WithEvents btnSupreme As Button
+    Friend WithEvents lblChaletSpec As Label
 End Class
