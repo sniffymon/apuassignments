@@ -56,8 +56,8 @@ Public Class CartCheckIn
         For x = 1 To i
 
             sql = "INSERT INTO Reservation (CheckIn_Date, CheckOut_Date, Deposit, ChaletNumber_FK, ExtraBed, GuestNo_FK)
-               SELECT @checkindate, @checkoutdate, @deposit, @chaletnumber, @extrab, (SELECT GuestNo FROM GuestDetail WHERE Guest_Name = @memguestname)
-               WHERE NOT EXISTS (SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber))"
+               SELECT @checkindate, @checkoutdate, @deposit, @chaletnumber, @extrab, (SELECT GuestNo FROM GuestDetail WHERE Guest_Name = @memguestname)"
+            'WHERE NOT EXISTS (SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber))"
 
             cmd = New SqlCommand(sql, conn)
             cmd.Parameters.AddWithValue("@checkindate", CheckIn.dtpCheckIn.Value.ToString("yyyy-MM-dd"))

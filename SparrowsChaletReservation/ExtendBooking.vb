@@ -78,7 +78,7 @@ Public Class ExtendBooking
         dr.Close()
         ' Select specific guests chalet from database 
         '
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND Reservation_Status = 'True'"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
@@ -89,6 +89,7 @@ Public Class ExtendBooking
         Dim exdata As DataTable = chaletds.Tables("SpecifiedCH")
         Dim row As DataRow
 
+        lblChaletSpec.Visible = True
         For Each ctrl As Control In Me.tlpChaletButtons.Controls
             If TypeOf ctrl Is Button Then
                 ctrl.Visible = False
@@ -97,6 +98,7 @@ Public Class ExtendBooking
 
         For Each row In exdata.Rows
             DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).Visible = True
+            lblChaletSpec.Visible = False
         Next
         conn.Close()
     End Sub

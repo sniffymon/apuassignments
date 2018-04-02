@@ -31,7 +31,6 @@ Public Class CheckIn
             If TypeOf ctrl Is Button Then
                 With ctrl
                     .BackColor = Color.White
-                    .Visible = True
                 End With
             End If
         Next
@@ -42,7 +41,7 @@ Public Class CheckIn
 
         conn.Open()
         Dim chaletds As New DataSet
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @cidate AND CheckOut_Date >= @cidate) OR (CheckIn_Date < @codate AND CheckOut_Date >= @codate) OR (CheckOut_Date <= @cidate AND Reservation_Status = 'True')"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @cidate AND CheckOut_Date >= @cidate) OR (CheckIn_Date < @codate AND CheckOut_Date >= @codate) OR (CheckOut_Date <= @cidate AND Reservation_Status = 'True' AND CheckOut_Date <= GetDate())"
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@cidate", dtpCheckIn.Value.ToString("yyyy-MM-dd"))
         cmd.Parameters.AddWithValue("@codate", dtpCheckOut.Value.ToString("yyyy-MM-dd"))
@@ -76,7 +75,7 @@ Public Class CheckIn
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @date AND CheckOut_Date >= @date) OR (CheckOut_Date <= @date AND Reservation_Status = 'True')"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @date AND CheckOut_Date >= @date) OR (CheckOut_Date <= @date AND Reservation_Status = 'True' AND GetDate() <= @date)"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)

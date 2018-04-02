@@ -7,8 +7,7 @@ Public Class ChaletExtend
     Dim namememory As String
 
     Private Sub ChaletEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dtpCheckOut.CustomFormat = " "
-        dtpCheckOut.MinDate = dtpCheckOut.Value.ToString("yyyy-MM-dd")
+
 
         'LOAD Existing Info on Chalet
         '
@@ -16,26 +15,28 @@ Public Class ChaletExtend
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         conn.Open()
 
-        sql = "SELECT Guest_Name, GuestNo, ChaletNumber_FK, Cast(CheckIn_Date AS varchar), Cast(CheckOut_Date AS Varchar), ExtraBed
-              From GuestDetail
-              Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
-              WHERE ChaletNumber_FK = @clickedchaletCH"
+        sql = "SELECT Cast(CheckIn_Date AS varchar), Cast(CheckOut_Date AS Varchar), ExtraBed
+              From Reservation
+              INNER Join GuestDetail on GuestDetail.GuestNo = GuestNo_FK
+              WHERE ChaletNumber_FK = @clickedchaletCH AND GuestDetail.Guest_Name = @guestname"
 
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
+        cmd.Parameters.AddWithValue("@guestname", ExtendBooking.txtGuestName.Text)
         dr = cmd.ExecuteReader
         lblChalet.Text = AdminChaletInfo.clickedchalet
 
         If dr.Read() Then
             dtpCheckOut.CustomFormat = "yyyy-MM-dd"
-            txtGuestName.Text = dr(0)
-            txtCheckIn.text = dr(3).ToString
-            dtpCheckOut.value = dr(4)
-            txtEB.Text = dr(5)
+            txtGuestName.Text = ExtendBooking.txtGuestName.Text
+            txtCheckIn.Text = dr(0).ToString
+            dtpCheckOut.Value = dr(1)
+            txtEB.Text = dr(2)
         End If
 
         conn.Close()
-
+        'dtpCheckOut.CustomFormat = " "
+        dtpCheckOut.MinDate = dtpCheckOut.Value.ToString("yyyy-MM-dd")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExtendBooking.Click
@@ -49,7 +50,8 @@ Public Class ChaletExtend
 			   INNER JOIN
 			   Reservation
                ON Reservation.GuestNo_FK = GuestDetail.GuestNo
-               WHERE GuestDetail.Guest_Name = @memguestname AND ChaletNumber_FK = @clickedchaletCH;"
+               WHERE GuestDetail.Guest_Name = @memguestname AND ChaletNumber_FK = @clickedchaletCH AND NOT EXISTS (SELECT * FROM Reservation INNER JOIN GuestDetail ON GuestNo_FK = GuestDetail.GuestNo WHERE Guest_Name <> @memguestname AND NOT (CheckIn_Date < @checkoutdate AND CheckOut_Date > @checkoutdate) AND (CheckIn_Date <@checkoutdate AND CheckOut_Date >= @checkoutdate)
+               AND (CheckIn_Date < @checkoutdate AND CheckOut_Date > @checkoutdate) OR (CheckIn_Date < @checkoutdate AND CheckOut_Date >= @checkoutdate)AND ChaletNumber_FK = @clickedchaletCH)"
 
 
         cmd = New SqlCommand(sql, conn)
@@ -60,11 +62,11 @@ Public Class ChaletExtend
         EditCheck = cmd.ExecuteNonQuery()
 
         If EditCheck = 0 Then
-            MsgBox("No Similar Data Found")
+            MessageBox.Show("This chalet has already been booked on that day. Try an earlier date or another chalet.", "Extend Failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         ElseIf EditCheck = 1 Then
             MsgBox("Stay Successfully Extended")
+            Me.Close()
         End If
-        Me.Close()
 
     End Sub
 

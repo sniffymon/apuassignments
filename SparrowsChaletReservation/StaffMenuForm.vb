@@ -1,4 +1,11 @@
-﻿Public Class StaffMenuForm
+﻿Imports System.Data.SqlClient
+Public Class StaffMenuForm
+    Dim conn As New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+    Dim cmd As SqlCommand
+    Dim dr As SqlDataReader
+    Dim sql As String
+    Public contracheck As Integer
+    Public contrachalet, contraguestno As String
     Private Sub AdminMenuForm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         GuestInfoEdit.Close()
         CheckOut.Close()
@@ -81,6 +88,7 @@
         btnRegisterGuest.BackColor = Color.FromArgb(55, 71, 79)
         btnEditGuestRecords.BackColor = Color.FromArgb(55, 71, 79)
         btnCheckIn.BackColor = Color.FromArgb(55, 71, 79)
+        btnCheckOut.BackColor = Color.FromArgb(55, 71, 79)
         indSelectedTab.Visible = False
         GuestInfoEntry.Hide()
         GuestInfoEdit.Hide()
@@ -116,6 +124,22 @@
         lblDay.Text = regDate.ToString("dd")
         lblMonth.Text = regDate.ToString("MMM").ToUpper
         lblYear.Text = regDate.ToString("yyyy")
+
+        sql = "SELECT DISTINCT r.GuestNo_FK, r.ChaletNumber_FK, r.CheckOut_Date FROM Reservation r, Reservation r2 WHERE r.ChaletNumber_FK = r2.ChaletNumber_FK AND (r.CheckOut_Date = r2.CheckIn_Date) AND r.Reservation_Status = 'True' AND CONVERT(Date, GetDate()) = r.CheckOut_Date"
+        conn.Open()
+
+        cmd = New SqlCommand(sql, conn)
+
+        dr = cmd.ExecuteReader
+
+        If dr.HasRows Then
+            dr.Read()
+            btnCheckOut.ForeColor = Color.Red
+            contracheck += 1
+            contraguestno = (dr("GuestNo_FK"))
+            contrachalet = (dr("ChaletNumber_FK"))
+        End If
+        conn.Close()
     End Sub
 
     Private Sub PictureBox2_Click_1(sender As Object, e As EventArgs) Handles PictureBox2.Click
@@ -125,5 +149,11 @@
             LoginForm.Show()
             Me.Close()
         End If
+    End Sub
+
+    Public Sub RefreshForm(e As EventArgs)
+        Me.Controls.Clear()
+        InitializeComponent()
+        StaffMenuForm_Load(e, e)
     End Sub
 End Class

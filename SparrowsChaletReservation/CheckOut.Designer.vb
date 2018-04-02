@@ -92,7 +92,7 @@ Partial Class CheckOut
         '
         'btnCH020
         '
-        Me.btnCH020.BackColor = System.Drawing.Color.White
+        Me.btnCH020.BackColor = System.Drawing.Color.Red
         Me.btnCH020.BackgroundImage = CType(resources.GetObject("btnCH020.BackgroundImage"), System.Drawing.Image)
         Me.btnCH020.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCH020.FlatAppearance.BorderSize = 3
@@ -108,7 +108,7 @@ Partial Class CheckOut
         '
         'btnCH017
         '
-        Me.btnCH017.BackColor = System.Drawing.Color.White
+        Me.btnCH017.BackColor = System.Drawing.Color.Red
         Me.btnCH017.BackgroundImage = CType(resources.GetObject("btnCH017.BackgroundImage"), System.Drawing.Image)
         Me.btnCH017.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCH017.FlatAppearance.BorderSize = 3
@@ -124,7 +124,7 @@ Partial Class CheckOut
         '
         'btnCH011
         '
-        Me.btnCH011.BackColor = System.Drawing.Color.White
+        Me.btnCH011.BackColor = System.Drawing.Color.Red
         Me.btnCH011.BackgroundImage = CType(resources.GetObject("btnCH011.BackgroundImage"), System.Drawing.Image)
         Me.btnCH011.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCH011.FlatAppearance.BorderSize = 3
@@ -140,7 +140,7 @@ Partial Class CheckOut
         '
         'btnCH018
         '
-        Me.btnCH018.BackColor = System.Drawing.Color.White
+        Me.btnCH018.BackColor = System.Drawing.Color.Red
         Me.btnCH018.BackgroundImage = CType(resources.GetObject("btnCH018.BackgroundImage"), System.Drawing.Image)
         Me.btnCH018.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCH018.FlatAppearance.BorderSize = 3
@@ -156,7 +156,7 @@ Partial Class CheckOut
         '
         'btnCH012
         '
-        Me.btnCH012.BackColor = System.Drawing.Color.White
+        Me.btnCH012.BackColor = System.Drawing.Color.Red
         Me.btnCH012.BackgroundImage = CType(resources.GetObject("btnCH012.BackgroundImage"), System.Drawing.Image)
         Me.btnCH012.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCH012.FlatAppearance.BorderSize = 3
@@ -172,7 +172,7 @@ Partial Class CheckOut
         '
         'btnCH019
         '
-        Me.btnCH019.BackColor = System.Drawing.Color.White
+        Me.btnCH019.BackColor = System.Drawing.Color.Red
         Me.btnCH019.BackgroundImage = CType(resources.GetObject("btnCH019.BackgroundImage"), System.Drawing.Image)
         Me.btnCH019.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCH019.FlatAppearance.BorderSize = 3
@@ -188,7 +188,7 @@ Partial Class CheckOut
         '
         'btnCH016
         '
-        Me.btnCH016.BackColor = System.Drawing.Color.White
+        Me.btnCH016.BackColor = System.Drawing.Color.Red
         Me.btnCH016.BackgroundImage = CType(resources.GetObject("btnCH016.BackgroundImage"), System.Drawing.Image)
         Me.btnCH016.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCH016.FlatAppearance.BorderSize = 3
@@ -204,7 +204,7 @@ Partial Class CheckOut
         '
         'btnCH015
         '
-        Me.btnCH015.BackColor = System.Drawing.Color.White
+        Me.btnCH015.BackColor = System.Drawing.Color.Red
         Me.btnCH015.BackgroundImage = CType(resources.GetObject("btnCH015.BackgroundImage"), System.Drawing.Image)
         Me.btnCH015.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCH015.FlatAppearance.BorderSize = 3
@@ -220,7 +220,7 @@ Partial Class CheckOut
         '
         'btnCH014
         '
-        Me.btnCH014.BackColor = System.Drawing.Color.White
+        Me.btnCH014.BackColor = System.Drawing.Color.Red
         Me.btnCH014.BackgroundImage = CType(resources.GetObject("btnCH014.BackgroundImage"), System.Drawing.Image)
         Me.btnCH014.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCH014.FlatAppearance.BorderSize = 3
@@ -236,7 +236,7 @@ Partial Class CheckOut
         '
         'btnCH013
         '
-        Me.btnCH013.BackColor = System.Drawing.Color.White
+        Me.btnCH013.BackColor = System.Drawing.Color.Red
         Me.btnCH013.BackgroundImage = CType(resources.GetObject("btnCH013.BackgroundImage"), System.Drawing.Image)
         Me.btnCH013.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCH013.FlatAppearance.BorderSize = 3
@@ -281,7 +281,7 @@ Partial Class CheckOut
         '
         'btnCH010
         '
-        Me.btnCH010.BackColor = System.Drawing.Color.White
+        Me.btnCH010.BackColor = System.Drawing.Color.Red
         Me.btnCH010.FlatAppearance.BorderSize = 3
         Me.btnCH010.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH010.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -295,7 +295,7 @@ Partial Class CheckOut
         '
         'btnCH007
         '
-        Me.btnCH007.BackColor = System.Drawing.Color.White
+        Me.btnCH007.BackColor = System.Drawing.Color.Red
         Me.btnCH007.FlatAppearance.BorderSize = 3
         Me.btnCH007.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH007.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -309,7 +309,7 @@ Partial Class CheckOut
         '
         'btnCH001
         '
-        Me.btnCH001.BackColor = System.Drawing.Color.White
+        Me.btnCH001.BackColor = System.Drawing.Color.Red
         Me.btnCH001.FlatAppearance.BorderSize = 3
         Me.btnCH001.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH001.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -323,7 +323,7 @@ Partial Class CheckOut
         '
         'btnCH008
         '
-        Me.btnCH008.BackColor = System.Drawing.Color.White
+        Me.btnCH008.BackColor = System.Drawing.Color.Red
         Me.btnCH008.FlatAppearance.BorderSize = 3
         Me.btnCH008.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH008.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -337,7 +337,7 @@ Partial Class CheckOut
         '
         'btnCH009
         '
-        Me.btnCH009.BackColor = System.Drawing.Color.White
+        Me.btnCH009.BackColor = System.Drawing.Color.Red
         Me.btnCH009.FlatAppearance.BorderSize = 3
         Me.btnCH009.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH009.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -380,7 +380,7 @@ Partial Class CheckOut
         '
         'btnCH002
         '
-        Me.btnCH002.BackColor = System.Drawing.Color.White
+        Me.btnCH002.BackColor = System.Drawing.Color.Red
         Me.btnCH002.FlatAppearance.BorderSize = 3
         Me.btnCH002.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH002.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -410,7 +410,7 @@ Partial Class CheckOut
         '
         'btnCH006
         '
-        Me.btnCH006.BackColor = System.Drawing.Color.White
+        Me.btnCH006.BackColor = System.Drawing.Color.Red
         Me.btnCH006.FlatAppearance.BorderSize = 3
         Me.btnCH006.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH006.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -463,7 +463,7 @@ Partial Class CheckOut
         '
         'btnCH005
         '
-        Me.btnCH005.BackColor = System.Drawing.Color.White
+        Me.btnCH005.BackColor = System.Drawing.Color.Red
         Me.btnCH005.FlatAppearance.BorderSize = 3
         Me.btnCH005.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH005.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -477,7 +477,7 @@ Partial Class CheckOut
         '
         'btnCH004
         '
-        Me.btnCH004.BackColor = System.Drawing.Color.White
+        Me.btnCH004.BackColor = System.Drawing.Color.Red
         Me.btnCH004.FlatAppearance.BorderSize = 3
         Me.btnCH004.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH004.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -491,7 +491,7 @@ Partial Class CheckOut
         '
         'btnCH003
         '
-        Me.btnCH003.BackColor = System.Drawing.Color.White
+        Me.btnCH003.BackColor = System.Drawing.Color.Red
         Me.btnCH003.FlatAppearance.BorderSize = 3
         Me.btnCH003.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCH003.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.875!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -506,6 +506,7 @@ Partial Class CheckOut
         'lblTest
         '
         Me.lblTest.AutoSize = True
+        Me.lblTest.BackColor = System.Drawing.Color.Red
         Me.lblTest.Location = New System.Drawing.Point(305, 36)
         Me.lblTest.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTest.Name = "lblTest"

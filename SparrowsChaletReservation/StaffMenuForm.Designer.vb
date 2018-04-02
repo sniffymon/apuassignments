@@ -110,7 +110,7 @@ Partial Class StaffMenuForm
         Me.btnEditGuestRecords.Name = "btnEditGuestRecords"
         Me.btnEditGuestRecords.Size = New System.Drawing.Size(145, 72)
         Me.btnEditGuestRecords.TabIndex = 3
-        Me.btnEditGuestRecords.Text = "Edit Guest Records"
+        Me.btnEditGuestRecords.Text = "Search && Edit Guest Records"
         Me.btnEditGuestRecords.UseVisualStyleBackColor = False
         '
         'pnlMainView
@@ -121,7 +121,7 @@ Partial Class StaffMenuForm
         Me.pnlMainView.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.pnlMainView.BackgroundImage = CType(resources.GetObject("pnlMainView.BackgroundImage"), System.Drawing.Image)
         Me.pnlMainView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pnlMainView.Location = New System.Drawing.Point(44, -4)
+        Me.pnlMainView.Location = New System.Drawing.Point(44, 1)
         Me.pnlMainView.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.pnlMainView.Name = "pnlMainView"
         Me.pnlMainView.Size = New System.Drawing.Size(903, 478)
