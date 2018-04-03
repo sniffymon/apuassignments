@@ -26,6 +26,8 @@ Public Class CheckOutCart
             n += 1
             'n-=1
         Next
+        MessageBox.Show("Please click on the print button to print the receipt!", "Important", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ReceiptForm.ShowDialog()
         If StaffMenuForm.contracheck > 0 Then
             StaffMenuForm.btnCheckOut.ForeColor = Color.White
             StaffMenuForm.RefreshForm(e)
@@ -34,14 +36,13 @@ Public Class CheckOutCart
         CheckOut.checkedchalet.Clear()
         i = 0
 
-        MessageBox.Show("Please click on the print button to print the receipt!", "Important", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        ReceiptForm.ShowDialog()
+
         conn.Close()
     End Sub
     Private Sub CheckOutCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         lblTAmount.Text = CheckOut.overalltotal.ToString("c")
-        lblName.Text = CheckIn.txtGuestName.Text
+        lblName.Text = CheckOut.txtGuestName.Text
         lblCheckIn.Text = "From " & CheckOut.txtCheckIn.Text & " Until " & CheckOut.txtActualCheckOut.Text
 
 
@@ -212,5 +213,10 @@ Public Class CheckOutCart
             conn.Close()
         Next
         lblBalance.Text = (CheckOut.overalltotal - CDbl(lblDeposit.Text)).ToString("c")
+    End Sub
+
+    Private Sub CheckOutCart_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        i = 0
+        CheckOut.checkedchalet.Clear()
     End Sub
 End Class

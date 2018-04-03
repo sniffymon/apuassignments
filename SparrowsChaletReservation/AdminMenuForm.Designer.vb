@@ -244,6 +244,7 @@ Partial Class AdminMenuForm
         Me.lblYear.Size = New System.Drawing.Size(40, 17)
         Me.lblYear.TabIndex = 2
         Me.lblYear.Text = "2020"
+        Me.lblYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblMonth
         '
@@ -255,17 +256,19 @@ Partial Class AdminMenuForm
         Me.lblMonth.Size = New System.Drawing.Size(38, 19)
         Me.lblMonth.TabIndex = 1
         Me.lblMonth.Text = "NOV"
+        Me.lblMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblDay
         '
         Me.lblDay.AutoSize = True
         Me.lblDay.Font = New System.Drawing.Font("Segoe UI Light", 20.0!)
         Me.lblDay.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(182, Byte), Integer))
-        Me.lblDay.Location = New System.Drawing.Point(8, 215)
+        Me.lblDay.Location = New System.Drawing.Point(9, 215)
         Me.lblDay.Name = "lblDay"
         Me.lblDay.Size = New System.Drawing.Size(41, 37)
         Me.lblDay.TabIndex = 0
         Me.lblDay.Text = "31"
+        Me.lblDay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox3
         '

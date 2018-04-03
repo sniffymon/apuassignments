@@ -31,6 +31,8 @@ Public Class CheckOut
         If conn.State = ConnectionState.Closed Then
             conn.Open()
         End If
+        ' LOAD GUEST NUMBER
+        '
         sql = "SELECT Guest_ID_PassNum FROM GuestDetail"
         cmd = New SqlCommand(sql, conn)
 
@@ -151,14 +153,14 @@ Public Class CheckOut
             End If
 
             'duration of stay
-            Dim StartTime, EndTime As DateTime
+            Dim StartTime, EndTime, StartTime1, EndTime1 As DateTime
             Dim TimeSpan As TimeSpan
             StartTime = txtCheckIn.Text
             EndTime = txtActualCheckOut.Text
             TimeSpan = EndTime.Subtract(StartTime)
             txtDuration.Text = TimeSpan.Days
 
-            Dim StartTime1, EndTime1 As DateTime
+            '
             Dim TimeSpan1 As TimeSpan
             StartTime1 = txtCheckIn.Text
             EndTime1 = txtCheckOut.Text
