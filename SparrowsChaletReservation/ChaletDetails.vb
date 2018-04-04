@@ -3,36 +3,29 @@ Public Class ChaletDetails
     Dim conn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
-    Dim firstsql As String
-    Dim secondsql As String
+    Dim sql As String
     Private Sub ChaletDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         conn.Open()
-        firstsql = "SELECT Guest_Name FROM GuestDetail INNER JOIN Reservation ON GuestDetail.GuestNo=Reservation.GuestNo_FK
-               WHERE ChaletNumber_FK = @clickedchaletCH"
-        secondsql = "SELECT Cast(CheckIn_Date AS Varchar), Cast(CheckOut_Date AS Varchar), ExtraBed FROM Reservation WHERE ChaletNumber_FK = @clickedchaletCH"
+        sql = "SELECT Guest_Name, GuestNo, ChaletNumber_FK, Cast(CheckIn_Date AS Varchar), Cast(CheckOut_Date AS Varchar), ExtraBed
+              From GuestDetail
+              Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
+              WHERE ChaletNumber_FK = @clickedchaletCH AND (@date >= CheckIn_Date AND @date < CheckOut_Date) AND Reservation_Status = 'True'"
+        ' secondsql = "SELECT Cast(CheckIn_Date AS Varchar), Cast(CheckOut_Date AS Varchar), ExtraBed FROM Reservation WHERE ChaletNumber_FK = @clickedchaletCH"
 
-        cmd = New SqlCommand(firstsql, conn)
+        cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
+        cmd.Parameters.AddWithValue("@date", AdminChaletInfo.dtpDateSpec.Value.ToString("yyyy-MM-dd"))
         dr = cmd.ExecuteReader
 
         lblChalet.Text = AdminChaletInfo.clickedchalet
         If dr.Read() Then
             txtGuestName.Text = dr(0).ToString
+            txtCheckIn.Text = dr(3)
+            txtCheckOut.Text = dr(4)
+            txtEB.Text = dr(5)
         End If
         conn.Close()
-
-        cmd = New SqlCommand(secondsql, conn)
-        conn.Open()
-        cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
-        dr = cmd.ExecuteReader
-
-        If dr.Read() Then
-            txtCheckIn.Text = dr(0).ToString
-            txtCheckOut.Text = dr(1).ToString
-            txtEB.Text = dr(2).ToString
-            conn.Close()
-        End If
     End Sub
 End Class

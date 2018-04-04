@@ -37,10 +37,11 @@ Public Class ChaletEdit
         sql = "SELECT Guest_Name, GuestNo, ChaletNumber_FK, Cast(CheckIn_Date AS Varchar), Cast(CheckOut_Date AS Varchar), ExtraBed
               From GuestDetail
               Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
-              WHERE ChaletNumber_FK = @clickedchaletCH"
+              WHERE ChaletNumber_FK = @clickedchaletCH AND (@date >= CheckIn_Date AND @date < CheckOut_Date) AND Reservation_Status = 'True'"
 
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
+        cmd.Parameters.AddWithValue("@date", AdminChaletInfo.dtpDateSpec.Value.ToString("yyyy-MM-dd"))
         dr = cmd.ExecuteReader
         lblChalet.Text = AdminChaletInfo.clickedchalet
 

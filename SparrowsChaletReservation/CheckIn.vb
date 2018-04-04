@@ -26,7 +26,9 @@ Public Class CheckIn
     Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged, dtpCheckOut.ValueChanged
         ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-        dtpCheckOut.MinDate = dtpCheckIn.Value.AddDays(1)
+        If dtpCheckIn.Value <> dtpCheckIn.MinDate Then
+            dtpCheckOut.MinDate = dtpCheckIn.Value.AddDays(1)
+        End If
         For Each ctrl As Control In Me.GboChalet.Controls
             If TypeOf ctrl Is Button Then
                 With ctrl
@@ -41,7 +43,7 @@ Public Class CheckIn
 
         conn.Open()
         Dim chaletds As New DataSet
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @cidate AND CheckOut_Date >= @cidate) OR (CheckIn_Date < @codate AND CheckOut_Date >= @codate) OR (CheckOut_Date <= @cidate AND Reservation_Status = 'True' AND CheckOut_Date <= GetDate())"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @cidate AND CheckOut_Date >= @cidate) OR (CheckIn_Date < @codate AND CheckOut_Date >= @codate) OR (@cidate < CheckIn_Date AND @codate > CheckOut_Date) OR (CheckOut_Date <= @cidate AND Reservation_Status = 'True' AND CheckOut_Date <= CONVERT(Date,GetDate()))"
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@cidate", dtpCheckIn.Value.ToString("yyyy-MM-dd"))
         cmd.Parameters.AddWithValue("@codate", dtpCheckOut.Value.ToString("yyyy-MM-dd"))
@@ -75,7 +77,7 @@ Public Class CheckIn
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
         conn.Open()
-        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @date AND CheckOut_Date >= @date) OR (CheckOut_Date <= @date AND Reservation_Status = 'True' AND GetDate() <= @date)"
+        sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @date AND CheckOut_Date >= @date AND Reservation_Status = 'True') OR (CheckOut_Date <= @date AND Reservation_Status = 'True' AND GetDate() <= @date)"
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
