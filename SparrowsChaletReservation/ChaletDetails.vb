@@ -20,7 +20,6 @@ Public Class ChaletDetails
         lblChalet.Text = AdminChaletInfo.clickedchalet
         If dr.Read() Then
             txtGuestName.Text = dr(0).ToString
-
         End If
         conn.Close()
 
@@ -30,7 +29,6 @@ Public Class ChaletDetails
         dr = cmd.ExecuteReader
 
         If dr.Read() Then
-
             txtCheckIn.Text = dr(0).ToString
             txtCheckOut.Text = dr(1).ToString
             txtEB.Text = dr(2).ToString
