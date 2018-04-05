@@ -76,8 +76,6 @@ Public Class CheckOut
 
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         cmd.Parameters.AddWithValue("@guestid", CboGuestID.Text)
-
-
         dr = cmd.ExecuteReader
 
         If dr.Read() Then
