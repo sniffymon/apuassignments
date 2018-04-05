@@ -13,7 +13,6 @@ Public Class CheckOutCart
         conn.Open()
         Dim n As Integer = 0
         For x = 1 To i
-
             sql = "UPDATE Reservation
                SET Reservation_Status = 'False'
                WHERE ChaletNumber_FK = @chaletnumber;"
@@ -22,10 +21,14 @@ Public Class CheckOutCart
             cmd.Parameters.AddWithValue("@chaletnumber", CheckOut.checkedchalet(x - 1).Remove(0, 3))
             cmd.ExecuteNonQuery()
             n += 1
-
         Next
+
+        'show receipt window 
+        'remind staff to print the receipt
         MessageBox.Show("Please click on the print button to print the receipt!", "Important", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ReceiptForm.ShowDialog()
+
+
         If StaffMenuForm.contracheck > 0 Then
             StaffMenuForm.btnCheckOut.ForeColor = Color.White
             StaffMenuForm.RefreshForm(e)
@@ -34,16 +37,16 @@ Public Class CheckOutCart
         CheckOut.checkedchalet.Clear()
         i = 0
 
-
         conn.Close()
     End Sub
     Private Sub CheckOutCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        'get the info of guest 
         lblTAmount.Text = CheckOut.overalltotal.ToString("c")
         lblName.Text = CheckOut.txtGuestName.Text
         lblCheckIn.Text = "From " & CheckOut.txtCheckIn.Text & " Until " & CheckOut.txtActualCheckOut.Text
 
-
+        'design of labels
         For Each Item In CheckOut.checkedchalet
             Dim NewSubPanel As New Button
             With NewSubPanel
@@ -176,6 +179,7 @@ Public Class CheckOutCart
                 .BackColor = Color.White
             End With
 
+            'add all the new label into panel
             With pnlOthers.Controls
                 .Add(newTotalamount)
                 .Add(newlblTotalamount)
@@ -194,6 +198,7 @@ Public Class CheckOutCart
             i += 1
         Next
 
+        'connect to sql to get deposit amount
         Dim n As Integer = 0
         For x = 1 To i
             sql = "SELECT Deposit FROM Reservation WHERE GuestNo_FK=@guestid "
@@ -210,11 +215,13 @@ Public Class CheckOutCart
             dr.Close()
             conn.Close()
         Next
+
+        'balance amount calculation
         lblBalance.Text = (CheckOut.overalltotal - CDbl(lblDeposit.Text)).ToString("c")
     End Sub
 
     Private Sub CheckOutCart_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        'clear the info in the cart
+        'clear all the item in panel
         i = 0
         CheckOut.checkedchalet.Clear()
     End Sub
