@@ -13,8 +13,10 @@ Public Class GuestInfoEntry
             MessageBox.Show("Please check that you've entered all needed and valid information into the textboxes", "Guest Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
+        If conn.State = ConnectionState.Closed Then
+            conn.Open()
+        End If
 
-        conn.Open()
         'GUEST DETAIL SECTION START
         Sql = "INSERT INTO GuestDetail(Guest_ID_PassNum, Guest_Name, Guest_Contact_No, Guest_Email) SELECT @guestid, @guestname, @guestmobile, @guestemail WHERE NOT EXISTS (SELECT Guest_ID_PassNum FROM GuestDetail WHERE Guest_ID_PassNum = @guestid)"
         If EmailCheck(txtGuestEmail.Text) = True Then

@@ -65,17 +65,19 @@ Public Class CartCheckIn
         For x = 1 To i
 
             sql = "INSERT INTO Reservation (CheckIn_Date, CheckOut_Date, Deposit, ChaletNumber_FK, ExtraBed, GuestNo_FK)
-               SELECT @checkindate, @checkoutdate, @deposit, @chaletnumber, @extrab, (SELECT GuestNo FROM GuestDetail WHERE Guest_Name = @memguestname)"
+               SELECT @checkindate, @checkoutdate, @deposit, @chaletnumber, @extrab, @guestno"
             'WHERE NOT EXISTS (SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber))"
 
             cmd = New SqlCommand(sql, conn)
-            cmd.Parameters.AddWithValue("@checkindate", CheckIn.dtpCheckIn.Value.ToString("yyyy-MM-dd"))
-            cmd.Parameters.AddWithValue("@checkoutdate", CheckIn.dtpCheckOut.Value.ToString("yyyy-MM-dd"))
-            cmd.Parameters.AddWithValue("@deposit", CheckIn.ChaletDeposit)
-            'cmd.Parameters.AddWithValue("@totalamt", CheckIn.ChaletTotal)
-            cmd.Parameters.AddWithValue("@memguestname", CheckIn.txtGuestName.Text)
-            cmd.Parameters.AddWithValue("@chaletnumber", CheckIn.checkedchalet(x - 1))
-            cmd.Parameters.AddWithValue("@extrab", DirectCast(pnlOthers.Controls("Dropdown" & (x - 1).ToString), ComboBox).Text)
+            With cmd.Parameters
+                .AddWithValue("@checkindate", CheckIn.dtpCheckIn.Value.ToString("yyyy-MM-dd"))
+                .AddWithValue("@checkoutdate", CheckIn.dtpCheckOut.Value.ToString("yyyy-MM-dd"))
+                .AddWithValue("@deposit", CheckIn.ChaletDeposit)
+                .AddWithValue("@guestno", CheckIn.guestnomem)
+                .AddWithValue("@memguestname", CheckIn.txtGuestName.Text)
+                .AddWithValue("@chaletnumber", CheckIn.checkedchalet(x - 1))
+                .AddWithValue("@extrab", DirectCast(pnlOthers.Controls("Dropdown" & (x - 1).ToString), ComboBox).Text)
+            End With
 
             recordcheck = cmd.ExecuteNonQuery
             n += 1
