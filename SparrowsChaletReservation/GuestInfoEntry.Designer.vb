@@ -23,13 +23,13 @@ Partial Class GuestInfoEntry
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GboInfoEntry = New System.Windows.Forms.GroupBox()
+        Me.txtGuestMobile = New System.Windows.Forms.TextBox()
+        Me.txtGuestID = New System.Windows.Forms.TextBox()
         Me.txtGuestEmail = New System.Windows.Forms.TextBox()
         Me.txtGuestName = New System.Windows.Forms.TextBox()
         Me.lblGuestEmail = New System.Windows.Forms.Label()
-        Me.txtGuestMobile = New System.Windows.Forms.MaskedTextBox()
         Me.lblGuestMobile = New System.Windows.Forms.Label()
         Me.lblGuestName = New System.Windows.Forms.Label()
-        Me.txtGuestID = New System.Windows.Forms.MaskedTextBox()
         Me.lblGuestID = New System.Windows.Forms.Label()
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.lblRegisterGuest = New System.Windows.Forms.Label()
@@ -41,13 +41,13 @@ Partial Class GuestInfoEntry
         Me.GboInfoEntry.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GboInfoEntry.Controls.Add(Me.txtGuestMobile)
+        Me.GboInfoEntry.Controls.Add(Me.txtGuestID)
         Me.GboInfoEntry.Controls.Add(Me.txtGuestEmail)
         Me.GboInfoEntry.Controls.Add(Me.txtGuestName)
         Me.GboInfoEntry.Controls.Add(Me.lblGuestEmail)
-        Me.GboInfoEntry.Controls.Add(Me.txtGuestMobile)
         Me.GboInfoEntry.Controls.Add(Me.lblGuestMobile)
         Me.GboInfoEntry.Controls.Add(Me.lblGuestName)
-        Me.GboInfoEntry.Controls.Add(Me.txtGuestID)
         Me.GboInfoEntry.Controls.Add(Me.lblGuestID)
         Me.GboInfoEntry.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GboInfoEntry.Location = New System.Drawing.Point(24, 84)
@@ -58,6 +58,20 @@ Partial Class GuestInfoEntry
         Me.GboInfoEntry.TabIndex = 1
         Me.GboInfoEntry.TabStop = False
         Me.GboInfoEntry.Text = "Guest Information Enter"
+        '
+        'txtGuestMobile
+        '
+        Me.txtGuestMobile.Location = New System.Drawing.Point(361, 112)
+        Me.txtGuestMobile.Name = "txtGuestMobile"
+        Me.txtGuestMobile.Size = New System.Drawing.Size(201, 21)
+        Me.txtGuestMobile.TabIndex = 9
+        '
+        'txtGuestID
+        '
+        Me.txtGuestID.Location = New System.Drawing.Point(361, 38)
+        Me.txtGuestID.Name = "txtGuestID"
+        Me.txtGuestID.Size = New System.Drawing.Size(201, 21)
+        Me.txtGuestID.TabIndex = 8
         '
         'txtGuestEmail
         '
@@ -84,17 +98,6 @@ Partial Class GuestInfoEntry
         Me.lblGuestEmail.TabIndex = 3
         Me.lblGuestEmail.Text = "Email Address"
         '
-        'txtGuestMobile
-        '
-        Me.txtGuestMobile.Location = New System.Drawing.Point(361, 111)
-        Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtGuestMobile.Mask = "+000-00000000"
-        Me.txtGuestMobile.Name = "txtGuestMobile"
-        Me.txtGuestMobile.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestMobile.Size = New System.Drawing.Size(201, 21)
-        Me.txtGuestMobile.TabIndex = 3
-        Me.txtGuestMobile.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
-        '
         'lblGuestMobile
         '
         Me.lblGuestMobile.AutoSize = True
@@ -116,16 +119,6 @@ Partial Class GuestInfoEntry
         Me.lblGuestName.Size = New System.Drawing.Size(37, 13)
         Me.lblGuestName.TabIndex = 7
         Me.lblGuestName.Text = "Name"
-        '
-        'txtGuestID
-        '
-        Me.txtGuestID.Location = New System.Drawing.Point(361, 35)
-        Me.txtGuestID.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtGuestID.Mask = "000000000000"
-        Me.txtGuestID.Name = "txtGuestID"
-        Me.txtGuestID.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtGuestID.Size = New System.Drawing.Size(201, 21)
-        Me.txtGuestID.TabIndex = 0
         '
         'lblGuestID
         '
@@ -189,13 +182,13 @@ Partial Class GuestInfoEntry
 
     Friend WithEvents GboInfoEntry As GroupBox
     Friend WithEvents lblGuestEmail As Label
-    Friend WithEvents txtGuestMobile As MaskedTextBox
     Friend WithEvents lblGuestMobile As Label
     Friend WithEvents lblGuestName As Label
-    Friend WithEvents txtGuestID As MaskedTextBox
     Friend WithEvents lblGuestID As Label
     Friend WithEvents btnRegister As Button
     Friend WithEvents lblRegisterGuest As Label
     Friend WithEvents txtGuestEmail As TextBox
     Friend WithEvents txtGuestName As TextBox
+    Friend WithEvents txtGuestID As TextBox
+    Friend WithEvents txtGuestMobile As TextBox
 End Class

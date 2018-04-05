@@ -61,13 +61,21 @@ Public Class GuestInfoEntry
             EmailCheck = False
         End If
     End Function
-    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestID.KeyDown
+    Private Sub txtGuestEmail_KeyDown(sender As Object, e As KeyEventArgs) Handles txtGuestEmail.KeyDown
         'enter key to activate register button
         If e.KeyCode = Keys.Enter Then
             btnRegister.PerformClick()
         ElseIf e.KeyCode = Keys.Space Then
             e.Handled = True
             e.SuppressKeyPress = True
+        End If
+    End Sub
+
+    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyPressEventArgs) Handles txtGuestID.KeyPress, txtGuestMobile.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
         End If
     End Sub
 End Class
