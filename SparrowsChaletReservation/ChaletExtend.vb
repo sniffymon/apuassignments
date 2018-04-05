@@ -8,6 +8,7 @@ Public Class ChaletExtend
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
     Dim namememory As String
+    Dim valid As DateTime
 
     'LOAD DATA FROM DATABASE
     '
@@ -36,14 +37,20 @@ Public Class ChaletExtend
 
         conn.Close()
         dtpCheckOut.MinDate = dtpCheckOut.Value.ToString("yyyy-MM-dd")
+        valid = dtpCheckOut.Value
     End Sub
 
     'EXTEND CHECKOUT DATE 
     '
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExtendBooking.Click
+        'VALIDATE IF VALUE IS THE SAME
+        '
+        If dtpCheckOut.Value = valid Then
+            MsgBox("The selected checkout date has not changed.")
+            Exit Sub
+        End If
         Dim EditCheck As Integer
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         conn.Open()
         sql = "UPDATE Reservation
                SET CheckOut_Date =@checkoutdate

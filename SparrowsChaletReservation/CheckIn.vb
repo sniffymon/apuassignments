@@ -3,7 +3,7 @@ Public Class CheckIn
     Dim conn As New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
-    Dim sql As String
+    Public sql, guestnomem As String
     Public checkedchalet As New List(Of String)
     Dim addedchalets, standardchalets, supremechalets, n, unavaich As Integer
     Public ChaletTotal, ChaletDeposit, dayduration As Double
@@ -143,7 +143,7 @@ Public Class CheckIn
 
         'GUEST DETAIL SECTION START
 
-        sql = "SELECT Guest_Name, Guest_Contact_No, Guest_Email FROM GuestDetail WHERE 
+        sql = "SELECT Guest_Name, Guest_Contact_No, Guest_Email, GuestNo FROM GuestDetail WHERE 
 [Guest_ID_PassNum]=@guestid"
 
         'Creating 1st Instance of SQL Command
@@ -167,6 +167,7 @@ Public Class CheckIn
             txtGuestName.Text = dr(0)
             txtGuestMobile.Text = dr(1)
             txtGuestEmail.Text = dr(2)
+            guestnomem = dr(3)
         End If
         conn.Close()
     End Sub

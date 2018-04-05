@@ -86,6 +86,8 @@ Partial Class GuestInfoEntry
         '
         'txtGuestMobile
         '
+        Me.txtGuestMobile.HidePromptOnLeave = True
+        Me.txtGuestMobile.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert
         Me.txtGuestMobile.Location = New System.Drawing.Point(361, 111)
         Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestMobile.Mask = "+000-00000000"
@@ -119,6 +121,9 @@ Partial Class GuestInfoEntry
         '
         'txtGuestID
         '
+        Me.txtGuestID.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        Me.txtGuestID.HidePromptOnLeave = True
+        Me.txtGuestID.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite
         Me.txtGuestID.Location = New System.Drawing.Point(361, 35)
         Me.txtGuestID.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestID.Mask = "000000000000"
