@@ -27,6 +27,7 @@ Public Class GuestInfoSearch
     End Sub
 
     Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGuestID.SelectedIndexChanged
+        'avoid emplty string in combo box
         If cboGuestID.Text = "" Then
             MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -56,6 +57,7 @@ Public Class GuestInfoSearch
     End Sub
 
     Private Sub cboGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboGuestID.KeyPress
+        'only allow numbers and control key in the combobox
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else

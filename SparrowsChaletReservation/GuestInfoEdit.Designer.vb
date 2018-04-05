@@ -70,7 +70,7 @@ Partial Class GuestInfoEdit
         Me.txtGuestMobile.Name = "txtGuestMobile"
         Me.txtGuestMobile.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txtGuestMobile.Size = New System.Drawing.Size(173, 21)
-        Me.txtGuestMobile.TabIndex = 15
+        Me.txtGuestMobile.TabIndex = 6
         Me.txtGuestMobile.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
         'txtGuestEmail
@@ -79,7 +79,7 @@ Partial Class GuestInfoEdit
         Me.txtGuestEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestEmail.Name = "txtGuestEmail"
         Me.txtGuestEmail.Size = New System.Drawing.Size(173, 21)
-        Me.txtGuestEmail.TabIndex = 14
+        Me.txtGuestEmail.TabIndex = 7
         '
         'btnUpdate
         '
@@ -90,7 +90,7 @@ Partial Class GuestInfoEdit
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(104, 38)
-        Me.btnUpdate.TabIndex = 2
+        Me.btnUpdate.TabIndex = 8
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
@@ -100,7 +100,7 @@ Partial Class GuestInfoEdit
         Me.txtGuestName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGuestName.Name = "txtGuestName"
         Me.txtGuestName.Size = New System.Drawing.Size(173, 21)
-        Me.txtGuestName.TabIndex = 12
+        Me.txtGuestName.TabIndex = 5
         '
         'CboGuestID
         '
@@ -111,7 +111,7 @@ Partial Class GuestInfoEdit
         Me.CboGuestID.Margin = New System.Windows.Forms.Padding(2)
         Me.CboGuestID.Name = "CboGuestID"
         Me.CboGuestID.Size = New System.Drawing.Size(173, 20)
-        Me.CboGuestID.TabIndex = 11
+        Me.CboGuestID.TabIndex = 4
         '
         'lblGuestEmail
         '

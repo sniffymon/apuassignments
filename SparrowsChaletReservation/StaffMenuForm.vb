@@ -125,7 +125,7 @@ Public Class StaffMenuForm
         lblMonth.Text = regDate.ToString("MMM").ToUpper
         lblYear.Text = regDate.ToString("yyyy")
 
-        sql = "SELECT DISTINCT r.GuestNo_FK, r.ChaletNumber_FK, r.CheckOut_Date FROM Reservation r, Reservation r2 WHERE (r.ChaletNumber_FK = r2.ChaletNumber_FK AND (r.CheckOut_Date = r2.CheckIn_Date) AND r.Reservation_Status = 'True' AND CONVERT(Date, GetDate()) = r.CheckOut_Date) OR (r.CheckOut_Date <= r2.CheckIn_Date AND r.Reservation_Status = 'True' AND CONVERT(Date,GetDate()) = r.CheckOut_Date)"
+        sql = "SELECT DISTINCT r.GuestNo_FK, r.ChaletNumber_FK, r.CheckOut_Date FROM Reservation r, Reservation r2 WHERE (r.ChaletNumber_FK = r2.ChaletNumber_FK AND ((r.CheckOut_Date = r2.CheckIn_Date) AND r.Reservation_Status = 'True' AND CONVERT(Date, GetDate()) = r.CheckOut_Date) OR (r.CheckOut_Date <= r2.CheckIn_Date AND r.Reservation_Status = 'True' AND CONVERT(Date,GetDate()) = r.CheckOut_Date))"
         conn.Open()
 
         cmd = New SqlCommand(sql, conn)

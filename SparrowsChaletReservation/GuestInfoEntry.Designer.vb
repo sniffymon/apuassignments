@@ -23,6 +23,8 @@ Partial Class GuestInfoEntry
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GboInfoEntry = New System.Windows.Forms.GroupBox()
+        Me.txtGuestEmail = New System.Windows.Forms.TextBox()
+        Me.txtGuestName = New System.Windows.Forms.TextBox()
         Me.lblGuestEmail = New System.Windows.Forms.Label()
         Me.txtGuestMobile = New System.Windows.Forms.MaskedTextBox()
         Me.lblGuestMobile = New System.Windows.Forms.Label()
@@ -31,8 +33,6 @@ Partial Class GuestInfoEntry
         Me.lblGuestID = New System.Windows.Forms.Label()
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.lblRegisterGuest = New System.Windows.Forms.Label()
-        Me.txtGuestName = New System.Windows.Forms.TextBox()
-        Me.txtGuestEmail = New System.Windows.Forms.TextBox()
         Me.GboInfoEntry.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,9 +55,23 @@ Partial Class GuestInfoEntry
         Me.GboInfoEntry.Name = "GboInfoEntry"
         Me.GboInfoEntry.Padding = New System.Windows.Forms.Padding(2)
         Me.GboInfoEntry.Size = New System.Drawing.Size(811, 264)
-        Me.GboInfoEntry.TabIndex = 2
+        Me.GboInfoEntry.TabIndex = 1
         Me.GboInfoEntry.TabStop = False
         Me.GboInfoEntry.Text = "Guest Information Enter"
+        '
+        'txtGuestEmail
+        '
+        Me.txtGuestEmail.Location = New System.Drawing.Point(361, 147)
+        Me.txtGuestEmail.Name = "txtGuestEmail"
+        Me.txtGuestEmail.Size = New System.Drawing.Size(201, 21)
+        Me.txtGuestEmail.TabIndex = 4
+        '
+        'txtGuestName
+        '
+        Me.txtGuestName.Location = New System.Drawing.Point(361, 76)
+        Me.txtGuestName.Name = "txtGuestName"
+        Me.txtGuestName.Size = New System.Drawing.Size(201, 21)
+        Me.txtGuestName.TabIndex = 2
         '
         'lblGuestEmail
         '
@@ -67,18 +81,18 @@ Partial Class GuestInfoEntry
         Me.lblGuestEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGuestEmail.Name = "lblGuestEmail"
         Me.lblGuestEmail.Size = New System.Drawing.Size(79, 13)
-        Me.lblGuestEmail.TabIndex = 7
+        Me.lblGuestEmail.TabIndex = 3
         Me.lblGuestEmail.Text = "Email Address"
         '
         'txtGuestMobile
         '
         Me.txtGuestMobile.Location = New System.Drawing.Point(361, 111)
         Me.txtGuestMobile.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtGuestMobile.Mask = "+9999-00000000"
+        Me.txtGuestMobile.Mask = "+000-00000000"
         Me.txtGuestMobile.Name = "txtGuestMobile"
         Me.txtGuestMobile.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txtGuestMobile.Size = New System.Drawing.Size(201, 21)
-        Me.txtGuestMobile.TabIndex = 6
+        Me.txtGuestMobile.TabIndex = 3
         Me.txtGuestMobile.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
         'lblGuestMobile
@@ -89,7 +103,7 @@ Partial Class GuestInfoEntry
         Me.lblGuestMobile.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGuestMobile.Name = "lblGuestMobile"
         Me.lblGuestMobile.Size = New System.Drawing.Size(87, 13)
-        Me.lblGuestMobile.TabIndex = 5
+        Me.lblGuestMobile.TabIndex = 1
         Me.lblGuestMobile.Text = "Mobile Number"
         '
         'lblGuestName
@@ -100,18 +114,18 @@ Partial Class GuestInfoEntry
         Me.lblGuestName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGuestName.Name = "lblGuestName"
         Me.lblGuestName.Size = New System.Drawing.Size(37, 13)
-        Me.lblGuestName.TabIndex = 3
+        Me.lblGuestName.TabIndex = 7
         Me.lblGuestName.Text = "Name"
         '
         'txtGuestID
         '
         Me.txtGuestID.Location = New System.Drawing.Point(361, 35)
         Me.txtGuestID.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtGuestID.Mask = "000000000009"
+        Me.txtGuestID.Mask = "000000000000"
         Me.txtGuestID.Name = "txtGuestID"
         Me.txtGuestID.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.txtGuestID.Size = New System.Drawing.Size(201, 21)
-        Me.txtGuestID.TabIndex = 2
+        Me.txtGuestID.TabIndex = 0
         '
         'lblGuestID
         '
@@ -121,7 +135,7 @@ Partial Class GuestInfoEntry
         Me.lblGuestID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGuestID.Name = "lblGuestID"
         Me.lblGuestID.Size = New System.Drawing.Size(110, 13)
-        Me.lblGuestID.TabIndex = 1
+        Me.lblGuestID.TabIndex = 5
         Me.lblGuestID.Text = "Passport/IC Number"
         '
         'btnRegister
@@ -133,7 +147,7 @@ Partial Class GuestInfoEntry
         Me.btnRegister.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(101, 40)
-        Me.btnRegister.TabIndex = 3
+        Me.btnRegister.TabIndex = 2
         Me.btnRegister.Text = "Enter"
         Me.btnRegister.UseVisualStyleBackColor = True
         '
@@ -146,23 +160,9 @@ Partial Class GuestInfoEntry
         Me.lblRegisterGuest.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblRegisterGuest.Name = "lblRegisterGuest"
         Me.lblRegisterGuest.Size = New System.Drawing.Size(301, 47)
-        Me.lblRegisterGuest.TabIndex = 9
+        Me.lblRegisterGuest.TabIndex = 0
         Me.lblRegisterGuest.Text = "REGISTER GUEST"
         Me.lblRegisterGuest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtGuestName
-        '
-        Me.txtGuestName.Location = New System.Drawing.Point(361, 76)
-        Me.txtGuestName.Name = "txtGuestName"
-        Me.txtGuestName.Size = New System.Drawing.Size(201, 21)
-        Me.txtGuestName.TabIndex = 9
-        '
-        'txtGuestEmail
-        '
-        Me.txtGuestEmail.Location = New System.Drawing.Point(361, 147)
-        Me.txtGuestEmail.Name = "txtGuestEmail"
-        Me.txtGuestEmail.Size = New System.Drawing.Size(201, 21)
-        Me.txtGuestEmail.TabIndex = 10
         '
         'GuestInfoEntry
         '

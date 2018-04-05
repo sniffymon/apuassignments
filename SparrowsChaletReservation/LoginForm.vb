@@ -11,7 +11,17 @@ Public Class LoginForm
     'SUB FOR LOGGING IN 
     '
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
+
         sql = "SELECT * FROM Users WHERE LoginUsername=@usrname AND Password=@pwd"
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@usrname", txtUsn.Text)

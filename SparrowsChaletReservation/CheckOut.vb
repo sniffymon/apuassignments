@@ -17,7 +17,16 @@ Public Class CheckOut
         '
         If StaffMenuForm.contracheck > 0 Then
             If conn.State = ConnectionState.Closed Then
-                conn.Open()
+                Try
+                    conn.Open()
+                Catch sqlEx As SqlException
+                    Select Case sqlEx.Number
+                    Case -1, 2, 53, 40
+                        MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Case Else
+                        MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Select
+                End Try
             End If
             sql = "SELECT Guest_ID_PassNum FROM GuestDetail WHERE GuestNo =" & StaffMenuForm.contraguestno
                 cmd = New SqlCommand(sql, conn)
@@ -29,7 +38,16 @@ Public Class CheckOut
                 conn.Close()
             End If
         If conn.State = ConnectionState.Closed Then
-            conn.Open()
+            Try
+                conn.Open()
+            Catch sqlEx As SqlException
+                Select Case sqlEx.Number
+                    Case -1, 2, 53, 40
+                        MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Case Else
+                        MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Select
+            End Try
         End If
         ' LOAD GUEST NUMBER
         '
@@ -51,6 +69,7 @@ Public Class CheckOut
 
     End Sub
     Private Sub CboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboGuestID.SelectedIndexChanged
+        ''INPUT VALIDATION & OCCUPANCY SPACE CHECK
         If CboGuestID.Text = "" Then
             MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -76,8 +95,6 @@ Public Class CheckOut
 
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         cmd.Parameters.AddWithValue("@guestid", CboGuestID.Text)
-
-
         dr = cmd.ExecuteReader
 
         If dr.Read() Then
@@ -96,7 +113,16 @@ Public Class CheckOut
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
         cmd.Parameters.AddWithValue("@guestno", guestnostorage)
         cmd.Parameters.AddWithValue("@currentdate", Date.Today)
         Dim adptr As New SqlDataAdapter(cmd)
@@ -120,7 +146,7 @@ Public Class CheckOut
                 ctrl.Visible = False
             End If
         Next
-
+        '
         Dim removedCH As String
         If exdata.Rows.Count = 0 Then
             MsgBox("There are no checkout details for this guest today!")
@@ -195,6 +221,7 @@ Public Class CheckOut
         End If
     End Sub
     Private Sub CboGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CboGuestID.KeyPress
+        'only allow numbers and control key in combo box
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else

@@ -51,7 +51,16 @@ Public Class CartCheckIn
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
         Dim n As Integer = 0
         For x = 1 To i
 
@@ -76,6 +85,9 @@ Public Class CartCheckIn
             MessageBox.Show("Chalet/Chalets Successfully Booked", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             CheckIn.RefreshForm(e)
             Me.Close()
+            ' FORCE REFRESH BY CLOSING
+            '
+            ExtendBooking.Close()
         Else
             MessageBox.Show("There was an unexpected error. Please check your booking details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
