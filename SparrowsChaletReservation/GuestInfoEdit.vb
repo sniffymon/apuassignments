@@ -2,7 +2,6 @@
 Imports System.Text.RegularExpressions
 Public Class GuestInfoEdit
     Dim conn As SqlConnection = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-    'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
     Dim sql As String
     Dim cmd As SqlCommand
     Dim idmemory As String
@@ -25,10 +24,6 @@ Public Class GuestInfoEdit
     End Sub
 
     Private Sub CboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboGuestID.SelectedIndexChanged
-        'If cboGuestID.Text = "" Then
-        '    MessageBox.Show("Please select a guest information to edit", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    Exit Sub
-        'End If
         'GUEST DETAIL SECTION START
 
         sql = "SELECT GuestNo, Guest_Name, Guest_Contact_No, Guest_Email FROM GuestDetail WHERE 
@@ -36,7 +31,16 @@ Public Class GuestInfoEdit
 
         'Creating 1st Instance of SQL Command
         cmd = New SqlCommand(sql, conn)
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         cmd.Parameters.AddWithValue("@guestid", CboGuestID.Text)
         dr = cmd.ExecuteReader
@@ -57,7 +61,16 @@ Public Class GuestInfoEdit
 
         If EmailCheck(txtGuestEmail.Text) = True Then
             cmd = New SqlCommand(sql, conn)
-            conn.Open()
+            Try
+                conn.Open()
+            Catch sqlEx As SqlException
+                Select Case sqlEx.Number
+                    Case -1, 2, 53, 40
+                        MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Case Else
+                        MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Select
+            End Try
             cmd.Parameters.AddWithValue("@ICnum", CboGuestID.Text)
             cmd.Parameters.AddWithValue("@guestname", txtGuestName.Text)
             cmd.Parameters.AddWithValue("@contactnum", txtGuestMobile.Text)

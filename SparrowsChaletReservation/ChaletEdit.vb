@@ -11,7 +11,16 @@ Public Class ChaletEdit
         dtpCheckOut.CustomFormat = " "
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
 
         '
         'LOAD cboGuestNames START
@@ -65,7 +74,16 @@ Public Class ChaletEdit
         Dim EditCheck As Integer
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
         sql = "UPDATE Reservation
                SET GuestNo_FK = GuestDetail.GuestNo, CheckIn_Date = @checkindate, CheckOut_Date =@checkoutdate, ExtraBed = @eb
 			   FROM GuestDetail 
@@ -104,7 +122,16 @@ Public Class ChaletEdit
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Dim Recorddeleted As Integer
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
 
         sql = " DELETE FROM Reservation WHERE ChaletNumber_FK = @clickedchaletCH"
         cmd = New SqlCommand(sql, conn)
@@ -119,9 +146,4 @@ Public Class ChaletEdit
 
         conn.Close()
     End Sub
-    'Private Sub ChaletButtons_Click(sender As Object, e As EventArgs) Handles btnCH001.Click, btnCH002.Click, btnCH003.Click, btnCH004.Click, btnCH005.Click, btnCH006.Click, btnCH007.Click, btnCH008.Click, btnCH009.Click, btnCH010.Click, btnCH011.Click, btnCH012.Click, btnCH013.Click, btnCH014.Click, btnCH015.Click, btnCH016.Click, btnCH017.Click, btnCH018.Click, btnCH019.Click, btnCH020.Click
-    '    ContextMenuStrip1.Show(sender, sender.Height, 0)
-    '    clickedchalet = "Chalet " & sender.text
-    '    clickedchaletCH = "CH0" & sender.text
-    'End Sub
 End Class

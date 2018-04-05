@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class ChaletExtend
-    Dim conn As SqlConnection
+    Dim conn As New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
     Dim sql As String
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
@@ -13,7 +13,16 @@ Public Class ChaletExtend
         '
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
 
         sql = "SELECT Cast(CheckIn_Date AS varchar), Cast(CheckOut_Date AS Varchar), ExtraBed
               From Reservation
@@ -41,9 +50,18 @@ Public Class ChaletExtend
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExtendBooking.Click
         Dim EditCheck As Integer
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
         sql = "UPDATE Reservation
                SET CheckOut_Date =@checkoutdate
 			   FROM GuestDetail 

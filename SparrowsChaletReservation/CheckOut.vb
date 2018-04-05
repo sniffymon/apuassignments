@@ -17,7 +17,16 @@ Public Class CheckOut
         '
         If StaffMenuForm.contracheck > 0 Then
             If conn.State = ConnectionState.Closed Then
-                conn.Open()
+                Try
+                    conn.Open()
+                Catch sqlEx As SqlException
+                    Select Case sqlEx.Number
+                    Case -1, 2, 53, 40
+                        MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Case Else
+                        MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Select
+                End Try
             End If
             sql = "SELECT Guest_ID_PassNum FROM GuestDetail WHERE GuestNo =" & StaffMenuForm.contraguestno
                 cmd = New SqlCommand(sql, conn)
@@ -29,7 +38,16 @@ Public Class CheckOut
                 conn.Close()
             End If
         If conn.State = ConnectionState.Closed Then
-            conn.Open()
+            Try
+                conn.Open()
+            Catch sqlEx As SqlException
+                Select Case sqlEx.Number
+                    Case -1, 2, 53, 40
+                        MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Case Else
+                        MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Select
+            End Try
         End If
         ' LOAD GUEST NUMBER
         '
@@ -96,7 +114,16 @@ Public Class CheckOut
 
         Dim chaletds As New DataSet
         cmd = New SqlCommand(sql, conn)
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
         cmd.Parameters.AddWithValue("@guestno", guestnostorage)
         cmd.Parameters.AddWithValue("@currentdate", Date.Today)
         Dim adptr As New SqlDataAdapter(cmd)

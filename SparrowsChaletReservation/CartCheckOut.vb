@@ -13,18 +13,16 @@ Public Class CheckOutCart
         conn.Open()
         Dim n As Integer = 0
         For x = 1 To i
-            'Dim n as integer =1
-            'for x=1 to i
+
             sql = "UPDATE Reservation
                SET Reservation_Status = 'False'
                WHERE ChaletNumber_FK = @chaletnumber;"
 
             cmd = New SqlCommand(sql, conn)
             cmd.Parameters.AddWithValue("@chaletnumber", CheckOut.checkedchalet(x - 1).Remove(0, 3))
-            'cmd.Parameters.AddWithValue("@chaletnumber", CheckOut.checkedchalet(x + 1))
             cmd.ExecuteNonQuery()
             n += 1
-            'n-=1
+
         Next
         MessageBox.Show("Please click on the print button to print the receipt!", "Important", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ReceiptForm.ShowDialog()
@@ -216,6 +214,7 @@ Public Class CheckOutCart
     End Sub
 
     Private Sub CheckOutCart_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        'clear the info in the cart
         i = 0
         CheckOut.checkedchalet.Clear()
     End Sub

@@ -24,8 +24,6 @@ Public Class CheckIn
     End Sub
 
     Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged, dtpCheckOut.ValueChanged
-        ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         If dtpCheckIn.Value <> dtpCheckIn.MinDate Then
             dtpCheckOut.MinDate = dtpCheckIn.Value.AddDays(1)
         End If
@@ -41,7 +39,17 @@ Public Class CheckIn
         supremechalets = 0
         checkedchalet.Clear()
 
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
+
         Dim chaletds As New DataSet
         sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @cidate AND CheckOut_Date >= @cidate) OR (CheckIn_Date < @codate AND CheckOut_Date >= @codate) OR (@cidate < CheckIn_Date AND @codate > CheckOut_Date) OR (CheckOut_Date <= @cidate AND Reservation_Status = 'True' AND CheckOut_Date <= CONVERT(Date,GetDate()))"
         cmd = New SqlCommand(sql, conn)
@@ -73,10 +81,17 @@ Public Class CheckIn
         End If
     End Sub
     Private Sub CheckIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
 
-        conn.Open()
         sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @date AND CheckOut_Date >= @date AND Reservation_Status = 'True') OR (CheckOut_Date <= @date AND Reservation_Status = 'True' AND GetDate() <= @date)"
 
         Dim chaletds As New DataSet
@@ -130,7 +145,16 @@ Public Class CheckIn
 
         'Creating 1st Instance of SQL Command
         cmd = New SqlCommand(sql, conn)
-        conn.Open()
+        Try
+            conn.Open()
+        Catch sqlEx As SqlException
+            Select Case sqlEx.Number
+                Case -1, 2, 53, 40
+                    MessageBox.Show("Please check if the connection is available!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case Else
+                    MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        End Try
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         cmd.Parameters.AddWithValue("@guestid", CboGuestID.Text)
 
@@ -178,33 +202,6 @@ Public Class CheckIn
             MessageBox.Show("Chalets selected not enough to accomodate guests!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
-        ''
-        '' AVAILABILITY CHECK
-        ''
-        'n = 0
-        ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-
-        'conn.Open()
-
-        'For x = 1 To addedchalets
-        '    sql = "SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber)"
-        '    cmd = New SqlCommand(sql, conn)
-        '    cmd.Parameters.AddWithValue("@checkindate", dtpCheckIn.Value.ToString("yyyy-MM-dd"))
-        '    cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Value.ToString("yyyy-MM-dd"))
-        '    cmd.Parameters.AddWithValue("@chaletnumber", checkedchalet(n))
-
-        '    dr = cmd.ExecuteReader
-
-        '    If dr.HasRows Then
-        '        MsgBox("Chalets selected are unavailable on specified date!")
-        '        Exit Sub
-        '    End If
-        '    dr.Close()
-        '    n += 1
-        'Next
-        'conn.Close()
-        '
         ' PRICE CALCULATION
         '
         Dim StartTime, EndTime As DateTime
