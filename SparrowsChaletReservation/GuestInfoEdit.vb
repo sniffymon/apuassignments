@@ -9,6 +9,7 @@ Public Class GuestInfoEdit
     Dim dr As SqlDataReader
     Dim updatechecker As Integer
     Private Sub GuestInfoEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'load guest into combobox
         conn.Open()
         sql = "SELECT Guest_ID_PassNum FROM GuestDetail"
         cmd = New SqlCommand(sql, conn)
@@ -29,8 +30,8 @@ Public Class GuestInfoEdit
         '    MessageBox.Show("Please select a guest information to edit", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
         '    Exit Sub
         'End If
-        'GUEST DETAIL SECTION START
 
+        'GUEST DETAIL SECTION START
         sql = "SELECT GuestNo, Guest_Name, Guest_Contact_No, Guest_Email FROM GuestDetail WHERE 
 [Guest_ID_PassNum]=@guestid"
 
@@ -51,10 +52,12 @@ Public Class GuestInfoEdit
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        'update guestdetail
+
         sql = "UPDATE GuestDetail
                SET Guest_ID_PassNum = @ICnum, Guest_Name = @guestname, Guest_Contact_No = @contactnum, Guest_Email = @email
                WHERE GuestNo = @idmemory"
-
+        'determine parameters
         If EmailCheck(txtGuestEmail.Text) = True Then
             cmd = New SqlCommand(sql, conn)
             conn.Open()
@@ -72,7 +75,7 @@ Public Class GuestInfoEdit
             End If
 
             conn.Close()
-
+            'message box for invalid email
         ElseIf EmailCheck(txtGuestEmail.Text) = False Then
             MessageBox.Show("Invalid Email, please try again", "Invalid Email or GuestID", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtGuestEmail.Focus()
@@ -88,7 +91,7 @@ Public Class GuestInfoEdit
     End Sub
 
     Function EmailCheck(ByVal emailaddress As String) As Boolean
-
+        'email validation
         Dim pattern As String = "\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
         Dim emailAddressMatch As Match = Regex.Match(emailaddress, pattern)
         If emailAddressMatch.Success Then

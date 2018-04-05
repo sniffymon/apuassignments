@@ -7,10 +7,12 @@ Public Class GuestInfoEntry
     Dim Sql As String
     Dim cmd As SqlCommand
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
+        ''INPUT VALIDATION & OCCUPANCY SPACE CHECK
         If String.IsNullOrWhiteSpace(txtGuestName.Text) Or txtGuestID.Text = "" Or txtGuestEmail.Text = "" Or txtGuestMobile.Text = "" Then
             MessageBox.Show("Please check that you've entered all needed and valid information into the textboxes", "Guest Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
+
         conn.Open()
         'GUEST DETAIL SECTION START
         Sql = "INSERT INTO GuestDetail(Guest_ID_PassNum, Guest_Name, Guest_Contact_No, Guest_Email) VALUES(@guestid, @guestname, @guestmobile, @guestemail)"
@@ -28,6 +30,7 @@ Public Class GuestInfoEntry
             'GUEST DETAIL SECTION END
             conn.Close()
 
+            'message box for invalid email
         ElseIf EmailCheck(txtGuestEmail.Text) = False Then
             MessageBox.Show("Invalid Email, please try again", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtGuestEmail.Focus()
@@ -38,7 +41,7 @@ Public Class GuestInfoEntry
 
     End Sub
     Function EmailCheck(ByVal emailaddress As String) As Boolean
-
+        'email validation
         Dim pattern As String = "\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
         Dim emailAddressMatch As Match = Regex.Match(emailaddress, pattern)
         If emailAddressMatch.Success Then
@@ -48,6 +51,7 @@ Public Class GuestInfoEntry
         End If
     End Function
     Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles  txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestID.KeyDown
+        'enter key to activate register button
         If e.KeyCode = Keys.Enter Then
             btnRegister.PerformClick()
         End If
@@ -55,8 +59,10 @@ Public Class GuestInfoEntry
 
 
     Private Sub txtGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGuestID.KeyPress, txtGuestEmail.KeyPress, txtGuestMobile.KeyPress
+        'allow backspace key
         If Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
+
 End Class

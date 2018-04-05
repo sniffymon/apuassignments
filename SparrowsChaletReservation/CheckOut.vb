@@ -51,6 +51,7 @@ Public Class CheckOut
 
     End Sub
     Private Sub CboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboGuestID.SelectedIndexChanged
+        ''INPUT VALIDATION & OCCUPANCY SPACE CHECK
         If CboGuestID.Text = "" Then
             MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -118,7 +119,7 @@ Public Class CheckOut
                 ctrl.Visible = False
             End If
         Next
-
+        '
         Dim removedCH As String
         If exdata.Rows.Count = 0 Then
             MsgBox("There are no checkout details for this guest today!")
@@ -193,6 +194,7 @@ Public Class CheckOut
         End If
     End Sub
     Private Sub CboGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CboGuestID.KeyPress
+        'only allow numbers and control key in combo box
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
