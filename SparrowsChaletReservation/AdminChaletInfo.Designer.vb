@@ -158,7 +158,7 @@ Partial Class AdminChaletInfo
         Me.btnClear.Margin = New System.Windows.Forms.Padding(2)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(61, 22)
-        Me.btnClear.TabIndex = 12
+        Me.btnClear.TabIndex = 1
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
@@ -253,7 +253,7 @@ Partial Class AdminChaletInfo
         Me.btnSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(61, 22)
-        Me.btnSearch.TabIndex = 2
+        Me.btnSearch.TabIndex = 0
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = True
         '

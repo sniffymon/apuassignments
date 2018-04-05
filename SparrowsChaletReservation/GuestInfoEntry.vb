@@ -6,8 +6,9 @@ Public Class GuestInfoEntry
     'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
     Dim Sql As String
     Dim cmd As SqlCommand
+    Dim insertcheck As Integer
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        ''INPUT VALIDATION & OCCUPANCY SPACE CHECK
+        'INPUT VALIDATION & OCCUPANCY SPACE CHECK
         If String.IsNullOrWhiteSpace(txtGuestName.Text) Or txtGuestID.Text = "" Or txtGuestEmail.Text = "" Or txtGuestMobile.Text = "" Then
             MessageBox.Show("Please check that you've entered all needed and valid information into the textboxes", "Guest Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -15,7 +16,7 @@ Public Class GuestInfoEntry
 
         conn.Open()
         'GUEST DETAIL SECTION START
-        Sql = "INSERT INTO GuestDetail(Guest_ID_PassNum, Guest_Name, Guest_Contact_No, Guest_Email) VALUES(@guestid, @guestname, @guestmobile, @guestemail)"
+        Sql = "INSERT INTO GuestDetail(Guest_ID_PassNum, Guest_Name, Guest_Contact_No, Guest_Email) SELECT @guestid, @guestname, @guestmobile, @guestemail WHERE NOT EXISTS (SELECT Guest_ID_PassNum FROM GuestDetail WHERE Guest_ID_PassNum = @guestid)"
         If EmailCheck(txtGuestEmail.Text) = True Then
             'Creating 1st Instance of SQL Command
             cmd = New SqlCommand(Sql, conn)
@@ -25,11 +26,21 @@ Public Class GuestInfoEntry
             cmd.Parameters.AddWithValue("@guestmobile", txtGuestMobile.Text)
             cmd.Parameters.AddWithValue("@guestname", txtGuestName.Text)
             'Execute SQL Query above and expecting no return
-            cmd.ExecuteNonQuery()
-            MsgBox("Guest Info Successfully Stored")
+            insertcheck = cmd.ExecuteNonQuery()
+            If insertcheck = 1 Then
+                MsgBox("Guest Info Successfully Stored")
+            ElseIf insertcheck = 0 Then
+                MessageBox.Show("This IC Number has already been registered once on the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
             'GUEST DETAIL SECTION END
             conn.Close()
-
+            ' CLOSE TO TRIGGER A REFRESH ON THE COMBOBOX OF OTHER FORMS
+            '
+            GuestInfoEdit.Close()
+            ExtendBooking.Close()
+            CheckIn.Close()
+            CheckOut.Close()
             'message box for invalid email
         ElseIf EmailCheck(txtGuestEmail.Text) = False Then
             MessageBox.Show("Invalid Email, please try again", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -50,19 +61,13 @@ Public Class GuestInfoEntry
             EmailCheck = False
         End If
     End Function
-    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles  txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestID.KeyDown
+    Private Sub txtGuestID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtGuestEmail.KeyDown, txtGuestMobile.KeyDown, txtGuestID.KeyDown
         'enter key to activate register button
         If e.KeyCode = Keys.Enter Then
             btnRegister.PerformClick()
-        End If
-    End Sub
-
-
-    Private Sub txtGuestID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGuestID.KeyPress, txtGuestEmail.KeyPress, txtGuestMobile.KeyPress
-        'allow backspace key
-        If Char.IsWhiteSpace(e.KeyChar) Then
+        ElseIf e.KeyCode = Keys.Space Then
             e.Handled = True
+            e.SuppressKeyPress = True
         End If
     End Sub
-
 End Class

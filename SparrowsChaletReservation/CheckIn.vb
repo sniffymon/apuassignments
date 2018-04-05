@@ -126,6 +126,9 @@ Public Class CheckIn
             CboGuestID.Items.Add("No Existing Guests")
         End If
         conn.Close()
+
+        dtpCheckIn.MinDate = Date.Today
+        dtpCheckOut.MinDate = dtpCheckIn.Value.AddDays(1)
     End Sub
 
     Private Sub cboGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboGuestID.SelectedIndexChanged

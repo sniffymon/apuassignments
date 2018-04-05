@@ -105,6 +105,7 @@ Partial Class CheckOut
         Me.btnCH020.TabIndex = 53
         Me.btnCH020.Text = "20"
         Me.btnCH020.UseVisualStyleBackColor = False
+        Me.btnCH020.Visible = False
         '
         'btnCH017
         '
@@ -121,6 +122,7 @@ Partial Class CheckOut
         Me.btnCH017.TabIndex = 52
         Me.btnCH017.Text = "17"
         Me.btnCH017.UseVisualStyleBackColor = False
+        Me.btnCH017.Visible = False
         '
         'btnCH011
         '
@@ -137,6 +139,7 @@ Partial Class CheckOut
         Me.btnCH011.TabIndex = 51
         Me.btnCH011.Text = "11"
         Me.btnCH011.UseVisualStyleBackColor = False
+        Me.btnCH011.Visible = False
         '
         'btnCH018
         '
@@ -153,6 +156,7 @@ Partial Class CheckOut
         Me.btnCH018.TabIndex = 50
         Me.btnCH018.Text = "18"
         Me.btnCH018.UseVisualStyleBackColor = False
+        Me.btnCH018.Visible = False
         '
         'btnCH012
         '
@@ -169,6 +173,7 @@ Partial Class CheckOut
         Me.btnCH012.TabIndex = 49
         Me.btnCH012.Text = "12"
         Me.btnCH012.UseVisualStyleBackColor = False
+        Me.btnCH012.Visible = False
         '
         'btnCH019
         '
@@ -185,6 +190,7 @@ Partial Class CheckOut
         Me.btnCH019.TabIndex = 48
         Me.btnCH019.Text = "19"
         Me.btnCH019.UseVisualStyleBackColor = False
+        Me.btnCH019.Visible = False
         '
         'btnCH016
         '
@@ -201,6 +207,7 @@ Partial Class CheckOut
         Me.btnCH016.TabIndex = 47
         Me.btnCH016.Text = "16"
         Me.btnCH016.UseVisualStyleBackColor = False
+        Me.btnCH016.Visible = False
         '
         'btnCH015
         '
@@ -217,6 +224,7 @@ Partial Class CheckOut
         Me.btnCH015.TabIndex = 46
         Me.btnCH015.Text = "15"
         Me.btnCH015.UseVisualStyleBackColor = False
+        Me.btnCH015.Visible = False
         '
         'btnCH014
         '
@@ -233,6 +241,7 @@ Partial Class CheckOut
         Me.btnCH014.TabIndex = 45
         Me.btnCH014.Text = "14"
         Me.btnCH014.UseVisualStyleBackColor = False
+        Me.btnCH014.Visible = False
         '
         'btnCH013
         '
@@ -249,6 +258,7 @@ Partial Class CheckOut
         Me.btnCH013.TabIndex = 44
         Me.btnCH013.Text = "13"
         Me.btnCH013.UseVisualStyleBackColor = False
+        Me.btnCH013.Visible = False
         '
         'lblGuestEmail
         '
@@ -292,6 +302,7 @@ Partial Class CheckOut
         Me.btnCH010.TabIndex = 43
         Me.btnCH010.Text = "10"
         Me.btnCH010.UseVisualStyleBackColor = False
+        Me.btnCH010.Visible = False
         '
         'btnCH007
         '
@@ -306,6 +317,7 @@ Partial Class CheckOut
         Me.btnCH007.TabIndex = 42
         Me.btnCH007.Text = "07"
         Me.btnCH007.UseVisualStyleBackColor = False
+        Me.btnCH007.Visible = False
         '
         'btnCH001
         '
@@ -320,6 +332,7 @@ Partial Class CheckOut
         Me.btnCH001.TabIndex = 41
         Me.btnCH001.Text = "01"
         Me.btnCH001.UseVisualStyleBackColor = False
+        Me.btnCH001.Visible = False
         '
         'btnCH008
         '
@@ -334,6 +347,7 @@ Partial Class CheckOut
         Me.btnCH008.TabIndex = 40
         Me.btnCH008.Text = "08"
         Me.btnCH008.UseVisualStyleBackColor = False
+        Me.btnCH008.Visible = False
         '
         'btnCH009
         '
@@ -348,6 +362,7 @@ Partial Class CheckOut
         Me.btnCH009.TabIndex = 38
         Me.btnCH009.Text = "09"
         Me.btnCH009.UseVisualStyleBackColor = False
+        Me.btnCH009.Visible = False
         '
         'txtGuestMobile
         '
@@ -391,6 +406,7 @@ Partial Class CheckOut
         Me.btnCH002.TabIndex = 39
         Me.btnCH002.Text = "02"
         Me.btnCH002.UseVisualStyleBackColor = False
+        Me.btnCH002.Visible = False
         '
         'lblCheckout
         '
@@ -421,6 +437,7 @@ Partial Class CheckOut
         Me.btnCH006.TabIndex = 37
         Me.btnCH006.Text = "06"
         Me.btnCH006.UseVisualStyleBackColor = False
+        Me.btnCH006.Visible = False
         '
         'CboGuestID
         '
@@ -474,6 +491,7 @@ Partial Class CheckOut
         Me.btnCH005.TabIndex = 36
         Me.btnCH005.Text = "05"
         Me.btnCH005.UseVisualStyleBackColor = False
+        Me.btnCH005.Visible = False
         '
         'btnCH004
         '
@@ -488,6 +506,7 @@ Partial Class CheckOut
         Me.btnCH004.TabIndex = 35
         Me.btnCH004.Text = "04"
         Me.btnCH004.UseVisualStyleBackColor = False
+        Me.btnCH004.Visible = False
         '
         'btnCH003
         '
@@ -502,6 +521,7 @@ Partial Class CheckOut
         Me.btnCH003.TabIndex = 34
         Me.btnCH003.Text = "03"
         Me.btnCH003.UseVisualStyleBackColor = False
+        Me.btnCH003.Visible = False
         '
         'lblTest
         '
@@ -512,6 +532,7 @@ Partial Class CheckOut
         Me.lblTest.Name = "lblTest"
         Me.lblTest.Size = New System.Drawing.Size(0, 13)
         Me.lblTest.TabIndex = 33
+        Me.lblTest.Visible = False
         '
         'btnCheckOut
         '

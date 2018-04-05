@@ -100,4 +100,18 @@ Public Class GuestInfoEdit
             EmailCheck = False
         End If
     End Function
+
+    Private Sub txtUsn_TextChanged(sender As Object, e As KeyEventArgs) Handles CboGuestID.KeyDown, txtGuestName.KeyDown, txtGuestMobile.KeyDown, txtGuestEmail.KeyDown
+        Select Case sender.Name
+            Case CboGuestID.Name, txtGuestName.Name, txtGuestMobile.Name, txtGuestEmail.Name
+                If e.KeyCode = Keys.Enter Then
+                    btnUpdate.PerformClick()
+                End If
+            Case txtGuestMobile.Name, txtGuestEmail.Name
+                If e.KeyCode = Keys.Space Then
+                    e.Handled = True
+                    e.SuppressKeyPress = True
+                End If
+        End Select
+    End Sub
 End Class

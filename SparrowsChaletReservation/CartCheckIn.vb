@@ -85,6 +85,9 @@ Public Class CartCheckIn
             MessageBox.Show("Chalet/Chalets Successfully Booked", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             CheckIn.RefreshForm(e)
             Me.Close()
+            ' FORCE REFRESH BY CLOSING
+            '
+            ExtendBooking.Close()
         Else
             MessageBox.Show("There was an unexpected error. Please check your booking details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub

@@ -68,7 +68,7 @@ Public Class ChaletExtend
 			   INNER JOIN
 			   Reservation
                ON Reservation.GuestNo_FK = GuestDetail.GuestNo
-               WHERE GuestDetail.Guest_Name = @memguestname AND ChaletNumber_FK = @clickedchaletCH AND NOT EXISTS (SELECT * FROM Reservation INNER JOIN GuestDetail ON GuestNo_FK = GuestDetail.GuestNo WHERE Guest_Name <> @memguestname AND NOT (CheckIn_Date < @checkoutdate AND CheckOut_Date > @checkoutdate) AND (CheckIn_Date <@checkoutdate AND CheckOut_Date >= @checkoutdate)
+               WHERE GuestDetail.Guest_Name = @memguestname AND ChaletNumber_FK = @clickedchaletCH AND NOT EXISTS (SELECT * FROM Reservation INNER JOIN GuestDetail ON GuestNo_FK = GuestDetail.GuestNo WHERE Guest_Name <> @memguestname AND NOT (CheckIn_Date < @checkoutdate AND CheckOut_Date > @checkoutdate) AND (CheckIn_Date <@checkoutdate AND CheckOut_Date >= @checkoutdate) OR (CheckIn_Date < @checkindate AND CheckOut_Date > @checkoutdate)
                AND (CheckIn_Date < @checkoutdate AND CheckOut_Date > @checkoutdate) OR (CheckIn_Date < @checkoutdate AND CheckOut_Date >= @checkoutdate)AND ChaletNumber_FK = @clickedchaletCH)"
 
 
@@ -76,6 +76,7 @@ Public Class ChaletExtend
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
         cmd.Parameters.AddWithValue("@memguestname", txtGuestName.Text)
         cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Value.ToString("yyyy-MM-dd"))
+        cmd.Parameters.AddWithValue("@checkindate", txtCheckIn.Text)
 
         EditCheck = cmd.ExecuteNonQuery()
 

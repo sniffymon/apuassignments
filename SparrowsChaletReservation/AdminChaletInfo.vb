@@ -7,7 +7,7 @@ Public Class AdminChaletInfo
     Dim cmd As SqlCommand
     Dim searchmode As Boolean = False
     Dim chaletamt, sql, guestnostorage As String
-    Private Sub ChaletBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub AdminChaletInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
@@ -128,6 +128,7 @@ Public Class AdminChaletInfo
 
         For Each row In exdata.Rows
             DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).Visible = True
+            DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).BackColor = Color.Red
             lblChaletSpec.Visible = False
         Next
         conn.Close()
@@ -146,6 +147,8 @@ Public Class AdminChaletInfo
                 ctrl.Visible = True
             End If
         Next
+
+        AdminChaletInfo_Load(e, e)
     End Sub
 
     Private Sub btnLeft_Click(sender As Object, e As EventArgs) Handles btnLeft.Click, btnRight.Click
@@ -237,4 +240,5 @@ Public Class AdminChaletInfo
         ChaletEditNEW.Text = "Edit " & clickedchalet
         ChaletEditNEW.Show()
     End Sub
+
 End Class
