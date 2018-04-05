@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+
 Public Class RegisterStaff
     'DECLARATIONS OF NEEDED VARIABLES
     '
@@ -7,11 +8,7 @@ Public Class RegisterStaff
     Dim cmd As SqlCommand
     Dim registercheck As Integer
 
-
-    'SUB FOR REGISTERING STAFF
-    '
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
         'INPUT VALIDATION
         '
         If txtFullName.Text = "" Or txtCfmPwd.Text = "" Or txtPwd.Text = "" Then
@@ -25,7 +22,7 @@ Public Class RegisterStaff
             Exit Sub
         End If
 
-        'LOCAL VARIABLES FOR USERNAME GENERATION
+        'DECLARATIONS FOR GENERATING USERNAME
         '
         Dim threeinitials As String
         threeinitials = txtFullName.Text
@@ -35,9 +32,9 @@ Public Class RegisterStaff
         Dim y As Integer
         Dim z As Integer
 
-
-        'USERNAME GENERATION
+        'GENERATING USERNAME
         '
+
         If initialarray.Count >= 3 Then
             lblUsrName.Text = (initialarray(0).Chars(0) + initialarray(1).Chars(0) + initialarray(2).Chars(0)).ToUpper
         ElseIf initialarray.Count = 2 Then
@@ -50,7 +47,8 @@ Public Class RegisterStaff
             lblUsrName.Text = (initialarray(0).Chars(0) + initialarray(0).Chars(1) + initialarray(0).Chars(2)).ToUpper
         End If
 
-        'CHECK FOR EXISTING USERNAME TO AVOID SAME USERNAME IN DATABASE
+        'CHECK FOR EXISTING USERNAME IN DATABASE TO AVOID SAME USERNAME
+        'GENERATE ANOTHER USERNAME
         '
         For i = 0 To 2
             If conn.State = ConnectionState.Closed Then
@@ -66,13 +64,7 @@ Public Class RegisterStaff
             adapter.Fill(chaletds, "LoginUsername")
             Dim stafftable As DataTable = chaletds.Tables("LoginUsername")
             Dim row As DataRow
-
-            'GENERATE ANOTHER USERNAME
-            '
             For Each row In stafftable.Rows
-
-                'CHECK FOR 1 WORD NAME CONDITION
-                '
                 If initialarray.Count = 1 Then
                     If row(0) = lblUsrName.Text And threeinitials.Length > x + 3 Then
                         lblUsrName.Text = (threeinitials.Substring(0, 2) + threeinitials.Substring(x + 3, 1)).ToUpper
@@ -93,8 +85,6 @@ Public Class RegisterStaff
                     End If
                 End If
 
-                'CHECK FOR 2 WORD NAME CONDITION
-                '
                 If initialarray.Count = 2 Then
                     If row(0) = lblUsrName.Text And initialarray(1).Length > y + 1 Then
                         lblUsrName.Text = (threeinitials.Substring(0, 2) + initialarray(1).Chars(y + 1)).ToUpper
@@ -119,8 +109,6 @@ Public Class RegisterStaff
                     End If
                 End If
 
-                'CHECK FOR 3 WORD OR ABOVE NAME CONDITION
-                '
                 If initialarray.Count >= 3 Then
                     If row(0) = lblUsrName.Text And initialarray(2).Length > z + 1 Then
                         lblUsrName.Text = (initialarray(0).Chars(0) + initialarray(1).Chars(0) + initialarray(2).Chars(z + 1)).ToUpper
@@ -152,19 +140,19 @@ Public Class RegisterStaff
             conn.Close()
         Next
 
-        'INSERT STAFF DATA INTO DATABASE
+        'REGISTER STAFF INFO INTO DATABASE
         '
         conn.Open()
         sql = "INSERT INTO Users(UserFullName, Password, LoginUsername, AdminRole) VALUES(@staffname, @staffpwd, @staffusrname, @adminrole)"
         cmd = New SqlCommand(sql, conn)
+        'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         cmd.Parameters.AddWithValue("@staffname", txtFullName.Text)
         cmd.Parameters.AddWithValue("@staffpwd", txtPwd.Text)
         cmd.Parameters.AddWithValue("@staffusrname", lblUsrName.Text)
         cmd.Parameters.AddWithValue("@adminrole", "False")
+        'Execute SQL Query above and expecting no return
         registercheck = cmd.ExecuteNonQuery()
 
-        'CHECK FOR SUCCESSFULL REGISTRATION
-        '
         If registercheck = 1 Then
             MessageBox.Show("Staff Info Successfully Stored", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             txtCfmPwd.Text = ""
@@ -178,7 +166,7 @@ Public Class RegisterStaff
         conn.Close()
     End Sub
 
-    'ENABLE ENTER BUTTON TO LOG IN 
+    'ENABLE ENTER BUTTON LOG IN
     '
     Private Sub txtFullName_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPwd.KeyDown, txtCfmPwd.KeyDown, txtFullName.KeyDown, CheckBox1.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -186,13 +174,13 @@ Public Class RegisterStaff
         End If
     End Sub
 
-    'FOCUS POINTER TO PASSWORD TEXTBOX
+    'SET POINTER TO PASSWORD TEXTBOX AFTER FILLING FULLNAME TEXTBOX
     '
     Private Sub txtFullName_Leave(sender As Object, e As EventArgs) Handles txtFullName.Leave
         txtPwd.Focus()
     End Sub
 
-    'MASK & UNMASK BOTH PASSWORD TEXTBOXES
+    'MASK & UNMASK BOTH PASSWORDS
     '
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         txtPwd.UseSystemPasswordChar = Not txtPwd.UseSystemPasswordChar

@@ -1,18 +1,22 @@
 ﻿Imports System.Data.SqlClient
+
+'DECLARATION ON NEEDED VARIABLES
+'
 Public Class ChaletDetails
     Dim conn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
     Dim sql As String
+
+    'GET DATA FROM DATABASE TO DISPLAY ON FORM
+    '
     Private Sub ChaletDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         conn.Open()
         sql = "SELECT Guest_Name, GuestNo, ChaletNumber_FK, Cast(CheckIn_Date AS Varchar), Cast(CheckOut_Date AS Varchar), ExtraBed
               From GuestDetail
               Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
               WHERE ChaletNumber_FK = @clickedchaletCH AND (@date >= CheckIn_Date AND @date < CheckOut_Date) AND Reservation_Status = 'True'"
-        ' secondsql = "SELECT Cast(CheckIn_Date AS Varchar), Cast(CheckOut_Date AS Varchar), ExtraBed FROM Reservation WHERE ChaletNumber_FK = @clickedchaletCH"
 
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)

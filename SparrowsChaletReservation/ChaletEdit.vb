@@ -1,4 +1,7 @@
 ﻿Imports System.Data.SqlClient
+
+'DECLARATION OF NEEDED VARIABLES
+'
 Public Class ChaletEdit
     Dim conn As SqlConnection
     Dim sql As String
@@ -6,16 +9,13 @@ Public Class ChaletEdit
     Dim dr As SqlDataReader
     Dim namememory As String
 
+    'LOADING GUESTNAMES INTO COMBOBOX
+    '
     Private Sub ChaletEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpCheckIn.CustomFormat = " "
         dtpCheckOut.CustomFormat = " "
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         conn.Open()
-
-        '
-        'LOAD cboGuestNames START
-        '
         sql = "SELECT Guest_Name FROM GuestDetail"
         cmd = New SqlCommand(sql, conn)
 
@@ -31,8 +31,8 @@ Public Class ChaletEdit
             CboGuestName.Items.Add("No Existing Guests")
         End If
         dr2.Close()
-        '
-        'LOAD cboGuestNames STOP
+
+        'DISPLAY DATA FROM DATABASE
         '
         sql = "SELECT Guest_Name, GuestNo, ChaletNumber_FK, Cast(CheckIn_Date AS Varchar), Cast(CheckOut_Date AS Varchar), ExtraBed
               From GuestDetail
@@ -54,17 +54,15 @@ Public Class ChaletEdit
             CboEB.Text = dr(5)
             namememory = CboGuestName.Text
         End If
-        '
-        'LOAD Existing Info on Chalet
-        '
-        conn.Close()
 
+        conn.Close()
     End Sub
 
+    'UPDATE DISPLAYED DATA 
+    '
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Dim EditCheck As Integer
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         conn.Open()
         sql = "UPDATE Reservation
                SET GuestNo_FK = GuestDetail.GuestNo, CheckIn_Date = @checkindate, CheckOut_Date =@checkoutdate, ExtraBed = @eb
@@ -73,9 +71,6 @@ Public Class ChaletEdit
 			   Reservation
                ON Reservation.GuestNo_FK = GuestDetail.GuestNo
                WHERE GuestDetail.Guest_Name = @memguestname AND ChaletNumber_FK = @clickedchaletCH;"
-
-
-
 
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
@@ -95,10 +90,14 @@ Public Class ChaletEdit
 
     End Sub
 
+    'LIMIT CHECKOUT DATE TO BE 1 DAY AFTER CHECKIN DATE
+    '
     Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged
         dtpCheckOut.MinDate = dtpCheckIn.Value.AddDays(1)
     End Sub
 
+    'DELETE SELECTED DATA FROM DATABASE
+    '
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Dim Recorddeleted As Integer
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
@@ -117,9 +116,4 @@ Public Class ChaletEdit
 
         conn.Close()
     End Sub
-    'Private Sub ChaletButtons_Click(sender As Object, e As EventArgs) Handles btnCH001.Click, btnCH002.Click, btnCH003.Click, btnCH004.Click, btnCH005.Click, btnCH006.Click, btnCH007.Click, btnCH008.Click, btnCH009.Click, btnCH010.Click, btnCH011.Click, btnCH012.Click, btnCH013.Click, btnCH014.Click, btnCH015.Click, btnCH016.Click, btnCH017.Click, btnCH018.Click, btnCH019.Click, btnCH020.Click
-    '    ContextMenuStrip1.Show(sender, sender.Height, 0)
-    '    clickedchalet = "Chalet " & sender.text
-    '    clickedchaletCH = "CH0" & sender.text
-    'End Sub
 End Class

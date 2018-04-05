@@ -1,4 +1,7 @@
 ﻿Imports System.Data.SqlClient
+
+'DECLARATION OF NEEDED DECLARATIONS
+'
 Public Class ChaletExtend
     Dim conn As SqlConnection
     Dim sql As String
@@ -6,15 +9,12 @@ Public Class ChaletExtend
     Dim dr As SqlDataReader
     Dim namememory As String
 
+    'LOAD DATA FROM DATABASE
+    '
     Private Sub ChaletEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-        'LOAD Existing Info on Chalet
-        '
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
         conn.Open()
-
         sql = "SELECT Cast(CheckIn_Date AS varchar), Cast(CheckOut_Date AS Varchar), ExtraBed
               From Reservation
               INNER Join GuestDetail on GuestDetail.GuestNo = GuestNo_FK
@@ -35,10 +35,11 @@ Public Class ChaletExtend
         End If
 
         conn.Close()
-        'dtpCheckOut.CustomFormat = " "
         dtpCheckOut.MinDate = dtpCheckOut.Value.ToString("yyyy-MM-dd")
     End Sub
 
+    'EXTEND CHECKOUT DATE 
+    '
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExtendBooking.Click
         Dim EditCheck As Integer
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
@@ -70,6 +71,8 @@ Public Class ChaletExtend
 
     End Sub
 
+    'SET CUSTOM FORMAT OF CHECKOUT DATE
+    '
     Private Sub dtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckOut.ValueChanged
         sender.CustomFormat = "yyyy-MM-dd"
     End Sub
