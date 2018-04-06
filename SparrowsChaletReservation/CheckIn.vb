@@ -38,6 +38,7 @@ Public Class CheckIn
         standardchalets = 0
         supremechalets = 0
         checkedchalet.Clear()
+        unavaich = 0
 
         Try
             conn.Open()
@@ -63,6 +64,7 @@ Public Class CheckIn
 
         For Each row In exdata.Rows
             DirectCast(GboChalet.Controls("btn" & row(0)), Button).BackColor = Color.Red
+            unavaich += 1
         Next
         conn.Close()
     End Sub
@@ -180,7 +182,10 @@ Public Class CheckIn
         '
         'INPUT VALIDATION & OCCUPANCY SPACE CHECK
         '
-        If String.IsNullOrWhiteSpace(txtGuestName.Text) Then
+        If txtPax.Text = "0" Then
+            MessageBox.Show("Please specify number of adults again!", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        ElseIf String.IsNullOrWhiteSpace(txtGuestName.Text) Then
             MessageBox.Show("Please select a guest that is booking the chalet!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         ElseIf dtpCheckIn.Text = dtpCheckOut.Text Or dtpCheckIn.Value > dtpCheckOut.Value Then
@@ -191,6 +196,7 @@ Public Class CheckIn
             Exit Sub
         ElseIf txtPax.Text > 80 - (unavaich * 4) Then
             MessageBox.Show("There aren't enough chalets to accomodate amount of guests!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
         End If
         '
         ' OCCUPANCY MINIMUM CHECK

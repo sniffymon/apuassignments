@@ -44,7 +44,7 @@ Public Class AdminChaletInfo
         sql = "SELECT Guest_ID_PassNum FROM GuestDetail"
         cmd = New SqlCommand(sql, conn)
 
-
+        cboGuestID.Items.Clear()
         Dim dr As SqlDataReader = cmd.ExecuteReader
         Dim guestcombotb As New DataTable
 

@@ -74,10 +74,14 @@ Public Class GuestInfoEntry
     End Sub
 
     Private Sub txtGuestID_KeyDown(sender As Object, e As KeyPressEventArgs) Handles txtGuestID.KeyPress, txtGuestMobile.KeyPress
-        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
+        If Not (Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar)) Then
             e.Handled = True
         End If
+        Select Case sender.Name
+            Case txtGuestID.Name
+                If txtGuestID.TextLength = 12 Then e.Handled = True
+            Case txtGuestMobile.Name
+                If txtGuestMobile.TextLength = 10 Then e.Handled = True
+        End Select
     End Sub
 End Class

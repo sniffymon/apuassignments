@@ -30,9 +30,9 @@ Partial Class ChaletEdit
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.dtpCheckIn = New System.Windows.Forms.DateTimePicker()
         Me.dtpCheckOut = New System.Windows.Forms.DateTimePicker()
-        Me.CboGuestName = New System.Windows.Forms.ComboBox()
         Me.CboEB = New System.Windows.Forms.ComboBox()
         Me.btnDelete = New System.Windows.Forms.Button()
+        Me.txtGuestID = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblEB
@@ -132,16 +132,6 @@ Partial Class ChaletEdit
         Me.dtpCheckOut.Size = New System.Drawing.Size(145, 22)
         Me.dtpCheckOut.TabIndex = 23
         '
-        'CboGuestName
-        '
-        Me.CboGuestName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CboGuestName.FormattingEnabled = True
-        Me.CboGuestName.Location = New System.Drawing.Point(154, 151)
-        Me.CboGuestName.Margin = New System.Windows.Forms.Padding(2)
-        Me.CboGuestName.Name = "CboGuestName"
-        Me.CboGuestName.Size = New System.Drawing.Size(145, 21)
-        Me.CboGuestName.TabIndex = 24
-        '
         'CboEB
         '
         Me.CboEB.AutoCompleteCustomSource.AddRange(New String() {"None", "1", "2"})
@@ -167,15 +157,25 @@ Partial Class ChaletEdit
         Me.btnDelete.Text = "Delete" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Records"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
+        'txtGuestID
+        '
+        Me.txtGuestID.BackColor = System.Drawing.SystemColors.Window
+        Me.txtGuestID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtGuestID.Location = New System.Drawing.Point(154, 146)
+        Me.txtGuestID.Name = "txtGuestID"
+        Me.txtGuestID.Size = New System.Drawing.Size(145, 23)
+        Me.txtGuestID.TabIndex = 27
+        Me.txtGuestID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'ChaletEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(375, 396)
+        Me.Controls.Add(Me.txtGuestID)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.CboEB)
-        Me.Controls.Add(Me.CboGuestName)
         Me.Controls.Add(Me.dtpCheckOut)
         Me.Controls.Add(Me.dtpCheckIn)
         Me.Controls.Add(Me.btnUpdate)
@@ -203,7 +203,7 @@ Partial Class ChaletEdit
     Friend WithEvents btnUpdate As Button
     Friend WithEvents dtpCheckIn As DateTimePicker
     Friend WithEvents dtpCheckOut As DateTimePicker
-    Friend WithEvents CboGuestName As ComboBox
     Friend WithEvents CboEB As ComboBox
     Friend WithEvents btnDelete As Button
+    Friend WithEvents txtGuestID As Label
 End Class

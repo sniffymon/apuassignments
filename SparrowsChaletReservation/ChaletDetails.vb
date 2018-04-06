@@ -3,7 +3,7 @@
 'DECLARATION ON NEEDED VARIABLES
 '
 Public Class ChaletDetails
-    Dim conn As SqlConnection
+    Dim conn As SqlConnection = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
     Dim sql As String
@@ -11,7 +11,6 @@ Public Class ChaletDetails
     'GET DATA FROM DATABASE TO DISPLAY ON FORM
     '
     Private Sub ChaletDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         conn.Open()
         sql = "SELECT Guest_Name, GuestNo, ChaletNumber_FK, Cast(CheckIn_Date AS Varchar), Cast(CheckOut_Date AS Varchar), ExtraBed
               From GuestDetail

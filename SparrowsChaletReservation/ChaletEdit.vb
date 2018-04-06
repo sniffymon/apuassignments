@@ -3,37 +3,18 @@
 'DECLARATION OF NEEDED VARIABLES
 '
 Public Class ChaletEdit
-    Dim conn As SqlConnection
+    Dim conn As SqlConnection = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
     Dim sql As String
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
-    Dim namememory As String
 
-    'LOADING GUESTNAMES INTO COMBOBOX
+    'DISPLAY DATA FROM DATABASE
     '
     Private Sub ChaletEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpCheckIn.CustomFormat = " "
         dtpCheckOut.CustomFormat = " "
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
+
         conn.Open()
-        sql = "SELECT Guest_Name FROM GuestDetail"
-        cmd = New SqlCommand(sql, conn)
-
-
-        Dim dr2 As SqlDataReader = cmd.ExecuteReader
-        Dim guestcombotb As New DataTable
-
-        If dr2.HasRows Then
-            While (dr2.Read())
-                CboGuestName.Items.Add(dr2(0))
-            End While
-        Else
-            CboGuestName.Items.Add("No Existing Guests")
-        End If
-        dr2.Close()
-
-        'DISPLAY DATA FROM DATABASE
-        '
         sql = "SELECT Guest_Name, GuestNo, ChaletNumber_FK, Cast(CheckIn_Date AS Varchar), Cast(CheckOut_Date AS Varchar), ExtraBed
               From GuestDetail
               Left Join Reservation on GuestDetail.GuestNo = Reservation.GuestNo_FK
@@ -48,11 +29,10 @@ Public Class ChaletEdit
         If dr.Read() Then
             dtpCheckIn.CustomFormat = "yyyy-MM-dd"
             dtpCheckOut.CustomFormat = "yyyy-MM-dd"
-            CboGuestName.Text = dr(0)
+            txtGuestID.Text = dr(0)
             dtpCheckIn.Value = dr(3)
             dtpCheckOut.Value = dr(4)
             CboEB.Text = dr(5)
-            namememory = CboGuestName.Text
         End If
 
         conn.Close()
@@ -62,7 +42,6 @@ Public Class ChaletEdit
     '
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Dim EditCheck As Integer
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         conn.Open()
         sql = "UPDATE Reservation
                SET GuestNo_FK = GuestDetail.GuestNo, CheckIn_Date = @checkindate, CheckOut_Date =@checkoutdate, ExtraBed = @eb
@@ -74,8 +53,7 @@ Public Class ChaletEdit
 
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
-        cmd.Parameters.AddWithValue("@memguestname", namememory)
-        cmd.Parameters.AddWithValue("@guestname", CboGuestName.SelectedText)
+        cmd.Parameters.AddWithValue("@memguestname", txtGuestID.Text)
         cmd.Parameters.AddWithValue("@checkindate", dtpCheckIn.Text)
         cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Text)
         cmd.Parameters.AddWithValue("@eb", CboEB.Text)
@@ -103,15 +81,24 @@ Public Class ChaletEdit
         conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
         conn.Open()
 
-        sql = " DELETE FROM Reservation WHERE ChaletNumber_FK = @clickedchaletCH"
+        sql = " DELETE FROM Reservation WHERE ChaletNumber_FK = @clickedchaletCH AND CheckIn_Date = @checkindate AND CheckOut_Date = @checkoutdate"
         cmd = New SqlCommand(sql, conn)
         cmd.Parameters.AddWithValue("@clickedchaletCH", AdminChaletInfo.clickedchaletCH)
+        cmd.Parameters.AddWithValue("@checkindate", dtpCheckIn.Value.ToString("yyyy-MM-dd"))
+        cmd.Parameters.AddWithValue("@checkoutdate", dtpCheckOut.Value.ToString("yyyy-MM-dd"))
 
         Recorddeleted = cmd.ExecuteNonQuery()
         If Recorddeleted = 0 Then
             MessageBox.Show("Error occured when deleting data. Please try again.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf Recorddeleted = 1 Then
             MessageBox.Show("Record successfully deleted.", "Success")
+            Me.Close()
+            AdminChaletInfo.Close()
+            AdminChaletInfo.TopLevel = False
+            Adminmenuform.pnlMainView.Controls.Add(AdminChaletInfo)
+            AdminChaletInfo.Show()
+            AdminChaletInfo.BringToFront()
+
         End If
 
         conn.Close()
