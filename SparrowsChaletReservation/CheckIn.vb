@@ -9,24 +9,46 @@ Public Class CheckIn
     Public ChaletTotal, ChaletDeposit, dayduration As Double
 
 
-    Private Sub ChaletButtons_Click(sender As Object, e As EventArgs) Handles btnCH001.Click, btnCH002.Click, btnCH003.Click, btnCH004.Click, btnCH005.Click, btnCH006.Click, btnCH007.Click, btnCH008.Click, btnCH009.Click, btnCH010.Click
-        If sender.BackColor = Color.White Then
-            DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255)
-            addedchalets += 1
-            standardchalets += 1
-            checkedchalet.Add("CH0" & sender.text)
-        ElseIf DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255) Then
-            DirectCast(sender, Button).BackColor = Color.White
-            addedchalets -= 1
-            standardchalets -= 1
-            checkedchalet.Remove("CH0" & sender.text)
-        End If
+    Private Sub ChaletButtons_Click(sender As Object, e As EventArgs) Handles btnCH001.Click, btnCH002.Click, btnCH003.Click, btnCH004.Click, btnCH005.Click, btnCH006.Click, btnCH007.Click, btnCH008.Click, btnCH009.Click, btnCH010.Click, btnCH011.Click, btnCH012.Click, btnCH013.Click, btnCH014.Click, btnCH015.Click, btnCH016.Click, btnCH017.Click, btnCH018.Click, btnCH019.Click, btnCH020.Click
+        ' CHALET SELECTION COLORS AND SELECTION COUNT
+        '
+        Select Case sender.Text
+            Case sender.Text < 11
+                If sender.BackColor = Color.White Then
+                    DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255)
+                    addedchalets += 1
+                    standardchalets += 1
+                    checkedchalet.Add("CH0" & sender.text)
+                ElseIf DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255) Then
+                    DirectCast(sender, Button).BackColor = Color.White
+                    addedchalets -= 1
+                    standardchalets -= 1
+                    checkedchalet.Remove("CH0" & sender.text)
+                End If
+            Case sender.Text > 10
+                If sender.BackColor = Color.White Then
+                    DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255)
+                    addedchalets += 1
+                    supremechalets += 1
+                    checkedchalet.Add("CH0" & sender.text)
+                ElseIf DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255) Then
+                    DirectCast(sender, Button).BackColor = Color.White
+                    addedchalets -= 1
+                    supremechalets -= 1
+                    checkedchalet.Remove("CH0" & sender.text)
+                End If
+        End Select
     End Sub
 
     Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged, dtpCheckOut.ValueChanged
+        ' SET MINIMUM DATE FOR CHECKOUT DTP TO BE 1 DAY MORE THEN CHECKIN DTP
+        '
         If dtpCheckIn.Value <> dtpCheckIn.MinDate Then
             dtpCheckOut.MinDate = dtpCheckIn.Value.AddDays(1)
         End If
+
+        ' RESET VARIABLES TO AVOID MISCALCULATION
+        '
         For Each ctrl As Control In Me.GboChalet.Controls
             If TypeOf ctrl Is Button Then
                 With ctrl
@@ -50,7 +72,8 @@ Public Class CheckIn
                     MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Select
         End Try
-
+        ' QUERY TO VIEW WHICH CHALETS ARE BOOK IN DTP RANGE
+        '
         Dim chaletds As New DataSet
         sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @cidate AND CheckOut_Date >= @cidate) OR (CheckIn_Date < @codate AND CheckOut_Date >= @codate) OR (@cidate < CheckIn_Date AND @codate > CheckOut_Date) OR (CheckOut_Date <= @cidate AND Reservation_Status = 'True' AND CheckOut_Date <= CONVERT(Date,GetDate()))"
         cmd = New SqlCommand(sql, conn)
@@ -68,20 +91,6 @@ Public Class CheckIn
         Next
         conn.Close()
     End Sub
-
-    Private Sub btnCH011_Click(sender As Object, e As EventArgs) Handles btnCH011.Click, btnCH012.Click, btnCH013.Click, btnCH014.Click, btnCH015.Click, btnCH016.Click, btnCH017.Click, btnCH018.Click, btnCH019.Click, btnCH020.Click
-        If sender.BackColor = Color.White Then
-            DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255)
-            addedchalets += 1
-            supremechalets += 1
-            checkedchalet.Add("CH0" & sender.text)
-        ElseIf DirectCast(sender, Button).BackColor = Color.FromArgb(128, 128, 255) Then
-            DirectCast(sender, Button).BackColor = Color.White
-            addedchalets -= 1
-            supremechalets -= 1
-            checkedchalet.Remove("CH0" & sender.text)
-        End If
-    End Sub
     Private Sub CheckIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             conn.Open()
@@ -93,7 +102,8 @@ Public Class CheckIn
                     MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Select
         End Try
-
+        ' QUERY TO VIEW CHALETS BOOKED ON SYSTEM DATE (TODAY)
+        '
         sql = "SELECT ChaletNumber_FK FROM Reservation WHERE (CheckIn_Date <= @date AND CheckOut_Date >= @date AND Reservation_Status = 'True') OR (CheckOut_Date <= @date AND Reservation_Status = 'True' AND GetDate() <= @date)"
 
         Dim chaletds As New DataSet
@@ -139,10 +149,6 @@ Public Class CheckIn
             Exit Sub
         End If
 
-        ' conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-
-
         'GUEST DETAIL SECTION START
 
         sql = "SELECT Guest_Name, Guest_Contact_No, Guest_Email, GuestNo FROM GuestDetail WHERE 
@@ -174,6 +180,8 @@ Public Class CheckIn
         conn.Close()
     End Sub
     Private Sub txtPax_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPax.KeyPress
+        ' INPUT VALIDATION FOR GUEST COUNT
+        '
         If Not Char.IsDigit(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
@@ -229,6 +237,8 @@ Public Class CheckIn
     End Sub
 
     Public Sub RefreshForm(e As EventArgs)
+        'CUSTOM SUB TO REFRESH FORM WHEN CALLED
+        '
         Me.Controls.Clear()
         InitializeComponent()
         CheckIn_Load(e, e)

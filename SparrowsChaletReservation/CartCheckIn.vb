@@ -11,40 +11,49 @@ Public Class CartCheckIn
         Label5.Text = CheckIn.txtGuestName.Text
         Label7.Text = "From " & CheckIn.dtpCheckIn.Text & " Until " & CheckIn.dtpCheckOut.Text
 
-
+        ' LOOP TO CREATE "PANELS" FOR "SHOPPING ITEMS"
+        '
         For Each Item In CheckIn.checkedchalet
             Dim NewSubPanel As New Button
-            NewSubPanel.Location = New Point(5, lastButtonPos)
-            NewSubPanel.Size = New Size(550, 100)
-            NewSubPanel.Text = "Chalet = " & CheckIn.checkedchalet(i)
-            NewSubPanel.TextAlign = ContentAlignment.MiddleLeft
-            NewSubPanel.Font = New Drawing.Font("Segoe UI Semibold", 13.875)
-            NewSubPanel.FlatStyle = FlatStyle.Flat
-            NewSubPanel.FlatAppearance.BorderColor = Color.Black
-            NewSubPanel.ForeColor = Color.Black
-            NewSubPanel.BackColor = Color.White
-            NewSubPanel.FlatAppearance.BorderSize = 1
-            NewSubPanel.FlatAppearance.MouseOverBackColor = Color.White
-            NewSubPanel.FlatAppearance.MouseDownBackColor = Color.White
-
+            With NewSubPanel
+                .Location = New Point(5, lastButtonPos)
+                .Size = New Size(550, 100)
+                .Text = "Chalet = " & CheckIn.checkedchalet(i)
+                .TextAlign = ContentAlignment.MiddleLeft
+                .Font = New Drawing.Font("Segoe UI Semibold", 13.875)
+                .FlatStyle = FlatStyle.Flat
+                .FlatAppearance.BorderColor = Color.Black
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+                .FlatAppearance.BorderSize = 1
+                .FlatAppearance.MouseOverBackColor = Color.White
+                .FlatAppearance.MouseDownBackColor = Color.White
+            End With
 
             Dim NewEBDropDown As New ComboBox
-            NewEBDropDown.Items.Add("No Extra Beds")
-            NewEBDropDown.Items.Add("1")
-            NewEBDropDown.Items.Add("2")
-            NewEBDropDown.SelectedIndex = 0
-            NewEBDropDown.DropDownStyle = ComboBoxStyle.DropDownList
-            NewEBDropDown.Location = New Point(400, lastButtonPos + 45)
-            NewEBDropDown.Name = "Dropdown" & i.ToString
+            With NewEBDropDown
+                .Items.Add("No Extra Beds")
+                .Items.Add("1")
+                .Items.Add("2")
+                .SelectedIndex = 0
+                .DropDownStyle = ComboBoxStyle.DropDownList
+                .Location = New Point(400, lastButtonPos + 45)
+                .Name = "Dropdown" & i.ToString
+            End With
 
             Dim NewEBLabel As New Label
-            NewEBLabel.Text = "Extra Portable Beds"
-            NewEBLabel.BackColor = Color.White
-            NewEBLabel.Location = New Point(300, lastButtonPos + 50)
-
-            pnlOthers.Controls.Add(NewEBLabel)
-            pnlOthers.Controls.Add(NewEBDropDown)
-            pnlOthers.Controls.Add(NewSubPanel)
+            With NewEBLabel
+                .Text = "Extra Portable Beds"
+                .BackColor = Color.White
+                .Location = New Point(300, lastButtonPos + 50)
+            End With
+            ' ADD "PANELS" TO CART "LIST"
+            '
+            With pnlOthers
+                .Controls.Add(NewEBLabel)
+                .Controls.Add(NewEBDropDown)
+                .Controls.Add(NewSubPanel)
+            End With
             lastButtonPos = lastButtonPos + 110
             i = i + 1
         Next
@@ -61,12 +70,13 @@ Public Class CartCheckIn
                     MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Select
         End Try
+        ' QUERY TO INSERT RESERVATION/CHECKIN
+        '
         Dim n As Integer = 0
         For x = 1 To i
 
             sql = "INSERT INTO Reservation (CheckIn_Date, CheckOut_Date, Deposit, ChaletNumber_FK, ExtraBed, GuestNo_FK)
                SELECT @checkindate, @checkoutdate, @deposit, @chaletnumber, @extrab, @guestno"
-            'WHERE NOT EXISTS (SELECT * FROM Reservation WHERE (@checkindate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber) OR (@checkindate <= CheckIn_Date AND @checkoutdate >= CheckIn_Date AND ChaletNumber_FK = @chaletnumber))"
 
             cmd = New SqlCommand(sql, conn)
             With cmd.Parameters
@@ -83,6 +93,8 @@ Public Class CartCheckIn
             n += 1
         Next
         conn.Close()
+        ' CHECK IF DATA ENTRY WAS SUCCESSFUL
+        '
         If recordcheck = 1 Then
             MessageBox.Show("Chalet/Chalets Successfully Booked", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             CheckIn.RefreshForm(e)

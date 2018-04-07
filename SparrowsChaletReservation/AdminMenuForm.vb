@@ -1,5 +1,7 @@
 ﻿Public Class AdminMenuForm
     Private Sub AdminMenuForm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        ' FORCE CLOSE OTHER FORMS TO ENSURE THAT IT WILL NOT CONTINUE TO RUN IN BACKGROUND
+        '
         GuestInfoEdit.Close()
         AdminChaletInfo.Close()
         OccupancyReportForm.Close()
@@ -81,6 +83,8 @@
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click, PictureBox3.Click
+        ' ANIMATE PANEL SLIDING BY INCREMENTING OR DECREMENTING PANEL X-COORDINATES BY 1
+        '
         If pnlMenu.Location = New Point(-155, 2) Then
             Do Until pnlMenu.Location.X = 0
                 pnlMenu.Location = New Point(pnlMenu.Location.X + 1, 2)
@@ -92,12 +96,16 @@
         End If
     End Sub
     Private Sub pnlMenu_MouseLeave(sender As Object, e As EventArgs) Handles pnlMenu.MouseLeave
+        ' ENSURE PANEL CLOSING WHEN MOUSE LEAVE
+        '
         Do Until pnlMenu.Location.X = -155
             pnlMenu.Location = New Point(pnlMenu.Location.X - 1, 2)
         Loop
     End Sub
 
     Private Sub AdminMenuForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' LOAD SYSTEM DATE INTO SYSTEM CALENDAR
+        '
         Dim regDate As Date = Date.Now()
         lblDay.Text = regDate.ToString("dd")
         lblMonth.Text = regDate.ToString("MMM").ToUpper
@@ -105,6 +113,8 @@
     End Sub
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        'LOGOUT
+        '
         Dim answer As MsgBoxResult
         answer = MessageBox.Show("Logout?", "Are you sure", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If answer = MsgBoxResult.Yes Then
@@ -112,5 +122,4 @@
             Me.Close()
         End If
     End Sub
-
 End Class

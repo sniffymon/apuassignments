@@ -3,15 +3,13 @@ Imports System.Data.SqlClient
 Public Class AdminChaletInfo
     Public clickedchalet As String
     Public clickedchaletCH As String
-    Dim conn As SqlConnection
+    Dim conn As New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
     Dim cmd As SqlCommand
     Dim searchmode As Boolean = False
     Dim chaletamt, sql, guestnostorage As String
     Private Sub AdminChaletInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-
+        ' Open Connection and Catch Exceptions
+        '
         Try
             conn.Open()
         Catch sqlEx As SqlException
@@ -22,6 +20,8 @@ Public Class AdminChaletInfo
                     MessageBox.Show("An unexpected error occured! Please contact your system administrator!", "Undefined Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Select
         End Try
+        ' QUERY TO LOAD BOOKED CHALETS FOR SYSTEM DATE (TODAY)
+        '
         sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
                WHERE CheckIn_Date <= @date AND CheckOut_Date >= @date AND Reservation_Status = 'True'"
 
@@ -38,8 +38,7 @@ Public Class AdminChaletInfo
             DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).BackColor = Color.Red
         Next
 
-        '
-        'Start Loading For Guest ID In Search ComboBox
+        'LOAD EXISTING GUEST ID INTO COMBOBOX
         '
         sql = "SELECT Guest_ID_PassNum FROM GuestDetail"
         cmd = New SqlCommand(sql, conn)
@@ -63,15 +62,14 @@ Public Class AdminChaletInfo
         clickedchaletCH = "CH0" & sender.text
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        ' INPUT VALIDATION
+        '
         If cboGuestID.Text = "" Then
             MessageBox.Show("Please enter all needed information into the textboxes", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
         searchmode = True
-
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
 
 
         'GUEST DETAIL SECTION START
@@ -95,14 +93,18 @@ Public Class AdminChaletInfo
         'Determining Parameters (NEEDED TO AVOID SQL INJECTION)
         '
         cmd.Parameters.AddWithValue("@guestid", cboGuestID.Text)
-
+        'DISPLAY AND STORE COLLECTED INFORMATION FROM DATABASE
+        '
         Dim dr As SqlDataReader = cmd.ExecuteReader
-
-        If dr.Read() Then
+        If dr.HasRows Then
+            dr.Read()
             guestnostorage = dr(0)
             txtGuestName.Text = dr(1)
             txtGuestMobile.Text = dr(2)
             txtGuestEmail.Text = dr(3)
+        Else
+            MsgBox("Guest with this Passport ID could not be found.")
+            Exit Sub
         End If
         dr.Close()
         ' Request for only specified guest chalets on that day
@@ -118,14 +120,15 @@ Public Class AdminChaletInfo
 
         Dim exdata As DataTable = chaletds.Tables("SpecifiedCH")
         Dim row As DataRow
-
+        ' RESET CHALET VISIBLE/COLORS
         For Each ctrl As Control In Me.tlpChaletButtons.Controls
             If TypeOf ctrl Is Button Then
                 ctrl.Visible = False
                 lblChaletSpec.Visible = True
             End If
         Next
-
+        ' SHOW SPECIFIC GUEST BOOKED CHALETS
+        '
         For Each row In exdata.Rows
             DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).Visible = True
             DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).BackColor = Color.Red
@@ -135,6 +138,8 @@ Public Class AdminChaletInfo
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        ' RESET ALL SELECTED INFORMATION IN FORM
+        '
         cboGuestID.SelectedIndex = -1
         txtGuestName.Text = ""
         txtGuestEmail.Text = ""
@@ -150,7 +155,8 @@ Public Class AdminChaletInfo
 
         AdminChaletInfo_Load(e, e)
     End Sub
-
+    'NAVIGATE TO DIFFERENT DAYS USING ARROWS
+    '
     Private Sub btnLeft_Click(sender As Object, e As EventArgs) Handles btnLeft.Click, btnRight.Click
         Select Case sender.Name
             Case btnLeft.Name
@@ -161,6 +167,8 @@ Public Class AdminChaletInfo
     End Sub
 
     Private Sub dtpDateSpec_ValueChanged(sender As Object, e As EventArgs) Handles dtpDateSpec.ValueChanged
+        ' RESET CHALET VISIBLE/COLORS
+        '
         For Each ctrl As Control In Me.tlpChaletButtons.Controls
             If TypeOf ctrl Is Button Then
                 With ctrl
@@ -169,9 +177,6 @@ Public Class AdminChaletInfo
                 End With
             End If
         Next
-        conn = New SqlConnection("Server=den1.mssql1.gear.host;Database=sparrowsresort;User Id=sparrowsresort; Password=@Ssignment123;")
-        'conn = New SqlConnection("Server=ASLEYTAN38A5\SQLEXPRESS;Database=SparrowsResort;Trusted_Connection=True;")
-
         Try
             conn.Open()
         Catch sqlEx As SqlException
@@ -183,7 +188,8 @@ Public Class AdminChaletInfo
             End Select
         End Try
         Dim chaletds As New DataSet
-
+        ' SHOW NON-GUEST SPECIFIED BOOKED CHALETS
+        '
         If searchmode = False Then
             sql = "SELECT ChaletNumber FROM Chalet INNER JOIN Reservation ON ChaletNumber = ChaletNumber_FK
                WHERE CheckIn_Date <= @date AND CheckOut_Date >= @date AND Reservation_Status = 'True'"
@@ -198,7 +204,8 @@ Public Class AdminChaletInfo
             For Each row In exdata.Rows
                 DirectCast(tlpChaletButtons.Controls("btn" & row(0)), Button).BackColor = Color.Red
             Next
-
+            ' SHOW GUEST SPECIFIED BOOKED CHALETS
+            '
         ElseIf searchmode = True Then
             sql = "SELECT ChaletNumber_FK FROM Reservation WHERE GuestNo_FK=@guestno AND CheckIn_Date <= @date AND CheckOut_Date >= @date"
             cmd = New SqlCommand(sql, conn)
@@ -230,12 +237,16 @@ Public Class AdminChaletInfo
     End Sub
 
     Private Sub ViewDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewDetailsToolStripMenuItem.Click
+        ' LAUNCH NEW INSTANCE OF CHALET DETAILS FORM
+        '
         Dim ChaletDetailsNEW As New ChaletDetails
         ChaletDetailsNEW.Text = clickedchalet & " Details"
         ChaletDetailsNEW.Show()
     End Sub
 
     Private Sub EditDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditDetailsToolStripMenuItem.Click
+        ' LAUNCH NEW INSTANCE OF CHALET EDIT FORM
+        '
         Dim ChaletEditNEW As New ChaletEdit
         ChaletEditNEW.Text = "Edit " & clickedchalet
         ChaletEditNEW.Show()

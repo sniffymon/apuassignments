@@ -6,7 +6,9 @@ Public Class StaffMenuForm
     Dim sql As String
     Public contracheck As Integer = 0
     Public contrachalet, contraguestno As String
-    Private Sub AdminMenuForm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+    Private Sub StaffMenuForm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        ' MAKE SURE EVERY FORM IS CLOSED TO AVOID APPLICATION RUNNING IN BACKGROUND
+        '
         GuestInfoEdit.Close()
         CheckOut.Close()
         ExtendBooking.Close()
@@ -102,29 +104,34 @@ Public Class StaffMenuForm
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        ' PANEL SLIDING ANIMATION DONE BY INCREMENT AND DECREMENT OF 1 with X-COORDINATE
+        '
         If pnlMenu.Location = New Point(-155, 2) Then
             Do Until pnlMenu.Location.X = 0
                 pnlMenu.Location = New Point(pnlMenu.Location.X + 1, 2)
             Loop
-            'pnlMenu.Size = New Size(153, 481)
         ElseIf pnlMenu.Location = New Point(0, 2) Then
-            'pnlMenu.Size = New Size(194, 481)
             Do Until pnlMenu.Location.X = -155
                 pnlMenu.Location = New Point(pnlMenu.Location.X - 1, 2)
             Loop
         End If
     End Sub
     Private Sub pnlMenu_MouseLeave(sender As Object, e As EventArgs) Handles pnlMenu.MouseLeave
+        ' ENSURE PANEL CLOSES ON MOUSE LEAVE
+        '
         Do Until pnlMenu.Location.X = -155
             pnlMenu.Location = New Point(pnlMenu.Location.X - 1, 2)
         Loop
     End Sub
     Private Sub StaffMenuForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' SHOW SYSTEM DATE
+        '
         Dim regDate As Date = Date.Now()
         lblDay.Text = regDate.ToString("dd")
         lblMonth.Text = regDate.ToString("MMM").ToUpper
         lblYear.Text = regDate.ToString("yyyy")
-
+        ' SYSTEM FUNCTION TO DETERMINE MANDATORY CHECKOUTS FOR THE DAY
+        '
         sql = "SELECT DISTINCT r.GuestNo_FK, r.ChaletNumber_FK, r.CheckOut_Date FROM Reservation r, Reservation r2 WHERE (r.ChaletNumber_FK = r2.ChaletNumber_FK AND ((r.CheckOut_Date = r2.CheckIn_Date) AND r.Reservation_Status = 'True' AND CONVERT(Date, GetDate()) = r.CheckOut_Date) OR (r.CheckOut_Date <= r2.CheckIn_Date AND r.Reservation_Status = 'True' AND CONVERT(Date,GetDate()) = r.CheckOut_Date))"
         conn.Open()
 
@@ -143,6 +150,8 @@ Public Class StaffMenuForm
     End Sub
 
     Private Sub PictureBox2_Click_1(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        ' LOGOUT
+        '
         Dim answer As MsgBoxResult
         answer = MessageBox.Show("Logout?", "Are you sure", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If answer = MsgBoxResult.Yes Then
@@ -152,6 +161,8 @@ Public Class StaffMenuForm
     End Sub
 
     Public Sub RefreshForm(e As EventArgs)
+        ' CUSTOM SUB TO REFRESH FORM WHEN CALLED
+        '
         Me.Controls.Clear()
         InitializeComponent()
         StaffMenuForm_Load(e, e)
